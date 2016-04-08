@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -185,17 +185,17 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import { assert } from &#x27;ember-metal/debug&#x27;;
-import BasicStream, { Stream } from &#x27;./stream&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;;
+import Stream from &#x27;./stream&#x27;;
 
 /*
- Check whether an object is a stream or not.
+ Check whether an object is a stream or not
 
- @private
+ @public
  @for Ember.stream
  @function isStream
- @param {Object|Stream} object Object to check whether it is a stream.
- @return {Boolean} &#x60;true&#x60; if the object is a stream, &#x60;false&#x60; otherwise.
+ @param {Object|Stream} object object to check whether it is a stream
+ @return {Boolean} &#x60;true&#x60; if the object is a stream, &#x60;false&#x60; otherwise
 */
 export function isStream(object) {
   return object &amp;&amp; object.isStream;
@@ -208,10 +208,10 @@ export function isStream(object) {
  @public
  @for Ember.stream
  @function subscribe
- @param {Object|Stream} object Object or stream to potentially subscribe to.
- @param {Function} callback Function to run when stream value changes.
+ @param {Object|Stream} object object or stream to potentially subscribe to
+ @param {Function} callback function to run when stream value changes
  @param {Object} [context] the callback will be executed with this context if it
-                           is provided.
+                           is provided
  */
 export function subscribe(object, callback, context) {
   if (object &amp;&amp; object.isStream) {
@@ -223,12 +223,12 @@ export function subscribe(object, callback, context) {
  A method of unsubscribing from a stream which is safe for use with a non-stream
  object. If a non-stream object is passed, the function does nothing.
 
- @private
+ @public
  @for Ember.stream
  @function unsubscribe
- @param {Object|Stream} object Object or stream to potentially unsubscribe from.
- @param {Function} callback Function originally passed to &#x60;subscribe()&#x60;.
- @param {Object} [context] Object originally passed to &#x60;subscribe()&#x60;.
+ @param {Object|Stream} object object or stream to potentially unsubscribe from
+ @param {Function} callback function originally passed to &#x60;subscribe()&#x60;
+ @param {Object} [context] object originally passed to &#x60;subscribe()&#x60;
  */
 export function unsubscribe(object, callback, context) {
   if (object &amp;&amp; object.isStream) {
@@ -237,14 +237,14 @@ export function unsubscribe(object, callback, context) {
 }
 
 /*
- Retrieve the value of a stream, or in the case where a non-stream object is passed,
+ Retrieve the value of a stream, or in the case a non-stream object is passed,
  return the object itself.
 
- @private
+ @public
  @for Ember.stream
  @function read
- @param {Object|Stream} object Object to return the value of.
- @return The stream&#x27;s current value, or the non-stream object itself.
+ @param {Object|Stream} object object to return the value of
+ @return the stream&#x27;s current value, or the non-stream object itself
  */
 export function read(object) {
   if (object &amp;&amp; object.isStream) {
@@ -257,11 +257,11 @@ export function read(object) {
 /*
  Map an array, replacing any streams with their values.
 
- @private
+ @public
  @for Ember.stream
  @function readArray
  @param {Array} array The array to read values from
- @return {Array} A new array of the same length with the values of non-stream
+ @return {Array} a new array of the same length with the values of non-stream
                  objects mapped from their original positions untouched, and
                  the values of stream objects retaining their original position
                  and replaced with the stream&#x27;s current value.
@@ -279,11 +279,11 @@ export function readArray(array) {
  Map a hash, replacing any stream property values with the current value of that
  stream.
 
- @private
+ @public
  @for Ember.stream
  @function readHash
- @param {Object} object The hash to read keys and values from.
- @return {Object} A new object with the same keys as the passed object. The
+ @param {Object} object The hash to read keys and values from
+ @return {Object} a new object with the same keys as the passed object. The
                   property values in the new object are the original values in
                   the case of non-stream objects, and the streams&#x27; current
                   values in the case of stream objects.
@@ -297,14 +297,14 @@ export function readHash(object) {
 }
 
 /*
- Check whether an array contains any stream values.
+ Check whether an array contains any stream values
 
- @private
+ @public
  @for Ember.stream
  @function scanArray
- @param {Array} array Array given to a handlebars helper.
+ @param {Array} array array given to a handlebars helper
  @return {Boolean} &#x60;true&#x60; if the array contains a stream/bound value, &#x60;false&#x60;
-                   otherwise.
+                   otherwise
 */
 export function scanArray(array) {
   var length = array.length;
@@ -321,14 +321,14 @@ export function scanArray(array) {
 }
 
 /*
- Check whether a hash has any stream property values.
+ Check whether a hash has any stream property values
 
- @private
+ @public
  @for Ember.stream
  @function scanHash
- @param {Object} hash &quot;hash&quot; argument given to a handlebars helper.
+ @param {Object} hash &quot;hash&quot; argument given to a handlebars helper
  @return {Boolean} &#x60;true&#x60; if the object contains a stream/bound value, &#x60;false&#x60;
-                   otherwise.
+                   otherwise
  */
 export function scanHash(hash) {
   var containsStream = false;
@@ -343,50 +343,39 @@ export function scanHash(hash) {
   return containsStream;
 }
 
-let ConcatStream = BasicStream.extend({
-  init(array, separator) {
-    this.array = array;
-    this.separator = separator;
-
-    // Used by angle bracket components to detect an attribute was provided
-    // as a string literal.
-    this.isConcat = true;
-  },
-
-  label() {
-    let labels = labelsFor(this.array);
-    return &#x60;concat([${labels.join(&#x27;, &#x27;)}]; separator=${inspect(this.separator)})&#x60;;
-  },
-
-  compute() {
-    return concat(readArray(this.array), this.separator);
-  }
-});
-
 /*
- Join an array, with any streams replaced by their current values.
+ Join an array, with any streams replaced by their current values
 
- @private
+ @public
  @for Ember.stream
  @function concat
  @param {Array} array An array containing zero or more stream objects and
-                      zero or more non-stream objects.
- @param {String} separator String to be used to join array elements.
+                      zero or more non-stream objects
+ @param {String} separator string to be used to join array elements
  @return {String} String with array elements concatenated and joined by the
                   provided separator, and any stream array members having been
-                  replaced by the current value of the stream.
+                  replaced by the current value of the stream
  */
 export function concat(array, separator) {
   // TODO: Create subclass ConcatStream &lt; Stream. Defer
   // subscribing to streams until the value() is called.
   var hasStream = scanArray(array);
   if (hasStream) {
-    let stream = new ConcatStream(array, separator);
+    var i, l;
+    var stream = new Stream(function() {
+      return concat(readArray(array), separator);
+    }, function() {
+      var labels = labelsFor(array);
+      return &#x60;concat([${labels.join(&#x27;, &#x27;)}]; separator=${inspect(separator)})&#x60;;
+    });
 
-    for (let i = 0, l = array.length; i &lt; l; i++) {
-      addDependency(stream, array[i]);
+    for (i = 0, l = array.length; i &lt; l; i++) {
+      stream.addDependency(array[i]);
     }
 
+    // used by angle bracket components to detect an attribute was provided
+    // as a string literal
+    stream.isConcat = true;
     return stream;
   } else {
     return array.join(separator);
@@ -396,7 +385,7 @@ export function concat(array, separator) {
 export function labelsFor(streams) {
   var labels =  [];
 
-  for (var i = 0, l = streams.length; i &lt; l; i++) {
+  for (var i=0, l=streams.length; i&lt;l; i++) {
     var stream = streams[i];
     labels.push(labelFor(stream));
   }
@@ -446,14 +435,14 @@ export function or(first, second) {
 }
 
 export function addDependency(stream, dependency) {
-  assert(&#x27;Cannot add a stream as a dependency to a non-stream&#x27;, isStream(stream) || !isStream(dependency));
+  Ember.assert(&#x27;Cannot add a stream as a dependency to a non-stream&#x27;, isStream(stream) || !isStream(dependency));
   if (isStream(stream)) {
     stream.addDependency(dependency);
   }
 }
 
 export function zip(streams, callback, label) {
-  assert(&#x27;Must call zip with a label&#x27;, !!label);
+  Ember.assert(&#x27;Must call zip with a label&#x27;, !!label);
 
   var stream = new Stream(function() {
     var array = readArray(streams);
@@ -462,7 +451,7 @@ export function zip(streams, callback, label) {
     return &#x60;${label}(${labelsFor(streams)})&#x60;;
   });
 
-  for (var i = 0, l = streams.length; i &lt; l; i++) {
+  for (var i=0, l=streams.length; i&lt;l; i++) {
     stream.addDependency(streams[i]);
   }
 
@@ -470,7 +459,7 @@ export function zip(streams, callback, label) {
 }
 
 export function zipHash(object, callback, label) {
-  assert(&#x27;Must call zipHash with a label&#x27;, !!label);
+  Ember.assert(&#x27;Must call zipHash with a label&#x27;, !!label);
 
   var stream = new Stream(function() {
     var hash = readHash(object);
@@ -506,12 +495,12 @@ export function zipHash(object, callback, label) {
  In the example, result is a stream if source is a stream, or a number of
  source was numeric.
 
- @private
+ @public
  @for Ember.stream
  @function chain
- @param {Object|Stream} value A stream or non-stream object.
- @param {Function} fn Function to be run when the stream value changes, or to
-                      be run once in the case of a non-stream object.
+ @param {Object|Stream} value A stream or non-stream object
+ @param {Function} fn function to be run when the stream value changes, or to
+                      be run once in the case of a non-stream object
  @return {Object|Stream} In the case of a stream &#x60;value&#x60; parameter, a new
                          stream that will be updated with the return value of
                          the provided function &#x60;fn&#x60;. In the case of a
@@ -519,7 +508,7 @@ export function zipHash(object, callback, label) {
                          function &#x60;fn&#x60;.
  */
 export function chain(value, fn, label) {
-  assert(&#x27;Must call chain with a label&#x27;, !!label);
+  Ember.assert(&#x27;Must call chain with a label&#x27;, !!label);
   if (isStream(value)) {
     var stream = new Stream(fn, function() { return &#x60;${label}(${labelFor(value)})&#x60;; });
     stream.addDependency(value);

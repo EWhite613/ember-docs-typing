@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,9 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
+                                <li><a href="../classes/Ember.Engine.html">Ember.Engine</a></li>
+                                <li><a href="../classes/Ember.EngineInstance.html">Ember.EngineInstance</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +110,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +135,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,7 +193,6 @@
         <div class="uses">
             Uses
             <ul class="inline commas">
-                    <li><a href="Ember.ViewSupport.html">Ember.ViewSupport</a></li>
                     <li><a href="Ember.ViewContextSupport.html">Ember.ViewContextSupport</a></li>
                     <li><a href="Ember.ViewChildViewsSupport.html">Ember.ViewChildViewsSupport</a></li>
                     <li><a href="Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
@@ -204,7 +210,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l27"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:27</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l31"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:31</code></a>
         </div>
 
             Module: <a href="../modules/ember-views.html">ember-views</a><br>
@@ -376,15 +382,16 @@ mapped, since <code>:</code> is not a valid character for properties in Javascri
 <pre class="code prettyprint"><code class="language-html">&lt;use xlink:href=&quot;#triangle&quot;&gt;&lt;/use&gt;
 </code></pre>
 <p>If the return value of an <code>attributeBindings</code> monitored property is a boolean
-the property's value will be set as a coerced string:</p>
+the property will follow HTML's pattern of repeating the attribute's name as
+its value:</p>
 <pre class="code prettyprint"><code class="language-javascript">MyTextInput = Ember.View.extend({
   tagName: 'input',
   attributeBindings: ['disabled'],
-  disabled: false
+  disabled: true
 });
 </code></pre>
-<p>Will result in a view instance with an HTML representation of:</p>
-<pre class="code prettyprint"><code class="language-html">&lt;input id=&quot;ember1&quot; class=&quot;ember-view&quot; disabled=&quot;false&quot; /&gt;
+<p>Will result in view instances with an HTML representation of:</p>
+<pre class="code prettyprint"><code class="language-html">&lt;input id=&quot;ember1&quot; class=&quot;ember-view&quot; disabled=&quot;disabled&quot; /&gt;
 </code></pre>
 <p><code>attributeBindings</code> can refer to computed properties:</p>
 <pre class="code prettyprint"><code class="language-javascript">MyTextInput = Ember.View.extend({
@@ -397,14 +404,6 @@ the property's value will be set as a coerced string:</p>
       return false;
     }
   })
-});
-</code></pre>
-<p>To prevent setting an attribute altogether, use <code>null</code> or <code>undefined</code> as the
-return value of the <code>attributeBindings</code> monitored property:</p>
-<pre class="code prettyprint"><code class="language-javascript">MyTextInput = Ember.View.extend({
-  tagName: 'form',
-  attributeBindings: ['novalidate'],
-  novalidate: null
 });
 </code></pre>
 <p>Updates to the property of an attribute binding will result in automatic
@@ -790,10 +789,6 @@ for additional information.</p>
                                 <a href="#method_removeAllChildren">removeAllChildren</a>
 
                             </li>
-                            <li class="index-item method private inherited">
-                                <a href="#method_removeChild">removeChild</a>
-
-                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#method_removeObserver">removeObserver</a>
 
@@ -853,15 +848,11 @@ for additional information.</p>
                                 <a href="#property_ariaRole">ariaRole</a>
 
                             </li>
-                            <li class="index-item property private inherited">
-                                <a href="#property_childViews">childViews</a>
-
-                            </li>
-                            <li class="index-item property public inherited inherited">
+                            <li class="index-item property public inherited">
                                 <a href="#property_classNameBindings">classNameBindings</a>
 
                             </li>
-                            <li class="index-item property public inherited inherited">
+                            <li class="index-item property public inherited">
                                 <a href="#property_classNames">classNames</a>
 
                             </li>
@@ -929,7 +920,7 @@ for additional information.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l673"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:673</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l666"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:666</code></a>
         </p>
 
 
@@ -980,7 +971,7 @@ passing <code>isUrgent</code> to this method will return <code>&quot;is-urgent&q
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.LegacyViewSupport.html#method__contextDidChange">Ember.LegacyViewSupport</a>:
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_legacy_view_support.js.html#l97"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:97</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_mixins_legacy_view_support.js.html#l101"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:101</code></a>
         </p>
 
 
@@ -2091,7 +2082,7 @@ application.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.LegacyViewSupport.html#method_nearestChildOf">Ember.LegacyViewSupport</a>:
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_legacy_view_support.js.html#l47"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:47</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_mixins_legacy_view_support.js.html#l51"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:51</code></a>
         </p>
 
 
@@ -2159,7 +2150,7 @@ application.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.LegacyViewSupport.html#method_nearestInstanceOf">Ember.LegacyViewSupport</a>:
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_legacy_view_support.js.html#l72"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:72</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_mixins_legacy_view_support.js.html#l76"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:76</code></a>
         </p>
 
 
@@ -2731,7 +2722,7 @@ like.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.LegacyViewSupport.html#method_removeAllChildren">Ember.LegacyViewSupport</a>:
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_legacy_view_support.js.html#l28"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:28</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_mixins_legacy_view_support.js.html#l32"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:32</code></a>
         </p>
 
 
@@ -2743,72 +2734,6 @@ like.</p>
 
     </div>
 
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/Ember.View.html" class="crosslink">Ember.View</a></span>:
-                    <p>receiver</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_removeChild" class="method item private inherited">
-    <h3 class="name"><code>removeChild</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>view</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/Ember.View.html" class="crosslink">Ember.View</a></span>
-        </span>
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/Ember.ClassNamesSupport.html#method_removeChild">Ember.ClassNamesSupport</a>:
-        <a href="../files/ember.js_packages_ember-glimmer_lib_ember-views_child-views-support.js.html#l35"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;ember-views&#x2F;child-views-support.js:35</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Removes the child view from the parent view.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">view</code>
-                        <span class="type"><a href="../classes/Ember.View.html" class="crosslink">Ember.View</a></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
 
         <div class="returns">
             <h4>Returns:</h4>
@@ -3519,7 +3444,7 @@ teacher.toString(); //=&gt; &quot;&lt;App.Teacher:ember1026:Tom Dale&gt;&quot;
                 Ember.Evented
             </a>
             but overwritten in
-        <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l79"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:79</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l83"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:83</code></a>
         </p>
 
 
@@ -3744,34 +3669,6 @@ visually challenged users navigate rich web applications.</p>
 
 
 </div>
-<div id="property_childViews" class="property item private inherited">
-    <h3 class="name"><code>childViews</code></h3>
-    <span class="type">Array</span>
-
-
-        <span class="flag private">private</span>
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/Ember.ClassNamesSupport.html#property_childViews">Ember.ClassNamesSupport</a>:
-        <a href="../files/ember.js_packages_ember-glimmer_lib_ember-views_child-views-support.js.html#l12"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;ember-views&#x2F;child-views-support.js:12</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>Array of child views. You should never edit this array directly.
-Instead, use <code>appendChild</code> and <code>removeFromParent</code>.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> []</p>
-
-
-</div>
 <div id="property_classNameBindings" class="property item public inherited">
     <h3 class="name"><code>classNameBindings</code></h3>
     <span class="type">Array</span>
@@ -3782,12 +3679,9 @@ Instead, use <code>appendChild</code> and <code>removeFromParent</code>.</p>
 
 
     <div class="meta">
-            <p>Inherited from
-            <a href="../classes/Ember.ClassNamesSupport.html#property_classNameBindings">
-                Ember.ClassNamesSupport
-            </a>
-            but overwritten in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_ember-views_class-names-support.js.html#l40"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;ember-views&#x2F;class-names-support.js:40</code></a>
+                <p>Inherited from
+                <a href="../classes/Ember.ClassNamesSupport.html#property_classNameBindings">Ember.ClassNamesSupport</a>:
+        <a href="../files/ember.js_packages_ember-views_lib_mixins_class_names_support.js.html#l41"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;class_names_support.js:41</code></a>
         </p>
 
 
@@ -3837,12 +3731,9 @@ Ember.View.extend({
 
 
     <div class="meta">
-            <p>Inherited from
-            <a href="../classes/Ember.ClassNamesSupport.html#property_classNames">
-                Ember.ClassNamesSupport
-            </a>
-            but overwritten in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_ember-views_class-names-support.js.html#l28"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;ember-views&#x2F;class-names-support.js:28</code></a>
+                <p>Inherited from
+                <a href="../classes/Ember.ClassNamesSupport.html#property_classNames">Ember.ClassNamesSupport</a>:
+        <a href="../files/ember.js_packages_ember-views_lib_mixins_class_names_support.js.html#l29"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;class_names_support.js:29</code></a>
         </p>
 
 
@@ -3945,7 +3836,7 @@ mislead your users to think they can override the property in a subclass).</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.InstrumentationSupport.html#property_instrumentDisplay">Ember.InstrumentationSupport</a>:
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_instrumentation_support.js.html#l14"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;instrumentation_support.js:14</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_mixins_instrumentation_support.js.html#l15"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;instrumentation_support.js:15</code></a>
         </p>
 
 
@@ -4136,7 +4027,7 @@ mislead your users to think they can override the property in a subclass).</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreView.html#property_parentView">Ember.CoreView</a>:
-        <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l60"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:60</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l62"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:62</code></a>
         </p>
 
 
@@ -4165,7 +4056,7 @@ property will point to the parent of the view.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l725"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:725</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l718"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:718</code></a>
         </p>
 
 

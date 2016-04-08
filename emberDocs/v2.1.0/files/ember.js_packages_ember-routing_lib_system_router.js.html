@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -185,15 +189,14 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import Logger from &#x27;ember-metal/logger&#x27;;
-import { assert, info } from &#x27;ember-metal/debug&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;; // FEATURES, Logger, assert
 import EmberError from &#x27;ember-metal/error&#x27;;
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import { set } from &#x27;ember-metal/property_set&#x27;;
 import { defineProperty } from &#x27;ember-metal/properties&#x27;;
 import EmptyObject from &#x27;ember-metal/empty_object&#x27;;
 import { computed } from &#x27;ember-metal/computed&#x27;;
-import assign from &#x27;ember-metal/assign&#x27;;
+import merge from &#x27;ember-metal/merge&#x27;;
 import run from &#x27;ember-metal/run_loop&#x27;;
 import EmberObject from &#x27;ember-runtime/system/object&#x27;;
 import Evented from &#x27;ember-runtime/mixins/evented&#x27;;
@@ -205,10 +208,7 @@ import {
   stashParamNames,
   calculateCacheKey
 } from &#x27;ember-routing/utils&#x27;;
-import { guidFor } from &#x27;ember-metal/utils&#x27;;
 import RouterState from &#x27;./router_state&#x27;;
-import { getOwner } from &#x27;container/owner&#x27;;
-import dictionary from &#x27;ember-metal/dictionary&#x27;;
 
 /**
 @module ember
@@ -221,7 +221,6 @@ import &#x27;router/transition&#x27;;
 function K() { return this; }
 
 var slice = [].slice;
-
 
 /**
   The &#x60;Ember.Router&#x60; class manages the application state and URLs. Refer to
@@ -264,7 +263,7 @@ var EmberRouter = EmberObject.extend(Evented, {
   */
   rootURL: &#x27;/&#x27;,
 
-  _initRouterJs() {
+  _initRouterJs(moduleBasedResolver) {
     var router = this.router = new Router();
     router.triggerEvent = triggerEvent;
 
@@ -272,36 +271,31 @@ var EmberRouter = EmberObject.extend(Evented, {
     router._triggerWillLeave = K;
 
     var dslCallbacks = this.constructor.dslCallbacks || [K];
-    var dsl = this._buildDSL();
-
-    dsl.route(&#x27;application&#x27;, { path: &#x27;/&#x27;, resetNamespace: true, overrideNameAssertion: true }, function() {
-      for (var i = 0; i &lt; dslCallbacks.length; i++) {
-        dslCallbacks[i].call(this);
-      }
+    var dsl = new EmberRouterDSL(null, {
+      enableLoadingSubstates: !!moduleBasedResolver
     });
 
+    function generateDSL() {
+      this.route(&#x27;application&#x27;, { path: &#x27;/&#x27;, resetNamespace: true, overrideNameAssertion: true }, function() {
+        for (var i = 0; i &lt; dslCallbacks.length; i++) {
+          dslCallbacks[i].call(this);
+        }
+      });
+    }
+
+    generateDSL.call(dsl);
+
     if (get(this, &#x27;namespace.LOG_TRANSITIONS_INTERNAL&#x27;)) {
-      router.log = Logger.debug;
+      router.log = Ember.Logger.debug;
     }
 
     router.map(dsl.generate());
   },
 
-  _buildDSL() {
-    let moduleBasedResolver = this._hasModuleBasedResolver();
-
-    return new EmberRouterDSL(null, {
-      enableLoadingSubstates: !!moduleBasedResolver
-    });
-  },
-
   init() {
-    this._super(...arguments);
-
     this._activeViews = {};
     this._qpCache = new EmptyObject();
     this._resetQueuedQueryParameterChanges();
-    this._handledErrors = dictionary(null);
   },
 
   /*
@@ -324,18 +318,6 @@ var EmberRouter = EmberObject.extend(Evented, {
     return get(this, &#x27;location&#x27;).getURL();
   }),
 
-  _hasModuleBasedResolver() {
-    let owner = getOwner(this);
-
-    if (!owner) { return false; }
-
-    let resolver = owner.application &amp;&amp; owner.application.__registry__ &amp;&amp; owner.application.__registry__.resolver;
-
-    if (!resolver) { return false; }
-
-    return !!resolver.moduleBasedResolver;
-  },
-
   /**
     Initializes the current router instance and sets up the change handling
     event listeners used by the instances &#x60;location&#x60; implementation.
@@ -346,10 +328,10 @@ var EmberRouter = EmberObject.extend(Evented, {
     @method startRouting
     @private
   */
-  startRouting() {
+  startRouting(moduleBasedResolver) {
     var initialURL = get(this, &#x27;initialURL&#x27;);
 
-    if (this.setupRouter()) {
+    if (this.setupRouter(moduleBasedResolver)) {
       if (typeof initialURL === &#x27;undefined&#x27;) {
         initialURL = get(this, &#x27;location&#x27;).getURL();
       }
@@ -360,8 +342,8 @@ var EmberRouter = EmberObject.extend(Evented, {
     }
   },
 
-  setupRouter() {
-    this._initRouterJs();
+  setupRouter(moduleBasedResolver) {
+    this._initRouterJs(moduleBasedResolver);
     this._setupLocation();
 
     var router = this.router;
@@ -399,9 +381,9 @@ var EmberRouter = EmberObject.extend(Evented, {
         this._super(...arguments);
 
         return ga(&#x27;send&#x27;, &#x27;pageview&#x27;, {
-          &#x27;page&#x27;: this.get(&#x27;url&#x27;),
-          &#x27;title&#x27;: this.get(&#x27;url&#x27;)
-        });
+            &#x27;page&#x27;: this.get(&#x27;url&#x27;),
+            &#x27;title&#x27;: this.get(&#x27;url&#x27;)
+          });
       }
     });
     &#x60;&#x60;&#x60;
@@ -423,7 +405,7 @@ var EmberRouter = EmberObject.extend(Evented, {
     run.once(this, this.trigger, &#x27;didTransition&#x27;);
 
     if (get(this, &#x27;namespace&#x27;).LOG_TRANSITIONS) {
-      Logger.log(&#x60;Transitioned into &#x27;${EmberRouter._routePath(infos)}&#x27;&#x60;);
+      Ember.Logger.log(&#x60;Transitioned into &#x27;${EmberRouter._routePath(infos)}&#x27;&#x60;);
     }
   },
 
@@ -454,15 +436,12 @@ var EmberRouter = EmberObject.extend(Evented, {
       defaultParentState = ownState;
     }
     if (!this._toplevelView) {
-      let owner = getOwner(this);
-      var OutletView = owner._lookupFactory(&#x27;view:-outlet&#x27;);
+      var OutletView = this.container.lookupFactory(&#x27;view:-outlet&#x27;);
       this._toplevelView = OutletView.create();
-      this._toplevelView.setOutletState(liveRoutes);
-      var instance = owner.lookup(&#x27;-application-instance:main&#x27;);
+      var instance = this.container.lookup(&#x27;-application-instance:main&#x27;);
       instance.didCreateRootView(this._toplevelView);
-    } else {
-      this._toplevelView.setOutletState(liveRoutes);
     }
+    this._toplevelView.setOutletState(liveRoutes);
   },
 
   /**
@@ -479,7 +458,7 @@ var EmberRouter = EmberObject.extend(Evented, {
     run.once(this, this.trigger, &#x27;willTransition&#x27;, transition);
 
     if (get(this, &#x27;namespace&#x27;).LOG_TRANSITIONS) {
-      Logger.log(&#x60;Preparing to transition from &#x27;${EmberRouter._routePath(oldInfos)}&#x27; to &#x27;${EmberRouter._routePath(newInfos)}&#x27;&#x60;);
+      Ember.Logger.log(&#x60;Preparing to transition from &#x27;${EmberRouter._routePath(oldInfos)}&#x27; to &#x27; ${EmberRouter._routePath(newInfos)}&#x27;&#x60;);
     }
   },
 
@@ -496,22 +475,6 @@ var EmberRouter = EmberObject.extend(Evented, {
     return transition;
   },
 
-  /**
-    Transition the application into another route. The route may
-    be either a single route or route path:
-
-    See [Route.transitionTo](http://emberjs.com/api/classes/Ember.Route.html#method_transitionTo) for more info.
-
-    @method transitionTo
-    @param {String} name the name of the route or a URL
-    @param {...Object} models the model(s) or identifier(s) to be used while
-      transitioning to the route.
-    @param {Object} [options] optional hash with a queryParams property
-      containing a mapping of query parameters
-    @return {Transition} the transition object associated with this
-      attempted transition
-    @public
-  */
   transitionTo(...args) {
     var queryParams;
     if (resemblesURL(args[0])) {
@@ -536,7 +499,7 @@ var EmberRouter = EmberObject.extend(Evented, {
 
     var infos = this.router.currentHandlerInfos;
     if (get(this, &#x27;namespace&#x27;).LOG_TRANSITIONS) {
-      Logger.log(&#x60;Intermediate-transitioned into &#x27;${EmberRouter._routePath(infos)}&#x27;&#x60;);
+      Ember.Logger.log(&#x60;Intermediate-transitioned into &#x27;${EmberRouter._routePath(infos)}&#x27;&#x60;);
     }
   },
 
@@ -660,7 +623,7 @@ var EmberRouter = EmberObject.extend(Evented, {
   },
 
   _connectActiveComponentNode(templateName, componentNode) {
-    assert(&#x27;cannot connect an activeView that already exists&#x27;, !this._activeViews[templateName]);
+    Ember.assert(&#x27;cannot connect an activeView that already exists&#x27;, !this._activeViews[templateName]);
 
     var _activeViews = this._activeViews;
     function disconnectActiveView() {
@@ -674,10 +637,9 @@ var EmberRouter = EmberObject.extend(Evented, {
   _setupLocation() {
     var location = get(this, &#x27;location&#x27;);
     var rootURL = get(this, &#x27;rootURL&#x27;);
-    let owner = getOwner(this);
 
-    if (&#x27;string&#x27; === typeof location &amp;&amp; owner) {
-      var resolvedLocation = owner.lookup(&#x60;location:${location}&#x60;);
+    if (&#x27;string&#x27; === typeof location &amp;&amp; this.container) {
+      var resolvedLocation = this.container.lookup(&#x60;location:${location}&#x60;);
 
       if (&#x27;undefined&#x27; !== typeof resolvedLocation) {
         location = set(this, &#x27;location&#x27;, resolvedLocation);
@@ -713,12 +675,12 @@ var EmberRouter = EmberObject.extend(Evented, {
 
   _getHandlerFunction() {
     var seen = new EmptyObject();
-    let owner = getOwner(this);
-    var DefaultRoute = owner._lookupFactory(&#x27;route:basic&#x27;);
+    var container = this.container;
+    var DefaultRoute = container.lookupFactory(&#x27;route:basic&#x27;);
 
     return (name) =&gt; {
       var routeName = &#x27;route:&#x27; + name;
-      var handler = owner.lookup(routeName);
+      var handler = container.lookup(routeName);
 
       if (seen[name]) {
         return handler;
@@ -727,11 +689,11 @@ var EmberRouter = EmberObject.extend(Evented, {
       seen[name] = true;
 
       if (!handler) {
-        owner.register(routeName, DefaultRoute.extend());
-        handler = owner.lookup(routeName);
+        container.registry.register(routeName, DefaultRoute.extend());
+        handler = container.lookup(routeName);
 
         if (get(this, &#x27;namespace.LOG_ACTIVE_GENERATION&#x27;)) {
-          info(&#x60;generated -&gt; ${routeName}&#x60;, { fullName: routeName });
+          Ember.Logger.info(&#x60;generated -&gt; ${routeName}&#x60;, { fullName: routeName });
         }
       }
 
@@ -792,7 +754,7 @@ var EmberRouter = EmberObject.extend(Evented, {
 
     for (var key in groupedByUrlKey) {
       var qps = groupedByUrlKey[key];
-      assert(&#x60;You&#x27;re not allowed to have more than one controller property map to the same query param key, but both \&#x60;${qps[0].qp.scopedPropertyName}\&#x60; and \&#x60;${qps[1] ? qps[1].qp.scopedPropertyName : &#x27;&#x27;}\&#x60; map to \&#x60;${qps[0].qp.urlKey}\&#x60;. You can fix this by mapping one of the controller properties to a different query param key via the \&#x60;as\&#x60; config option, e.g. \&#x60;${qps[0].qp.prop}: { as: \&#x27;other-${qps[0].qp.prop}\&#x27; }\&#x60;&#x60;, qps.length &lt;= 1);
+      Ember.assert(&#x60;You&#x27;re not allowed to have more than one controller property map to the same query param key, but both \&#x60;${qps[0].qp.scopedPropertyName}\&#x60; and \&#x60;${qps[1] ? qps[1].qp.scopedPropertyName : &#x27;&#x27;}\&#x60; map to \&#x60;${qps[0].qp.urlKey}\&#x60;. You can fix this by mapping one of the controller properties to a different query param key via the \&#x60;as\&#x60; config option, e.g. \&#x60;${qps[0].qp.prop}: { as: \&#x27;other-${qps[0].qp.prop}\&#x27; }\&#x60;&#x60;, qps.length &lt;= 1);
       var qp = qps[0].qp;
       queryParams[qp.urlKey] = qp.route.serializeQueryParam(qps[0].value, qp.urlKey, qp.type);
     }
@@ -817,24 +779,18 @@ var EmberRouter = EmberObject.extend(Evented, {
 
   _doTransition(_targetRouteName, models, _queryParams) {
     var targetRouteName = _targetRouteName || getActiveTargetName(this.router);
-    assert(&#x60;The route ${targetRouteName} was not found&#x60;, targetRouteName &amp;&amp; this.router.hasRoute(targetRouteName));
+    Ember.assert(&#x60;The route ${targetRouteName} was not found&#x60;, targetRouteName &amp;&amp; this.router.hasRoute(targetRouteName));
 
     var queryParams = {};
-    // merge in any queryParams from the active transition which could include
-    // queryparams from the url on initial load.
-    if (this.router.activeTransition) {
-      assign(queryParams, this.router.activeTransition.queryParams);
-    }
-
-    assign(queryParams, _queryParams);
+    merge(queryParams, _queryParams);
     this._prepareQueryParams(targetRouteName, models, queryParams);
 
     var transitionArgs = routeArgs(targetRouteName, models, queryParams);
-    var transition = this.router.transitionTo.apply(this.router, transitionArgs);
+    var transitionPromise = this.router.transitionTo.apply(this.router, transitionArgs);
 
-    didBeginTransition(transition, this);
+    didBeginTransition(transitionPromise, this);
 
-    return transition;
+    return transitionPromise;
   },
 
   _prepareQueryParams(targetRouteName, models, queryParams) {
@@ -871,7 +827,7 @@ var EmberRouter = EmberObject.extend(Evented, {
 
       if (!qpMeta) { continue; }
 
-      assign(map, qpMeta.map);
+      merge(map, qpMeta.map);
       qps.push.apply(qps, qpMeta.qps);
     }
 
@@ -939,20 +895,6 @@ var EmberRouter = EmberObject.extend(Evented, {
       run.cancel(this._slowTransitionTimer);
     }
     this._slowTransitionTimer = null;
-  },
-
-  // These three helper functions are used to ensure errors aren&#x27;t
-  // re-raised if they&#x27;re handled in a route&#x27;s error action.
-  _markErrorAsHandled(errorGuid) {
-    this._handledErrors[errorGuid] = true;
-  },
-
-  _isErrorHandled(errorGuid) {
-    return this._handledErrors[errorGuid];
-  },
-
-  _clearHandledError(errorGuid) {
-    delete this._handledErrors[errorGuid];
   }
 });
 
@@ -1066,7 +1008,7 @@ function logError(_error, initialMessage) {
     if (typeof error === &#x27;string&#x27;) { errorArgs.push(error); }
   }
 
-  Logger.error.apply(this, errorArgs);
+  Ember.Logger.error.apply(this, errorArgs);
 }
 
 function findChildRouteName(parentRoute, originatingChildRoute, name) {
@@ -1089,12 +1031,12 @@ function findChildRouteName(parentRoute, originatingChildRoute, name) {
 }
 
 function routeHasBeenDefined(router, name) {
-  let owner = getOwner(router);
+  var container = router.container;
   return router.hasRoute(name) &amp;&amp;
-         (owner.hasRegistration(&#x60;template:${name}&#x60;) || owner.hasRegistration(&#x60;route:${name}&#x60;));
+         (container.registry.has(&#x60;template:${name}&#x60;) || container.registry.has(&#x60;route:${name}&#x60;));
 }
 
-export function triggerEvent(handlerInfos, ignoreFailure, args) {
+function triggerEvent(handlerInfos, ignoreFailure, args) {
   var name = args.shift();
 
   if (!handlerInfos) {
@@ -1113,11 +1055,6 @@ export function triggerEvent(handlerInfos, ignoreFailure, args) {
       if (handler.actions[name].apply(handler, args) === true) {
         eventWasHandled = true;
       } else {
-        // Should only hit here if a non-bubbling error action is triggered on a route.
-        if (name === &#x27;error&#x27;) {
-          var errorId = guidFor(args[0]);
-          handler.router._markErrorAsHandled(errorId);
-        }
         return;
       }
     }
@@ -1157,7 +1094,7 @@ function updatePaths(router) {
   set(router, &#x27;currentPath&#x27;, path);
   set(router, &#x27;currentRouteName&#x27;, currentRouteName);
 
-  let appController = getOwner(router).lookup(&#x27;controller:application&#x27;);
+  let appController = router.container.lookup(&#x27;controller:application&#x27;);
 
   if (!appController) {
     // appController might not exist when top-level loading/error
@@ -1281,16 +1218,6 @@ function didBeginTransition(transition, router) {
     router.set(&#x27;currentState&#x27;, routerState);
   }
   router.set(&#x27;targetState&#x27;, routerState);
-
-  transition.promise = transition.catch(function(error) {
-    var errorId = guidFor(error);
-
-    if (router._isErrorHandled(errorId)) {
-      router._clearHandledError(errorId);
-    } else {
-      throw error;
-    }
-  });
 }
 
 function resemblesURL(str) {
@@ -1368,10 +1295,10 @@ function appendOrphan(liveRoutes, into, myState) {
     };
   }
   liveRoutes.outlets.__ember_orphans__.outlets[into] = myState;
-  run.schedule(&#x27;afterRender&#x27;, function() {
+  Ember.run.schedule(&#x27;afterRender&#x27;, function() {
     // &#x60;wasUsed&#x60; gets set by the render helper. See the function
     // &#x60;impersonateAnOutlet&#x60;.
-    assert(&#x27;You attempted to render into \&#x27;&#x27; + into + &#x27;\&#x27; but it was not found&#x27;,
+    Ember.assert(&#x27;You attempted to render into \&#x27;&#x27; + into + &#x27;\&#x27; but it was not found&#x27;,
                  liveRoutes.outlets.__ember_orphans__.outlets[into].wasUsed);
   });
 }

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -185,10 +189,12 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-&#x27;no use strict&#x27;;
 // Remove &quot;use strict&quot;; from transpiled module until
 // https://bugs.webkit.org/show_bug.cgi?id=138038 is fixed
+//
+&#x27;REMOVE_USE_STRICT: true&#x27;;
 
+import isEnabled from &#x27;ember-metal/features&#x27;;
 import { protoMethods as listenerMethods } from &#x27;ember-metal/meta_listeners&#x27;;
 import EmptyObject from &#x27;ember-metal/empty_object&#x27;;
 
@@ -208,18 +214,17 @@ import EmptyObject from &#x27;ember-metal/empty_object&#x27;;
  The following methods will get generated metaprogrammatically, and
  I&#x27;m including them here for greppability:
 
- writableCache, readableCache, writeWatching,
- peekWatching, clearWatching, writeMixins,
- peekMixins, clearMixins, writeBindings,
- peekBindings, clearBindings, writeValues,
- peekValues, clearValues, writeDeps, forEachInDeps
+ writableCache, readableCache, writableWatching, readableWatching,
+ peekWatching, clearWatching, writableMixins, readableMixins,
+ peekMixins, clearMixins, writableBindings, readableBindings,
+ peekBindings, clearBindings, writableValues, readableValues,
+ peekValues, clearValues, writableDeps, readableDeps, getAllDeps
  writableChainWatchers, readableChainWatchers, writableChains,
  readableChains
 
 */
 let members = {
   cache: ownMap,
-  weak: ownMap,
   watching: inheritedMap,
   mixins: inheritedMap,
   bindings: inheritedMap,
@@ -230,11 +235,9 @@ let members = {
 };
 
 let memberNames = Object.keys(members);
-const META_FIELD = &#x27;__ember_meta__&#x27;;
 
 function Meta(obj, parentMeta) {
   this._cache = undefined;
-  this._weak = undefined;
   this._watching = undefined;
   this._mixins = undefined;
   this._bindings = undefined;
@@ -288,44 +291,37 @@ function inheritedMap(name, Meta) {
   let key = memberProperty(name);
   let capitalized = capitalize(name);
 
-  Meta.prototype[&#x27;write&#x27; + capitalized] = function(subkey, value) {
-    let map = this._getOrCreateOwnMap(key);
-    map[subkey] = value;
+  Meta.prototype[&#x27;writable&#x27; + capitalized] = function() {
+    return this._getOrCreateInheritedMap(key);
+  };
+
+  Meta.prototype[&#x27;readable&#x27; + capitalized] = function() {
+    return this._getInherited(key);
   };
 
   Meta.prototype[&#x27;peek&#x27; + capitalized] = function(subkey) {
-    return this._findInherited(key, subkey);
-  };
-
-  Meta.prototype[&#x27;forEach&#x27; + capitalized] = function(fn) {
-    let pointer = this;
-    let seen = new EmptyObject();
-    while (pointer !== undefined) {
-      let map = pointer[key];
-      if (map) {
-        for (let key in map) {
-          if (!seen[key]) {
-            seen[key] = true;
-            fn(key, map[key]);
-          }
-        }
-      }
-      pointer = pointer.parent;
+    let map = this._getInherited(key);
+    if (map) {
+      return map[subkey];
     }
   };
 
   Meta.prototype[&#x27;clear&#x27; + capitalized] = function() {
-    this[key] = undefined;
-  };
-
-  Meta.prototype[&#x27;deleteFrom&#x27; + capitalized] = function(subkey) {
-    delete this._getOrCreateOwnMap(key)[subkey];
-  };
-
-  Meta.prototype[&#x27;hasIn&#x27; + capitalized] = function(subkey) {
-    return this._findInherited(key, subkey) !== undefined;
+    this[key] = new EmptyObject();
   };
 }
+
+Meta.prototype._getOrCreateInheritedMap = function(key) {
+  let ret = this[key];
+  if (!ret) {
+    if (this.parent) {
+      ret = this[key] = Object.create(this.parent._getOrCreateInheritedMap(key));
+    } else {
+      ret = this[key] = new EmptyObject();
+    }
+  }
+  return ret;
+};
 
 Meta.prototype._getInherited = function(key) {
   let pointer = this;
@@ -337,92 +333,34 @@ Meta.prototype._getInherited = function(key) {
   }
 };
 
-Meta.prototype._findInherited = function(key, subkey) {
-  let pointer = this;
-  while (pointer !== undefined) {
-    let map = pointer[key];
-    if (map) {
-      let value = map[subkey];
-      if (value !== undefined) {
-        return value;
-      }
-    }
-    pointer = pointer.parent;
-  }
-};
-
-
 // Implements a member that provides a lazily created map of maps,
 // with inheritance at both levels.
 function inheritedMapOfMaps(name, Meta) {
   let key = memberProperty(name);
   let capitalized = capitalize(name);
 
-  Meta.prototype[&#x27;write&#x27; + capitalized] = function(subkey, itemkey, value) {
-    let outerMap = this._getOrCreateOwnMap(key);
+  Meta.prototype[&#x27;writable&#x27; + capitalized] = function(subkey) {
+    let outerMap = this._getOrCreateInheritedMap(key);
     let innerMap = outerMap[subkey];
     if (!innerMap) {
       innerMap = outerMap[subkey] = new EmptyObject();
+    } else if (!Object.hasOwnProperty.call(outerMap, subkey)) {
+      innerMap = outerMap[subkey] = Object.create(innerMap);
     }
-    innerMap[itemkey] = value;
+    return innerMap;
   };
 
-  Meta.prototype[&#x27;peek&#x27; + capitalized] = function(subkey, itemkey) {
-    let pointer = this;
-    while (pointer !== undefined) {
-      let map = pointer[key];
-      if (map) {
-        let value = map[subkey];
-        if (value) {
-          if (value[itemkey] !== undefined) {
-            return value[itemkey];
-          }
-        }
-      }
-      pointer = pointer.parent;
+  Meta.prototype[&#x27;readable&#x27; + capitalized] = function(subkey) {
+    let map = this._getInherited(key);
+    if (map) {
+      return map[subkey];
     }
   };
 
-  Meta.prototype[&#x27;has&#x27; + capitalized] = function(subkey) {
-    let pointer = this;
-    while (pointer !== undefined) {
-      if (pointer[key] &amp;&amp; pointer[key][subkey]) {
-        return true;
-      }
-      pointer = pointer.parent;
-    }
-    return false;
-  };
-
-  Meta.prototype[&#x27;forEachIn&#x27; + capitalized] = function(subkey, fn) {
-    return this._forEachIn(key, subkey, fn);
+  Meta.prototype[&#x27;getAll&#x27; + capitalized] = function() {
+    return this._getInherited(key);
   };
 }
-
-Meta.prototype._forEachIn = function(key, subkey, fn) {
-  let pointer = this;
-  let seen = new EmptyObject();
-  let calls = [];
-  while (pointer !== undefined) {
-    let map = pointer[key];
-    if (map) {
-      let innerMap = map[subkey];
-      if (innerMap) {
-        for (let innerKey in innerMap) {
-          if (!seen[innerKey]) {
-            seen[innerKey] = true;
-            calls.push([innerKey, innerMap[innerKey]]);
-          }
-        }
-      }
-    }
-    pointer = pointer.parent;
-  }
-  for (let i = 0; i &lt; calls.length; i++) {
-    let [innerKey, value] = calls[i];
-    fn(innerKey, value);
-  }
-};
 
 // Implements a member that provides a non-heritable, lazily-created
 // object using the method you provide.
@@ -482,24 +420,16 @@ export var META_DESC = {
 };
 
 var EMBER_META_PROPERTY = {
-  name: META_FIELD,
+  name: &#x27;__ember_meta__&#x27;,
   descriptor: META_DESC
 };
 
-// choose the one appropriate for given platform
-let setMeta = function(obj, meta) {
-  // if &#x60;null&#x60; already, just set it to the new value
-  // otherwise define property first
-  if (obj[META_FIELD] !== null) {
-    if (obj.__defineNonEnumerable) {
-      obj.__defineNonEnumerable(EMBER_META_PROPERTY);
-    } else {
-      Object.defineProperty(obj, META_FIELD, META_DESC);
-    }
-  }
+// Placeholder for non-writable metas.
+export var EMPTY_META = new Meta(null);
 
-  obj[META_FIELD] = meta;
-};
+if (isEnabled(&#x27;mandatory-setter&#x27;)) {
+  EMPTY_META.writableValues();
+}
 
 /**
   Retrieves the meta hash for an object. If &#x60;writable&#x60; is true ensures the
@@ -519,32 +449,33 @@ let setMeta = function(obj, meta) {
     the meta hash, allowing the method to avoid making an unnecessary copy.
   @return {Object} the meta hash for an object
 */
-export function meta(obj) {
-  let maybeMeta = peekMeta(obj);
-  let parent;
+export function meta(obj, writable) {
+  var ret = obj.__ember_meta__;
+  if (writable === false) {
+    return ret || EMPTY_META;
+  }
 
-  // remove this code, in-favor of explicit parent
-  if (maybeMeta) {
-    if (maybeMeta.source === obj) {
-      return maybeMeta;
+  if (ret &amp;&amp; ret.source === obj) {
+    return ret;
+  }
+
+  if (!ret) {
+    ret = new Meta(obj);
+    if (isEnabled(&#x27;mandatory-setter&#x27;)) {
+      ret.writableValues();
     }
-    parent = maybeMeta;
+  } else {
+    ret = new Meta(obj, ret);
   }
 
-  let newMeta = new Meta(obj, parent);
-  setMeta(obj, newMeta);
-  return newMeta;
-}
-
-export function peekMeta(obj) {
-  return obj[META_FIELD];
-}
-
-export function deleteMeta(obj) {
-  if (typeof obj[META_FIELD] !== &#x27;object&#x27;) {
-    return;
+  if (obj.__defineNonEnumerable) {
+    obj.__defineNonEnumerable(EMBER_META_PROPERTY);
+  } else {
+    Object.defineProperty(obj, &#x27;__ember_meta__&#x27;, META_DESC);
   }
-  obj[META_FIELD] = null;
+  obj.__ember_meta__ = ret;
+
+  return ret;
 }
 
     </pre>

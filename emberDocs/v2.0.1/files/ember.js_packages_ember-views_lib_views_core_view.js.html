@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -185,7 +185,7 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import { assert, deprecate } from &#x27;ember-metal/debug&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;;
 import { get } from &#x27;ember-metal/property_get&#x27;;
 
 import EmberObject from &#x27;ember-runtime/system/object&#x27;;
@@ -193,10 +193,11 @@ import Evented from &#x27;ember-runtime/mixins/evented&#x27;;
 import ActionHandler, { deprecateUnderscoreActions } from &#x27;ember-runtime/mixins/action_handler&#x27;;
 import { typeOf } from &#x27;ember-runtime/utils&#x27;;
 
-import { InteractiveRenderer } from &#x27;ember-metal-views&#x27;;
+import Renderer from &#x27;ember-metal-views/renderer&#x27;;
 import { cloneStates, states } from &#x27;ember-views/views/states&#x27;;
 import { internal } from &#x27;htmlbars-runtime&#x27;;
-import require from &#x27;require&#x27;;
+
+function K() { return this; }
 
 // Normally, the renderer is injected by the container when the view is looked
 // up. However, if someone creates a view without looking it up via the
@@ -221,22 +222,22 @@ var renderer;
   @uses Ember.ActionHandler
   @private
 */
-const CoreView = EmberObject.extend(Evented, ActionHandler, {
+var CoreView = EmberObject.extend(Evented, ActionHandler, {
   isView: true,
 
   _states: cloneStates(states),
 
   init() {
-    this._super(...arguments);
+    this._super.apply(this, arguments);
     this._state = &#x27;preRender&#x27;;
-    this._currentState = this._states.preRender;
+    this.currentState = this._states.preRender;
     this._isVisible = get(this, &#x27;isVisible&#x27;);
 
     // Fallback for legacy cases where the view was created directly
     // via &#x60;create()&#x60; instead of going through the container.
     if (!this.renderer) {
       var DOMHelper = domHelper();
-      renderer = renderer || InteractiveRenderer.create({ dom: new DOMHelper() });
+      renderer = renderer || new Renderer(new DOMHelper());
       this.renderer = renderer;
     }
 
@@ -255,6 +256,8 @@ const CoreView = EmberObject.extend(Evented, ActionHandler, {
   */
   parentView: null,
 
+  _state: null,
+
   instrumentName: &#x27;core_view&#x27;,
 
   instrumentDetails(hash) {
@@ -272,7 +275,7 @@ const CoreView = EmberObject.extend(Evented, ActionHandler, {
     @private
   */
   trigger() {
-    this._super(...arguments);
+    this._super.apply(this, arguments);
     var name = arguments[0];
     var method = this[name];
     if (method) {
@@ -292,7 +295,7 @@ const CoreView = EmberObject.extend(Evented, ActionHandler, {
   destroy() {
     if (!this._super(...arguments)) { return; }
 
-    this._currentState.cleanup(this);
+    this.currentState.cleanup(this);
 
     // If the destroyingSubtreeForView property is not set but we have an
     // associated render node, it means this view is being destroyed from user
@@ -301,12 +304,16 @@ const CoreView = EmberObject.extend(Evented, ActionHandler, {
     // make sure that any render nodes created as part of the rendering process
     // are cleaned up.
     if (!this.ownerView._destroyingSubtreeForView &amp;&amp; this._renderNode) {
-      assert(&#x27;BUG: Render node exists without concomitant env.&#x27;, this.ownerView.env);
+      Ember.assert(&#x27;BUG: Render node exists without concomitant env.&#x27;, this.ownerView.env);
       internal.clearMorph(this._renderNode, this.ownerView.env, true);
     }
 
     return this;
-  }
+  },
+
+  clearRenderedChildren: K,
+  _transitionTo: K,
+  destroyElement: K
 });
 
 deprecateUnderscoreActions(CoreView);
@@ -317,17 +324,16 @@ CoreView.reopenClass({
 
 export var DeprecatedCoreView = CoreView.extend({
   init() {
-    deprecate(
-      &#x27;Ember.CoreView is deprecated. Please use Ember.View.&#x27;,
-      false, { id: &#x27;ember-views.core-view&#x27;, until: &#x27;2.4.0&#x27; }
-    );
-    this._super(...arguments);
+    Ember.deprecate(&#x27;Ember.CoreView is deprecated. Please use Ember.View.&#x27;,
+                    false,
+                    { id: &#x27;ember-views.core-view&#x27;, until: &#x27;2.4.0&#x27; });
+    this._super.apply(this, arguments);
   }
 });
 
 var _domHelper;
 function domHelper() {
-  return _domHelper = _domHelper || require(&#x27;ember-htmlbars/system/dom-helper&#x27;).default;
+  return _domHelper = _domHelper || Ember.__loader.require(&#x27;ember-htmlbars/system/dom-helper&#x27;)[&#x27;default&#x27;];
 }
 
 export default CoreView;

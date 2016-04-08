@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -195,7 +199,6 @@
 //
 import Ember from &#x27;ember-metal/core&#x27;; // ES6TODO: Ember.A
 
-import symbol from &#x27;ember-metal/symbol&#x27;;
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import {
   computed,
@@ -233,28 +236,6 @@ function arrayObserversHelper(obj, target, opts, operation, notify) {
   }
 
   return obj;
-}
-
-export function addArrayObserver(array, target, opts) {
-  return arrayObserversHelper(array, target, opts, addListener, false);
-}
-
-export function removeArrayObserver(array, target, opts) {
-  return arrayObserversHelper(array, target, opts, removeListener, true);
-}
-
-export function objectAt(content, idx) {
-  if (content.objectAt) {
-    return content.objectAt(idx);
-  }
-
-  return content[idx];
-}
-
-const EMBER_ARRAY = symbol(&#x27;EMBER_ARRAY&#x27;);
-
-export function isEmberArray(obj) {
-  return obj &amp;&amp; !!obj[EMBER_ARRAY];
 }
 
 // ..........................................................
@@ -298,8 +279,6 @@ export function isEmberArray(obj) {
   @public
 */
 export default Mixin.create(Enumerable, {
-
-  [EMBER_ARRAY]: true,
 
   /**
     __Required.__ You must implement this method to apply this mixin.
@@ -360,12 +339,16 @@ export default Mixin.create(Enumerable, {
     @public
    */
   objectsAt(indexes) {
-    return indexes.map(idx =&gt; objectAt(this, idx));
+    var self = this;
+
+    return indexes.map(function(idx) {
+      return self.objectAt(idx);
+    });
   },
 
   // overrides Ember.Enumerable version
   nextObject(idx) {
-    return objectAt(this, idx);
+    return this.objectAt(idx);
   },
 
   /**
@@ -390,11 +373,11 @@ export default Mixin.create(Enumerable, {
   }),
 
   firstObject: computed(function() {
-    return objectAt(this, 0);
+    return this.objectAt(0);
   }),
 
   lastObject: computed(function() {
-    return objectAt(this, get(this, &#x27;length&#x27;) - 1);
+    return this.objectAt(get(this, &#x27;length&#x27;) - 1);
   }),
 
   // optimized version from Enumerable
@@ -443,7 +426,7 @@ export default Mixin.create(Enumerable, {
     }
 
     while (beginIndex &lt; endIndex) {
-      ret[ret.length] = objectAt(this, beginIndex++);
+      ret[ret.length] = this.objectAt(beginIndex++);
     }
 
     return ret;
@@ -485,7 +468,7 @@ export default Mixin.create(Enumerable, {
     }
 
     for (idx = startAt; idx &lt; len; idx++) {
-      if (objectAt(this, idx) === object) {
+      if (this.objectAt(idx) === object) {
         return idx;
       }
     }
@@ -529,7 +512,7 @@ export default Mixin.create(Enumerable, {
     }
 
     for (idx = startAt; idx &gt;= 0; idx--) {
-      if (objectAt(this, idx) === object) {
+      if (this.objectAt(idx) === object) {
         return idx;
       }
     }
@@ -551,7 +534,7 @@ export default Mixin.create(Enumerable, {
       called just after the array is modified.
 
     Both callbacks will be passed the observed object, starting index of the
-    change as well as a count of the items to be removed and added. You can use
+    change as well a a count of the items to be removed and added. You can use
     these callbacks to optionally inspect the array during the change, clear
     caches, or do any other bookkeeping necessary.
 
@@ -568,7 +551,7 @@ export default Mixin.create(Enumerable, {
   */
 
   addArrayObserver(target, opts) {
-    return addArrayObserver(this, target, opts);
+    return arrayObserversHelper(this, target, opts, addListener, false);
   },
 
   /**
@@ -584,7 +567,7 @@ export default Mixin.create(Enumerable, {
     @public
   */
   removeArrayObserver(target, opts) {
-    return removeArrayObserver(this, target, opts);
+    return arrayObserversHelper(this, target, opts, removeListener, true);
   },
 
   /**
@@ -642,7 +625,7 @@ export default Mixin.create(Enumerable, {
       lim = startIdx + removeAmt;
 
       for (var idx = startIdx; idx &lt; lim; idx++) {
-        removing.push(objectAt(this, idx));
+        removing.push(this.objectAt(idx));
       }
     } else {
       removing = removeAmt;
@@ -690,7 +673,7 @@ export default Mixin.create(Enumerable, {
       lim = startIdx + addAmt;
 
       for (var idx = startIdx; idx &lt; lim; idx++) {
-        adding.push(objectAt(this, idx));
+        adding.push(this.objectAt(idx));
       }
     } else {
       adding = addAmt;
@@ -708,12 +691,12 @@ export default Mixin.create(Enumerable, {
     var cachedFirst = cacheFor(this, &#x27;firstObject&#x27;);
     var cachedLast = cacheFor(this, &#x27;lastObject&#x27;);
 
-    if (objectAt(this, 0) !== cachedFirst) {
+    if (this.objectAt(0) !== cachedFirst) {
       propertyWillChange(this, &#x27;firstObject&#x27;);
       propertyDidChange(this, &#x27;firstObject&#x27;);
     }
 
-    if (objectAt(this, length - 1) !== cachedLast) {
+    if (this.objectAt(length - 1) !== cachedLast) {
       propertyWillChange(this, &#x27;lastObject&#x27;);
       propertyDidChange(this, &#x27;lastObject&#x27;);
     }
@@ -727,22 +710,8 @@ export default Mixin.create(Enumerable, {
     return an enumerable that maps automatically to the named key on the
     member objects.
 
-    &#x60;@each&#x60; should only be used in a non-terminal context. Example:
-
-    &#x60;&#x60;&#x60;javascript
-    myMethod: computed(&#x27;posts.@each.author&#x27;, function(){
-      ...
-    });
-    &#x60;&#x60;&#x60;
-
-    If you merely want to watch for the array being changed, like an object being
-    replaced, added or removed, use &#x60;[]&#x60; instead of &#x60;@each&#x60;.
-
-    &#x60;&#x60;&#x60;javascript
-    myMethod: computed(&#x27;posts.[]&#x27;, function(){
-      ...
-    });
-    &#x60;&#x60;&#x60;
+    If you merely want to watch for any items being added or removed to the array,
+    use the &#x60;[]&#x60; property instead of &#x60;@each&#x60;.
 
     @property @each
     @public

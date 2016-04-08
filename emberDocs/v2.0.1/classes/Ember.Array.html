@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -192,7 +192,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l76"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:76</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l53"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:53</code></a>
         </div>
 
             Module: <a href="../modules/ember-runtime.html">ember-runtime</a><br>
@@ -223,7 +223,7 @@ as controllers and collections.</p>
 contents in a KVO-friendly way. You can also be notified whenever the
 membership of an array changes by using <code>.observes('myArray.[]')</code>.</p>
 <p>To support <code>Ember.Array</code> in your own class, you must override two
-primitives to use it: <code>length()</code> and <code>objectAt()</code>.</p>
+primitives to use it: <code>replace()</code> and <code>objectAt()</code>.</p>
 <p>Note that the Ember.Array mixin also incorporates the <code>Ember.Enumerable</code>
 mixin. All <code>Ember.Array</code>-like objects are also enumerable.</p>
 
@@ -254,7 +254,7 @@ mixin. All <code>Ember.Array</code>-like objects are also enumerable.</p>
                                 <a href="#method_addEnumerableObserver">addEnumerableObserver</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method private inherited">
                                 <a href="#method_any">any</a>
 
                             </li>
@@ -314,11 +314,11 @@ mixin. All <code>Ember.Array</code>-like objects are also enumerable.</p>
                                 <a href="#method_indexOf">indexOf</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method private inherited">
                                 <a href="#method_invoke">invoke</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method private inherited">
                                 <a href="#method_isAny">isAny</a>
 
                             </li>
@@ -350,7 +350,7 @@ mixin. All <code>Ember.Array</code>-like objects are also enumerable.</p>
                                 <a href="#method_objectsAt">objectsAt</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method private inherited">
                                 <a href="#method_reduce">reduce</a>
 
                             </li>
@@ -382,11 +382,11 @@ mixin. All <code>Ember.Array</code>-like objects are also enumerable.</p>
                                 <a href="#method_sortBy">sortBy</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method private inherited">
                                 <a href="#method_toArray">toArray</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method private inherited">
                                 <a href="#method_uniq">uniq</a>
 
                             </li>
@@ -466,7 +466,7 @@ mixin. All <code>Ember.Array</code>-like objects are also enumerable.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l357"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:357</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l336"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:336</code></a>
         </p>
 
 
@@ -483,7 +483,7 @@ called just before the array is modified.</li>
 called just after the array is modified.</li>
 </ul>
 <p>Both callbacks will be passed the observed object, starting index of the
-change as well as a count of the items to be removed and added. You can use
+change as well a a count of the items to be removed and added. You can use
 these callbacks to optionally inspect the array during the change, clear
 caches, or do any other bookkeeping necessary.</p>
 <p>In addition to passing a target, you can also include an options hash
@@ -562,7 +562,7 @@ target.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_addEnumerableObserver">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l872"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:872</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l866"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:866</code></a>
         </p>
 
 
@@ -612,7 +612,7 @@ mixin.
 
 
 </div>
-<div id="method_any" class="method item public inherited">
+<div id="method_any" class="method item private inherited">
     <h3 class="name"><code>any</code></h3>
 
         <div class="args">
@@ -631,7 +631,7 @@ mixin.
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -640,7 +640,7 @@ mixin.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_any">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l610"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:610</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l604"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:604</code></a>
         </p>
 
 
@@ -748,7 +748,7 @@ if (people.any(isManager)) {
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l469"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:469</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l448"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:448</code></a>
         </p>
 
 
@@ -848,7 +848,7 @@ pass <code>null</code> assumes 0.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l414"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:414</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l393"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:393</code></a>
         </p>
 
 
@@ -936,7 +936,7 @@ pass <code>null</code> assumes 0.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_compact">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l775"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:775</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l769"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:769</code></a>
         </p>
 
 
@@ -989,7 +989,7 @@ arr.compact();  // ['a', 'c']
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_contains">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l211"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:211</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l205"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:205</code></a>
         </p>
 
 
@@ -1063,7 +1063,7 @@ arr.contains('z'); // false
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_enumerableContentDidChange">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l995"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:995</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l989"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:989</code></a>
         </p>
 
 
@@ -1136,7 +1136,7 @@ notify range observers.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_enumerableContentWillChange">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l942"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:942</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l936"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:936</code></a>
         </p>
 
 
@@ -1209,7 +1209,7 @@ to be removed or added if available or just a count.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_every">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l555"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:555</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l549"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:549</code></a>
         </p>
 
 
@@ -1312,7 +1312,7 @@ if (people.every(isEngineer)) {
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_filter">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l367"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:367</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l361"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:361</code></a>
         </p>
 
 
@@ -1410,7 +1410,7 @@ to give your iterator function access to the current object.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_filterBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l441"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:441</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l435"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:435</code></a>
         </p>
 
 
@@ -1490,7 +1490,7 @@ this will match any property that evaluates to <code>true</code>.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_find">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l481"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:481</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l475"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:475</code></a>
         </p>
 
 
@@ -1588,7 +1588,7 @@ to give your iterator function access to the current object.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_findBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l538"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:538</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l532"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:532</code></a>
         </p>
 
 
@@ -1670,7 +1670,7 @@ This method works much like the more generic <code>find()</code> method.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_forEach">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l236"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:236</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l230"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:230</code></a>
         </p>
 
 
@@ -1762,7 +1762,7 @@ to give your iterator function access to the current object.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_getEach">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l287"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:287</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l281"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:281</code></a>
         </p>
 
 
@@ -1829,7 +1829,7 @@ to give your iterator function access to the current object.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l265"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:265</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l244"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:244</code></a>
         </p>
 
 
@@ -1894,7 +1894,7 @@ arr.indexOf('a', 100);  // -1
 
 
 </div>
-<div id="method_invoke" class="method item public inherited">
+<div id="method_invoke" class="method item private inherited">
     <h3 class="name"><code>invoke</code></h3>
 
         <div class="args">
@@ -1913,7 +1913,7 @@ arr.indexOf('a', 100);  // -1
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -1922,7 +1922,7 @@ arr.indexOf('a', 100);  // -1
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_invoke">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l732"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:732</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l726"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:726</code></a>
         </p>
 
 
@@ -1973,7 +1973,7 @@ Prototype 1.6.
 
 
 </div>
-<div id="method_isAny" class="method item public inherited">
+<div id="method_isAny" class="method item private inherited">
     <h3 class="name"><code>isAny</code></h3>
 
         <div class="args">
@@ -1992,7 +1992,7 @@ Prototype 1.6.
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -2001,7 +2001,7 @@ Prototype 1.6.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_isAny">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l668"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:668</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l662"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:662</code></a>
         </p>
 
 
@@ -2081,7 +2081,7 @@ than using a callback.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_isEvery">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l594"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:594</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l588"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:588</code></a>
         </p>
 
 
@@ -2161,7 +2161,7 @@ than using a callback.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l309"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:309</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l288"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:288</code></a>
         </p>
 
 
@@ -2254,7 +2254,7 @@ arr.lastIndexOf('a', 100);  //  4
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_map">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l315"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:315</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l309"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:309</code></a>
         </p>
 
 
@@ -2347,7 +2347,7 @@ to give your iterator function access to the current object.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_mapBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l352"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:352</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l346"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:346</code></a>
         </p>
 
 
@@ -2418,7 +2418,7 @@ property on all items in the enumeration.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_nextObject">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l98"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:98</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l92"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:92</code></a>
         </p>
 
 
@@ -2528,7 +2528,7 @@ This works great on any Array-like objects.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l128"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:128</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l103"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:103</code></a>
         </p>
 
 
@@ -2608,7 +2608,7 @@ arr.objectAt(5);   // undefined
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l160"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:160</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l135"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:135</code></a>
         </p>
 
 
@@ -2653,7 +2653,7 @@ arr.objectsAt([2, 3, 4]);  // ['c', 'd', undefined]
 
 
 </div>
-<div id="method_reduce" class="method item public inherited">
+<div id="method_reduce" class="method item private inherited">
     <h3 class="name"><code>reduce</code></h3>
 
         <div class="args">
@@ -2675,7 +2675,7 @@ arr.objectsAt([2, 3, 4]);  // ['c', 'd', undefined]
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -2684,7 +2684,7 @@ arr.objectsAt([2, 3, 4]);  // ['c', 'd', undefined]
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_reduce">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l684"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:684</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l678"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:678</code></a>
         </p>
 
 
@@ -2795,7 +2795,7 @@ spec. Sorry.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_reject">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l408"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:408</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l402"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:402</code></a>
         </p>
 
 
@@ -2891,7 +2891,7 @@ to give your iterator function access to the current object.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_rejectBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l456"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:456</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l450"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:450</code></a>
         </p>
 
 
@@ -2971,7 +2971,7 @@ this will match any property that evaluates to false.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l387"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:387</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l366"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:366</code></a>
         </p>
 
 
@@ -3055,7 +3055,7 @@ have no effect.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_removeEnumerableObserver">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l901"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:901</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l895"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:895</code></a>
         </p>
 
 
@@ -3132,7 +3132,7 @@ have no effect.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_setEach">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l297"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:297</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l291"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:291</code></a>
         </p>
 
 
@@ -3212,7 +3212,7 @@ it will be set directly. <code>null</code> objects are skipped.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l219"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:219</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l198"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:198</code></a>
         </p>
 
 
@@ -3298,7 +3298,7 @@ arr.slice(1, 100);  // ['green', 'blue']
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_sortBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l1050"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:1050</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l1044"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:1044</code></a>
         </p>
 
 
@@ -3341,7 +3341,7 @@ You may provide multiple arguments to sort by multiple properties.
 
 
 </div>
-<div id="method_toArray" class="method item public inherited">
+<div id="method_toArray" class="method item private inherited">
     <h3 class="name"><code>toArray</code></h3>
 
         <span class="paren">()</span>
@@ -3351,7 +3351,7 @@ You may provide multiple arguments to sort by multiple properties.
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -3360,7 +3360,7 @@ You may provide multiple arguments to sort by multiple properties.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_toArray">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l757"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:757</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l751"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:751</code></a>
         </p>
 
 
@@ -3384,7 +3384,7 @@ guaranteed. Corresponds to the method implemented by Prototype.
 
 
 </div>
-<div id="method_uniq" class="method item public inherited">
+<div id="method_uniq" class="method item private inherited">
     <h3 class="name"><code>uniq</code></h3>
 
         <span class="paren">()</span>
@@ -3394,7 +3394,7 @@ guaranteed. Corresponds to the method implemented by Prototype.
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -3403,7 +3403,7 @@ guaranteed. Corresponds to the method implemented by Prototype.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_uniq">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l824"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:824</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l818"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:818</code></a>
         </p>
 
 
@@ -3458,7 +3458,7 @@ This only works on primitive data types, e.g. Strings, Numbers, etc.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_without">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l793"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:793</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l787"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:787</code></a>
         </p>
 
 
@@ -3520,7 +3520,7 @@ arr.without('a');  // ['b', 'c']
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l537"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:537</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l516"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:516</code></a>
         </p>
 
 
@@ -3531,17 +3531,8 @@ arr.without('a');  // ['b', 'c']
 on the array. Just get an equivalent property on this object and it will
 return an enumerable that maps automatically to the named key on the
 member objects.</p>
-<p><code>@each</code> should only be used in a non-terminal context. Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">myMethod: computed('posts.@each.author', function(){
-  ...
-});
-</code></pre>
-<p>If you merely want to watch for the array being changed, like an object being
-replaced, added or removed, use <code>[]</code> instead of <code>@each</code>.</p>
-<pre class="code prettyprint"><code class="language-javascript">myMethod: computed('posts.[]', function(){
-  ...
-});
-</code></pre>
+<p>If you merely want to watch for any items being added or removed to the array,
+use the <code>[]</code> property instead of <code>@each</code>.</p>
 
     </div>
 
@@ -3563,7 +3554,7 @@ replaced, added or removed, use <code>[]</code> instead of <code>@each</code>.</
                 Ember.Enumerable
             </a>
             but overwritten in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l184"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:184</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l163"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:163</code></a>
         </p>
 
 
@@ -3592,7 +3583,7 @@ array, it will replace the current content.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#property_firstObject">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l136"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:136</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l130"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:130</code></a>
         </p>
 
 
@@ -3632,7 +3623,7 @@ arr.get('firstObject');  // undefined
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l403"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:403</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l382"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:382</code></a>
         </p>
 
 
@@ -3659,7 +3650,7 @@ on the array.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#property_hasEnumerableObservers">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l929"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:929</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l923"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:923</code></a>
         </p>
 
 
@@ -3685,7 +3676,7 @@ on the array.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#property_lastObject">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l172"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:172</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l166"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:166</code></a>
         </p>
 
 
@@ -3720,7 +3711,7 @@ arr.get('lastObject');  // undefined
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l117"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:117</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_array.js.html#l92"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;array.js:92</code></a>
         </p>
 
 

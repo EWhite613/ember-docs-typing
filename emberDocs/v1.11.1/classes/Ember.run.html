@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementers must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementers must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
                                 <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
+                                <li><a href="../classes/Ember.HTMLBars.Helper.html">Ember.HTMLBars.Helper</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,40 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
+                                <li><a href="../classes/HandlebarsCompatibleHelper.html">HandlebarsCompatibleHelper</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
+                                <li><a href="../classes/TransformWithAsToHash.html">TransformWithAsToHash</a></li>
                             </ul>
                 
                 
@@ -138,6 +189,7 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
                                 <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
@@ -145,7 +197,6 @@
                                 <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
                                 <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -186,7 +237,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l38"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:38</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l40"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:40</code></a>
         </div>
 
             Module: <a href="../modules/ember-metal.html">ember-metal</a>
@@ -211,7 +262,7 @@ call.</p>
 
     <div class="constructor">
         <h2>Constructor</h2>
-<div id="method_Ember.run" class="method item public">
+<div id="method_Ember.run" class="method item">
     <h3 class="name"><code>Ember.run</code></h3>
 
         <div class="args">
@@ -233,7 +284,6 @@ call.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
         <span class="flag static">static</span>
@@ -243,7 +293,7 @@ call.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l38"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:38</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l40"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:40</code></a>
         </p>
 
 
@@ -332,60 +382,55 @@ then it will be looked up on the passed target.</p>
                                 <a href="#method__addQueue">_addQueue</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_begin">begin</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_bind">bind</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_cancel">cancel</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_debounce">debounce</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_end">end</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_join">join</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_later">later</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_next">next</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_once">once</a>
 
                             </li>
-                            <li class="index-item method public deprecated">
-                                <a href="#method_replace">replace</a>
-
-                                    <span class="flag deprecated">deprecated</span>
-                            </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_schedule">schedule</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_scheduleOnce">scheduleOnce</a>
 
                             </li>
-                            <li class="index-item method private">
+                            <li class="index-item method">
                                 <a href="#method_sync">sync</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_throttle">throttle</a>
 
                             </li>
@@ -396,7 +441,7 @@ then it will be looked up on the passed target.</p>
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_queues">queues</a>
 
                             </li>
@@ -434,7 +479,7 @@ then it will be looked up on the passed target.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l658"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:658</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l640"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:640</code></a>
         </p>
 
 
@@ -479,7 +524,7 @@ then it will be looked up on the passed target.</p>
 
 
 </div>
-<div id="method_begin" class="method item public">
+<div id="method_begin" class="method item">
     <h3 class="name"><code>begin</code></h3>
 
         <span class="paren">()</span>
@@ -489,7 +534,6 @@ then it will be looked up on the passed target.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -498,7 +542,7 @@ then it will be looked up on the passed target.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l172"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:172</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l173"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:173</code></a>
         </p>
 
 
@@ -527,7 +571,7 @@ run.end();
 
 
 </div>
-<div id="method_bind" class="method item public">
+<div id="method_bind" class="method item">
     <h3 class="name"><code>bind</code></h3>
 
         <div class="args">
@@ -549,7 +593,6 @@ run.end();
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -558,7 +601,7 @@ run.end();
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l112"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:112</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l113"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:113</code></a>
         </p>
 
 
@@ -580,12 +623,12 @@ after the TinyMCE instance is initialized but before it is actually rendered.
 We can use that setup option to do some additional setup for our component.
 The component itself could look something like the following:</p>
 <pre class="code prettyprint"><code class="language-javascript">App.RichTextEditorComponent = Ember.Component.extend({
-  initializeTinyMCE: Ember.on('didInsertElement', function() {
+  initializeTinyMCE: function() {
     tinymce.init({
       selector: '#' + this.$().prop('id'),
       setup: Ember.run.bind(this, this.setupEditor)
     });
-  }),
+  }.on('didInsertElement'),
 
   setupEditor: function(editor) {
     this.set('editor', editor);
@@ -596,7 +639,7 @@ The component itself could look something like the following:</p>
   }
 });
 </code></pre>
-<p>In this example, we use Ember.run.bind to bind the setupEditor method to the
+<p>In this example, we use Ember.run.bind to bind the setupEditor message to the
 context of the App.RichTextEditorComponent and to have the invocation of that
 method be safely handled and executed by the Ember run loop.</p>
 
@@ -658,7 +701,7 @@ then it will be looked up on the passed target.</p>
 
 
 </div>
-<div id="method_cancel" class="method item public">
+<div id="method_cancel" class="method item">
     <h3 class="name"><code>cancel</code></h3>
 
         <div class="args">
@@ -674,7 +717,6 @@ then it will be looked up on the passed target.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -683,7 +725,7 @@ then it will be looked up on the passed target.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l472"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:472</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l466"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:466</code></a>
         </p>
 
 
@@ -692,7 +734,7 @@ then it will be looked up on the passed target.</p>
 
     <div class="description">
         <p>Cancels a scheduled item. Must be a value returned by <code>run.later()</code>,
-<code>run.once()</code>, <code>run.scheduleOnce()</code>, <code>run.next()</code>, <code>run.debounce()</code>, or
+<code>run.once()</code>, <code>run.next()</code>, <code>run.debounce()</code>, or
 <code>run.throttle()</code>.</p>
 <pre class="code prettyprint"><code class="language-javascript">var runNext = run.next(myContext, function() {
   // will not be executed
@@ -705,12 +747,6 @@ var runLater = run.later(myContext, function() {
 }, 500);
 
 run.cancel(runLater);
-
-var runScheduleOnce = run.scheduleOnce('afterRender', myContext, function() {
-  // will not be executed
-});
-
-run.cancel(runScheduleOnce);
 
 var runOnce = run.once(myContext, function() {
   // will not be executed
@@ -770,7 +806,7 @@ run.cancel(debounceImmediate);
 
 
 </div>
-<div id="method_debounce" class="method item public">
+<div id="method_debounce" class="method item">
     <h3 class="name"><code>debounce</code></h3>
 
         <div class="args">
@@ -798,7 +834,6 @@ run.cancel(debounceImmediate);
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -807,7 +842,7 @@ run.cancel(debounceImmediate);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l531"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:531</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l518"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:518</code></a>
         </p>
 
 
@@ -946,7 +981,7 @@ of the trailing edge of the wait interval. Defaults to false.</p>
 
 
 </div>
-<div id="method_end" class="method item public">
+<div id="method_end" class="method item">
     <h3 class="name"><code>end</code></h3>
 
         <span class="paren">()</span>
@@ -956,7 +991,6 @@ of the trailing edge of the wait interval. Defaults to false.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -994,7 +1028,7 @@ run.end();
 
 
 </div>
-<div id="method_join" class="method item public">
+<div id="method_join" class="method item">
     <h3 class="name"><code>join</code></h3>
 
         <div class="args">
@@ -1016,7 +1050,6 @@ run.end();
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1025,7 +1058,7 @@ run.end();
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l70"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:70</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l72"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:72</code></a>
         </p>
 
 
@@ -1111,7 +1144,7 @@ when called within an existing loop, no return value is possible.</p>
 
 
 </div>
-<div id="method_later" class="method item public">
+<div id="method_later" class="method item">
     <h3 class="name"><code>later</code></h3>
 
         <div class="args">
@@ -1136,7 +1169,6 @@ when called within an existing loop, no return value is possible.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1145,7 +1177,7 @@ when called within an existing loop, no return value is possible.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l298"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:298</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l294"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:294</code></a>
         </p>
 
 
@@ -1234,7 +1266,7 @@ target at the time the method is invoked.</p>
 
 
 </div>
-<div id="method_next" class="method item public">
+<div id="method_next" class="method item">
     <h3 class="name"><code>next</code></h3>
 
         <div class="args">
@@ -1256,7 +1288,6 @@ target at the time the method is invoked.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1265,7 +1296,7 @@ target at the time the method is invoked.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l404"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:404</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l402"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:402</code></a>
         </p>
 
 
@@ -1290,18 +1321,15 @@ For instance, if you'd like to schedule an operation to happen
 after all DOM element operations have completed within the current
 run loop, you can make use of the <code>afterRender</code> run loop queue (added
 by the <code>ember-views</code> package, along with the preceding <code>render</code> queue
-where all the DOM element operations happen).</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">export default Ember.Component.extend({
-  didInsertElement() {
-    this._super(...arguments);
+where all the DOM element operations happen). Example:</p>
+<pre class="code prettyprint"><code class="language-javascript">App.MyCollectionView = Ember.CollectionView.extend({
+  didInsertElement: function() {
     run.scheduleOnce('afterRender', this, 'processChildElements');
   },
-
-  processChildElements() {
-    // ... do something with component's child component
+  processChildElements: function() {
+    // ... do something with collectionView's child view
     // elements after they've finished rendering, which
-    // can't be done within this component's
+    // can't be done within the CollectionView's
     // <code>didInsertElement</code> hook because that gets run
     // before the child elements have been added to the DOM.
   }
@@ -1375,7 +1403,7 @@ target at the time the method is invoked.</p>
 
 
 </div>
-<div id="method_once" class="method item public">
+<div id="method_once" class="method item">
     <h3 class="name"><code>once</code></h3>
 
         <div class="args">
@@ -1397,7 +1425,6 @@ target at the time the method is invoked.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1406,7 +1433,7 @@ target at the time the method is invoked.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l328"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:328</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l323"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:323</code></a>
         </p>
 
 
@@ -1475,129 +1502,7 @@ target at the time the method is invoked.</p>
 
 
 </div>
-<div id="method_replace" class="method item public deprecated">
-    <h3 class="name"><code>replace</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>array</code>
-                </li>
-                <li class="arg">
-                        <code>idx</code>
-                </li>
-                <li class="arg">
-                        <code>amt</code>
-                </li>
-                <li class="arg">
-                        <code>objects</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Array</span>
-        </span>
-
-        <span class="flag deprecated">deprecated</span>
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_replace.js.html#l27"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;replace.js:27</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Replaces objects in an array with the passed objects.</p>
-<pre class="code prettyprint"><code class="language-javascript">  var array = [1,2,3];
-  Ember.EnumerableUtils.replace(array, 1, 2, [4, 5]); // [1, 4, 5]
-
-  var array = [1,2,3];
-  Ember.EnumerableUtils.replace(array, 1, 1, [4, 5]); // [1, 4, 5, 3]
-
-  var array = [1,2,3];
-  Ember.EnumerableUtils.replace(array, 10, 1, [4, 5]); // [1, 2, 3, 4, 5]
-</code></pre>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">array</code>
-                        <span class="type">Array</span>
-
-
-                    <div class="param-description">
-                        <p>The array the objects should be inserted into.</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">idx</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                        <p>Starting index in the array to replace. If <em>idx</em> &gt;=
-length, then append to the end of the array.</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">amt</code>
-                        <span class="type">Number</span>
-
-
-                    <div class="param-description">
-                        <p>Number of elements that should be removed from the array,
-starting at <em>idx</em></p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">objects</code>
-                        <span class="type">Array</span>
-
-
-                    <div class="param-description">
-                        <p>An array of zero or more objects that should be
-inserted into the array at <em>idx</em></p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Array</span>:
-                    <p>The modified array.</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_schedule" class="method item public">
+<div id="method_schedule" class="method item">
     <h3 class="name"><code>schedule</code></h3>
 
         <div class="args">
@@ -1622,7 +1527,6 @@ inserted into the array at <em>idx</em></p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1631,7 +1535,7 @@ inserted into the array at <em>idx</em></p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l222"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:222</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l220"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:220</code></a>
         </p>
 
 
@@ -1730,7 +1634,7 @@ invoked allowing you to change the target function.</p>
 
 
 </div>
-<div id="method_scheduleOnce" class="method item public">
+<div id="method_scheduleOnce" class="method item">
     <h3 class="name"><code>scheduleOnce</code></h3>
 
         <div class="args">
@@ -1755,7 +1659,6 @@ invoked allowing you to change the target function.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1764,7 +1667,7 @@ invoked allowing you to change the target function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l347"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:347</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l346"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:346</code></a>
         </p>
 
 
@@ -1876,7 +1779,7 @@ target at the time the method is invoked.</p>
 
 
 </div>
-<div id="method_sync" class="method item private">
+<div id="method_sync" class="method item">
     <h3 class="name"><code>sync</code></h3>
 
         <span class="paren">()</span>
@@ -1886,7 +1789,6 @@ target at the time the method is invoked.</p>
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -1895,7 +1797,7 @@ target at the time the method is invoked.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l275"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:275</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l272"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:272</code></a>
         </p>
 
 
@@ -1925,7 +1827,7 @@ in the later 'render' queue added by the <code>ember-views</code> package).</p>
 
 
 </div>
-<div id="method_throttle" class="method item public">
+<div id="method_throttle" class="method item">
     <h3 class="name"><code>throttle</code></h3>
 
         <div class="args">
@@ -1953,7 +1855,6 @@ in the later 'render' queue added by the <code>ember-views</code> package).</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1962,7 +1863,7 @@ in the later 'render' queue added by the <code>ember-views</code> package).</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l604"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:604</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l590"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:590</code></a>
         </p>
 
 
@@ -2080,19 +1981,18 @@ of the trailing edge of the wait interval. Defaults to true.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-<div id="property_queues" class="property item private">
+<div id="property_queues" class="property item">
     <h3 class="name"><code>queues</code></h3>
     <span class="type">Array</span>
 
 
-        <span class="flag private">private</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l210"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:210</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_run_loop.js.html#l209"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;run_loop.js:209</code></a>
         </p>
 
 

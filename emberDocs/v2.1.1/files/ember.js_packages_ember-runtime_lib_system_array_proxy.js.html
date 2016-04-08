@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -185,16 +189,13 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import { assert } from &#x27;ember-metal/debug&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;; // Ember.assert
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import {
   isArray
 } from &#x27;ember-runtime/utils&#x27;;
 import { computed } from &#x27;ember-metal/computed&#x27;;
-import {
-  _beforeObserver,
-  observer
-} from &#x27;ember-metal/mixin&#x27;;
+import { observer } from &#x27;ember-metal/mixin&#x27;;
 import {
   beginPropertyChanges,
   endPropertyChanges
@@ -204,11 +205,6 @@ import EmberObject from &#x27;ember-runtime/system/object&#x27;;
 import MutableArray from &#x27;ember-runtime/mixins/mutable_array&#x27;;
 import Enumerable from &#x27;ember-runtime/mixins/enumerable&#x27;;
 import alias from &#x27;ember-metal/alias&#x27;;
-import {
-  addArrayObserver,
-  removeArrayObserver,
-  objectAt
-} from &#x27;ember-runtime/mixins/array&#x27;;
 
 /**
 @module ember
@@ -269,7 +265,23 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
     @type Ember.Array
     @private
   */
-  content: null,
+  content: computed({
+    get() {
+      return this._content;
+    },
+    set(k, v) {
+      if (this._didInitArrayProxy) {
+        var oldContent = this._content;
+        var len = oldContent ? get(oldContent, &#x27;length&#x27;) : 0;
+        this.arrangedContentArrayWillChange(this, 0, len, undefined);
+        this.arrangedContentWillChange(this);
+      }
+      this._content = v;
+      return v;
+    }
+  }),
+
+
 
   /**
    The array that the proxy pretends to be. In the default &#x60;ArrayProxy&#x60;
@@ -278,7 +290,7 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
 
    @property arrangedContent
    @private
-  */
+   */
   arrangedContent: alias(&#x27;content&#x27;),
 
   /**
@@ -294,7 +306,7 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
     @private
   */
   objectAtContent(idx) {
-    return objectAt(get(this, &#x27;arrangedContent&#x27;), idx);
+    return get(this, &#x27;arrangedContent&#x27;).objectAt(idx);
   },
 
   /**
@@ -316,22 +328,9 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
     get(this, &#x27;content&#x27;).replace(idx, amt, objects);
   },
 
-  /**
-    Invoked when the content property is about to change. Notifies observers that the
-    entire array content will change.
-
-    @private
-    @method _contentWillChange
-  */
-  _contentWillChange: _beforeObserver(&#x27;content&#x27;, function() {
-    this._teardownContent();
-  }),
-
-  _teardownContent() {
-    var content = get(this, &#x27;content&#x27;);
-
+  _teardownContent(content) {
     if (content) {
-      removeArrayObserver(content, this, {
+      content.removeArrayObserver(this, {
         willChange: &#x27;contentArrayWillChange&#x27;,
         didChange: &#x27;contentArrayDidChange&#x27;
       });
@@ -372,40 +371,33 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
   */
   _contentDidChange: observer(&#x27;content&#x27;, function() {
     var content = get(this, &#x27;content&#x27;);
+    this._teardownContent(this._prevContent);
 
-    assert(&#x27;Can\&#x27;t set ArrayProxy\&#x27;s content to itself&#x27;, content !== this);
+    Ember.assert(&#x27;Can\&#x27;t set ArrayProxy\&#x27;s content to itself&#x27;, content !== this);
 
     this._setupContent();
   }),
 
   _setupContent() {
     var content = get(this, &#x27;content&#x27;);
+    this._prevContent = content;
 
     if (content) {
-      assert(&#x60;ArrayProxy expects an Array or Ember.ArrayProxy, but you passed ${typeof content}&#x60;, isArray(content) || content.isDestroyed);
+      Ember.assert(&#x60;ArrayProxy expects an Array or Ember.ArrayProxy, but you passed ${typeof content}&#x60;, isArray(content) || content.isDestroyed);
 
-      addArrayObserver(content, this, {
+      content.addArrayObserver(this, {
         willChange: &#x27;contentArrayWillChange&#x27;,
         didChange: &#x27;contentArrayDidChange&#x27;
       });
     }
   },
 
-  _arrangedContentWillChange: _beforeObserver(&#x27;arrangedContent&#x27;, function() {
-    var arrangedContent = get(this, &#x27;arrangedContent&#x27;);
-    var len = arrangedContent ? get(arrangedContent, &#x27;length&#x27;) : 0;
-
-    this.arrangedContentArrayWillChange(this, 0, len, undefined);
-    this.arrangedContentWillChange(this);
-
-    this._teardownArrangedContent(arrangedContent);
-  }),
-
   _arrangedContentDidChange: observer(&#x27;arrangedContent&#x27;, function() {
+    this._teardownArrangedContent(this._prevArrangedContent);
     var arrangedContent = get(this, &#x27;arrangedContent&#x27;);
     var len = arrangedContent ? get(arrangedContent, &#x27;length&#x27;) : 0;
 
-    assert(&#x27;Can\&#x27;t set ArrayProxy\&#x27;s content to itself&#x27;, arrangedContent !== this);
+    Ember.assert(&#x27;Can\&#x27;t set ArrayProxy\&#x27;s content to itself&#x27;, arrangedContent !== this);
 
     this._setupArrangedContent();
 
@@ -415,12 +407,13 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
 
   _setupArrangedContent() {
     var arrangedContent = get(this, &#x27;arrangedContent&#x27;);
+    this._prevArrangedContent = arrangedContent;
 
     if (arrangedContent) {
-      assert(&#x60;ArrayProxy expects an Array or Ember.ArrayProxy, but you passed ${typeof arrangedContent}&#x60;,
+      Ember.assert(&#x60;ArrayProxy expects an Array or Ember.ArrayProxy, but you passed ${typeof arrangedContent}&#x60;,
         isArray(arrangedContent) || arrangedContent.isDestroyed);
 
-      addArrayObserver(arrangedContent, this, {
+      arrangedContent.addArrayObserver(this, {
         willChange: &#x27;arrangedContentArrayWillChange&#x27;,
         didChange: &#x27;arrangedContentArrayDidChange&#x27;
       });
@@ -431,7 +424,7 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
     var arrangedContent = get(this, &#x27;arrangedContent&#x27;);
 
     if (arrangedContent) {
-      removeArrayObserver(arrangedContent, this, {
+      arrangedContent.removeArrayObserver(this, {
         willChange: &#x27;arrangedContentArrayWillChange&#x27;,
         didChange: &#x27;arrangedContentArrayDidChange&#x27;
       });
@@ -453,7 +446,7 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
 
   _replace(idx, amt, objects) {
     var content = get(this, &#x27;content&#x27;);
-    assert(&#x27;The content property of &#x27; + this.constructor + &#x27; should be set before modifying it&#x27;, content);
+    Ember.assert(&#x27;The content property of &#x27; + this.constructor + &#x27; should be set before modifying it&#x27;, content);
     if (content) {
       this.replaceContent(idx, amt, objects);
     }
@@ -504,7 +497,7 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
       // Get a list of indices in original content to remove
       for (i = start; i &lt; start + len; i++) {
         // Use arrangedContent here so we avoid confusion with objects transformed by objectAtContent
-        indices.push(content.indexOf(objectAt(arrangedContent, i)));
+        indices.push(content.indexOf(arrangedContent.objectAt(i)));
       }
 
       // Replace in reverse order since indices will change
@@ -567,6 +560,7 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
   },
 
   init() {
+    this._didInitArrayProxy = true;
     this._super(...arguments);
     this._setupContent();
     this._setupArrangedContent();
@@ -574,7 +568,7 @@ var ArrayProxy = EmberObject.extend(MutableArray, {
 
   willDestroy() {
     this._teardownArrangedContent();
-    this._teardownContent();
+    this._teardownContent(this.get(&#x27;content&#x27;));
   }
 });
 

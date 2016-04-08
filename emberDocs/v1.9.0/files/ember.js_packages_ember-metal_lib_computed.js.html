@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,105 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
-                                <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +148,35 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
-                                <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
                 
@@ -138,14 +185,12 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
-                                <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
-                                <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
-                                <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
-                                <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -185,65 +230,73 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import { assert, warn } from &#x27;ember-metal/debug&#x27;;
-import { set } from &#x27;ember-metal/property_set&#x27;;
-import { inspect } from &#x27;ember-metal/utils&#x27;;
-import { meta as metaFor, peekMeta } from &#x27;ember-metal/meta&#x27;;
-import expandProperties from &#x27;ember-metal/expand_properties&#x27;;
-import EmberError from &#x27;ember-metal/error&#x27;;
+import { set } from &quot;ember-metal/property_set&quot;;
+import {
+  meta,
+  inspect
+} from &quot;ember-metal/utils&quot;;
+import expandProperties from &quot;ember-metal/expand_properties&quot;;
+import EmberError from &quot;ember-metal/error&quot;;
 import {
   Descriptor,
   defineProperty
-} from &#x27;ember-metal/properties&#x27;;
+} from &quot;ember-metal/properties&quot;;
 import {
   propertyWillChange,
   propertyDidChange
-} from &#x27;ember-metal/property_events&#x27;;
+} from &quot;ember-metal/property_events&quot;;
 import {
   addDependentKeys,
   removeDependentKeys
-} from &#x27;ember-metal/dependent_keys&#x27;;
+} from &quot;ember-metal/dependent_keys&quot;;
 
 /**
-@module ember
-@submodule ember-metal
+@module ember-metal
 */
 
+Ember.warn(&quot;The CP_DEFAULT_CACHEABLE flag has been removed and computed properties&quot; +
+           &quot;are always cached by default. Use &#x60;volatile&#x60; if you don&#x27;t want caching.&quot;, Ember.ENV.CP_DEFAULT_CACHEABLE !== false);
+
+var metaFor = meta;
+var a_slice = [].slice;
 
 function UNDEFINED() { }
 
-const DEEP_EACH_REGEX = /\.@each\.[^.]+\./;
+// ..........................................................
+// COMPUTED PROPERTY
+//
 
 /**
-  A computed property transforms an object literal with object&#x27;s accessor function(s) into a property.
+  A computed property transforms an object&#x27;s function into a property.
 
   By default the function backing the computed property will only be called
   once and the result will be cached. You can specify various properties
   that your computed property depends on. This will force the cached
   result to be recomputed if the dependencies are modified.
 
-  In the following example we declare a computed property - &#x60;fullName&#x60; - by calling
-  &#x60;.Ember.computed()&#x60; with property dependencies (&#x60;firstName&#x60; and &#x60;lastName&#x60;) as leading arguments and getter accessor function. The &#x60;fullName&#x60; getter function
+  In the following example we declare a computed property (by calling
+  &#x60;.property()&#x60; on the fullName function) and setup the property
+  dependencies (depending on firstName and lastName). The fullName function
   will be called once (regardless of how many times it is accessed) as long
-  as its dependencies have not changed. Once &#x60;firstName&#x60; or &#x60;lastName&#x60; are updated
-  any future calls (or anything bound) to &#x60;fullName&#x60; will incorporate the new
+  as its dependencies have not changed. Once firstName or lastName are updated
+  any future calls (or anything bound) to fullName will incorporate the new
   values.
 
   &#x60;&#x60;&#x60;javascript
-  let Person = Ember.Object.extend({
+  var Person = Ember.Object.extend({
     // these will be supplied by &#x60;create&#x60;
     firstName: null,
     lastName: null,
 
-    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, function() {
-      let firstName = this.get(&#x27;firstName&#x27;),
-          lastName  = this.get(&#x27;lastName&#x27;);
+    fullName: function() {
+      var firstName = this.get(&#x27;firstName&#x27;);
+      var lastName = this.get(&#x27;lastName&#x27;);
 
-      return firstName + &#x27; &#x27; + lastName;
-    })
+     return firstName + &#x27; &#x27; + lastName;
+    }.property(&#x27;firstName&#x27;, &#x27;lastName&#x27;)
   });
 
-  let tom = Person.create({
+  var tom = Person.create({
     firstName: &#x27;Tom&#x27;,
     lastName: &#x27;Dale&#x27;
   });
@@ -251,98 +304,60 @@ const DEEP_EACH_REGEX = /\.@each\.[^.]+\./;
   tom.get(&#x27;fullName&#x27;) // &#x27;Tom Dale&#x27;
   &#x60;&#x60;&#x60;
 
-  You can also define what Ember should do when setting a computed property by providing additional function (&#x60;set&#x60;) in hash argument.
-  If you try to set a computed property, it will try to invoke setter accessor function with the key and
-  value you want to set it to as arguments.
+  You can also define what Ember should do when setting a computed property.
+  If you try to set a computed property, it will be invoked with the key and
+  value you want to set it to. You can also accept the previous value as the
+  third parameter.
 
   &#x60;&#x60;&#x60;javascript
-  let Person = Ember.Object.extend({
+  var Person = Ember.Object.extend({
     // these will be supplied by &#x60;create&#x60;
     firstName: null,
     lastName: null,
 
-    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, {
-      get(key) {
-        let firstName = this.get(&#x27;firstName&#x27;),
-            lastName  = this.get(&#x27;lastName&#x27;);
+    fullName: function(key, value, oldValue) {
+      // getter
+      if (arguments.length === 1) {
+        var firstName = this.get(&#x27;firstName&#x27;);
+        var lastName = this.get(&#x27;lastName&#x27;);
 
         return firstName + &#x27; &#x27; + lastName;
-      },
-      set(key, value) {
-        let [firstName, lastName] = value.split(&#x27; &#x27;);
 
-        this.set(&#x27;firstName&#x27;, firstName);
-        this.set(&#x27;lastName&#x27;, lastName);
+      // setter
+      } else {
+        var name = value.split(&#x27; &#x27;);
+
+        this.set(&#x27;firstName&#x27;, name[0]);
+        this.set(&#x27;lastName&#x27;, name[1]);
 
         return value;
       }
-    })
+    }.property(&#x27;firstName&#x27;, &#x27;lastName&#x27;)
   });
 
-  let person = Person.create();
+  var person = Person.create();
 
   person.set(&#x27;fullName&#x27;, &#x27;Peter Wagenet&#x27;);
   person.get(&#x27;firstName&#x27;); // &#x27;Peter&#x27;
   person.get(&#x27;lastName&#x27;);  // &#x27;Wagenet&#x27;
   &#x60;&#x60;&#x60;
 
-  You can overwrite computed property with normal property (no longer computed), that won&#x27;t change if dependencies change, if you set computed property and it won&#x27;t have setter accessor function defined.
-
-  You can also mark computed property as &#x60;.readOnly()&#x60; and block all attempts to set it.
-
-  &#x60;&#x60;&#x60;javascript
-  let Person = Ember.Object.extend({
-    // these will be supplied by &#x60;create&#x60;
-    firstName: null,
-    lastName: null,
-
-    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, {
-      get(key) {
-        let firstName = this.get(&#x27;firstName&#x27;);
-        let lastName  = this.get(&#x27;lastName&#x27;);
-
-        return firstName + &#x27; &#x27; + lastName;
-      }
-    }).readOnly()
-  });
-
-  let person = Person.create();
-  person.set(&#x27;fullName&#x27;, &#x27;Peter Wagenet&#x27;); // Uncaught Error: Cannot set read-only property &quot;fullName&quot; on object: &lt;(...):emberXXX&gt;
-  &#x60;&#x60;&#x60;
-
-  Additional resources:
-  - [New CP syntax RFC](https://github.com/emberjs/rfcs/blob/master/text/0011-improved-cp-syntax.md)
-  - [New computed syntax explained in &quot;Ember 1.12 released&quot; ](http://emberjs.com/blog/2015/05/13/ember-1-12-released.html#toc_new-computed-syntax)
-
   @class ComputedProperty
   @namespace Ember
-  @public
+  @extends Ember.Descriptor
+  @constructor
 */
-function ComputedProperty(config, opts) {
-  this.isDescriptor = true;
-  if (typeof config === &#x27;function&#x27;) {
-    this._getter = config;
-  } else {
-    assert(&#x27;Ember.computed expects a function or an object as last argument.&#x27;, typeof config === &#x27;object&#x27; &amp;&amp; !Array.isArray(config));
-    assert(&#x27;Config object pased to a Ember.computed can only contain &#x60;get&#x60; or &#x60;set&#x60; keys.&#x27;, (function() {
-      let keys = Object.keys(config);
-      for (let i = 0; i &lt; keys.length; i++) {
-        if (keys[i] !== &#x27;get&#x27; &amp;&amp; keys[i] !== &#x27;set&#x27;) {
-          return false;
-        }
-      }
-      return true;
-    })());
-    this._getter = config.get;
-    this._setter = config.set;
-  }
-  assert(&#x27;Computed properties must receive a getter or a setter, you passed none.&#x27;, !!this._getter || !!this._setter);
+function ComputedProperty(func, opts) {
+  func.__ember_arity__ = func.length;
+  this.func = func;
+
   this._dependentKeys = undefined;
   this._suspended = undefined;
   this._meta = undefined;
-  this._volatile = false;
+
+  this._cacheable = (opts &amp;&amp; opts.cacheable !== undefined) ? opts.cacheable : true;
   this._dependentKeys = opts &amp;&amp; opts.dependentKeys;
-  this._readOnly =  false;
+  this._readOnly = opts &amp;&amp; (opts.readOnly !== undefined || !!opts.readOnly) || false;
 }
 
 ComputedProperty.prototype = new Descriptor();
@@ -350,31 +365,43 @@ ComputedProperty.prototype = new Descriptor();
 var ComputedPropertyPrototype = ComputedProperty.prototype;
 
 /**
+  Properties are cacheable by default. Computed property will automatically
+  cache the return value of your function until one of the dependent keys changes.
+
+  Call &#x60;volatile()&#x60; to set it into non-cached mode. When in this mode
+  the computed property will not automatically cache the return value.
+
+  However, if a property is properly observable, there is no reason to disable
+  caching.
+
+  @method cacheable
+  @param {Boolean} aFlag optional set to &#x60;false&#x60; to disable caching
+  @return {Ember.ComputedProperty} this
+  @chainable
+*/
+ComputedPropertyPrototype.cacheable = function(aFlag) {
+  this._cacheable = aFlag !== false;
+  return this;
+};
+
+/**
   Call on a computed property to set it into non-cached mode. When in this
   mode the computed property will not automatically cache the return value.
 
-  It also does not automatically fire any change events. You must manually notify
-  any changes if you want to observe this property.
-
-  Dependency keys have no effect on volatile properties as they are for cache
-  invalidation and notification when cached value is invalidated.
-
   &#x60;&#x60;&#x60;javascript
-  let outsideService = Ember.Object.extend({
-    value: Ember.computed(function() {
+  var outsideService = Ember.Object.extend({
+    value: function() {
       return OutsideService.getValue();
-    }).volatile()
+    }.property().volatile()
   }).create();
   &#x60;&#x60;&#x60;
 
   @method volatile
   @return {Ember.ComputedProperty} this
   @chainable
-  @public
 */
 ComputedPropertyPrototype.volatile = function() {
-  this._volatile = true;
-  return this;
+  return this.cacheable(false);
 };
 
 /**
@@ -382,13 +409,13 @@ ComputedPropertyPrototype.volatile = function() {
   mode the computed property will throw an error when set.
 
   &#x60;&#x60;&#x60;javascript
-  let Person = Ember.Object.extend({
-    guid: Ember.computed(function() {
+  var Person = Ember.Object.extend({
+    guid: function() {
       return &#x27;guid-guid-guid&#x27;;
-    }).readOnly()
+    }.property().readOnly()
   });
 
-  let person = Person.create();
+  var person = Person.create();
 
   person.set(&#x27;guid&#x27;, &#x27;new-guid&#x27;); // will throw an exception
   &#x60;&#x60;&#x60;
@@ -396,11 +423,9 @@ ComputedPropertyPrototype.volatile = function() {
   @method readOnly
   @return {Ember.ComputedProperty} this
   @chainable
-  @public
 */
-ComputedPropertyPrototype.readOnly = function() {
-  this._readOnly = true;
-  assert(&#x27;Computed properties that define a setter using the new syntax cannot be read-only&#x27;, !(this._readOnly &amp;&amp; this._setter &amp;&amp; this._setter !== this._getter));
+ComputedPropertyPrototype.readOnly = function(readOnly) {
+  this._readOnly = readOnly === undefined || !!readOnly;
   return this;
 };
 
@@ -409,8 +434,8 @@ ComputedPropertyPrototype.readOnly = function() {
   arguments containing key paths that this computed property depends on.
 
   &#x60;&#x60;&#x60;javascript
-  let President = Ember.Object.extend({
-    fullName: Ember.computed(function() {
+  var President = Ember.Object.extend({
+    fullName: computed(function() {
       return this.get(&#x27;firstName&#x27;) + &#x27; &#x27; + this.get(&#x27;lastName&#x27;);
 
       // Tell Ember that this computed property depends on firstName
@@ -418,7 +443,7 @@ ComputedPropertyPrototype.readOnly = function() {
     }).property(&#x27;firstName&#x27;, &#x27;lastName&#x27;)
   });
 
-  let president = President.create({
+  var president = President.create({
     firstName: &#x27;Barack&#x27;,
     lastName: &#x27;Obama&#x27;
   });
@@ -430,19 +455,11 @@ ComputedPropertyPrototype.readOnly = function() {
   @param {String} path* zero or more property paths
   @return {Ember.ComputedProperty} this
   @chainable
-  @public
 */
 ComputedPropertyPrototype.property = function() {
   var args;
 
-  var addArg = function(property) {
-    warn(
-      &#x60;Dependent keys containing @each only work one level deep. &#x60; +
-        &#x60;You cannot use nested forms like todos.@each.owner.name or todos.@each.owner.@each.name. &#x60; +
-          &#x60;Please create an intermediary computed property.&#x60;,
-      DEEP_EACH_REGEX.test(property) === false,
-      { id: &#x27;ember-metal.computed-deep-each&#x27; }
-    );
+  var addArg = function (property) {
     args.push(property);
   };
 
@@ -464,10 +481,10 @@ ComputedPropertyPrototype.property = function() {
   You can pass a hash of these values to a computed property like this:
 
   &#x60;&#x60;&#x60;
-  person: Ember.computed(function() {
-    let personId = this.get(&#x27;personId&#x27;);
+  person: function() {
+    var personId = this.get(&#x27;personId&#x27;);
     return App.Person.create({ id: personId });
-  }).meta({ type: App.Person })
+  }.property().meta({ type: App.Person })
   &#x60;&#x60;&#x60;
 
   The hash that you pass to the &#x60;meta()&#x60; function will be saved on the
@@ -476,10 +493,10 @@ ComputedPropertyPrototype.property = function() {
   via the &#x60;metaForProperty()&#x60; function.
 
   @method meta
-  @param {Object} meta
+  @param {Hash} meta
   @chainable
-  @public
 */
+
 ComputedPropertyPrototype.meta = function(meta) {
   if (arguments.length === 0) {
     return this._meta || {};
@@ -489,121 +506,188 @@ ComputedPropertyPrototype.meta = function(meta) {
   }
 };
 
-// invalidate cache when CP key changes
+/* impl descriptor API */
 ComputedPropertyPrototype.didChange = function(obj, keyName) {
   // _suspended is set via a CP.set to ensure we don&#x27;t clear
   // the cached value set by the setter
-  if (this._volatile || this._suspended === obj) {
-    return;
-  }
-
-  // don&#x27;t create objects just to invalidate
-  let meta = peekMeta(obj);
-  if (!meta || meta.source !== obj) {
-    return;
-  }
-
-  let cache = meta.readableCache();
-  if (cache &amp;&amp; cache[keyName] !== undefined) {
-    cache[keyName] = undefined;
-    removeDependentKeys(this, obj, keyName, meta);
+  if (this._cacheable &amp;&amp; this._suspended !== obj) {
+    var meta = metaFor(obj);
+    if (meta.cache[keyName] !== undefined) {
+      meta.cache[keyName] = undefined;
+      removeDependentKeys(this, obj, keyName, meta);
+    }
   }
 };
 
+function finishChains(chainNodes)
+{
+  for (var i=0, l=chainNodes.length; i&lt;l; i++) {
+    chainNodes[i].didChange(null);
+  }
+}
+
+/**
+  Access the value of the function backing the computed property.
+  If this property has already been cached, return the cached result.
+  Otherwise, call the function passing the property name as an argument.
+
+  &#x60;&#x60;&#x60;javascript
+  var Person = Ember.Object.extend({
+    fullName: function(keyName) {
+      // the keyName parameter is &#x27;fullName&#x27; in this case.
+      return this.get(&#x27;firstName&#x27;) + &#x27; &#x27; + this.get(&#x27;lastName&#x27;);
+    }.property(&#x27;firstName&#x27;, &#x27;lastName&#x27;)
+  });
+
+
+  var tom = Person.create({
+    firstName: &#x27;Tom&#x27;,
+    lastName: &#x27;Dale&#x27;
+  });
+
+  tom.get(&#x27;fullName&#x27;) // &#x27;Tom Dale&#x27;
+  &#x60;&#x60;&#x60;
+
+  @method get
+  @param {String} keyName The key being accessed.
+  @return {Object} The return value of the function backing the CP.
+*/
 ComputedPropertyPrototype.get = function(obj, keyName) {
-  if (this._volatile) {
-    return this._getter.call(obj, keyName);
-  }
+  var ret, cache, meta, chainNodes;
+  if (this._cacheable) {
+    meta = metaFor(obj);
+    cache = meta.cache;
 
-  let meta = metaFor(obj);
-  let cache = meta.writableCache();
+    var result = cache[keyName];
 
-  let result = cache[keyName];
-  if (result === UNDEFINED) {
-    return undefined;
-  } else if (result !== undefined) {
-    return result;
-  }
+    if (result === UNDEFINED) {
+      return undefined;
+    }  else if (result !== undefined) {
+      return result;
+    }
 
-  let ret = this._getter.call(obj, keyName);
-  if (ret === undefined) {
-    cache[keyName] = UNDEFINED;
+    ret = this.func.call(obj, keyName);
+    if (ret === undefined) {
+      cache[keyName] = UNDEFINED;
+    } else {
+      cache[keyName] = ret;
+    }
+
+    chainNodes = meta.chainWatchers &amp;&amp; meta.chainWatchers[keyName];
+    if (chainNodes) {
+      finishChains(chainNodes);
+    }
+    addDependentKeys(this, obj, keyName, meta);
   } else {
-    cache[keyName] = ret;
+    ret = this.func.call(obj, keyName);
   }
-
-  let chainWatchers = meta.readableChainWatchers();
-  if (chainWatchers) {
-    chainWatchers.revalidate(keyName);
-  }
-  addDependentKeys(this, obj, keyName, meta);
-
   return ret;
 };
 
-ComputedPropertyPrototype.set = function computedPropertySetEntry(obj, keyName, value) {
-  if (this._readOnly) {
-    this._throwReadOnlyError(obj, keyName);
-  }
+/**
+  Set the value of a computed property. If the function that backs your
+  computed property does not accept arguments then the default action for
+  setting would be to define the property on the current object, and set
+  the value of the property to the value being set.
 
-  if (!this._setter) {
-    return this.clobberSet(obj, keyName, value);
-  }
+  Generally speaking if you intend for your computed property to be set
+  your backing function should accept either two or three arguments.
 
-  if (this._volatile) {
-    return this.volatileSet(obj, keyName, value);
-  }
+  &#x60;&#x60;&#x60;javascript
+  var Person = Ember.Object.extend({
+    // these will be supplied by &#x60;create&#x60;
+    firstName: null,
+    lastName: null,
 
-  return this.setWithSuspend(obj, keyName, value);
-};
+    fullName: function(key, value, oldValue) {
+      // getter
+      if (arguments.length === 1) {
+        var firstName = this.get(&#x27;firstName&#x27;);
+        var lastName = this.get(&#x27;lastName&#x27;);
 
-ComputedPropertyPrototype._throwReadOnlyError = function computedPropertyThrowReadOnlyError(obj, keyName) {
-  throw new EmberError(&#x60;Cannot set read-only property &quot;${keyName}&quot; on object: ${inspect(obj)}&#x60;);
-};
+        return firstName + &#x27; &#x27; + lastName;
 
-ComputedPropertyPrototype.clobberSet = function computedPropertyClobberSet(obj, keyName, value) {
-  let cachedValue = cacheFor(obj, keyName);
-  defineProperty(obj, keyName, null, cachedValue);
-  set(obj, keyName, value);
-  return value;
-};
+      // setter
+      } else {
+        var name = value.split(&#x27; &#x27;);
 
-ComputedPropertyPrototype.volatileSet = function computedPropertyVolatileSet(obj, keyName, value) {
-  return this._setter.call(obj, keyName, value);
-};
+        this.set(&#x27;firstName&#x27;, name[0]);
+        this.set(&#x27;lastName&#x27;, name[1]);
 
-ComputedPropertyPrototype.setWithSuspend = function computedPropertySetWithSuspend(obj, keyName, value) {
-  let oldSuspended = this._suspended;
+        return value;
+      }
+    }.property(&#x27;firstName&#x27;, &#x27;lastName&#x27;)
+  });
+
+  var person = Person.create();
+
+  person.set(&#x27;fullName&#x27;, &#x27;Peter Wagenet&#x27;);
+  person.get(&#x27;firstName&#x27;); // &#x27;Peter&#x27;
+  person.get(&#x27;lastName&#x27;);  // &#x27;Wagenet&#x27;
+  &#x60;&#x60;&#x60;
+
+  @method set
+  @param {String} keyName The key being accessed.
+  @param {Object} newValue The new value being assigned.
+  @param {String} oldValue The old value being replaced.
+  @return {Object} The return value of the function backing the CP.
+*/
+ComputedPropertyPrototype.set = function computedPropertySetWithSuspend(obj, keyName, value) {
+  var oldSuspended = this._suspended;
+
   this._suspended = obj;
+
   try {
-    return this._set(obj, keyName, value);
+    this._set(obj, keyName, value);
   } finally {
     this._suspended = oldSuspended;
   }
 };
 
 ComputedPropertyPrototype._set = function computedPropertySet(obj, keyName, value) {
-  // cache requires own meta
-  let meta           = metaFor(obj);
-  // either there is a writable cache or we need one to update
-  let cache          = meta.writableCache();
-  let hadCachedValue = false;
-  let cachedValue;
-  if (cache[keyName] !== undefined) {
-    if (cache[keyName] !== UNDEFINED) {
+  var cacheable      = this._cacheable;
+  var func           = this.func;
+  var meta           = metaFor(obj, cacheable);
+  var cache          = meta.cache;
+  var hadCachedValue = false;
+
+  var funcArgLength, cachedValue, ret;
+
+  if (this._readOnly) {
+    throw new EmberError(&#x27;Cannot set read-only property &quot;&#x27; + keyName + &#x27;&quot; on object: &#x27; + inspect(obj));
+  }
+
+  if (cacheable &amp;&amp; cache[keyName] !== undefined) {
+    if(cache[keyName] !== UNDEFINED) {
       cachedValue = cache[keyName];
     }
+
     hadCachedValue = true;
   }
 
-  let ret = this._setter.call(obj, keyName, value, cachedValue);
+  // Check if the CP has been wrapped. If it has, use the
+  // length from the wrapped function.
 
-  // allows setter to return the same value that is cached already
-  if (hadCachedValue &amp;&amp; cachedValue === ret) {
-    return ret;
+  funcArgLength = func.wrappedFunction ? func.wrappedFunction.__ember_arity__ : func.__ember_arity__;
+
+  // For backwards-compatibility with computed properties
+  // that check for arguments.length === 2 to determine if
+  // they are being get or set, only pass the old cached
+  // value if the computed property opts into a third
+  // argument.
+  if (funcArgLength === 3) {
+    ret = func.call(obj, keyName, value, cachedValue);
+  } else if (funcArgLength === 2) {
+    ret = func.call(obj, keyName, value);
+  } else {
+    defineProperty(obj, keyName, null, cachedValue);
+    set(obj, keyName, value);
+    return;
   }
 
-  let watched = meta.peekWatching(keyName);
+  if (hadCachedValue &amp;&amp; cachedValue === ret) { return; }
+
+  var watched = meta.watching[keyName];
   if (watched) {
     propertyWillChange(obj, keyName);
   }
@@ -612,14 +696,15 @@ ComputedPropertyPrototype._set = function computedPropertySet(obj, keyName, valu
     cache[keyName] = undefined;
   }
 
-  if (!hadCachedValue) {
-    addDependentKeys(this, obj, keyName, meta);
-  }
-
-  if (ret === undefined) {
-    cache[keyName] = UNDEFINED;
-  } else {
-    cache[keyName] = ret;
+  if (cacheable) {
+    if (!hadCachedValue) {
+      addDependentKeys(this, obj, keyName, meta);
+    }
+    if (ret === undefined) {
+      cache[keyName] = UNDEFINED;
+    } else {
+      cache[keyName] = ret;
+    }
   }
 
   if (watched) {
@@ -631,108 +716,79 @@ ComputedPropertyPrototype._set = function computedPropertySet(obj, keyName, valu
 
 /* called before property is overridden */
 ComputedPropertyPrototype.teardown = function(obj, keyName) {
-  if (this._volatile) {
-    return;
-  }
-  let meta = metaFor(obj);
-  let cache = meta.readableCache();
-  if (cache &amp;&amp; cache[keyName] !== undefined) {
+  var meta = metaFor(obj);
+
+  if (keyName in meta.cache) {
     removeDependentKeys(this, obj, keyName, meta);
-    cache[keyName] = undefined;
   }
+
+  if (this._cacheable) { delete meta.cache[keyName]; }
+
+  return null; // no value to restore
 };
+
 
 /**
   This helper returns a new property descriptor that wraps the passed
   computed property function. You can use this helper to define properties
   with mixins or via &#x60;Ember.defineProperty()&#x60;.
 
-  If you pass a function as an argument, it will be used as a getter. A computed
-  property defined in this way might look like this:
+  The function you pass will be used to both get and set property values.
+  The function should accept two parameters, key and value. If value is not
+  undefined you should set the value first. In either case return the
+  current value of the property.
+  
+  A computed property defined in this way might look like this:
 
   &#x60;&#x60;&#x60;js
-  let Person = Ember.Object.extend({
-    init() {
-      this._super(...arguments);
+  var Person = Ember.Object.extend({
+    firstName: &#x27;Betty&#x27;,
+    lastName: &#x27;Jones&#x27;,
 
-      this.firstName = &#x27;Betty&#x27;;
-      this.lastName = &#x27;Jones&#x27;;
-    },
-
-    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, function() {
-      return &#x60;${this.get(&#x27;firstName&#x27;)} ${this.get(&#x27;lastName&#x27;)}&#x60;;
+    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, function(key, value) {
+      return this.get(&#x27;firstName&#x27;) + &#x27; &#x27; + this.get(&#x27;lastName&#x27;);
     })
   });
 
-  let client = Person.create();
+  var client = Person.create();
 
   client.get(&#x27;fullName&#x27;); // &#x27;Betty Jones&#x27;
-
+  
   client.set(&#x27;lastName&#x27;, &#x27;Fuller&#x27;);
   client.get(&#x27;fullName&#x27;); // &#x27;Betty Fuller&#x27;
   &#x60;&#x60;&#x60;
 
-  You can pass a hash with two functions, &#x60;get&#x60; and &#x60;set&#x60;, as an
-  argument to provide both a getter and setter:
-
-  &#x60;&#x60;&#x60;js
-  let Person = Ember.Object.extend({
-    init() {
-      this._super(...arguments);
-
-      this.firstName = &#x27;Betty&#x27;;
-      this.lastName = &#x27;Jones&#x27;;
-    },
-
-    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, {
-      get(key) {
-        return &#x60;${this.get(&#x27;firstName&#x27;)} ${this.get(&#x27;lastName&#x27;)}&#x60;;
-      },
-      set(key, value) {
-        let [firstName, lastName] = value.split(/\s+/);
-        this.setProperties({ firstName, lastName });
-        return value;
-      }
-    });
-  })
-
-  let client = Person.create();
-  client.get(&#x27;firstName&#x27;); // &#x27;Betty&#x27;
-
-  client.set(&#x27;fullName&#x27;, &#x27;Carroll Fuller&#x27;);
-  client.get(&#x27;firstName&#x27;); // &#x27;Carroll&#x27;
-  &#x60;&#x60;&#x60;
-
-  The &#x60;set&#x60; function should accept two parameters, &#x60;key&#x60; and &#x60;value&#x60;. The value
-  returned from &#x60;set&#x60; will be the new value of the property.
-
-  _Note: This is the preferred way to define computed properties when writing third-party
+  _Note: This is the prefered way to define computed properties when writing third-party
   libraries that depend on or use Ember, since there is no guarantee that the user
-  will have [prototype Extensions](http://emberjs.com/guides/configuring-ember/disabling-prototype-extensions/) enabled._
+  will have prototype extensions enabled._
 
-  The alternative syntax, with prototype extensions, might look like:
+  You might use this method if you disabled
+  [Prototype Extensions](http://emberjs.com/guides/configuring-ember/disabling-prototype-extensions/).
+  The alternative syntax might look like this
+  (if prototype extensions are enabled, which is the default behavior):
 
   &#x60;&#x60;&#x60;js
-  fullName() {
+  fullName: function () {
     return this.get(&#x27;firstName&#x27;) + &#x27; &#x27; + this.get(&#x27;lastName&#x27;);
   }.property(&#x27;firstName&#x27;, &#x27;lastName&#x27;)
   &#x60;&#x60;&#x60;
 
-  @class computed
-  @namespace Ember
-  @constructor
-  @static
+  @method computed
+  @for Ember
   @param {String} [dependentKeys*] Optional dependent keys that trigger this computed property.
   @param {Function} func The computed property function.
   @return {Ember.ComputedProperty} property descriptor instance
-  @public
 */
-export default function computed(func) {
+function computed(func) {
   var args;
 
   if (arguments.length &gt; 1) {
-    args = [].slice.call(arguments);
+    args = a_slice.call(arguments);
     func = args.pop();
+  }
+
+  if (typeof func !== &quot;function&quot;) {
+    throw new EmberError(&quot;Computed Property declared without a property function&quot;);
   }
 
   var cp = new ComputedProperty(func);
@@ -756,11 +812,10 @@ export default function computed(func) {
   @param {String} key the name of the property whose cached value you want
     to return
   @return {Object} the cached value
-  @public
 */
 function cacheFor(obj, key) {
-  var meta = peekMeta(obj);
-  var cache = meta &amp;&amp; meta.source === obj &amp;&amp; meta.readableCache();
+  var meta = obj[&#x27;__ember_meta__&#x27;];
+  var cache = meta &amp;&amp; meta.cache;
   var ret = cache &amp;&amp; cache[key];
 
   if (ret === UNDEFINED) {

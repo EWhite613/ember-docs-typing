@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -193,11 +198,6 @@ import EmberObject from &#x27;ember-runtime/system/object&#x27;;
 import { A as emberA } from &#x27;ember-runtime/system/native_array&#x27;;
 import Application from &#x27;ember-application/system/application&#x27;;
 import { getOwner } from &#x27;container/owner&#x27;;
-import {
-  addArrayObserver,
-  removeArrayObserver,
-  objectAt
-} from &#x27;ember-runtime/mixins/array&#x27;;
 
 /**
 @module ember
@@ -227,7 +227,7 @@ import {
   * &#x60;observeRecord&#x60;
 
   The adapter will need to be registered
-  in the application&#x27;s container as &#x60;dataAdapter:main&#x60;.
+  in the application&#x27;s container as &#x60;dataAdapter:main&#x60;
 
   Example:
 
@@ -264,7 +264,7 @@ export default EmberObject.extend({
   containerDebugAdapter: undefined,
 
   /**
-    The number of attributes to send
+    Number of attributes to send
     as columns. (Enough to make the record
     identifiable).
 
@@ -362,23 +362,23 @@ export default EmberObject.extend({
     @public
     @method watchRecords
 
-    @param {String} modelName The model name.
+    @param {String} modelName The model name
 
     @param {Function} recordsAdded Callback to call to add records.
     Takes an array of objects containing wrapped records.
     The object should have the following properties:
-      columnValues: {Object} The key and value of a table cell.
-      object: {Object} The actual record object.
+      columnValues: {Object} key and value of a table cell
+      object: {Object} the actual record object
 
     @param {Function} recordsUpdated Callback to call when a record has changed.
     Takes an array of objects containing wrapped records.
 
     @param {Function} recordsRemoved Callback to call when a record has removed.
     Takes the following parameters:
-      index: The array index where the records were removed.
-      count: The number of records removed.
+      index: the array index where the records were removed
+      count: the number of records removed
 
-    @return {Function} Method to call to remove all observers.
+    @return {Function} Method to call to remove all observers
   */
   watchRecords(modelName, recordsAdded, recordsUpdated, recordsRemoved) {
     var releaseMethods = emberA();
@@ -398,7 +398,7 @@ export default EmberObject.extend({
 
     var contentDidChange = (array, idx, removedCount, addedCount) =&gt; {
       for (var i = idx; i &lt; idx + addedCount; i++) {
-        var record = objectAt(array, i);
+        var record = array.objectAt(i);
         var wrapped = this.wrapRecord(record);
         releaseMethods.push(this.observeRecord(record, recordUpdated));
         recordsAdded([wrapped]);
@@ -410,11 +410,11 @@ export default EmberObject.extend({
     };
 
     var observer = { didChange: contentDidChange, willChange() { return this; } };
-    addArrayObserver(records, this, observer);
+    records.addArrayObserver(this, observer);
 
     release = () =&gt; {
       releaseMethods.forEach(function(fn) { fn(); });
-      removeArrayObserver(records, this, observer);
+      records.removeArrayObserver(this, observer);
       this.releaseMethods.removeObject(release);
     };
 
@@ -440,12 +440,12 @@ export default EmberObject.extend({
     Detect whether a class is a model.
 
     Test that against the model class
-    of your persistence library.
+    of your persistence library
 
     @private
     @method detect
-    @param {Class} klass The class to test.
-    @return boolean Whether the class is a model class or not.
+    @param {Class} klass The class to test
+    @return boolean Whether the class is a model class or not
   */
   detect(klass) {
     return false;
@@ -456,10 +456,10 @@ export default EmberObject.extend({
 
     @private
     @method columnsForType
-    @param {Class} type The model type.
+    @param {Class} type The model type
     @return {Array} An array of columns of the following format:
-     name: {String} The name of the column.
-     desc: {String} Humanized description (what would show in a table column name).
+     name: {String} name of the column
+     desc: {String} Humanized description (what would show in a table column name)
   */
   columnsForType(type) {
     return emberA();
@@ -470,9 +470,9 @@ export default EmberObject.extend({
 
     @private
     @method observeModelType
-    @param {String} modelName The model type name.
+    @param {String} modelName The model type name
     @param {Function} typesUpdated Called when a type is modified.
-    @return {Function} The function to call to remove observers.
+    @return {Function} The function to call to remove observers
   */
 
   observeModelType(modelName, typesUpdated) {
@@ -489,10 +489,10 @@ export default EmberObject.extend({
       willChange() { return this; }
     };
 
-    addArrayObserver(records, this, observer);
+    records.addArrayObserver(this, observer);
 
     var release = () =&gt; {
-      removeArrayObserver(records, this, observer);
+      records.removeArrayObserver(this, observer);
     };
 
     return release;
@@ -504,17 +504,17 @@ export default EmberObject.extend({
 
     @private
     @method wrapModelType
-    @param {Class} klass A model class.
-    @param {String} modelName Name of the class.
-    @return {Object} Contains the wrapped type and the function to remove observers
+    @param {Class} klass A model class
+    @param {String} modelName Name of the class
+    @return {Object} contains the wrapped type and the function to remove observers
     Format:
-      type: {Object} The wrapped type.
+      type: {Object} the wrapped type
         The wrapped type has the following format:
-          name: {String} The name of the type.
-          count: {Integer} The number of records available.
-          columns: {Columns} An array of columns to describe the record.
-          object: {Class} The actual Model type class.
-      release: {Function} The function to remove observers.
+          name: {String} name of the type
+          count: {Integer} number of records available
+          columns: {Columns} array of columns to describe the record
+          object: {Class} the actual Model type class
+      release: {Function} The function to remove observers
   */
   wrapModelType(klass, name) {
     var records = this.getRecords(klass, name);
@@ -537,7 +537,7 @@ export default EmberObject.extend({
 
     @private
     @method getModelTypes
-    @return {Array} Array of model types.
+    @return {Array} Array of model types
   */
   getModelTypes() {
     var containerDebugAdapter = this.get(&#x27;containerDebugAdapter&#x27;);
@@ -549,7 +549,7 @@ export default EmberObject.extend({
       types = this._getObjectsOnNamespaces();
     }
 
-    // New adapters return strings instead of classes.
+    // New adapters return strings instead of classes
     types = emberA(types).map((name) =&gt; {
       return {
         klass: this._nameToClass(name),
@@ -565,11 +565,11 @@ export default EmberObject.extend({
 
   /**
     Loops over all namespaces and all objects
-    attached to them.
+    attached to them
 
     @private
     @method _getObjectsOnNamespaces
-    @return {Array} Array of model type strings.
+    @return {Array} Array of model type strings
   */
   _getObjectsOnNamespaces() {
     var namespaces = emberA(Namespace.NAMESPACES);
@@ -654,8 +654,8 @@ export default EmberObject.extend({
 
     @private
     @method getRecordFilterValues
-    @param {Object} record The record instance.
-    @return {Object} The filter values.
+    @param {Object} record The record instance
+    @return {Object} The filter values
   */
   getRecordFilterValues(record) {
     return {};
@@ -667,8 +667,8 @@ export default EmberObject.extend({
     @private
     @method getRecordColor
     @param {Object} record The record instance
-    @return {String} The records color.
-      Possible options: black, red, blue, green.
+    @return {String} The record&#x27;s color
+      Possible options: black, red, blue, green
   */
   getRecordColor(record) {
     return null;
@@ -680,7 +680,7 @@ export default EmberObject.extend({
 
     @private
     @method observerRecord
-    @param {Object} record The record instance.
+    @param {Object} record The record instance
     @param {Function} recordUpdated The callback to call when a record is updated.
     @return {Function} The function to call to remove all observers.
   */

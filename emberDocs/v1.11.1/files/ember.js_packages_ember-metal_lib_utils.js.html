@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementers must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementers must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
                                 <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
+                                <li><a href="../classes/Ember.HTMLBars.Helper.html">Ember.HTMLBars.Helper</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,40 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
+                                <li><a href="../classes/HandlebarsCompatibleHelper.html">HandlebarsCompatibleHelper</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
+                                <li><a href="../classes/TransformWithAsToHash.html">TransformWithAsToHash</a></li>
                             </ul>
                 
                 
@@ -138,6 +189,7 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
                                 <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
@@ -145,7 +197,6 @@
                                 <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
                                 <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -185,9 +236,22 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-&#x27;no use strict&#x27;;
 // Remove &quot;use strict&quot;; from transpiled module until
 // https://bugs.webkit.org/show_bug.cgi?id=138038 is fixed
+//
+&quot;REMOVE_USE_STRICT: true&quot;;
+
+import Ember from &quot;ember-metal/core&quot;;
+import o_create from &#x27;ember-metal/platform/create&#x27;;
+import {
+  hasPropertyAccessors,
+  defineProperty as o_defineProperty,
+  canDefineNonEnumerableProperties
+} from &#x27;ember-metal/platform/define_property&#x27;;
+
+import {
+  forEach
+} from &quot;ember-metal/array&quot;;
 
 /**
 @module ember-metal
@@ -205,7 +269,8 @@ var _uuid = 0;
 /**
   Generates a universally unique identifier. This method
   is used internally by Ember for assisting with
-  the generation of GUID&#x27;s and other unique identifiers.
+  the generation of GUID&#x27;s and other unique identifiers
+  such as &#x60;bind-attr&#x60; data attributes.
 
   @public
   @return {Number} [description]
@@ -267,7 +332,7 @@ var stringCache  = {};
   @private
   @return {String} interned version of the provided string
 */
-export function intern(str) {
+function intern(str) {
   var obj = {};
   obj[str] = 1;
   for (var key in obj) {
@@ -301,6 +366,13 @@ export var GUID_DESC = {
   value: null
 };
 
+var undefinedDescriptor = {
+  configurable: true,
+  writable: true,
+  enumerable: false,
+  value: undefined
+};
+
 var nullDescriptor = {
   configurable: true,
   writable: true,
@@ -308,10 +380,28 @@ var nullDescriptor = {
   value: null
 };
 
+var META_DESC = {
+  writable: true,
+  configurable: true,
+  enumerable: false,
+  value: null
+};
+
+export var EMBER_META_PROPERTY = {
+  name: &#x27;__ember_meta__&#x27;,
+  descriptor: META_DESC
+};
+
 export var GUID_KEY_PROPERTY = {
   name: GUID_KEY,
   descriptor: nullDescriptor
 };
+
+export var NEXT_SUPER_PROPERTY = {
+  name: &#x27;__nextSuper&#x27;,
+  descriptor: undefinedDescriptor
+};
+
 
 /**
   Generates a new guid, optionally saving the guid to the object that you
@@ -344,7 +434,7 @@ export function generateGuid(obj, prefix) {
       if (obj.__defineNonEnumerable) {
         obj.__defineNonEnumerable(GUID_KEY_PROPERTY);
       } else {
-        Object.defineProperty(obj, GUID_KEY, GUID_DESC);
+        o_defineProperty(obj, GUID_KEY, GUID_DESC);
       }
     }
   }
@@ -359,24 +449,21 @@ export function generateGuid(obj, prefix) {
 
   You can also use this method on DOM Element objects.
 
-  @public
+  @private
   @method guidFor
   @for Ember
   @param {Object} obj any object, string, number, Element, or primitive
   @return {String} the unique guid for this instance.
 */
 export function guidFor(obj) {
-  if (obj &amp;&amp; obj[GUID_KEY]) {
-    return obj[GUID_KEY];
-  }
 
   // special cases where we don&#x27;t want to add a key to object
   if (obj === undefined) {
-    return &#x27;(undefined)&#x27;;
+    return &quot;(undefined)&quot;;
   }
 
   if (obj === null) {
-    return &#x27;(null)&#x27;;
+    return &quot;(null)&quot;;
   }
 
   var ret;
@@ -388,7 +475,7 @@ export function guidFor(obj) {
       ret = numberCache[obj];
 
       if (!ret) {
-        ret = numberCache[obj] = &#x27;nu&#x27; + obj;
+        ret = numberCache[obj] = &#x27;nu&#x27;+obj;
       }
 
       return ret;
@@ -406,6 +493,10 @@ export function guidFor(obj) {
       return obj ? &#x27;(true)&#x27; : &#x27;(false)&#x27;;
 
     default:
+      if (obj[GUID_KEY]) {
+        return obj[GUID_KEY];
+      }
+
       if (obj === Object) {
         return &#x27;(Object)&#x27;;
       }
@@ -424,39 +515,187 @@ export function guidFor(obj) {
         if (obj.__defineNonEnumerable) {
           obj.__defineNonEnumerable(GUID_KEY_PROPERTY);
         } else {
-          Object.defineProperty(obj, GUID_KEY, GUID_DESC);
+          o_defineProperty(obj, GUID_KEY, GUID_DESC);
         }
       }
       return ret;
   }
 }
 
-const HAS_SUPER_PATTERN = /\.(_super|call\(this|apply\(this)/;
+// ..........................................................
+// META
+//
+function Meta(obj) {
+  this.watching = {};
+  this.cache = undefined;
+  this.cacheMeta = undefined;
+  this.source = obj;
+  this.deps = undefined;
+  this.listeners = undefined;
+  this.mixins = undefined;
+  this.bindings = undefined;
+  this.chains = undefined;
+  this.values = undefined;
+  this.proto = undefined;
+}
 
-export const checkHasSuper = (function () {
-  let sourceAvailable = (function() {
-    return this;
-  }).toString().indexOf(&#x27;return this&#x27;) &gt; -1;
+Meta.prototype = {
+  chainWatchers: null // FIXME
+};
 
-  if (sourceAvailable) {
-    return function checkHasSuper(func) {
-      return HAS_SUPER_PATTERN.test(func.toString());
-    };
+if (!canDefineNonEnumerableProperties) {
+  // on platforms that don&#x27;t support enumerable false
+  // make meta fail jQuery.isPlainObject() to hide from
+  // jQuery.extend() by having a property that fails
+  // hasOwnProperty check.
+  Meta.prototype.__preventPlainObject__ = true;
+
+  // Without non-enumerable properties, meta objects will be output in JSON
+  // unless explicitly suppressed
+  Meta.prototype.toJSON = function () { };
+}
+
+// Placeholder for non-writable metas.
+var EMPTY_META = new Meta(null);
+
+if (Ember.FEATURES.isEnabled(&#x27;mandatory-setter&#x27;)) {
+  if (hasPropertyAccessors) {
+    EMPTY_META.values = {};
+  }
+}
+
+/**
+  Retrieves the meta hash for an object. If &#x60;writable&#x60; is true ensures the
+  hash is writable for this object as well.
+
+  The meta object contains information about computed property descriptors as
+  well as any watched properties and other information. You generally will
+  not access this information directly but instead work with higher level
+  methods that manipulate this hash indirectly.
+
+  @method meta
+  @for Ember
+  @private
+
+  @param {Object} obj The object to retrieve meta for
+  @param {Boolean} [writable=true] Pass &#x60;false&#x60; if you do not intend to modify
+    the meta hash, allowing the method to avoid making an unnecessary copy.
+  @return {Object} the meta hash for an object
+*/
+function meta(obj, writable) {
+  var ret = obj.__ember_meta__;
+  if (writable===false) {
+    return ret || EMPTY_META;
   }
 
-  return function checkHasSuper() {
-    return true;
-  };
-}());
+  if (!ret) {
+    if (canDefineNonEnumerableProperties) {
+      if (obj.__defineNonEnumerable) {
+        obj.__defineNonEnumerable(EMBER_META_PROPERTY);
+      } else {
+        o_defineProperty(obj, &#x27;__ember_meta__&#x27;, META_DESC);
+      }
+    }
 
-function ROOT() {}
-ROOT.__hasSuper = false;
+    ret = new Meta(obj);
 
-function hasSuper(func) {
-  if (func.__hasSuper === undefined) {
-    func.__hasSuper = checkHasSuper(func);
+    if (Ember.FEATURES.isEnabled(&#x27;mandatory-setter&#x27;)) {
+      if (hasPropertyAccessors) {
+        ret.values = {};
+      }
+    }
+
+    obj.__ember_meta__ = ret;
+  } else if (ret.source !== obj) {
+    if (obj.__defineNonEnumerable) {
+      obj.__defineNonEnumerable(EMBER_META_PROPERTY);
+    } else {
+      o_defineProperty(obj, &#x27;__ember_meta__&#x27;, META_DESC);
+    }
+
+    ret = o_create(ret);
+    ret.watching  = o_create(ret.watching);
+    ret.cache     = undefined;
+    ret.cacheMeta = undefined;
+    ret.source    = obj;
+
+    if (Ember.FEATURES.isEnabled(&#x27;mandatory-setter&#x27;)) {
+      if (hasPropertyAccessors) {
+        ret.values = o_create(ret.values);
+      }
+    }
+
+    obj[&#x27;__ember_meta__&#x27;] = ret;
   }
-  return func.__hasSuper;
+  return ret;
+}
+
+export function getMeta(obj, property) {
+  var _meta = meta(obj, false);
+  return _meta[property];
+}
+
+export function setMeta(obj, property, value) {
+  var _meta = meta(obj, true);
+  _meta[property] = value;
+  return value;
+}
+
+/**
+  @deprecated
+  @private
+
+  In order to store defaults for a class, a prototype may need to create
+  a default meta object, which will be inherited by any objects instantiated
+  from the class&#x27;s constructor.
+
+  However, the properties of that meta object are only shallow-cloned,
+  so if a property is a hash (like the event system&#x27;s &#x60;listeners&#x60; hash),
+  it will by default be shared across all instances of that class.
+
+  This method allows extensions to deeply clone a series of nested hashes or
+  other complex objects. For instance, the event system might pass
+  &#x60;[&#x27;listeners&#x27;, &#x27;foo:change&#x27;, &#x27;ember157&#x27;]&#x60; to &#x60;prepareMetaPath&#x60;, which will
+  walk down the keys provided.
+
+  For each key, if the key does not exist, it is created. If it already
+  exists and it was inherited from its constructor, the constructor&#x27;s
+  key is cloned.
+
+  You can also pass false for &#x60;writable&#x60;, which will simply return
+  undefined if &#x60;prepareMetaPath&#x60; discovers any part of the path that
+  shared or undefined.
+
+  @method metaPath
+  @for Ember
+  @param {Object} obj The object whose meta we are examining
+  @param {Array} path An array of keys to walk down
+  @param {Boolean} writable whether or not to create a new meta
+    (or meta property) if one does not already exist or if it&#x27;s
+    shared with its constructor
+*/
+export function metaPath(obj, path, writable) {
+  Ember.deprecate(&quot;Ember.metaPath is deprecated and will be removed from future releases.&quot;);
+  var _meta = meta(obj, writable);
+  var keyName, value;
+
+  for (var i=0, l=path.length; i&lt;l; i++) {
+    keyName = path[i];
+    value = _meta[keyName];
+
+    if (!value) {
+      if (!writable) { return undefined; }
+      value = _meta[keyName] = { __ember_source__: obj };
+    } else if (value.__ember_source__ !== obj) {
+      if (!writable) { return undefined; }
+      value = _meta[keyName] = o_create(value);
+      value.__ember_source__ = obj;
+    }
+
+    _meta = value;
+  }
+
+  return value;
 }
 
 /**
@@ -471,41 +710,35 @@ function hasSuper(func) {
   @param {Function} superFunc The super function.
   @return {Function} wrapped function.
 */
-export function wrap(func, superFunc) {
-  if (!hasSuper(func)) {
-    return func;
-  }
-  // ensure an unwrapped super that calls _super is wrapped with a terminal _super
-  if (!superFunc.wrappedFunction &amp;&amp; hasSuper(superFunc)) {
-    return _wrap(func, _wrap(superFunc, ROOT));
-  }
-  return _wrap(func, superFunc);
-}
 
-function _wrap(func, superFunc) {
+export function wrap(func, superFunc) {
   function superWrapper() {
-    let orig = this._super;
-    let length = arguments.length;
-    let ret;
-    this._super = superFunc;
-    switch (length) {
-      case 0:  ret = func.call(this); break;
-      case 1:  ret = func.call(this, arguments[0]); break;
-      case 2:  ret = func.call(this, arguments[0], arguments[1]); break;
-      case 3:  ret = func.call(this, arguments[0], arguments[1], arguments[2]); break;
-      case 4:  ret = func.call(this, arguments[0], arguments[1], arguments[2], arguments[3]); break;
-      case 5:  ret = func.call(this, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4]); break;
-      default:
-        // v8 bug potentially incorrectly deopts this function: https://code.google.com/p/v8/issues/detail?id=3709
-        // we may want to keep this around till this ages out on mobile
-        let args = new Array(length);
-        for (var x = 0; x &lt; length; x++) {
-          args[x] = arguments[x];
-        }
-        ret = func.apply(this, args);
-        break;
+    var ret;
+    var sup  = this &amp;&amp; this.__nextSuper;
+    var length = arguments.length;
+
+    if (this) {
+      this.__nextSuper = superFunc;
     }
-    this._super = orig;
+
+    if (length === 0) {
+      ret = func.call(this);
+    } else if (length === 1) {
+      ret = func.call(this, arguments[0]);
+    } else if (length === 2) {
+      ret = func.call(this, arguments[0], arguments[1]);
+    } else {
+      var args = new Array(length);
+      for (var i = 0; i &lt; length; i++) {
+        args[i] = arguments[i];
+      }
+      ret = apply(this, func, args);
+    }
+
+    if (this) {
+      this.__nextSuper = sup;
+    }
+
     return ret;
   }
 
@@ -515,6 +748,79 @@ function _wrap(func, superFunc) {
   superWrapper.__ember_listens__ = func.__ember_listens__;
 
   return superWrapper;
+}
+
+var EmberArray;
+
+/**
+  Returns true if the passed object is an array or Array-like.
+
+  Ember Array Protocol:
+
+    - the object has an objectAt property
+    - the object is a native Array
+    - the object is an Object, and has a length property
+
+  Unlike &#x60;Ember.typeOf&#x60; this method returns true even if the passed object is
+  not formally array but appears to be array-like (i.e. implements &#x60;Ember.Array&#x60;)
+
+  &#x60;&#x60;&#x60;javascript
+  Ember.isArray();                                          // false
+  Ember.isArray([]);                                        // true
+  Ember.isArray(Ember.ArrayProxy.create({ content: [] }));  // true
+  &#x60;&#x60;&#x60;
+
+  @method isArray
+  @for Ember
+  @param {Object} obj The object to test
+  @return {Boolean} true if the passed object is an array or Array-like
+*/
+// ES6TODO: Move up to runtime? This is only use in ember-metal by concatenatedProperties
+function isArray(obj) {
+  var modulePath, type;
+
+  if (typeof EmberArray === &quot;undefined&quot;) {
+    modulePath = &#x27;ember-runtime/mixins/array&#x27;;
+    if (Ember.__loader.registry[modulePath]) {
+      EmberArray = Ember.__loader.require(modulePath)[&#x27;default&#x27;];
+    }
+  }
+
+  if (!obj || obj.setInterval) { return false; }
+  if (Array.isArray &amp;&amp; Array.isArray(obj)) { return true; }
+  if (EmberArray &amp;&amp; EmberArray.detect(obj)) { return true; }
+
+  type = typeOf(obj);
+  if (&#x27;array&#x27; === type) { return true; }
+  if ((obj.length !== undefined) &amp;&amp; &#x27;object&#x27; === type) { return true; }
+  return false;
+}
+
+/**
+  Forces the passed object to be part of an array. If the object is already
+  an array or array-like, it will return the object. Otherwise, it will add the object to
+  an array. If obj is &#x60;null&#x60; or &#x60;undefined&#x60;, it will return an empty array.
+
+  &#x60;&#x60;&#x60;javascript
+  Ember.makeArray();            // []
+  Ember.makeArray(null);        // []
+  Ember.makeArray(undefined);   // []
+  Ember.makeArray(&#x27;lindsay&#x27;);   // [&#x27;lindsay&#x27;]
+  Ember.makeArray([1, 2, 42]);  // [1, 2, 42]
+
+  var controller = Ember.ArrayProxy.create({ content: [] });
+
+  Ember.makeArray(controller) === controller;  // true
+  &#x60;&#x60;&#x60;
+
+  @method makeArray
+  @for Ember
+  @param {Object} obj the object
+  @return {Array}
+*/
+export function makeArray(obj) {
+  if (obj === null || obj === undefined) { return []; }
+  return isArray(obj) ? obj : [obj];
 }
 
 /**
@@ -533,7 +839,6 @@ function _wrap(func, superFunc) {
   @param {Object} obj The object to check for the method
   @param {String} methodName The method name to check for
   @return {Boolean}
-  @private
 */
 function canInvoke(obj, methodName) {
   return !!(obj &amp;&amp; typeof obj[methodName] === &#x27;function&#x27;);
@@ -557,7 +862,6 @@ function canInvoke(obj, methodName) {
   @param {String} methodName The method name to check for
   @param {Array} [args] The arguments to pass to the method
   @return {*} the return value of the invoked method or undefined if it cannot be invoked
-  @public
 */
 export function tryInvoke(obj, methodName, args) {
   if (canInvoke(obj, methodName)) {
@@ -565,38 +869,260 @@ export function tryInvoke(obj, methodName, args) {
   }
 }
 
+// https://github.com/emberjs/ember.js/pull/1617
+var needsFinallyFix = (function() {
+  var count = 0;
+  try {
+    // jscs:disable
+    try {
+    } finally {
+      count++;
+      throw new Error(&#x27;needsFinallyFixTest&#x27;);
+    }
+    // jscs:enable
+  } catch (e) {}
+
+  return count !== 1;
+})();
+
+/**
+  Provides try/finally functionality, while working
+  around Safari&#x27;s double finally bug.
+
+  &#x60;&#x60;&#x60;javascript
+  var tryable = function() {
+    someResource.lock();
+    runCallback(); // May throw error.
+  };
+
+  var finalizer = function() {
+    someResource.unlock();
+  };
+
+  Ember.tryFinally(tryable, finalizer);
+  &#x60;&#x60;&#x60;
+
+  @method tryFinally
+  @for Ember
+  @param {Function} tryable The function to run the try callback
+  @param {Function} finalizer The function to run the finally callback
+  @param {Object} [binding] The optional calling object. Defaults to &#x27;this&#x27;
+  @return {*} The return value is the that of the finalizer,
+  unless that value is undefined, in which case it is the return value
+  of the tryable
+*/
+
+var tryFinally;
+if (needsFinallyFix) {
+  tryFinally = function(tryable, finalizer, binding) {
+    var result, finalResult, finalError;
+
+    binding = binding || this;
+
+    try {
+      result = tryable.call(binding);
+    } finally {
+      try {
+        finalResult = finalizer.call(binding);
+      } catch (e) {
+        finalError = e;
+      }
+    }
+
+    if (finalError) { throw finalError; }
+
+    return (finalResult === undefined) ? result : finalResult;
+  };
+} else {
+  tryFinally = function(tryable, finalizer, binding) {
+    var result, finalResult;
+
+    binding = binding || this;
+
+    try {
+      result = tryable.call(binding);
+    } finally {
+      finalResult = finalizer.call(binding);
+    }
+
+    return (finalResult === undefined) ? result : finalResult;
+  };
+}
+
+/**
+  Provides try/catch/finally functionality, while working
+  around Safari&#x27;s double finally bug.
+
+  &#x60;&#x60;&#x60;javascript
+  var tryable = function() {
+    for (i = 0, l = listeners.length; i &lt; l; i++) {
+      listener = listeners[i];
+      beforeValues[i] = listener.before(name, time(), payload);
+    }
+
+    return callback.call(binding);
+  };
+
+  var catchable = function(e) {
+    payload = payload || {};
+    payload.exception = e;
+  };
+
+  var finalizer = function() {
+    for (i = 0, l = listeners.length; i &lt; l; i++) {
+      listener = listeners[i];
+      listener.after(name, time(), payload, beforeValues[i]);
+    }
+  };
+
+  Ember.tryCatchFinally(tryable, catchable, finalizer);
+  &#x60;&#x60;&#x60;
+
+  @method tryCatchFinally
+  @for Ember
+  @param {Function} tryable The function to run the try callback
+  @param {Function} catchable The function to run the catchable callback
+  @param {Function} finalizer The function to run the finally callback
+  @param {Object} [binding] The optional calling object. Defaults to &#x27;this&#x27;
+  @return {*} The return value is the that of the finalizer,
+  unless that value is undefined, in which case it is the return value
+  of the tryable.
+*/
+var tryCatchFinally;
+if (needsFinallyFix) {
+  tryCatchFinally = function(tryable, catchable, finalizer, binding) {
+    var result, finalResult, finalError;
+
+    binding = binding || this;
+
+    try {
+      result = tryable.call(binding);
+    } catch(error) {
+      result = catchable.call(binding, error);
+    } finally {
+      try {
+        finalResult = finalizer.call(binding);
+      } catch (e) {
+        finalError = e;
+      }
+    }
+
+    if (finalError) { throw finalError; }
+
+    return (finalResult === undefined) ? result : finalResult;
+  };
+} else {
+  tryCatchFinally = function(tryable, catchable, finalizer, binding) {
+    var result, finalResult;
+
+    binding = binding || this;
+
+    try {
+      result = tryable.call(binding);
+    } catch(error) {
+      result = catchable.call(binding, error);
+    } finally {
+      finalResult = finalizer.call(binding);
+    }
+
+    return (finalResult === undefined) ? result : finalResult;
+  };
+}
+
 // ........................................
 // TYPING &amp; ARRAY MESSAGING
 //
 
-var objectToString = Object.prototype.toString;
+var TYPE_MAP = {};
+var t = &quot;Boolean Number String Function Array Date RegExp Object&quot;.split(&quot; &quot;);
+forEach.call(t, function(name) {
+  TYPE_MAP[&quot;[object &quot; + name + &quot;]&quot;] = name.toLowerCase();
+});
+
+var toString = Object.prototype.toString;
+
+var EmberObject;
 
 /**
-  Forces the passed object to be part of an array. If the object is already
-  an array, it will return the object. Otherwise, it will add the object to
-  an array. If obj is &#x60;null&#x60; or &#x60;undefined&#x60;, it will return an empty array.
+  Returns a consistent type for the passed item.
+
+  Use this instead of the built-in &#x60;typeof&#x60; to get the type of an item.
+  It will return the same result across all browsers and includes a bit
+  more detail. Here is what will be returned:
+
+      | Return Value  | Meaning                                              |
+      |---------------|------------------------------------------------------|
+      | &#x27;string&#x27;      | String primitive or String object.                   |
+      | &#x27;number&#x27;      | Number primitive or Number object.                   |
+      | &#x27;boolean&#x27;     | Boolean primitive or Boolean object.                 |
+      | &#x27;null&#x27;        | Null value                                           |
+      | &#x27;undefined&#x27;   | Undefined value                                      |
+      | &#x27;function&#x27;    | A function                                           |
+      | &#x27;array&#x27;       | An instance of Array                                 |
+      | &#x27;regexp&#x27;      | An instance of RegExp                                |
+      | &#x27;date&#x27;        | An instance of Date                                  |
+      | &#x27;class&#x27;       | An Ember class (created using Ember.Object.extend()) |
+      | &#x27;instance&#x27;    | An Ember object instance                             |
+      | &#x27;error&#x27;       | An instance of the Error object                      |
+      | &#x27;object&#x27;      | A JavaScript object not inheriting from Ember.Object |
+
+  Examples:
 
   &#x60;&#x60;&#x60;javascript
-  Ember.makeArray();            // []
-  Ember.makeArray(null);        // []
-  Ember.makeArray(undefined);   // []
-  Ember.makeArray(&#x27;lindsay&#x27;);   // [&#x27;lindsay&#x27;]
-  Ember.makeArray([1, 2, 42]);  // [1, 2, 42]
+  Ember.typeOf();                       // &#x27;undefined&#x27;
+  Ember.typeOf(null);                   // &#x27;null&#x27;
+  Ember.typeOf(undefined);              // &#x27;undefined&#x27;
+  Ember.typeOf(&#x27;michael&#x27;);              // &#x27;string&#x27;
+  Ember.typeOf(new String(&#x27;michael&#x27;));  // &#x27;string&#x27;
+  Ember.typeOf(101);                    // &#x27;number&#x27;
+  Ember.typeOf(new Number(101));        // &#x27;number&#x27;
+  Ember.typeOf(true);                   // &#x27;boolean&#x27;
+  Ember.typeOf(new Boolean(true));      // &#x27;boolean&#x27;
+  Ember.typeOf(Ember.makeArray);        // &#x27;function&#x27;
+  Ember.typeOf([1, 2, 90]);             // &#x27;array&#x27;
+  Ember.typeOf(/abc/);                  // &#x27;regexp&#x27;
+  Ember.typeOf(new Date());             // &#x27;date&#x27;
+  Ember.typeOf(Ember.Object.extend());  // &#x27;class&#x27;
+  Ember.typeOf(Ember.Object.create());  // &#x27;instance&#x27;
+  Ember.typeOf(new Error(&#x27;teamocil&#x27;));  // &#x27;error&#x27;
 
-  var controller = Ember.ArrayProxy.create({ content: [] });
-
-  Ember.makeArray(controller) === controller;  // true
+  // &#x27;normal&#x27; JavaScript object
+  Ember.typeOf({ a: &#x27;b&#x27; });             // &#x27;object&#x27;
   &#x60;&#x60;&#x60;
 
-  @method makeArray
+  @method typeOf
   @for Ember
-  @param {Object} obj the object
-  @return {Array}
-  @private
+  @param {Object} item the item to check
+  @return {String} the type
 */
-export function makeArray(obj) {
-  if (obj === null || obj === undefined) { return []; }
-  return Array.isArray(obj) ? obj : [obj];
+function typeOf(item) {
+  var ret, modulePath;
+
+  // ES6TODO: Depends on Ember.Object which is defined in runtime.
+  if (typeof EmberObject === &quot;undefined&quot;) {
+    modulePath = &#x27;ember-runtime/system/object&#x27;;
+    if (Ember.__loader.registry[modulePath]) {
+      EmberObject = Ember.__loader.require(modulePath)[&#x27;default&#x27;];
+    }
+  }
+
+  ret = (item === null || item === undefined) ? String(item) : TYPE_MAP[toString.call(item)] || &#x27;object&#x27;;
+
+  if (ret === &#x27;function&#x27;) {
+    if (EmberObject &amp;&amp; EmberObject.detect(item)) {
+      ret = &#x27;class&#x27;;
+    }
+  } else if (ret === &#x27;object&#x27;) {
+    if (item instanceof Error) {
+      ret = &#x27;error&#x27;;
+    } else if (EmberObject &amp;&amp; item instanceof EmberObject) {
+      ret = &#x27;instance&#x27;;
+    } else if (item instanceof Date) {
+      ret = &#x27;date&#x27;;
+    }
+  }
+
+  return ret;
 }
 
 /**
@@ -611,54 +1137,40 @@ export function makeArray(obj) {
   @param {Object} obj The object you want to inspect.
   @return {String} A description of the object
   @since 1.4.0
-  @private
 */
 export function inspect(obj) {
-  if (obj === null) {
-    return &#x27;null&#x27;;
-  }
-  if (obj === undefined) {
-    return &#x27;undefined&#x27;;
-  }
-  if (Array.isArray(obj)) {
+  var type = typeOf(obj);
+  if (type === &#x27;array&#x27;) {
     return &#x27;[&#x27; + obj + &#x27;]&#x27;;
   }
-  // for non objects
-  var type = typeof obj;
-  if (type !== &#x27;object&#x27; &amp;&amp; type !== &#x27;symbol&#x27;) {
-    return &#x27;&#x27; + obj;
-  }
-  // overridden toString
-  if (typeof obj.toString === &#x27;function&#x27; &amp;&amp; obj.toString !== objectToString) {
-    return obj.toString();
+  if (type !== &#x27;object&#x27;) {
+    return obj + &#x27;&#x27;;
   }
 
-  // Object.prototype.toString === {}.toString
   var v;
   var ret = [];
   for (var key in obj) {
     if (obj.hasOwnProperty(key)) {
       v = obj[key];
       if (v === &#x27;toString&#x27;) { continue; } // ignore useless items
-      if (typeof v === &#x27;function&#x27;) { v = &#x27;function() { ... }&#x27;; }
+      if (typeOf(v) === &#x27;function&#x27;) { v = &quot;function() { ... }&quot;; }
 
       if (v &amp;&amp; typeof v.toString !== &#x27;function&#x27;) {
-        ret.push(key + &#x27;: &#x27; + objectToString.call(v));
+        ret.push(key + &quot;: &quot; + toString.call(v));
       } else {
-        ret.push(key + &#x27;: &#x27; + v);
+        ret.push(key + &quot;: &quot; + v);
       }
     }
   }
-  return &#x27;{&#x27; + ret.join(&#x27;, &#x27;) + &#x27;}&#x27;;
+  return &quot;{&quot; + ret.join(&quot;, &quot;) + &quot;}&quot;;
 }
 
 // The following functions are intentionally minified to keep the functions
 // below Chrome&#x27;s function body size inlining limit of 600 chars.
 /**
-  @param {Object} t target
-  @param {Function} m method
-  @param {Array} a args
-  @private
+  @param {Object} target
+  @param {Function} method
+  @param {Array} args
 */
 export function apply(t, m, a) {
   var l = a &amp;&amp; a.length;
@@ -674,10 +1186,9 @@ export function apply(t, m, a) {
 }
 
 /**
-  @param {Object} t target
-  @param {String} m method
-  @param {Array} a args
-  @private
+  @param {Object} target
+  @param {String} method
+  @param {Array} args
 */
 export function applyStr(t, m, a) {
   var l = a &amp;&amp; a.length;
@@ -692,38 +1203,17 @@ export function applyStr(t, m, a) {
   }
 }
 
-export function lookupDescriptor(obj, keyName) {
-  let current = obj;
-  while (current) {
-    let descriptor = Object.getOwnPropertyDescriptor(current, keyName);
-
-    if (descriptor) {
-      return descriptor;
-    }
-
-    current = Object.getPrototypeOf(current);
-  }
-
-  return null;
-}
-
-// A &#x60;toString&#x60; util function that supports objects without a &#x60;toString&#x60;
-// method, e.g. an object created with &#x60;Object.create(null)&#x60;.
-export function toString(obj) {
-  if (obj &amp;&amp; obj.toString) {
-    return obj.toString();
-  } else {
-    return objectToString.call(obj);
-  }
-}
-
 export {
   GUID_KEY,
-  makeArray,
-  canInvoke
+  META_DESC,
+  EMPTY_META,
+  meta,
+  typeOf,
+  tryCatchFinally,
+  isArray,
+  canInvoke,
+  tryFinally
 };
-
-
 
     </pre>
 </div>

@@ -20,7 +20,7 @@ while (body.length >= 1) {
         if (tag.tag_name.match(/^v[0-9]+\.[0-9]+\.[0-9]+$/i)) {
             console.log(tag.tag_name)
             console.log(exec('git checkout tags/' + tag.tag_name, {
-                cwd: '/ember.js'
+                cwd: 'ember.js'
             }))
             console.log('Current Working directory')
             console.log(process.cwd())

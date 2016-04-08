@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
+                                <li><a href="../classes/Ember.DAG.html">Ember.DAG</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
-                                <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
-                                <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
-                                <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,36 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
-                                <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
+                                <li><a href="../classes/Ember.RenderBuffer.html">Ember.RenderBuffer</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
-                                <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
+                                <li><a href="../classes/Ember.State.html">Ember.State</a></li>
+                                <li><a href="../classes/Ember.StateManager.html">Ember.StateManager</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
-                                <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
                 
@@ -138,14 +185,12 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
-                                <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
-                                <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
-                                <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
-                                <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -192,7 +237,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-runtime_lib_mixins_mutable_enumerable.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;mutable_enumerable.js:10</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-runtime_lib_mixins_mutable_enumerable.js.html#l11"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;mutable_enumerable.js:11</code></a>
         </div>
 
             Module: <a href="../modules/ember-runtime.html">ember-runtime</a><br>
@@ -244,131 +289,176 @@ tests, be sure to apply the Ember.MutableEnumerableTests to your object.</p>
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_addEnumerableObserver">addEnumerableObserver</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_addObject">addObject</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_addObjects">addObjects</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_any">any</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_anyBy">anyBy</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_compact">compact</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_contains">contains</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_enumerableContentDidChange">enumerableContentDidChange</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_enumerableContentWillChange">enumerableContentWillChange</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_every">every</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_everyBy">everyBy</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_everyProperty">everyProperty</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_filter">filter</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_filterBy">filterBy</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_filterProperty">filterProperty</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_find">find</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_findBy">findBy</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_findProperty">findProperty</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_forEach">forEach</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_getEach">getEach</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_invoke">invoke</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_isAny">isAny</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_isEvery">isEvery</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_map">map</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_mapBy">mapBy</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_mapProperty">mapProperty</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_nextObject">nextObject</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_reduce">reduce</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_reject">reject</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_rejectBy">rejectBy</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_rejectProperty">rejectProperty</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_removeEnumerableObserver">removeEnumerableObserver</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_removeObject">removeObject</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_removeObjects">removeObjects</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_setEach">setEach</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_some">some</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method deprecated inherited">
+                                <a href="#method_someProperty">someProperty</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#method_sortBy">sortBy</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_toArray">toArray</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_uniq">uniq</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_without">without</a>
 
                             </li>
@@ -379,19 +469,19 @@ tests, be sure to apply the Ember.MutableEnumerableTests to your object.</p>
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
-                            <li class="index-item property private inherited">
+                            <li class="index-item property inherited">
                                 <a href="#property_[]">[]</a>
 
                             </li>
-                            <li class="index-item property public inherited">
+                            <li class="index-item property inherited">
                                 <a href="#property_firstObject">firstObject</a>
 
                             </li>
-                            <li class="index-item property private inherited">
+                            <li class="index-item property inherited">
                                 <a href="#property_hasEnumerableObservers">hasEnumerableObservers</a>
 
                             </li>
-                            <li class="index-item property public inherited">
+                            <li class="index-item property inherited">
                                 <a href="#property_lastObject">lastObject</a>
 
                             </li>
@@ -404,7 +494,7 @@ tests, be sure to apply the Ember.MutableEnumerableTests to your object.</p>
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method_addEnumerableObserver" class="method item private inherited">
+<div id="method_addEnumerableObserver" class="method item inherited">
     <h3 class="name"><code>addEnumerableObserver</code></h3>
 
         <div class="args">
@@ -423,7 +513,6 @@ tests, be sure to apply the Ember.MutableEnumerableTests to your object.</p>
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -432,7 +521,7 @@ tests, be sure to apply the Ember.MutableEnumerableTests to your object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_addEnumerableObserver">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l872"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:872</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l890"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:890</code></a>
         </p>
 
 
@@ -461,7 +550,7 @@ mixin.</p>
                 </li>
                 <li class="param">
                         <code class="param-name optional">[opts]</code>
-                        <span class="type">Object</span>
+                        <span class="type">Hash</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
@@ -484,7 +573,7 @@ mixin.</p>
 
 
 </div>
-<div id="method_addObject" class="method item public">
+<div id="method_addObject" class="method item">
     <h3 class="name"><code>addObject</code></h3>
 
         <div class="args">
@@ -500,7 +589,6 @@ mixin.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -556,7 +644,7 @@ then this method should raise an exception.</p>
 
 
 </div>
-<div id="method_addObjects" class="method item public">
+<div id="method_addObjects" class="method item">
     <h3 class="name"><code>addObjects</code></h3>
 
         <div class="args">
@@ -572,7 +660,6 @@ then this method should raise an exception.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -581,7 +668,7 @@ then this method should raise an exception.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_mutable_enumerable.js.html#l69"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;mutable_enumerable.js:69</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_mutable_enumerable.js.html#l68"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;mutable_enumerable.js:68</code></a>
         </p>
 
 
@@ -623,7 +710,7 @@ then this method should raise an exception.</p>
 
 
 </div>
-<div id="method_any" class="method item public inherited">
+<div id="method_any" class="method item inherited">
     <h3 class="name"><code>any</code></h3>
 
         <div class="args">
@@ -642,7 +729,6 @@ then this method should raise an exception.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -651,7 +737,7 @@ then this method should raise an exception.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_any">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l610"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:610</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l609"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:609</code></a>
         </p>
 
 
@@ -676,9 +762,7 @@ otherwise.</p>
 object that will be set as <code>this</code> on the context. This is a good way
 to give your iterator function access to the current object.</p>
 <p>Usage Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">if (people.any(isManager)) {
-  Paychecks.addBiggerBonus();
-}
+<pre class="code prettyprint"><code class="language-javascript">if (people.any(isManager)) { Paychecks.addBiggerBonus(); }
 </code></pre>
 
     </div>
@@ -725,7 +809,89 @@ to give your iterator function access to the current object.</p>
 
 
 </div>
-<div id="method_compact" class="method item public inherited">
+<div id="method_anyBy" class="method item deprecated inherited">
+    <h3 class="name"><code>anyBy</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[value]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;isAny&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_anyBy">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l712"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:712</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;isAny&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>the property to test</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[value]</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>optional value to test against.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p><code>true</code> if the passed function returns <code>true</code> for any item</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_compact" class="method item inherited">
     <h3 class="name"><code>compact</code></h3>
 
         <span class="paren">()</span>
@@ -735,7 +901,6 @@ to give your iterator function access to the current object.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -744,7 +909,7 @@ to give your iterator function access to the current object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_compact">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l775"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:775</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l812"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:812</code></a>
         </p>
 
 
@@ -752,9 +917,9 @@ to give your iterator function access to the current object.</p>
     </div>
 
     <div class="description">
-        <p>Returns a copy of the array with all <code>null</code> and <code>undefined</code> elements removed.</p>
-<pre class="code prettyprint"><code class="language-javascript">var arr = ['a', null, 'c', undefined];
-arr.compact();  // ['a', 'c']
+        <p>Returns a copy of the array with all null and undefined elements removed.</p>
+<pre class="code prettyprint"><code class="language-javascript">var arr = [&quot;a&quot;, null, &quot;c&quot;, undefined];
+arr.compact();  // [&quot;a&quot;, &quot;c&quot;]
 </code></pre>
 
     </div>
@@ -772,7 +937,7 @@ arr.compact();  // ['a', 'c']
 
 
 </div>
-<div id="method_contains" class="method item public inherited">
+<div id="method_contains" class="method item inherited">
     <h3 class="name"><code>contains</code></h3>
 
         <div class="args">
@@ -788,7 +953,6 @@ arr.compact();  // ['a', 'c']
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -797,7 +961,7 @@ arr.compact();  // ['a', 'c']
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_contains">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l211"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:211</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l190"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:190</code></a>
         </p>
 
 
@@ -808,10 +972,9 @@ arr.compact();  // ['a', 'c']
         <p>Returns <code>true</code> if the passed object can be found in the receiver. The
 default version will iterate through the enumerable until the object
 is found. You may want to override this with a more efficient version.</p>
-<pre class="code prettyprint"><code class="language-javascript">var arr = ['a', 'b', 'c'];
-
-arr.contains('a'); // true
-arr.contains('z'); // false
+<pre class="code prettyprint"><code class="language-javascript">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];
+arr.contains(&quot;a&quot;); // true
+arr.contains(&quot;z&quot;); // false
 </code></pre>
 
     </div>
@@ -846,7 +1009,7 @@ arr.contains('z'); // false
 
 
 </div>
-<div id="method_enumerableContentDidChange" class="method item private inherited">
+<div id="method_enumerableContentDidChange" class="method item inherited">
     <h3 class="name"><code>enumerableContentDidChange</code></h3>
 
         <div class="args">
@@ -862,7 +1025,6 @@ arr.contains('z'); // false
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -872,7 +1034,7 @@ arr.contains('z'); // false
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_enumerableContentDidChange">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l995"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:995</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l979"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:979</code></a>
         </p>
 
 
@@ -922,7 +1084,7 @@ be added or the number of items to be added.</p>
 
 
 </div>
-<div id="method_enumerableContentWillChange" class="method item private inherited">
+<div id="method_enumerableContentWillChange" class="method item inherited">
     <h3 class="name"><code>enumerableContentWillChange</code></h3>
 
         <div class="args">
@@ -938,7 +1100,6 @@ be added or the number of items to be added.</p>
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -948,7 +1109,7 @@ be added or the number of items to be added.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_enumerableContentWillChange">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l942"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:942</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l943"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:943</code></a>
         </p>
 
 
@@ -996,7 +1157,7 @@ added or the number of items to be added.</p>
 
 
 </div>
-<div id="method_every" class="method item public inherited">
+<div id="method_every" class="method item inherited">
     <h3 class="name"><code>every</code></h3>
 
         <div class="args">
@@ -1015,7 +1176,6 @@ added or the number of items to be added.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1024,7 +1184,7 @@ added or the number of items to be added.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_every">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l555"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:555</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l539"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:539</code></a>
         </p>
 
 
@@ -1048,9 +1208,7 @@ parameters are optional):</p>
 object that will be set as <code>this</code> on the context. This is a good way
 to give your iterator function access to the current object.</p>
 <p>Example Usage:</p>
-<pre class="code prettyprint"><code class="language-javascript">if (people.every(isEngineer)) {
-  Paychecks.addBigBonus();
-}
+<pre class="code prettyprint"><code class="language-javascript">if (people.every(isEngineer)) { Paychecks.addBigBonus(); }
 </code></pre>
 
     </div>
@@ -1095,7 +1253,167 @@ to give your iterator function access to the current object.</p>
 
 
 </div>
-<div id="method_filter" class="method item public inherited">
+<div id="method_everyBy" class="method item deprecated inherited">
+    <h3 class="name"><code>everyBy</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[value]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;isEvery&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_everyBy">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l577"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:577</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;isEvery&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>the property to test</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[value]</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>optional value to test against.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_everyProperty" class="method item deprecated inherited">
+    <h3 class="name"><code>everyProperty</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[value]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;isEvery&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_everyProperty">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l586"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:586</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;isEvery&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>the property to test</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[value]</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>optional value to test against.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_filter" class="method item inherited">
     <h3 class="name"><code>filter</code></h3>
 
         <div class="args">
@@ -1114,7 +1432,6 @@ to give your iterator function access to the current object.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1123,7 +1440,7 @@ to give your iterator function access to the current object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_filter">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l367"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:367</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l338"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:338</code></a>
         </p>
 
 
@@ -1143,7 +1460,7 @@ parameters are optional):</p>
 <li><code>index</code> is the current index in the iteration.</li>
 <li><code>enumerable</code> is the enumerable object itself.</li>
 </ul>
-<p>It should return <code>true</code> to include the item in the results, <code>false</code>
+<p>It should return the <code>true</code> to include the item in the results, <code>false</code>
 otherwise.</p>
 <p>Note that in addition to a callback, you can also pass an optional target
 object that will be set as <code>this</code> on the context. This is a good way
@@ -1193,7 +1510,7 @@ to give your iterator function access to the current object.</p>
 
 
 </div>
-<div id="method_filterBy" class="method item public inherited">
+<div id="method_filterBy" class="method item inherited">
     <h3 class="name"><code>filterBy</code></h3>
 
         <div class="args">
@@ -1212,7 +1529,6 @@ to give your iterator function access to the current object.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1221,7 +1537,7 @@ to give your iterator function access to the current object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_filterBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l441"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:441</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l406"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:406</code></a>
         </p>
 
 
@@ -1277,7 +1593,92 @@ this will match any property that evaluates to <code>true</code>.</p>
 
 
 </div>
-<div id="method_find" class="method item public inherited">
+<div id="method_filterProperty" class="method item deprecated inherited">
+    <h3 class="name"><code>filterProperty</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[value]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;filterBy&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_filterProperty">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l420"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:420</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;filterBy&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        <p>Returns an array with just the items with the matched property. You
+can pass an optional second argument with the target value. Otherwise
+this will match any property that evaluates to <code>true</code>.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>the property to test</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[value]</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>optional value to test against.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>filtered array</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_find" class="method item inherited">
     <h3 class="name"><code>find</code></h3>
 
         <div class="args">
@@ -1296,7 +1697,6 @@ this will match any property that evaluates to <code>true</code>.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1305,7 +1705,7 @@ this will match any property that evaluates to <code>true</code>.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_find">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l481"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:481</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l464"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:464</code></a>
         </p>
 
 
@@ -1375,7 +1775,7 @@ to give your iterator function access to the current object.</p>
 
 
 </div>
-<div id="method_findBy" class="method item public inherited">
+<div id="method_findBy" class="method item inherited">
     <h3 class="name"><code>findBy</code></h3>
 
         <div class="args">
@@ -1394,7 +1794,6 @@ to give your iterator function access to the current object.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1403,7 +1802,7 @@ to give your iterator function access to the current object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_findBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l538"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:538</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l508"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:508</code></a>
         </p>
 
 
@@ -1460,7 +1859,93 @@ this will match any property that evaluates to <code>true</code>.</p>
 
 
 </div>
-<div id="method_forEach" class="method item public inherited">
+<div id="method_findProperty" class="method item deprecated inherited">
+    <h3 class="name"><code>findProperty</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[value]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;findBy&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_findProperty">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l524"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:524</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;findBy&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        <p>Returns the first item with a property matching the passed value. You
+can pass an optional second argument with the target value. Otherwise
+this will match any property that evaluates to <code>true</code>.</p>
+<p>This method works much like the more generic <code>find()</code> method.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>the property to test</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[value]</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>optional value to test against.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>found item or <code>undefined</code></p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_forEach" class="method item inherited">
     <h3 class="name"><code>forEach</code></h3>
 
         <div class="args">
@@ -1479,7 +1964,6 @@ this will match any property that evaluates to <code>true</code>.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1488,7 +1972,7 @@ this will match any property that evaluates to <code>true</code>.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_forEach">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l236"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:236</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l209"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:209</code></a>
         </p>
 
 
@@ -1556,7 +2040,7 @@ to give your iterator function access to the current object.</p>
 
 
 </div>
-<div id="method_getEach" class="method item public inherited">
+<div id="method_getEach" class="method item inherited">
     <h3 class="name"><code>getEach</code></h3>
 
         <div class="args">
@@ -1572,7 +2056,6 @@ to give your iterator function access to the current object.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1581,7 +2064,7 @@ to give your iterator function access to the current object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_getEach">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l287"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:287</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l250"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:250</code></a>
         </p>
 
 
@@ -1623,7 +2106,7 @@ to give your iterator function access to the current object.</p>
 
 
 </div>
-<div id="method_invoke" class="method item public inherited">
+<div id="method_invoke" class="method item inherited">
     <h3 class="name"><code>invoke</code></h3>
 
         <div class="args">
@@ -1642,7 +2125,6 @@ to give your iterator function access to the current object.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1651,7 +2133,7 @@ to give your iterator function access to the current object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_invoke">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l732"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:732</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l775"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:775</code></a>
         </p>
 
 
@@ -1706,7 +2188,7 @@ Prototype 1.6.</p>
 
 
 </div>
-<div id="method_isAny" class="method item public inherited">
+<div id="method_isAny" class="method item inherited">
     <h3 class="name"><code>isAny</code></h3>
 
         <div class="args">
@@ -1725,7 +2207,6 @@ Prototype 1.6.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1734,7 +2215,7 @@ Prototype 1.6.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_isAny">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l668"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:668</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l698"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:698</code></a>
         </p>
 
 
@@ -1743,9 +2224,8 @@ Prototype 1.6.</p>
     </div>
 
     <div class="description">
-        <p>Returns <code>true</code> if the passed property resolves to the value of the second
-argument for any item in the enumerable. This method is often simpler/faster
-than using a callback.</p>
+        <p>Returns <code>true</code> if the passed property resolves to <code>true</code> for any item in
+the enumerable. This method is often simpler/faster than using a callback.</p>
 
     </div>
 
@@ -1771,7 +2251,7 @@ than using a callback.</p>
 
 
                     <div class="param-description">
-                        <p>optional value to test against. Defaults to <code>true</code></p>
+                        <p>optional value to test against.</p>
 
                     </div>
 
@@ -1784,12 +2264,14 @@ than using a callback.</p>
 
             <div class="returns-description">
                         <span class="type">Boolean</span>:
+                    <p><code>true</code> if the passed function returns <code>true</code> for any item</p>
+
             </div>
         </div>
 
 
 </div>
-<div id="method_isEvery" class="method item public inherited">
+<div id="method_isEvery" class="method item inherited">
     <h3 class="name"><code>isEvery</code></h3>
 
         <div class="args">
@@ -1808,7 +2290,6 @@ than using a callback.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1817,7 +2298,7 @@ than using a callback.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_isEvery">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l594"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:594</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l595"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:595</code></a>
         </p>
 
 
@@ -1826,9 +2307,8 @@ than using a callback.</p>
     </div>
 
     <div class="description">
-        <p>Returns <code>true</code> if the passed property resolves to the value of the second
-argument for all items in the enumerable. This method is often simpler/faster
-than using a callback.</p>
+        <p>Returns <code>true</code> if the passed property resolves to <code>true</code> for all items in
+the enumerable. This method is often simpler/faster than using a callback.</p>
 
     </div>
 
@@ -1854,7 +2334,7 @@ than using a callback.</p>
 
 
                     <div class="param-description">
-                        <p>optional value to test against. Defaults to <code>true</code></p>
+                        <p>optional value to test against.</p>
 
                     </div>
 
@@ -1872,7 +2352,7 @@ than using a callback.</p>
 
 
 </div>
-<div id="method_map" class="method item public inherited">
+<div id="method_map" class="method item inherited">
     <h3 class="name"><code>map</code></h3>
 
         <div class="args">
@@ -1891,7 +2371,6 @@ than using a callback.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1900,7 +2379,7 @@ than using a callback.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_map">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l315"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:315</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l278"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:278</code></a>
         </p>
 
 
@@ -1968,7 +2447,7 @@ to give your iterator function access to the current object.</p>
 
 
 </div>
-<div id="method_mapBy" class="method item public inherited">
+<div id="method_mapBy" class="method item inherited">
     <h3 class="name"><code>mapBy</code></h3>
 
         <div class="args">
@@ -1984,7 +2463,6 @@ to give your iterator function access to the current object.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1993,7 +2471,7 @@ to give your iterator function access to the current object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_mapBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l352"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:352</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l312"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:312</code></a>
         </p>
 
 
@@ -2036,7 +2514,76 @@ property on all items in the enumeration.</p>
 
 
 </div>
-<div id="method_nextObject" class="method item private inherited">
+<div id="method_mapProperty" class="method item deprecated inherited">
+    <h3 class="name"><code>mapProperty</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;mapBy&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_mapProperty">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l326"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:326</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;mapBy&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        <p>Similar to map, this specialized function returns the value of the named
+property on all items in the enumeration.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>name of the property</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>The mapped array.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_nextObject" class="method item inherited">
     <h3 class="name"><code>nextObject</code></h3>
 
         <div class="args">
@@ -2058,7 +2605,6 @@ property on all items in the enumeration.</p>
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -2067,7 +2613,7 @@ property on all items in the enumeration.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_nextObject">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l98"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:98</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l96"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:96</code></a>
         </p>
 
 
@@ -2075,9 +2621,8 @@ property on all items in the enumeration.</p>
     </div>
 
     <div class="description">
-        <p><strong>Required.</strong> You must implement this method to apply this mixin.</p>
-<p>Implement this method to make your class enumerable.</p>
-<p>This method will be called repeatedly during enumeration. The index value
+        <p>Implement this method to make your class enumerable.</p>
+<p>This method will be call repeatedly during enumeration. The index value
 will always begin with 0 and increment monotonically. You don't have to
 rely on the index value to determine what object to return, but you should
 always check the value and start from the beginning when you see the
@@ -2091,7 +2636,7 @@ properly. The context object is reused and is not reset between
 iterations so make sure you setup the context with a fresh state whenever
 the index parameter is 0.</p>
 <p>Generally iterators will continue to call <code>nextObject</code> until the index
-reaches the current length-1. If you run out of data before this
+reaches the your current length-1. If you run out of data before this
 time for some reason, you should simply return undefined.</p>
 <p>The default implementation of this method simply looks up the index.
 This works great on any Array-like objects.</p>
@@ -2151,7 +2696,7 @@ This works great on any Array-like objects.</p>
 
 
 </div>
-<div id="method_reduce" class="method item public inherited">
+<div id="method_reduce" class="method item inherited">
     <h3 class="name"><code>reduce</code></h3>
 
         <div class="args">
@@ -2173,7 +2718,6 @@ This works great on any Array-like objects.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2182,7 +2726,7 @@ This works great on any Array-like objects.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_reduce">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l684"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:684</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l730"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:730</code></a>
         </p>
 
 
@@ -2265,7 +2809,7 @@ spec. Sorry.</p>
 
 
 </div>
-<div id="method_reject" class="method item public inherited">
+<div id="method_reject" class="method item inherited">
     <h3 class="name"><code>reject</code></h3>
 
         <div class="args">
@@ -2284,7 +2828,6 @@ spec. Sorry.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2293,7 +2836,7 @@ spec. Sorry.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_reject">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l408"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:408</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l374"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:374</code></a>
         </p>
 
 
@@ -2302,7 +2845,7 @@ spec. Sorry.</p>
 
     <div class="description">
         <p>Returns an array with all of the items in the enumeration where the passed
-function returns false. This method is the inverse of filter().</p>
+function returns false for. This method is the inverse of filter().</p>
 <p>The callback method you provide should have the following signature (all
 parameters are optional):</p>
 <pre class="code prettyprint"><code class="language-javascript">function(item, index, enumerable);
@@ -2312,7 +2855,7 @@ parameters are optional):</p>
 <li><em>index</em> is the current index in the iteration</li>
 <li><em>enumerable</em> is the enumerable object itself.</li>
 </ul>
-<p>It should return a falsey value to include the item in the results.</p>
+<p>It should return the a falsey value to include the item in the results.</p>
 <p>Note that in addition to a callback, you can also pass an optional target
 object that will be set as &quot;this&quot; on the context. This is a good way
 to give your iterator function access to the current object.</p>
@@ -2361,7 +2904,7 @@ to give your iterator function access to the current object.</p>
 
 
 </div>
-<div id="method_rejectBy" class="method item public inherited">
+<div id="method_rejectBy" class="method item inherited">
     <h3 class="name"><code>rejectBy</code></h3>
 
         <div class="args">
@@ -2380,7 +2923,6 @@ to give your iterator function access to the current object.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2389,7 +2931,7 @@ to give your iterator function access to the current object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_rejectBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l456"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:456</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l433"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:433</code></a>
         </p>
 
 
@@ -2445,7 +2987,92 @@ this will match any property that evaluates to false.</p>
 
 
 </div>
-<div id="method_removeEnumerableObserver" class="method item private inherited">
+<div id="method_rejectProperty" class="method item deprecated inherited">
+    <h3 class="name"><code>rejectProperty</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[value]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;rejectBy&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_rejectProperty">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l451"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:451</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;rejectBy&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        <p>Returns an array with the items that do not have truthy values for
+key.  You can pass an optional second argument with the target value.  Otherwise
+this will match any property that evaluates to false.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>the property to test</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[value]</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>optional value to test against.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>rejected array</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_removeEnumerableObserver" class="method item inherited">
     <h3 class="name"><code>removeEnumerableObserver</code></h3>
 
         <div class="args">
@@ -2464,7 +3091,6 @@ this will match any property that evaluates to false.</p>
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -2473,7 +3099,7 @@ this will match any property that evaluates to false.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_removeEnumerableObserver">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l901"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:901</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l911"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:911</code></a>
         </p>
 
 
@@ -2501,7 +3127,7 @@ this will match any property that evaluates to false.</p>
                 </li>
                 <li class="param">
                         <code class="param-name optional">[opts]</code>
-                        <span class="type">Object</span>
+                        <span class="type">Hash</span>
                         <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
@@ -2524,7 +3150,7 @@ this will match any property that evaluates to false.</p>
 
 
 </div>
-<div id="method_removeObject" class="method item public">
+<div id="method_removeObject" class="method item">
     <h3 class="name"><code>removeObject</code></h3>
 
         <div class="args">
@@ -2540,7 +3166,6 @@ this will match any property that evaluates to false.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2549,7 +3174,7 @@ this will match any property that evaluates to false.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_mutable_enumerable.js.html#l84"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;mutable_enumerable.js:84</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_mutable_enumerable.js.html#l82"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;mutable_enumerable.js:82</code></a>
         </p>
 
 
@@ -2596,7 +3221,7 @@ then this method should raise an exception.</p>
 
 
 </div>
-<div id="method_removeObjects" class="method item public">
+<div id="method_removeObjects" class="method item">
     <h3 class="name"><code>removeObjects</code></h3>
 
         <div class="args">
@@ -2612,7 +3237,6 @@ then this method should raise an exception.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2621,7 +3245,7 @@ then this method should raise an exception.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_mutable_enumerable.js.html#l102"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;mutable_enumerable.js:102</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_mutable_enumerable.js.html#l99"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;mutable_enumerable.js:99</code></a>
         </p>
 
 
@@ -2663,7 +3287,7 @@ then this method should raise an exception.</p>
 
 
 </div>
-<div id="method_setEach" class="method item public inherited">
+<div id="method_setEach" class="method item inherited">
     <h3 class="name"><code>setEach</code></h3>
 
         <div class="args">
@@ -2682,7 +3306,6 @@ then this method should raise an exception.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2691,7 +3314,7 @@ then this method should raise an exception.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_setEach">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l297"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:297</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l261"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:261</code></a>
         </p>
 
 
@@ -2747,7 +3370,190 @@ it will be set directly. <code>null</code> objects are skipped.</p>
 
 
 </div>
-<div id="method_sortBy" class="method item public inherited">
+<div id="method_some" class="method item deprecated inherited">
+    <h3 class="name"><code>some</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[target]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;any&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_some">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l662"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:662</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;any&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        <p>Returns <code>true</code> if the passed function returns true for any item in the
+enumeration. This corresponds with the <code>some()</code> method in JavaScript 1.6.</p>
+<p>The callback method you provide should have the following signature (all
+parameters are optional):</p>
+<pre class="code prettyprint"><code class="language-javascript">function(item, index, enumerable);
+</code></pre>
+<ul>
+<li><code>item</code> is the current item in the iteration.</li>
+<li><code>index</code> is the current index in the iteration.</li>
+<li><code>enumerable</code> is the enumerable object itself.</li>
+</ul>
+<p>It should return the <code>true</code> to include the item in the results, <code>false</code>
+otherwise.</p>
+<p>Note that in addition to a callback, you can also pass an optional target
+object that will be set as <code>this</code> on the context. This is a good way
+to give your iterator function access to the current object.</p>
+<p>Usage Example:</p>
+<pre class="code prettyprint"><code class="language-javascript">if (people.some(isManager)) { Paychecks.addBiggerBonus(); }
+</code></pre>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type"><a href="../classes/Function.html" class="crosslink">Function</a></span>
+
+
+                    <div class="param-description">
+                        <p>The callback to execute</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[target]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>The target object to use</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p><code>true</code> if the passed function returns <code>true</code> for any item</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_someProperty" class="method item deprecated inherited">
+    <h3 class="name"><code>someProperty</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[value]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Boolean</span>
+        </span>
+
+        <span class="flag deprecated" title="Use &#x60;isAny&#x60; instead">deprecated</span>
+
+
+
+
+
+
+    <div class="meta">
+                <p>Inherited from
+                <a href="../classes/Ember.Enumerable.html#method_someProperty">Ember.Enumerable</a>:
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l721"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:721</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;isAny&#x60; instead</p>
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>the property to test</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[value]</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>optional value to test against.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Boolean</span>:
+                    <p><code>true</code> if the passed function returns <code>true</code> for any item</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_sortBy" class="method item inherited">
     <h3 class="name"><code>sortBy</code></h3>
 
         <div class="args">
@@ -2763,7 +3569,6 @@ it will be set directly. <code>null</code> objects are skipped.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2772,7 +3577,7 @@ it will be set directly. <code>null</code> objects are skipped.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_sortBy">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l1050"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:1050</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l1016"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:1016</code></a>
         </p>
 
 
@@ -2817,7 +3622,7 @@ specified in the argument.</p>
 
 
 </div>
-<div id="method_toArray" class="method item public inherited">
+<div id="method_toArray" class="method item inherited">
     <h3 class="name"><code>toArray</code></h3>
 
         <span class="paren">()</span>
@@ -2827,7 +3632,6 @@ specified in the argument.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2836,7 +3640,7 @@ specified in the argument.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_toArray">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l757"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:757</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l799"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:799</code></a>
         </p>
 
 
@@ -2862,7 +3666,7 @@ guaranteed. Corresponds to the method implemented by Prototype.</p>
 
 
 </div>
-<div id="method_uniq" class="method item public inherited">
+<div id="method_uniq" class="method item inherited">
     <h3 class="name"><code>uniq</code></h3>
 
         <span class="paren">()</span>
@@ -2872,7 +3676,6 @@ guaranteed. Corresponds to the method implemented by Prototype.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2881,7 +3684,7 @@ guaranteed. Corresponds to the method implemented by Prototype.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_uniq">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l824"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:824</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l850"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:850</code></a>
         </p>
 
 
@@ -2891,10 +3694,9 @@ guaranteed. Corresponds to the method implemented by Prototype.</p>
     <div class="description">
         <p>Returns a new enumerable that contains only unique values. The default
 implementation returns an array regardless of the receiver type.</p>
-<pre class="code prettyprint"><code class="language-javascript">var arr = ['a', 'a', 'b', 'b'];
-arr.uniq();  // ['a', 'b']
+<pre class="code prettyprint"><code class="language-javascript">var arr = [&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;b&quot;];
+arr.uniq();  // [&quot;a&quot;, &quot;b&quot;]
 </code></pre>
-<p>This only works on primitive data types, e.g. Strings, Numbers, etc.</p>
 
     </div>
 
@@ -2909,7 +3711,7 @@ arr.uniq();  // ['a', 'b']
 
 
 </div>
-<div id="method_without" class="method item public inherited">
+<div id="method_without" class="method item inherited">
     <h3 class="name"><code>without</code></h3>
 
         <div class="args">
@@ -2925,7 +3727,6 @@ arr.uniq();  // ['a', 'b']
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2934,7 +3735,7 @@ arr.uniq();  // ['a', 'b']
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#method_without">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l793"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:793</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l827"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:827</code></a>
         </p>
 
 
@@ -2945,8 +3746,8 @@ arr.uniq();  // ['a', 'b']
         <p>Returns a new enumerable that excludes the passed value. The default
 implementation returns an array regardless of the receiver type unless
 the receiver does not contain the value.</p>
-<pre class="code prettyprint"><code class="language-javascript">var arr = ['a', 'b', 'a', 'c'];
-arr.without('a');  // ['b', 'c']
+<pre class="code prettyprint"><code class="language-javascript">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;a&quot;, &quot;c&quot;];
+arr.without(&quot;a&quot;);  // [&quot;b&quot;, &quot;c&quot;]
 </code></pre>
 
     </div>
@@ -2983,19 +3784,18 @@ arr.without('a');  // ['b', 'c']
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-<div id="property_[]" class="property item private inherited">
+<div id="property_[]" class="property item inherited">
     <h3 class="name"><code>[]</code></h3>
     <span class="type">Array</span>
 
 
-        <span class="flag private">private</span>
 
 
 
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#property_[]">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l851"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:851</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l870"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:870</code></a>
         </p>
 
 
@@ -3003,7 +3803,7 @@ arr.without('a');  // ['b', 'c']
 
     <div class="description">
         <p>This property will trigger anytime the enumerable's content changes.
-You can observe this property to be notified of changes to the enumerable's
+You can observe this property to be notified of changes to the enumerables
 content.</p>
 <p>For plain enumerables, this property is read only. <code>Array</code> overrides
 this method.</p>
@@ -3013,19 +3813,18 @@ this method.</p>
 
 
 </div>
-<div id="property_firstObject" class="property item public inherited">
+<div id="property_firstObject" class="property item inherited">
     <h3 class="name"><code>firstObject</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#property_firstObject">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l136"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:136</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l131"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:131</code></a>
         </p>
 
 
@@ -3039,8 +3838,8 @@ object if the enumerable contains only one item.</p>
 always return the same value each time it is called. If your enumerable
 contains only one object, this method should always return that object.
 If your enumerable is empty, this method should return <code>undefined</code>.</p>
-<pre class="code prettyprint"><code class="language-javascript">var arr = ['a', 'b', 'c'];
-arr.get('firstObject');  // 'a'
+<pre class="code prettyprint"><code class="language-javascript">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];
+arr.get('firstObject');  // &quot;a&quot;
 
 var arr = [];
 arr.get('firstObject');  // undefined
@@ -3051,19 +3850,18 @@ arr.get('firstObject');  // undefined
 
 
 </div>
-<div id="property_hasEnumerableObservers" class="property item private inherited">
+<div id="property_hasEnumerableObservers" class="property item inherited">
     <h3 class="name"><code>hasEnumerableObservers</code></h3>
     <span class="type">Boolean</span>
 
 
-        <span class="flag private">private</span>
 
 
 
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#property_hasEnumerableObservers">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l929"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:929</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l931"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:931</code></a>
         </p>
 
 
@@ -3078,19 +3876,18 @@ on the array.</p>
 
 
 </div>
-<div id="property_lastObject" class="property item public inherited">
+<div id="property_lastObject" class="property item inherited">
     <h3 class="name"><code>lastObject</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Enumerable.html#property_lastObject">Ember.Enumerable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l172"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:172</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_enumerable.js.html#l162"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;enumerable.js:162</code></a>
         </p>
 
 
@@ -3100,8 +3897,8 @@ on the array.</p>
         <p>Helper method returns the last object from a collection. If your enumerable
 contains only one object, this method should always return that object.
 If your enumerable is empty, this method should return <code>undefined</code>.</p>
-<pre class="code prettyprint"><code class="language-javascript">var arr = ['a', 'b', 'c'];
-arr.get('lastObject');  // 'c'
+<pre class="code prettyprint"><code class="language-javascript">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];
+arr.get('lastObject');  // &quot;c&quot;
 
 var arr = [];
 arr.get('lastObject');  // undefined

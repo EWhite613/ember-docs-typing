@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
+                                <li><a href="../classes/Ember.DAG.html">Ember.DAG</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
-                                <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
-                                <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
-                                <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,35 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
-                                <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
+                                <li><a href="../classes/Ember.Vertex.html">Ember.Vertex</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
-                                <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
                 
@@ -138,14 +184,12 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
-                                <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
-                                <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
-                                <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
-                                <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -195,93 +239,17 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l16"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:16</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l11"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:11</code></a>
         </div>
 
-            Module: <a href="../modules/ember-views.html">ember-views</a><br>
+            Module: <a href="../modules/ember-handlebars.html">ember-handlebars</a><br>
             Parent Module: <a href="../modules/ember.html">ember</a>
 
 </div>
 
 
 <div class="box intro">
-    <p><code>TextSupport</code> is a shared mixin used by both <code>Ember.TextField</code> and
-<code>Ember.TextArea</code>. <code>TextSupport</code> adds a number of methods that allow you to
-specify a controller action to invoke when a certain event is fired on your
-text field or textarea. The specifed controller action would get the current
-value of the field passed in as the only argument unless the value of
-the field is empty. In that case, the instance of the field itself is passed
-in as the only argument.</p>
-<p>Let's use the pressing of the escape key as an example. If you wanted to
-invoke a controller action when a user presses the escape key while on your
-field, you would use the <code>escape-press</code> attribute on your field like so:</p>
-<pre class="code prettyprint"><code class="language-handlebars">  {{! application.hbs}}
-
-  {{input escape-press='alertUser'}}
-</code></pre>
-<pre class="code prettyprint"><code class="language-javascript">    App = Ember.Application.create();
-
-    App.ApplicationController = Ember.Controller.extend({
-      actions: {
-        alertUser: function ( currentValue ) {
-          alert( 'escape pressed, current value: ' + currentValue );
-        }
-      }
-    });
-</code></pre>
-<p>The following chart is a visual representation of what takes place when the
-escape key is pressed in this scenario:</p>
-<pre class="code prettyprint"><code>The Template
-+---------------------------+
-|                           |
-| escape-press='alertUser'  |
-|                           |          TextSupport Mixin
-+----+----------------------+          +-------------------------------+
-     |                                 | cancel method                 |
-     |      escape button pressed      |                               |
-     +-------------------------------&gt; | checks for the <code>escape-press</code> |
-                                       | attribute and pulls out the   |
-     +-------------------------------+ | <code>alertUser</code> value             |
-     |     action name 'alertUser'     +-------------------------------+
-     |     sent to controller
-     v
-Controller
-+------------------------------------------ +
-|                                           |
-|  actions: {                               |
-|     alertUser: function( currentValue ){  |
-|       alert( 'the esc key was pressed!' ) |
-|     }                                     |
-|  }                                        |
-|                                           |
-+-------------------------------------------+
-</code></pre>
-<p>Here are the events that we currently support along with the name of the
-attribute you would need to use on your field. To reiterate, you would use the
-attribute name like so:</p>
-<pre class="code prettyprint"><code class="language-handlebars">  {{input attribute-name='controllerAction'}}
-</code></pre>
-<pre class="code prettyprint"><code>+--------------------+----------------+
-|                    |                |
-| event              | attribute name |
-+--------------------+----------------+
-| new line inserted  | insert-newline |
-|                    |                |
-| enter key pressed  | insert-newline |
-|                    |                |
-| cancel key pressed | escape-press   |
-|                    |                |
-| focusin            | focus-in       |
-|                    |                |
-| focusout           | focus-out      |
-|                    |                |
-| keypress           | key-press      |
-|                    |                |
-| keyup              | key-up         |
-|                    |                |
-| keydown            | key-down       |
-+--------------------+----------------+
-</code></pre>
+    <p>Shared mixin used by <code>Ember.TextField</code> and <code>Ember.TextArea</code>.</p>
 
 </div>
 
@@ -302,47 +270,39 @@ attribute name like so:</p>
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_apply">apply</a>
 
                             </li>
-                            <li class="index-item method private">
+                            <li class="index-item method">
                                 <a href="#method_cancel">cancel</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_detect">detect</a>
 
                             </li>
-                            <li class="index-item method private">
+                            <li class="index-item method">
                                 <a href="#method_focusIn">focusIn</a>
 
                             </li>
-                            <li class="index-item method private">
+                            <li class="index-item method">
                                 <a href="#method_focusOut">focusOut</a>
 
                             </li>
-                            <li class="index-item method private">
+                            <li class="index-item method">
                                 <a href="#method_insertNewline">insertNewline</a>
 
                             </li>
-                            <li class="index-item method private">
-                                <a href="#method_keyDown">keyDown</a>
-
-                            </li>
-                            <li class="index-item method private">
+                            <li class="index-item method">
                                 <a href="#method_keyPress">keyPress</a>
 
                             </li>
-                            <li class="index-item method private">
-                                <a href="#method_keyUp">keyUp</a>
-
-                            </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_reopen">reopen</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_triggerAction">triggerAction</a>
 
                             </li>
@@ -353,15 +313,15 @@ attribute name like so:</p>
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_action">action</a>
 
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_bubbles">bubbles</a>
 
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_onEvent">onEvent</a>
 
                             </li>
@@ -374,7 +334,7 @@ attribute name like so:</p>
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method_apply" class="method item private inherited">
+<div id="method_apply" class="method item inherited">
     <h3 class="name"><code>apply</code></h3>
 
         <div class="args">
@@ -390,7 +350,6 @@ attribute name like so:</p>
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -399,7 +358,7 @@ attribute name like so:</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Mixin.html#method_apply">Ember.Mixin</a>:
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l578"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:578</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l551"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:551</code></a>
         </p>
 
 
@@ -431,14 +390,13 @@ attribute name like so:</p>
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                    <p>applied object</p>
-
+                    applied object
             </div>
         </div>
 
 
 </div>
-<div id="method_cancel" class="method item private">
+<div id="method_cancel" class="method item">
     <h3 class="name"><code>cancel</code></h3>
 
         <div class="args">
@@ -451,7 +409,6 @@ attribute name like so:</p>
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -460,7 +417,7 @@ attribute name like so:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l227"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:227</code></a>
+        <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l110"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:110</code></a>
         </p>
 
 
@@ -468,12 +425,9 @@ attribute name like so:</p>
     </div>
 
     <div class="description">
-        <p>Allows you to specify a controller action to invoke when the escape button
-is pressed. To use this method, give your field an <code>escape-press</code>
-attribute. The value of that attribute should be the name of the action
-in your controller that you wish to invoke.</p>
-<p>For an example on how to use the <code>escape-press</code> attribute, please reference
-the example near the top of this file.</p>
+        <p>Called when the user hits escape.</p>
+<p>Called by the <code>Ember.TextSupport</code> mixin on keyUp if keycode matches 27.
+Uses sendAction to send the <code>escape-press</code> action.</p>
 
     </div>
 
@@ -487,7 +441,7 @@ the example near the top of this file.</p>
 
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                 </li>
@@ -497,7 +451,7 @@ the example near the top of this file.</p>
 
 
 </div>
-<div id="method_detect" class="method item private inherited">
+<div id="method_detect" class="method item inherited">
     <h3 class="name"><code>detect</code></h3>
 
         <div class="args">
@@ -513,7 +467,6 @@ the example near the top of this file.</p>
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -522,7 +475,7 @@ the example near the top of this file.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Mixin.html#method_detect">Ember.Mixin</a>:
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l611"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:611</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l579"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:579</code></a>
         </p>
 
 
@@ -560,7 +513,7 @@ the example near the top of this file.</p>
 
 
 </div>
-<div id="method_focusIn" class="method item private">
+<div id="method_focusIn" class="method item">
     <h3 class="name"><code>focusIn</code></h3>
 
         <div class="args">
@@ -573,7 +526,6 @@ the example near the top of this file.</p>
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -582,7 +534,7 @@ the example near the top of this file.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l244"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:244</code></a>
+        <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l123"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:123</code></a>
         </p>
 
 
@@ -590,12 +542,8 @@ the example near the top of this file.</p>
     </div>
 
     <div class="description">
-        <p>Allows you to specify a controller action to invoke when a field receives
-focus. To use this method, give your field a <code>focus-in</code> attribute. The value
-of that attribute should be the name of the action in your controller
-that you wish to invoke.</p>
-<p>For an example on how to use the <code>focus-in</code> attribute, please reference the
-example near the top of this file.</p>
+        <p>Called when the text area is focused.</p>
+<p>Uses sendAction to send the <code>focus-in</code> action.</p>
 
     </div>
 
@@ -609,7 +557,7 @@ example near the top of this file.</p>
 
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                 </li>
@@ -619,7 +567,7 @@ example near the top of this file.</p>
 
 
 </div>
-<div id="method_focusOut" class="method item private">
+<div id="method_focusOut" class="method item">
     <h3 class="name"><code>focusOut</code></h3>
 
         <div class="args">
@@ -632,7 +580,6 @@ example near the top of this file.</p>
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -641,7 +588,7 @@ example near the top of this file.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l261"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:261</code></a>
+        <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l135"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:135</code></a>
         </p>
 
 
@@ -649,12 +596,8 @@ example near the top of this file.</p>
     </div>
 
     <div class="description">
-        <p>Allows you to specify a controller action to invoke when a field loses
-focus. To use this method, give your field a <code>focus-out</code> attribute. The value
-of that attribute should be the name of the action in your controller
-that you wish to invoke.</p>
-<p>For an example on how to use the <code>focus-out</code> attribute, please reference the
-example near the top of this file.</p>
+        <p>Called when the text area is blurred.</p>
+<p>Uses sendAction to send the <code>focus-out</code> action.</p>
 
     </div>
 
@@ -668,7 +611,7 @@ example near the top of this file.</p>
 
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                 </li>
@@ -678,7 +621,7 @@ example near the top of this file.</p>
 
 
 </div>
-<div id="method_insertNewline" class="method item private">
+<div id="method_insertNewline" class="method item">
     <h3 class="name"><code>insertNewline</code></h3>
 
         <div class="args">
@@ -691,7 +634,6 @@ example near the top of this file.</p>
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -700,7 +642,7 @@ example near the top of this file.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l208"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:208</code></a>
+        <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l96"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:96</code></a>
         </p>
 
 
@@ -708,13 +650,9 @@ example near the top of this file.</p>
     </div>
 
     <div class="description">
-        <p>Allows you to specify a controller action to invoke when either the <code>enter</code>
-key is pressed or, in the case of the field being a textarea, when a newline
-is inserted. To use this method, give your field an <code>insert-newline</code>
-attribute. The value of that attribute should be the name of the action
-in your controller that you wish to invoke.</p>
-<p>For an example on how to use the <code>insert-newline</code> attribute, please
-reference the example near the top of this file.</p>
+        <p>Called when the user inserts a new line.</p>
+<p>Called by the <code>Ember.TextSupport</code> mixin on keyUp if keycode matches 13.
+Uses sendAction to send the <code>enter</code> action.</p>
 
     </div>
 
@@ -728,7 +666,7 @@ reference the example near the top of this file.</p>
 
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                 </li>
@@ -738,66 +676,7 @@ reference the example near the top of this file.</p>
 
 
 </div>
-<div id="method_keyDown" class="method item private">
-    <h3 class="name"><code>keyDown</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>event</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l315"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:315</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Allows you to specify a controller action to invoke when a key-down event is
-fired. To use this method, give your field a <code>key-down</code> attribute. The value
-of that attribute should be the name of the action in your controller that
-you wish to invoke.</p>
-<p>For an example on how to use the <code>key-down</code> attribute, please reference the
-example near the top of this file.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">event</code>
-                        <span class="type">Event</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_keyPress" class="method item private">
+<div id="method_keyPress" class="method item">
     <h3 class="name"><code>keyPress</code></h3>
 
         <div class="args">
@@ -810,7 +689,6 @@ example near the top of this file.</p>
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -819,7 +697,7 @@ example near the top of this file.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l279"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:279</code></a>
+        <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l147"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:147</code></a>
         </p>
 
 
@@ -827,12 +705,9 @@ example near the top of this file.</p>
     </div>
 
     <div class="description">
-        <p>Allows you to specify a controller action to invoke when a key is pressed.
-To use this method, give your field a <code>key-press</code> attribute. The value of
-that attribute should be the name of the action in your controller you
-that wish to invoke.</p>
-<p>For an example on how to use the <code>key-press</code> attribute, please reference the
-example near the top of this file.</p>
+        <p>Called when the user presses a key. Enabled by setting
+the <code>onEvent</code> property to <code>keyPress</code>.</p>
+<p>Uses sendAction to send the <code>key-press</code> action.</p>
 
     </div>
 
@@ -846,7 +721,7 @@ example near the top of this file.</p>
 
 
                     <div class="param-description">
-                         
+                        
                     </div>
 
                 </li>
@@ -856,66 +731,7 @@ example near the top of this file.</p>
 
 
 </div>
-<div id="method_keyUp" class="method item private">
-    <h3 class="name"><code>keyUp</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>event</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l296"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:296</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Allows you to specify a controller action to invoke when a key-up event is
-fired. To use this method, give your field a <code>key-up</code> attribute. The value
-of that attribute should be the name of the action in your controller
-that you wish to invoke.</p>
-<p>For an example on how to use the <code>key-up</code> attribute, please reference the
-example near the top of this file.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">event</code>
-                        <span class="type">Event</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_reopen" class="method item private inherited">
+<div id="method_reopen" class="method item inherited">
     <h3 class="name"><code>reopen</code></h3>
 
         <div class="args">
@@ -928,7 +744,6 @@ example near the top of this file.</p>
 
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -937,7 +752,7 @@ example near the top of this file.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Mixin.html#method_reopen">Ember.Mixin</a>:
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l540"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:540</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l514"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:514</code></a>
         </p>
 
 
@@ -969,7 +784,7 @@ example near the top of this file.</p>
 
 
 </div>
-<div id="method_triggerAction" class="method item private inherited">
+<div id="method_triggerAction" class="method item inherited">
     <h3 class="name"><code>triggerAction</code></h3>
 
         <div class="args">
@@ -985,7 +800,6 @@ example near the top of this file.</p>
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -994,7 +808,7 @@ example near the top of this file.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.TargetActionSupport.html#method_triggerAction">Ember.TargetActionSupport</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_target_action_support.js.html#l63"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;target_action_support.js:63</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_target_action_support.js.html#l56"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;target_action_support.js:56</code></a>
         </p>
 
 
@@ -1002,9 +816,11 @@ example near the top of this file.</p>
     </div>
 
     <div class="description">
-        <p>Send an <code>action</code> with an <code>actionContext</code> to a <code>target</code>. The action, actionContext
-and target will be retrieved from properties of the object. For example:</p>
-<pre class="code prettyprint"><code class="language-javascript">App.SaveButtonView = Ember.View.extend(Ember.TargetActionSupport, {
+        Send an <code>action</code> with an <code>actionContext</code> to a <code>target</code>. The action, actionContext
+and target will be retrieved from properties of the object. For example:
+
+<code>&#x60;</code>javascript
+App.SaveButtonView = Ember.View.extend(Ember.TargetActionSupport, {
   target: Ember.computed.alias('controller'),
   action: 'save',
   actionContext: Ember.computed.alias('context'),
@@ -1013,10 +829,13 @@ and target will be retrieved from properties of the object. For example:</p>
                           // to the current controller
   }
 });
-</code></pre>
-<p>The <code>target</code>, <code>action</code>, and <code>actionContext</code> can be provided as properties of
-an optional object argument to <code>triggerAction</code> as well.</p>
-<pre class="code prettyprint"><code class="language-javascript">App.SaveButtonView = Ember.View.extend(Ember.TargetActionSupport, {
+<code>&#x60;</code>
+
+The <code>target</code>, <code>action</code>, and <code>actionContext</code> can be provided as properties of
+an optional object argument to <code>triggerAction</code> as well.
+
+<code>&#x60;</code>javascript
+App.SaveButtonView = Ember.View.extend(Ember.TargetActionSupport, {
   click: function() {
     this.triggerAction({
       action: 'save',
@@ -1026,11 +845,14 @@ an optional object argument to <code>triggerAction</code> as well.</p>
         // to the current controller
   }
 });
-</code></pre>
-<p>The <code>actionContext</code> defaults to the object you are mixing <code>TargetActionSupport</code> into.
+<code>&#x60;</code>
+
+The <code>actionContext</code> defaults to the object you are mixing <code>TargetActionSupport</code> into.
 But <code>target</code> and <code>action</code> must be specified either as properties or with the argument
-to <code>triggerAction</code>, or a combination:</p>
-<pre class="code prettyprint"><code class="language-javascript">App.SaveButtonView = Ember.View.extend(Ember.TargetActionSupport, {
+to <code>triggerAction</code>, or a combination:
+
+<code>&#x60;</code>javascript
+App.SaveButtonView = Ember.View.extend(Ember.TargetActionSupport, {
   target: Ember.computed.alias('controller'),
   click: function() {
     this.triggerAction({
@@ -1039,8 +861,7 @@ to <code>triggerAction</code>, or a combination:</p>
         // to the current controller
   }
 });
-</code></pre>
-
+<code>&#x60;</code>
     </div>
 
         <div class="params">
@@ -1049,12 +870,11 @@ to <code>triggerAction</code>, or a combination:</p>
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">opts</code>
-                        <span class="type">Object</span>
+                        <span class="type">Hash</span>
 
 
                     <div class="param-description">
-                        <p>(optional, with the optional keys action, target and/or actionContext)</p>
-
+                        (optional, with the optional keys action, target and/or actionContext)
                     </div>
 
                 </li>
@@ -1066,8 +886,7 @@ to <code>triggerAction</code>, or a combination:</p>
 
             <div class="returns-description">
                         <span class="type">Boolean</span>:
-                    <p>true if the action was sent successfully and did not return false</p>
-
+                    true if the action was sent successfully and did not return false
             </div>
         </div>
 
@@ -1078,19 +897,18 @@ to <code>triggerAction</code>, or a combination:</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-<div id="property_action" class="property item private">
+<div id="property_action" class="property item">
     <h3 class="name"><code>action</code></h3>
     <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
 
 
-        <span class="flag private">private</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l143"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:143</code></a>
+        <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l40"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:40</code></a>
         </p>
 
 
@@ -1108,19 +926,18 @@ the value of the field as the context.</p>
 
 
 </div>
-<div id="property_bubbles" class="property item private">
+<div id="property_bubbles" class="property item">
     <h3 class="name"><code>bubbles</code></h3>
     <span class="type">Boolean</span>
 
 
-        <span class="flag private">private</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l172"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:172</code></a>
+        <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l67"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:67</code></a>
         </p>
 
 
@@ -1141,19 +958,18 @@ action has been dispatched, set <code>bubbles</code> to true.</p>
 
 
 </div>
-<div id="property_onEvent" class="property item private">
+<div id="property_onEvent" class="property item">
     <h3 class="name"><code>onEvent</code></h3>
     <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
 
 
-        <span class="flag private">private</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_mixins_text_support.js.html#l157"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;text_support.js:157</code></a>
+        <a href="../files/ember.js_packages_ember-handlebars_lib_controls_text_support.js.html#l53"><code>ember.js&#x2F;packages&#x2F;ember-handlebars&#x2F;lib&#x2F;controls&#x2F;text_support.js:53</code></a>
         </p>
 
 

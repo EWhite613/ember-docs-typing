@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,7 +186,7 @@
 
 
 
-            Module: <a href="../modules/ember-routing-views.html">ember-routing-views</a><br>
+            Module: <a href="../modules/ember-templates.html">ember-templates</a><br>
             Parent Module: <a href="../modules/ember.html">ember</a>
 
 </div>
@@ -216,12 +216,13 @@
                                 <a href="#method_action">action</a>
 
                             </li>
-                            <li class="index-item method public">
-                                <a href="#method_component">component</a>
+                            <li class="index-item method public deprecated">
+                                <a href="#method_collection">collection</a>
 
+                                    <span class="flag deprecated">deprecated</span>
                             </li>
                             <li class="index-item method public">
-                                <a href="#method_concat">concat</a>
+                                <a href="#method_component">component</a>
 
                             </li>
                             <li class="index-item method public">
@@ -245,22 +246,6 @@
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#method_get">get</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_hash">hash</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_hash">hash</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_if">if</a>
-
-                            </li>
-                            <li class="index-item method public">
                                 <a href="#method_if">if</a>
 
                             </li>
@@ -274,14 +259,6 @@
                             </li>
                             <li class="index-item method public">
                                 <a href="#method_loc">loc</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_loc">loc</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_log">log</a>
 
                             </li>
                             <li class="index-item method public">
@@ -305,23 +282,11 @@
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#method_render">render</a>
-
-                            </li>
-                            <li class="index-item method public">
                                 <a href="#method_textarea">textarea</a>
 
                             </li>
                             <li class="index-item method public">
                                 <a href="#method_unbound">unbound</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_unbound">unbound</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_unless">unless</a>
 
                             </li>
                             <li class="index-item method public">
@@ -361,10 +326,9 @@
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing-htmlbars_lib_keywords_action.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-routing-htmlbars&#x2F;lib&#x2F;keywords&#x2F;action.js:9</code></a>
+        <a href="../files/ember.js_packages_ember-routing-htmlbars_lib_keywords_action.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-routing-htmlbars&#x2F;lib&#x2F;keywords&#x2F;action.js:10</code></a>
         </p>
 
 
@@ -384,12 +348,12 @@ contexts to discuss are attribute context, and Handlebars value context.</p>
 {{yield (action &quot;refreshData&quot;) andAnotherParam}}
 </code></pre>
 <p>In these contexts,
-the helper is called a &quot;closure action&quot; helper. Its behavior is simple:
+the helper is called a &quot;closure action&quot; helper. It's behavior is simple:
 If passed a function name, read that function off the <code>actions</code> property
 of the current context. Once that function is read (or if a function was
 passed), create a closure over that function and any arguments.</p>
 <p>The resulting value of an action helper used this way is simply a function.
-For example, in the attribute context:</p>
+For example with this attribute context example:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{! An example of attribute context }}
 &lt;div onclick={{action &quot;save&quot;}}&gt;&lt;/div&gt;
 </code></pre>
@@ -404,11 +368,11 @@ div.onclick = actionFunction;
 </code></pre>
 <p>Thus when the div is clicked, the action on that context is called.
 Because the <code>actionFunction</code> is just a function, closure actions can be
-passed between components and still execute in the correct context.</p>
+passed between components the still execute in the correct context.</p>
 <p>Here is an example action handler on a component:</p>
 <pre class="code prettyprint"><code class="language-js">export default Ember.Component.extend({
   actions: {
-    save() {
+    save(/* event *\/) {
       this.get('model').save();
     }
   }
@@ -442,8 +406,8 @@ properties combined with currying of arguments. For example:</p>
 });
 </code></pre>
 <p>The first argument (<code>model</code>) was curried over, and the run-time argument (<code>event</code>)
-becomes a second argument. Action calls can be nested this way because each simply
-returns a function. Any function can be passed to the <code>{{action}}</code> helper, including
+becomes a second argument. Action calls be nested this way because each simply
+returns a function. Any function can be passed to the <code>{{action</code> helper, including
 other actions.</p>
 <p>Actions invoked with <code>sendAction</code> have the same currying behavior as demonstrated
 with <code>on-input</code> above. For example:</p>
@@ -465,21 +429,20 @@ export default Ember.Component.extend({
   }
 });
 </code></pre>
-<h3>Attaching actions to DOM elements</h3>
-<p>The third context of the <code>{{action}}</code> helper can be called &quot;element space&quot;.
+<h3>Attaching actions to DOM</h3>
+<p>The third context the <code>{{action</code> helper can be used in we call &quot;element space&quot;.
 For example:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{! An example of element space }}
 &lt;div {{action &quot;save&quot;}}&gt;&lt;/div&gt;
 </code></pre>
 <p>Used this way, the <code>{{action}}</code> helper provides a useful shortcut for
-registering an HTML element in a template for a single DOM event and
+registering an HTML element within a template for a single DOM event and
 forwarding that interaction to the template's context (controller or component).</p>
 <p>If the context of a template is a controller, actions used this way will
 bubble to routes when the controller does not implement the specified action.
 Once an action hits a route, it will bubble through the route hierarchy.</p>
 <h3>Event Propagation</h3>
-<p><code>{{action}}</code> helpers called in element space can control event bubbling. Note
-that the closure style actions cannot.</p>
+<p><code>{{action</code> helpers called in element space can control event bubbling.</p>
 <p>Events triggered through the action helper will automatically have
 <code>.preventDefault()</code> called on them. You do not need to do so in your event
 handlers. If you need to allow event propagation (to handle file inputs for
@@ -492,46 +455,28 @@ example) you can supply the <code>preventDefault=false</code> option to the <cod
 <p>To disable bubbling, pass <code>bubbles=false</code> to the helper:</p>
 <pre class="code prettyprint"><code class="language-handlebars">&lt;button {{action 'edit' post bubbles=false}}&gt;Edit&lt;/button&gt;
 </code></pre>
-<p>To disable bubbling with closure style actions you must create your own
-wrapper helper that makes use of <code>event.stopPropagation()</code>:</p>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;div onclick={{disable-bubbling (action &quot;sayHello&quot;)}}&gt;Hello&lt;/div&gt;
-</code></pre>
-<pre class="code prettyprint"><code class="language-js">// app/helpers/disable-bubbling.js
-import Ember from 'ember';
-
-export function disableBubbling([action]) {
-  return function(event) {
-    event.stopPropagation();
-
-    return action(event);
-  };
-}
-
-export default Ember.Helper.helper(disableBubbling);
-</code></pre>
 <p>If you need the default handler to trigger you should either register your
-own event handler, or use event methods on your view class. See
-<a href="/api/classes/Ember.View.html#toc_responding-to-browser-events">&quot;Responding to Browser Events&quot;</a>
-in the documentation for Ember.View for more information.</p>
+own event handler, or use event methods on your view class. See <a href="/api/classes/Ember.View.html">Ember.View</a>
+'Responding to Browser Events' for more information.</p>
 <h3>Specifying DOM event type</h3>
-<p><code>{{action}}</code> helpers called in element space can specify an event type.</p>
+<p><code>{{action</code> helpers called in element space can specify an event type.</p>
 <p>By default the <code>{{action}}</code> helper registers for DOM <code>click</code> events. You can
 supply an <code>on</code> option to the helper to specify a different DOM event name:</p>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;div {{action &quot;anActionName&quot; on=&quot;doubleClick&quot;}}&gt;
+<pre class="code prettyprint"><code class="language-handlebars">&lt;div {{action &quot;anActionName&quot; on=&quot;double-click&quot;}}&gt;
   click me
 &lt;/div&gt;
 </code></pre>
-<p>See <a href="/api/classes/Ember.View.html#toc_event-names">&quot;Event Names&quot;</a> for a list of
+<p>See <a href="/api/classes/Ember.View.html#toc_event-names">Event Names</a> for a list of
 acceptable DOM event names.</p>
 <h3>Specifying whitelisted modifier keys</h3>
-<p><code>{{action}}</code> helpers called in element space can specify modifier keys.</p>
-<p>By default the <code>{{action}}</code> helper will ignore click events with pressed modifier
+<p><code>{{action</code> helpers called in element space can specify modifier keys.</p>
+<p>By default the <code>{{action}}</code> helper will ignore click event with pressed modifier
 keys. You can supply an <code>allowedKeys</code> option to specify which keys should not be ignored.</p>
 <pre class="code prettyprint"><code class="language-handlebars">&lt;div {{action &quot;anActionName&quot; allowedKeys=&quot;alt&quot;}}&gt;
   click me
 &lt;/div&gt;
 </code></pre>
-<p>This way the action will fire when clicking with the alt key pressed down.</p>
+<p>This way the <code>{{action}}</code> will fire when clicking with the alt key pressed down.</p>
 <p>Alternatively, supply &quot;any&quot; to the <code>allowedKeys</code> option to accept any combination of modifier keys.</p>
 <pre class="code prettyprint"><code class="language-handlebars">&lt;div {{action &quot;anActionName&quot; allowedKeys=&quot;any&quot;}}&gt;
   click me with any key pressed
@@ -558,6 +503,122 @@ export default Ember.Controller.extend({
 
 
 </div>
+<div id="method_collection" class="method item public deprecated">
+    <h3 class="name"><code>collection</code></h3>
+
+        <span class="paren">()</span>
+
+
+        <span class="flag deprecated" title="Use &#x60;{{each}}&#x60; helper instead.">deprecated</span>
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_collection.js.html#l11"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;collection.js:11</code></a>
+        </p>
+
+
+            <p>Deprecated: Use &#x60;{{each}}&#x60; helper instead.</p>
+
+    </div>
+
+    <div class="description">
+        <p><code>{{collection}}</code> is a template helper for adding instances of
+<code>Ember.CollectionView</code> to a template. See <a href="/api/classes/Ember.CollectionView.html">Ember.CollectionView</a>
+for additional information on how a <code>CollectionView</code> functions.</p>
+<p><code>{{collection}}</code>'s primary use is as a block helper with a <code>contentBinding</code>
+option pointing towards an <code>Ember.Array</code>-compatible object. An <code>Ember.View</code>
+instance will be created for each item in its <code>content</code> property. Each view
+will have its own <code>content</code> property set to the appropriate item in the
+collection.</p>
+<p>The provided block will be applied as the template for each item's view.</p>
+<p>Given an empty <code>&lt;body&gt;</code> the following template:</p>
+<pre class="code prettyprint"><code class="language-handlebars">{{! application.hbs }}
+{{#collection content=model}}
+  Hi {{view.content.name}}
+{{/collection}}
+</code></pre>
+<p>And the following application code</p>
+<pre class="code prettyprint"><code class="language-javascript">App = Ember.Application.create();
+App.ApplicationRoute = Ember.Route.extend({
+  model: function() {
+    return [{name: 'Yehuda'},{name: 'Tom'},{name: 'Peter'}];
+  }
+});
+</code></pre>
+<p>The following HTML will result:</p>
+<pre class="code prettyprint"><code class="language-html">&lt;div class=&quot;ember-view&quot;&gt;
+  &lt;div class=&quot;ember-view&quot;&gt;Hi Yehuda&lt;/div&gt;
+  &lt;div class=&quot;ember-view&quot;&gt;Hi Tom&lt;/div&gt;
+  &lt;div class=&quot;ember-view&quot;&gt;Hi Peter&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Non-block version of collection</h3>
+<p>If you provide an <code>itemViewClass</code> option that has its own <code>template</code> you may
+omit the block.</p>
+<p>The following template:</p>
+<pre class="code prettyprint"><code class="language-handlebars">{{! application.hbs }}
+{{collection content=model itemViewClass=&quot;an-item&quot;}}
+</code></pre>
+<p>And application code</p>
+<pre class="code prettyprint"><code class="language-javascript">App = Ember.Application.create();
+App.ApplicationRoute = Ember.Route.extend({
+  model: function() {
+    return [{name: 'Yehuda'},{name: 'Tom'},{name: 'Peter'}];
+  }
+});
+
+App.AnItemView = Ember.View.extend({
+  template: Ember.Handlebars.compile(&quot;Greetings {{view.content.name}}&quot;)
+});
+</code></pre>
+<p>Will result in the HTML structure below</p>
+<pre class="code prettyprint"><code class="language-html">&lt;div class=&quot;ember-view&quot;&gt;
+  &lt;div class=&quot;ember-view&quot;&gt;Greetings Yehuda&lt;/div&gt;
+  &lt;div class=&quot;ember-view&quot;&gt;Greetings Tom&lt;/div&gt;
+  &lt;div class=&quot;ember-view&quot;&gt;Greetings Peter&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Specifying a CollectionView subclass</h3>
+<p>By default the <code>{{collection}}</code> helper will create an instance of
+<code>Ember.CollectionView</code>. You can supply a <code>Ember.CollectionView</code> subclass to
+the helper by passing it as the first argument:</p>
+<pre class="code prettyprint"><code class="language-handlebars">{{#collection &quot;my-custom-collection&quot; content=model}}
+  Hi {{view.content.name}}
+{{/collection}}
+</code></pre>
+<p>This example would look for the class <code>App.MyCustomCollection</code>.</p>
+<h3>Forwarded <code>item.*</code>-named Options</h3>
+<p>As with the <code>{{view}}</code>, helper options passed to the <code>{{collection}}</code> will be
+set on the resulting <code>Ember.CollectionView</code> as properties. Additionally,
+options prefixed with <code>item</code> will be applied to the views rendered for each
+item (note the camelcasing):</p>
+<pre class="code prettyprint"><code class="language-handlebars">{{#collection content=model
+              itemTagName=&quot;p&quot;
+              itemClassNames=&quot;greeting&quot;}}
+  Howdy {{view.content.name}}
+{{/collection}}
+</code></pre>
+<p>Will result in the following HTML structure:</p>
+<pre class="code prettyprint"><code class="language-html">&lt;div class=&quot;ember-view&quot;&gt;
+  &lt;p class=&quot;ember-view greeting&quot;&gt;Howdy Yehuda&lt;/p&gt;
+  &lt;p class=&quot;ember-view greeting&quot;&gt;Howdy Tom&lt;/p&gt;
+  &lt;p class=&quot;ember-view greeting&quot;&gt;Howdy Peter&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+    </div>
+
+
+
+
+</div>
 <div id="method_component" class="method item public">
     <h3 class="name"><code>component</code></h3>
 
@@ -572,10 +633,9 @@ export default Ember.Controller.extend({
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_component.js.html#l11"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;component.js:11</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_component.js.html#l8"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;component.js:8</code></a>
         </p>
 
 
@@ -616,20 +676,6 @@ component. In that case, use standard component syntax, for example:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{! application.hbs }}
 {{live-updating-chart}}
 </code></pre>
-<h2>Nested Usage</h2>
-<p>The <code>component</code> helper can be used to package a component path with initial attrs.
-The included attrs can then be merged during the final invocation.</p>
-<p>For example, given a <code>person-form</code> component with the following template:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{yield (hash
-    nameInput=(component &quot;my-input-component&quot; value=model.name placeholder=&quot;First Name&quot;))}}
-</code></pre>
-<p>The following snippet:</p>
-<pre class="code prettyprint"><code>{{#person-form as |form|}}
-  {{component form.nameInput placeholder=&quot;Username&quot;}}
-{{/person-form}}
-</code></pre>
-<p>would output an input whose value is already bound to <code>model.name</code> and <code>placeholder</code>
-is &quot;Username&quot;.</p>
 
     </div>
 
@@ -651,58 +697,17 @@ is &quot;Username&quot;.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_concat.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;concat.js:9</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_-concat.js.html#l6"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;-concat.js:6</code></a>
         </p>
 
 
 
-            <p>Available since 1.13.0</p>
     </div>
 
     <div class="description">
-        <p>Concatenates the given arguments into a string.</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{some-component name=(concat firstName &quot; &quot; lastName)}}
-
-{{! would pass name=&quot;&lt;first name value&gt; &lt;last name value&gt;&quot; to the component}}
-</code></pre>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_concat" class="method item public">
-    <h3 class="name"><code>concat</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helpers_concat.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helpers&#x2F;concat.js:9</code></a>
-        </p>
-
-
-
-            <p>Available since 1.13.0</p>
-    </div>
-
-    <div class="description">
-        <p>Concatenates the given arguments into a string.</p>
+        <p>Concatenates input params together.</p>
 <p>Example:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{some-component name=(concat firstName &quot; &quot; lastName)}}
 
@@ -732,7 +737,7 @@ is &quot;Username&quot;.</p>
                     <p>Provided by the <a href="../modules/ember-htmlbars.html">ember-htmlbars</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_debugger.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;debugger.js:10</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_debugger.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;debugger.js:9</code></a>
         </p>
 
 
@@ -783,7 +788,6 @@ you expect:</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_each.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;each.js:9</code></a>
@@ -797,7 +801,7 @@ you expect:</p>
         <p>The <code>{{#each}}</code> helper loops over elements in a collection. It is an extension
 of the base Handlebars <code>{{#each}}</code> helper.</p>
 <p>The default behavior of <code>{{#each}}</code> is to yield its inner block once for every
-item in an array passing the item as the first block parameter.</p>
+item in an array.</p>
 <pre class="code prettyprint"><code class="language-javascript">var developers = [{name: 'Yehuda'},{name: 'Tom'}, {name: 'Paul'}];
 </code></pre>
 <pre class="code prettyprint"><code class="language-handlebars">{{#each developers key=&quot;name&quot; as |person|}}
@@ -811,13 +815,6 @@ item in an array passing the item as the first block parameter.</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{#each developerNames key=&quot;@index&quot; as |name|}}
   {{name}}
 {{/each}}
-</code></pre>
-<p>During iteration, the index of each item in the array is provided as a second block parameter.</p>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;ul&gt;
-  {{#each people as |person index|}}
-    &lt;li&gt;Hello, {{person.name}}! You're number {{index}} in line&lt;/li&gt;
-  {{/each}}
-&lt;/ul&gt;
 </code></pre>
 <h3>Specifying Keys</h3>
 <p>The <code>key</code> option is used to tell Ember how to determine if the array being
@@ -862,15 +859,13 @@ if the collection is empty.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_each-in.js.html#l8"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;each-in.js:8</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_each-in.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;each-in.js:10</code></a>
         </p>
 
 
 
-            <p>Available since 2.1.0</p>
     </div>
 
     <div class="description">
@@ -913,15 +908,13 @@ object in a list:</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_get.js.html#l105"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;get.js:105</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_get.js.html#l39"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;get.js:39</code></a>
         </p>
 
 
 
-            <p>Available since 2.1.0</p>
     </div>
 
     <div class="description">
@@ -952,218 +945,6 @@ that fact via a two-way mutable binding.</p>
     </div>
 
 
-
-
-</div>
-<div id="method_get" class="method item public">
-    <h3 class="name"><code>get</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helpers_get.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helpers&#x2F;get.js:9</code></a>
-        </p>
-
-
-
-            <p>Available since 2.1.0</p>
-    </div>
-
-    <div class="description">
-        <p>Dynamically look up a property on an object. The second argument to <code>{{get}}</code>
-should have a string value, although it can be bound.</p>
-<p>For example, these two usages are equivilent:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{person.height}}
-{{get person &quot;height&quot;}}
-</code></pre>
-<p>If there were several facts about a person, the <code>{{get}}</code> helper can dynamically
-pick one:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{get person factName}}
-</code></pre>
-<p>For a more complex example, this template would allow the user to switch
-between showing the user's height and weight with a click:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{get person factName}}
-&lt;button {{action (mut factName) &quot;height&quot;}}&gt;Show height&lt;/button&gt;
-&lt;button {{action (mut factName) &quot;weight&quot;}}&gt;Show weight&lt;/button&gt;
-</code></pre>
-<p>The <code>{{get}}</code> helper can also respect mutable values itself. For example:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{input value=(mut (get person factName)) type=&quot;text&quot;}}
-&lt;button {{action (mut factName) &quot;height&quot;}}&gt;Show height&lt;/button&gt;
-&lt;button {{action (mut factName) &quot;weight&quot;}}&gt;Show weight&lt;/button&gt;
-</code></pre>
-<p>Would allow the user to swap what fact is being displayed, and also edit
-that fact via a two-way mutable binding.</p>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_hash" class="method item public">
-    <h3 class="name"><code>hash</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helpers_hash.js.html#l7"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helpers&#x2F;hash.js:7</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Use the <code>{{hash}}</code> helper to create a hash to pass as an option to your
-components. This is specially useful for contextual components where you can
-just yield a hash:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{yield (hash
-   name='Sarah'
-   title=office
-)}}
-</code></pre>
-<p>Would result in an object such as:</p>
-<pre class="code prettyprint"><code class="language-js">{ name: 'Sarah', title: this.get('office') }
-</code></pre>
-<p>Where the <code>title</code> is bound to updates of the <code>office</code> property.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>Hash</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_hash" class="method item public">
-    <h3 class="name"><code>hash</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_hash.js.html#l6"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;hash.js:6</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Use the <code>{{hash}}</code> helper to create a hash to pass as an option to your
-components. This is specially useful for contextual components where you can
-just yield a hash:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{yield (hash
-   name='Sarah'
-   title=office
-)}}
-</code></pre>
-<p>Would result in an object such as:</p>
-<pre class="code prettyprint"><code class="language-js">{ name: 'Sarah', title: this.get('office') }
-</code></pre>
-<p>Where the <code>title</code> is bound to updates of the <code>office</code> property.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>Hash</p>
-
-            </div>
-        </div>
 
 
 </div>
@@ -1181,7 +962,6 @@ just yield a hash:</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_if_unless.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;if_unless.js:9</code></a>
@@ -1193,8 +973,7 @@ just yield a hash:</p>
 
     <div class="description">
         <p>Use the <code>if</code> block helper to conditionally render a block depending on a
-property. If the property is &quot;falsey&quot;, for example: <code>false</code>, <code>undefined</code>,
-<code>null</code>, <code>&quot;&quot;</code>, <code>0</code>, <code>NaN</code> or an empty array, the block will not be rendered.</p>
+property. If the property is &quot;falsey&quot;, for example: <code>false</code>, <code>undefined</code>null<code>,</code>&quot;&quot;<code>,</code>0` or an empty array, the block will not be rendered.</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{! will not render if foo is falsey}}
 {{#if foo}}
  Welcome to the {{foo.bar}}
@@ -1202,7 +981,7 @@ property. If the property is &quot;falsey&quot;, for example: <code>false</code>
 </code></pre>
 <p>You can also specify a template to show if the property is falsey by using
 the <code>else</code> helper.</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{! is it raining outside?}}
+<pre class="code prettyprint"><code class="language-handlebars">{{!Is it raining outside?}}
 {{#if isRaining}}
   Yes, grab an umbrella!
 {{else}}
@@ -1235,47 +1014,6 @@ displayed</p>
 
 
 </div>
-<div id="method_if" class="method item public">
-    <h3 class="name"><code>if</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helpers_if-unless.js.html#l45"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helpers&#x2F;if-unless.js:45</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>The inline <code>if</code> helper conditionally renders a single property or string.
-This helper acts like a ternary operator. If the first property is truthy,
-the second argument will be displayed, otherwise, the third argument will be
-displayed</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{if useLongGreeting &quot;Hello&quot; &quot;Hi&quot;}} Alex
-</code></pre>
-<p>You can use the <code>if</code> helper inside another helper as a subexpression.</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{some-component height=(if isBig &quot;100&quot; &quot;10&quot;)}}
-</code></pre>
-
-    </div>
-
-
-
-
-</div>
 <div id="method_input" class="method item public">
     <h3 class="name"><code>input</code></h3>
 
@@ -1296,7 +1034,6 @@ displayed</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_input.js.html#l8"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;input.js:8</code></a>
@@ -1358,7 +1095,7 @@ the user presses the return key.</p>
 </ul>
 <p>For example, if you desire an action to be sent when the input is blurred,
 you only need to setup the action name to the event name property.</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{input focus-out=&quot;alertMessage&quot;}}
+<pre class="code prettyprint"><code class="language-handlebars">{{input focus-in=&quot;alertMessage&quot;}}
 </code></pre>
 <p>See more about <a href="/api/classes/Ember.TextField.html">Text Support Actions</a></p>
 <h3>Extending <code>Ember.TextField</code></h3>
@@ -1453,10 +1190,10 @@ if you wanted to add a css class to all checkboxes in your application:</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
+                    <p>Provided by the <a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing-views_lib_components_link-to.js.html#l6"><code>ember.js&#x2F;packages&#x2F;ember-routing-views&#x2F;lib&#x2F;components&#x2F;link-to.js:6</code></a>
+        <a href="../files/ember.js_packages_ember-routing-htmlbars_lib_keywords_link-to.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-routing-htmlbars&#x2F;lib&#x2F;keywords&#x2F;link-to.js:10</code></a>
         </p>
 
 
@@ -1464,7 +1201,7 @@ if you wanted to add a css class to all checkboxes in your application:</p>
     </div>
 
     <div class="description">
-        <p>The <code>{{link-to}}</code> component renders a link to the supplied
+        <p>The <code>{{link-to}}</code> helper renders a link to the supplied
 <code>routeName</code> passing an optionally supplied model to the
 route as its <code>model</code> context of the route. The block
 for <code>{{link-to}}</code> becomes the innerHTML of the rendered
@@ -1473,9 +1210,9 @@ element:</p>
   Great Hamster Photos
 {{/link-to}}
 </code></pre>
-<p>You can also use an inline form of <code>{{link-to}}</code> component by
+<p>You can also use an inline form of <code>{{link-to}}</code> helper by
 passing the link text as the first argument
-to the component:</p>
+to the helper:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{link-to 'Great Hamster Photos' 'photoGallery'}}
 </code></pre>
 <p>Both will result in:</p>
@@ -1497,10 +1234,9 @@ a <code>tagName</code> option:</p>
 </code></pre>
 <p>To override this option for your entire application, see
 &quot;Overriding Application-wide Defaults&quot;.</p>
-<h3>Disabling the <code>link-to</code> component</h3>
+<h3>Disabling the <code>link-to</code> helper</h3>
 <p>By default <code>{{link-to}}</code> is enabled.
-any passed value to the <code>disabled</code> component property will disable
-the <code>link-to</code> component.</p>
+any passed value to <code>disabled</code> helper property will disable the <code>link-to</code> helper.</p>
 <p>static use: the <code>disabled</code> option:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{#link-to 'photoGallery' disabled=true}}
   Great Hamster Photos
@@ -1512,7 +1248,7 @@ the <code>link-to</code> component.</p>
 {{/link-to}}
 </code></pre>
 <p>any passed value to <code>disabled</code> will disable it except <code>undefined</code>.
-to ensure that only <code>true</code> disable the <code>link-to</code> component you can
+to ensure that only <code>true</code> disable the <code>link-to</code> helper you can
 override the global behaviour of <code>Ember.LinkComponent</code>.</p>
 <pre class="code prettyprint"><code class="language-javascript">Ember.LinkComponent.reopen({
   disabled: Ember.computed(function(key, value) {
@@ -1560,7 +1296,8 @@ option:</p>
 &quot;Overriding Application-wide Defaults&quot;.</p>
 <h3>Keeping a link active for other routes</h3>
 <p>If you need a link to be 'active' even when it doesn't match
-the current route, you can use the <code>current-when</code> argument.</p>
+the current route, you can use the the <code>current-when</code>
+argument.</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{#link-to 'photoGallery' current-when='photos'}}
   Photo Gallery
 {{/link-to}}
@@ -1582,7 +1319,7 @@ route is the route this link would transition to.</p>
 <p>An optional model argument can be used for routes whose
 paths contain dynamic segments. This argument will become
 the model context of the linked route:</p>
-<pre class="code prettyprint"><code class="language-javascript">Router.map(function() {
+<pre class="code prettyprint"><code class="language-javascript">App.Router.map(function() {
   this.route(&quot;photoGallery&quot;, {path: &quot;hamster-photos/:photo_id&quot;});
 });
 </code></pre>
@@ -1600,7 +1337,7 @@ dynamic segments, multiple model arguments can be used.
 As the router transitions through the route path, each
 supplied model argument will become the context for the
 route with the dynamic segments:</p>
-<pre class="code prettyprint"><code class="language-javascript">Router.map(function() {
+<pre class="code prettyprint"><code class="language-javascript">App.Router.map(function() {
   this.route(&quot;photoGallery&quot;, { path: &quot;hamster-photos/:photo_id&quot; }, function() {
     this.route(&quot;comment&quot;, {path: &quot;comments/:comment_id&quot;});
   });
@@ -1620,7 +1357,7 @@ route with the dynamic segments:</p>
 an optional string or integer argument can be passed for routes whose
 paths contain dynamic segments. This argument will become the value
 of the dynamic segment:</p>
-<pre class="code prettyprint"><code class="language-javascript">Router.map(function() {
+<pre class="code prettyprint"><code class="language-javascript">App.Router.map(function() {
   this.route(&quot;photoGallery&quot;, { path: &quot;hamster-photos/:photo_id&quot; });
 });
 </code></pre>
@@ -1635,7 +1372,7 @@ of the dynamic segment:</p>
 <p>When transitioning into the linked route, the <code>model</code> hook will
 be triggered with parameters including this passed identifier.</p>
 <h3>Allowing Default Action</h3>
-<p>By default the <code>{{link-to}}</code> component prevents the default browser action
+<p>By default the <code>{{link-to}}</code> helper prevents the default browser action
 by calling <code>preventDefault()</code> as this sort of action bubbling is normally
 handled internally and we do not want to take the browser to a new URL (for
 example).</p>
@@ -1646,8 +1383,8 @@ your template:</p>
 {{/link-to}}
 </code></pre>
 <h3>Overriding attributes</h3>
-<p>You can override any given property of the <code>Ember.LinkComponent</code>
-that is generated by the <code>{{link-to}}</code> component by passing
+<p>You can override any given property of the Ember.LinkComponent
+that is generated by the <code>{{link-to}}</code> helper by passing
 key/value pairs, like so:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{#link-to  aPhoto tagName='li' title='Following this link will change your life' classNames='pic sweet'}}
   Uh-mazing!
@@ -1657,9 +1394,9 @@ key/value pairs, like so:</p>
 complete list of overrideable properties. Be sure to also
 check out inherited properties of <code>LinkComponent</code>.</p>
 <h3>Overriding Application-wide Defaults</h3>
-<p><code>{{link-to}}</code> creates an instance of <code>Ember.LinkComponent</code>
+<p><code>{{link-to}}</code> creates an instance of Ember.LinkComponent
 for rendering. To override options for your entire
-application, reopen <code>Ember.LinkComponent</code> and supply the
+application, reopen Ember.LinkComponent and supply the
 desired values:</p>
 <pre class="code prettyprint"><code class="language-javascript">Ember.LinkComponent.reopen({
   activeClass: &quot;is-active&quot;,
@@ -1748,10 +1485,9 @@ this manner:</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_loc.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;loc.js:9</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_loc.js.html#l8"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;loc.js:8</code></a>
         </p>
 
 
@@ -1789,79 +1525,7 @@ set up localized string references.</p>
 
 
                     <div class="param-description">
-                        <p>The string to format.</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_loc" class="method item public">
-    <h3 class="name"><code>loc</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>str</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helpers_loc.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helpers&#x2F;loc.js:9</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Calls <a href="/api/classes/Ember.String.html#method_loc">Ember.String.loc</a> with the
-provided string. This is a convenient way to localize text within a template.
-For example:</p>
-<pre class="code prettyprint"><code class="language-javascript">Ember.STRINGS = {
-  '_welcome_': 'Bonjour'
-};
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;div class='message'&gt;
-  {{loc '_welcome_'}}
-&lt;/div&gt;
-</code></pre>
-<pre class="code prettyprint"><code class="language-html">&lt;div class='message'&gt;
-  Bonjour
-&lt;/div&gt;
-</code></pre>
-<p>See <a href="/api/classes/Ember.String.html#method_loc">Ember.String.loc</a> for how to
-set up localized string references.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">str</code>
-                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
-
-
-                    <div class="param-description">
-                        <p>The string to format.</p>
+                        <p>The string to format</p>
 
                     </div>
 
@@ -1892,7 +1556,6 @@ set up localized string references.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_log.js.html#l8"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;log.js:8</code></a>
@@ -1930,64 +1593,6 @@ context. <code>log</code> also accepts primitive types such as strings or number
 
 
 </div>
-<div id="method_log" class="method item public">
-    <h3 class="name"><code>log</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>params</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helpers_log.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helpers&#x2F;log.js:9</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p><code>log</code> allows you to output the value of variables in the current rendering
-context. <code>log</code> also accepts primitive types such as strings or numbers.</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{log &quot;myVariable:&quot; myVariable }}
-</code></pre>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">params</code>
-                        <span class="type">Array</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
 <div id="method_mut" class="method item public">
     <h3 class="name"><code>mut</code></h3>
 
@@ -2008,10 +1613,9 @@ context. <code>log</code> also accepts primitive types such as strings or number
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_mut.js.html#l47"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;mut.js:47</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_mut.js.html#l17"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;mut.js:17</code></a>
         </p>
 
 
@@ -2029,7 +1633,7 @@ critical to understanding the logic of a large/complex <code>Component</code>.</
 <p>The child <code>Component</code> can then modify the parent's value as needed:</p>
 <pre class="code prettyprint"><code class="language-javascript">// my-child.js
 export default Component.extend({
-  click() {
+  click: function() {
     this.attrs.childClickCount.update(this.attrs.childClickCount.value + 1);
   }
 });
@@ -2081,10 +1685,9 @@ additional information on using <code>{{mut}}</code>.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_outlet.js.html#l16"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;outlet.js:16</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_outlet.js.html#l12"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;outlet.js:12</code></a>
         </p>
 
 
@@ -2092,7 +1695,7 @@ additional information on using <code>{{mut}}</code>.</p>
     </div>
 
     <div class="description">
-        <p>The <code>{{outlet}}</code> helper lets you specify where a child route will render in
+        <p>The <code>{{outlet}}</code> helper lets you specify where a child routes will render in
 your template. An important use of the <code>{{outlet}}</code> helper is in your
 application's <code>application.hbs</code> file:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{! app/templates/application.hbs }}
@@ -2173,7 +1776,6 @@ information on how your <code>route</code> interacts with the <code>{{outlet}}</
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_partial.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;partial.js:9</code></a>
@@ -2220,7 +1822,7 @@ name.</p>
 
 
                     <div class="param-description">
-                        <p>The name of the template to render minus the leading underscore.</p>
+                        <p>the name of the template to render minus the leading underscore</p>
 
                     </div>
 
@@ -2303,140 +1905,6 @@ It will supply url query parameters to the target route.</p>
 
 
 </div>
-<div id="method_render" class="method item public">
-    <h3 class="name"><code>render</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>name</code>
-                </li>
-                <li class="arg">
-                        <code>context</code>
-                </li>
-                <li class="arg">
-                        <code>options</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-routing-htmlbars_lib_keywords_render.js.html#l16"><code>ember.js&#x2F;packages&#x2F;ember-routing-htmlbars&#x2F;lib&#x2F;keywords&#x2F;render.js:16</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Calling <code>{{render}}</code> from within a template will insert another
-template that matches the provided name. The inserted template will
-access its properties on its own controller (rather than the controller
-of the parent template).
-If a view class with the same name exists, the view class also will be used.
-Note: A given controller may only be used <em>once</em> in your app in this manner.
-A singleton instance of the controller will be created for you.
-Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">App.NavigationController = Ember.Controller.extend({
-  who: &quot;world&quot;
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- navigation.hbs --&gt;
-Hello, {{who}}.
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- application.hbs --&gt;
-&lt;h1&gt;My great app&lt;/h1&gt;
-{{render &quot;navigation&quot;}}
-</code></pre>
-<pre class="code prettyprint"><code class="language-html">&lt;h1&gt;My great app&lt;/h1&gt;
-&lt;div class='ember-view'&gt;
-  Hello, world.
-&lt;/div&gt;
-</code></pre>
-<p>Optionally you may provide a second argument: a property path
-that will be bound to the <code>model</code> property of the controller.
-If a <code>model</code> property path is specified, then a new instance of the
-controller will be created and <code>{{render}}</code> can be used multiple times
-with the same name.</p>
-<p>For example if you had this <code>author</code> template.</p>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;div class=&quot;author&quot;&gt;
-  Written by {{firstName}} {{lastName}}.
-  Total Posts: {{postCount}}
-&lt;/div&gt;
-</code></pre>
-<p>You could render it inside the <code>post</code> template using the <code>render</code> helper.</p>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;div class=&quot;post&quot;&gt;
-  &lt;h1&gt;{{title}}&lt;/h1&gt;
-  &lt;div&gt;{{body}}&lt;/div&gt;
-  {{render &quot;author&quot; author}}
-&lt;/div&gt;
-</code></pre>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">name</code>
-                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">context</code>
-                        <span class="type">Object?</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Hash</span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>:
-                    <p>HTML string</p>
-
-            </div>
-        </div>
-
-
-</div>
 <div id="method_textarea" class="method item public">
     <h3 class="name"><code>textarea</code></h3>
 
@@ -2457,7 +1925,6 @@ with the same name.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_textarea.js.html#l6"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;textarea.js:6</code></a>
@@ -2638,57 +2105,9 @@ legacy 1.x view semantics (like <code>controller</code> being present).</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helpers_unbound.js.html#l9"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helpers&#x2F;unbound.js:9</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>The <code>{{unbound}}</code> helper disconnects the one-way binding of a property,
-essentially freezing its value at the moment of rendering. For example,
-in this example the display of the variable <code>name</code> will not change even
-if it is set with a new value:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{unbound name}}
-</code></pre>
-<p>Like any helper, the <code>unbound</code> helper can accept a nested helper expression.
-This allows for custom helpers to be rendered unbound:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{unbound (some-custom-helper)}}
-{{unbound (capitalize name)}}
-{{! You can use any helper, including unbound, in a nested expression }}
-{{capitalize (unbound name)}}
-</code></pre>
-<p>The <code>unbound</code> helper only accepts a single argument, and it return an
-unbound value.</p>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_unbound" class="method item public">
-    <h3 class="name"><code>unbound</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_unbound.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;unbound.js:10</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_unbound.js.html#l8"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;unbound.js:8</code></a>
         </p>
 
 
@@ -2732,7 +2151,6 @@ unbound value.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_if_unless.js.html#l69"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;if_unless.js:69</code></a>
@@ -2746,47 +2164,6 @@ unbound value.</p>
         <p>The <code>unless</code> helper is the inverse of the <code>if</code> helper. Its block will be
 rendered if the expression contains a falsey value.  All forms of the <code>if</code>
 helper can also be used with <code>unless</code>.</p>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_unless" class="method item public">
-    <h3 class="name"><code>unless</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helpers_if-unless.js.html#l63"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helpers&#x2F;if-unless.js:63</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>The inline <code>unless</code> helper conditionally renders a single property or string.
-This helper acts like a ternary operator. If the first property is falsy,
-the second argument will be displayed, otherwise, the third argument will be
-displayed</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{unless useLongGreeting &quot;Hi&quot; &quot;Hello&quot;}} Ben
-</code></pre>
-<p>You can use the <code>unless</code> helper inside another helper as a subexpression.</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{some-component height=(unless isBig &quot;10&quot; &quot;100&quot;)}}
-</code></pre>
 
     </div>
 
@@ -2809,7 +2186,6 @@ displayed</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_keywords_view.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;keywords&#x2F;view.js:10</code></a>
@@ -2972,7 +2348,6 @@ aView.get('aChildByName') // the instance of Ember.View created by {{view}} help
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-templates.html">ember-templates</a> module.</p>
                 <p>
                 Defined in
         <a href="../files/ember.js_packages_ember-htmlbars_lib_helpers_with.js.html#l8"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helpers&#x2F;with.js:8</code></a>
@@ -2986,7 +2361,7 @@ aView.get('aChildByName') // the instance of Ember.View created by {{view}} help
         <p>Use the <code>{{with}}</code> helper when you want to alias a property to a new name. This is helpful
 for semantic clarity as it allows you to retain default scope or to reference a property from another
 <code>{{with}}</code> block.</p>
-<p>If the aliased property is &quot;falsey&quot;, for example: <code>false</code>, <code>undefined</code> <code>null</code>, <code>&quot;&quot;</code>, <code>0</code>, NaN or
+<p>If the aliased property is &quot;falsey&quot;, for example: <code>false</code>, <code>undefined</code> <code>null</code>, <code>&quot;&quot;</code>, <code>0</code> or
 an empty array, the block will not be rendered.</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{! Will only render if user.posts contains items}}
 {{#with user.posts as |blogPosts|}}

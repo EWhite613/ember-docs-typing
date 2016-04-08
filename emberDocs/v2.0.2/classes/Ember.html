@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,7 +186,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:10</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l8"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:8</code></a>
         </div>
 
             Module: <a href="../modules/ember-metal.html">ember-metal</a><br>
@@ -199,6 +199,7 @@
     <p>This namespace contains all Ember methods and functions. Future versions of
 Ember may overwrite this namespace and therefore, you should avoid adding any
 new properties.</p>
+<p>You can also use the shorthand <code>Em</code> instead of <code>Ember</code>.</p>
 <p>At the heart of Ember is Ember-Runtime, a set of core functions that provide
 cross-platform compatibility and object property observing.  Ember-Runtime is
 small and performance-focused so you can use it alongside other
@@ -263,10 +264,6 @@ cross-platform libraries such as jQuery. For more details, see
                                 <a href="#method_assert">assert</a>
 
                             </li>
-                            <li class="index-item method public">
-                                <a href="#method_assign">assign</a>
-
-                            </li>
                             <li class="index-item method private deprecated">
                                 <a href="#method_beforeObserver">beforeObserver</a>
 
@@ -292,7 +289,7 @@ cross-platform libraries such as jQuery. For more details, see
                                 <a href="#method_changeProperties">changeProperties</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method private">
                                 <a href="#method_compare">compare</a>
 
                             </li>
@@ -353,27 +350,15 @@ cross-platform libraries such as jQuery. For more details, see
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#method_getOwner">getOwner</a>
-
-                            </li>
-                            <li class="index-item method public">
                                 <a href="#method_getProperties">getProperties</a>
 
                             </li>
-                            <li class="index-item method public">
-                                <a href="#method_getWithDefault">getWithDefault</a>
-
-                            </li>
-                            <li class="index-item method public">
+                            <li class="index-item method private">
                                 <a href="#method_guidFor">guidFor</a>
 
                             </li>
                             <li class="index-item method private">
                                 <a href="#method_hasListeners">hasListeners</a>
-
-                            </li>
-                            <li class="index-item method private">
-                                <a href="#method_info">info</a>
 
                             </li>
                             <li class="index-item method private">
@@ -396,6 +381,10 @@ cross-platform libraries such as jQuery. For more details, see
                                 <a href="#method_isEqual">isEqual</a>
 
                             </li>
+                            <li class="index-item method private">
+                                <a href="#method_isGlobalPath">isGlobalPath</a>
+
+                            </li>
                             <li class="index-item method public">
                                 <a href="#method_isNone">isNone</a>
 
@@ -406,6 +395,10 @@ cross-platform libraries such as jQuery. For more details, see
                             </li>
                             <li class="index-item method public">
                                 <a href="#method_K">K</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_keys">keys</a>
 
                             </li>
                             <li class="index-item method private">
@@ -428,7 +421,11 @@ cross-platform libraries such as jQuery. For more details, see
                                 <a href="#method_mixin">mixin</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method private">
+                                <a href="#method_normalizeTuple">normalizeTuple</a>
+
+                            </li>
+                            <li class="index-item method private">
                                 <a href="#method_observer">observer</a>
 
                             </li>
@@ -479,10 +476,6 @@ cross-platform libraries such as jQuery. For more details, see
                             </li>
                             <li class="index-item method public">
                                 <a href="#method_set">set</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_setOwner">setOwner</a>
 
                             </li>
                             <li class="index-item method public">
@@ -564,6 +557,10 @@ cross-platform libraries such as jQuery. For more details, see
                                 <a href="#property_LOG_VERSION">LOG_VERSION</a>
 
                             </li>
+                            <li class="index-item property public">
+                                <a href="#property_SHIM_ES5">SHIM_ES5</a>
+
+                            </li>
                             <li class="index-item property private">
                                 <a href="#property_STRINGS">STRINGS</a>
 
@@ -613,7 +610,7 @@ cross-platform libraries such as jQuery. For more details, see
                     <p>Provided by the <a href="../modules/ember-views.html">ember-views</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_index.js.html#l37"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;index.js:37</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_main.js.html#l45"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;main.js:45</code></a>
         </p>
 
 
@@ -752,7 +749,7 @@ cross-platform libraries such as jQuery. For more details, see
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l780"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:780</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l840"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:840</code></a>
         </p>
 
 
@@ -834,7 +831,7 @@ enabled.</p>
                     <p>Provided by the <a href="../modules/ember-debug.html">ember-debug</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-debug_lib_index.js.html#l167"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;index.js:167</code></a>
+        <a href="../files/ember.js_packages_ember-debug_lib_main.js.html#l236"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;main.js:236</code></a>
         </p>
 
 
@@ -842,7 +839,7 @@ enabled.</p>
     </div>
 
     <div class="description">
-        <p>Will call <code>Ember.warn()</code> if ENABLE_OPTIONAL_FEATURES or
+        <p>Will call <code>Ember.warn()</code> if ENABLE_ALL_FEATURES, ENABLE_OPTIONAL_FEATURES, or
 any specific FEATURES flag is truthy.</p>
 <p>This method is called automatically in debug canary builds.</p>
 
@@ -879,7 +876,7 @@ any specific FEATURES flag is truthy.</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_native_array.js.html#l107"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;native_array.js:107</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_native_array.js.html#l108"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;native_array.js:108</code></a>
         </p>
 
 
@@ -894,13 +891,12 @@ it is recommended that you use Ember.A when creating addons for
 ember or when you can not guarantee that <code>Ember.EXTEND_PROTOTYPES</code>
 will be <code>true</code>.</p>
 <p>Example</p>
-<pre class="code prettyprint"><code class="language-js">export default Ember.Component.extend({
+<pre class="code prettyprint"><code class="language-js">var Pagination = Ember.CollectionView.extend({
   tagName: 'ul',
   classNames: ['pagination'],
 
-  init() {
-    this._super(...arguments);
-
+  init: function() {
+    this._super.apply(this, arguments);
     if (!this.get('content')) {
       this.set('content', Ember.A());
     }
@@ -955,7 +951,7 @@ will be <code>true</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l73"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:73</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l105"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:105</code></a>
         </p>
 
 
@@ -1145,7 +1141,7 @@ will be <code>true</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l698"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:698</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l752"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:752</code></a>
         </p>
 
 
@@ -1216,7 +1212,7 @@ goodGuy.moniker(); // 'Tomhuda Katzdale'
                     <p>Provided by the <a href="../modules/ember-debug.html">ember-debug</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-debug_lib_index.js.html#l32"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;index.js:32</code></a>
+        <a href="../files/ember.js_packages_ember-debug_lib_main.js.html#l25"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;main.js:25</code></a>
         </p>
 
 
@@ -1226,8 +1222,7 @@ goodGuy.moniker(); // 'Tomhuda Katzdale'
     <div class="description">
         <p>Define an assertion that will throw an exception if the condition is not
 met. Ember build tools will remove any calls to <code>Ember.assert()</code> when
-doing an Ember.js framework production build and will make the assertion a
-no-op for an application production build. Example:</p>
+doing a production build. Example:</p>
 <pre class="code prettyprint"><code class="language-javascript">// Test for truthiness
 Ember.assert('Must pass a valid object', obj);
 
@@ -1255,12 +1250,13 @@ the text of the Error thrown if the assertion fails.</p>
                 </li>
                 <li class="param">
                         <code class="param-name">test</code>
-                        <span class="type">Boolean</span>
+                        <span class="type">Boolean | <a href="../classes/Function.html" class="crosslink">Function</a></span>
 
 
                     <div class="param-description">
                         <p>Must be truthy for the assertion to pass. If
-falsy, an exception will be thrown.</p>
+falsy, an exception will be thrown. If this is a function, it will be executed and
+its return value will be used as condition.</p>
 
                     </div>
 
@@ -1268,91 +1264,6 @@ falsy, an exception will be thrown.</p>
             </ul>
         </div>
 
-
-
-</div>
-<div id="method_assign" class="method item public">
-    <h3 class="name"><code>assign</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>original</code>
-                </li>
-                <li class="arg">
-                        <code>args</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_assign.js.html#l1"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;assign.js:1</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Copy properties from a source object to a target object.</p>
-<pre class="code prettyprint"><code class="language-javascript">var a = {first: 'Yehuda'};
-var b = {last: 'Katz'};
-var c = {company: 'Tilde Inc.'};
-Ember.assign(a, b, c); // a === {first: 'Yehuda', last: 'Katz', company: 'Tilde Inc.'}, b === {last: 'Katz'}, c === {company: 'Tilde Inc.'}
-</code></pre>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">original</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        <p>The object to assign into</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">args</code>
-                        <span class="type">Object</span>
-
-                        <span class="flag multiple" title="This argument may occur one or more times.">multiple</span>
-
-                    <div class="param-description">
-                        <p>The objects to copy properties from</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-            </div>
-        </div>
 
 
 </div>
@@ -1385,7 +1296,7 @@ Ember.assign(a, b, c); // a === {first: 'Yehuda', last: 'Katz', company: 'Tilde 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l819"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:819</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l877"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:877</code></a>
         </p>
 
 
@@ -1476,7 +1387,7 @@ enabled.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l203"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:203</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l219"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:219</code></a>
         </p>
 
 
@@ -1522,7 +1433,7 @@ enabled.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l468"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:468</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l451"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:451</code></a>
         </p>
 
 
@@ -1617,7 +1528,7 @@ Must be relative to obj or a global path.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l560"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:560</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l581"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:581</code></a>
         </p>
 
 
@@ -1702,7 +1613,7 @@ to return</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l333"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:333</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l418"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:418</code></a>
         </p>
 
 
@@ -1784,7 +1695,7 @@ Ember.canInvoke(foo, 'bat'); // false
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l224"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:224</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l240"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:240</code></a>
         </p>
 
 
@@ -1833,7 +1744,7 @@ exception-safe way.</p>
 
 
 </div>
-<div id="method_compare" class="method item public">
+<div id="method_compare" class="method item private">
     <h3 class="name"><code>compare</code></h3>
 
         <div class="args">
@@ -1852,7 +1763,7 @@ exception-safe way.</p>
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -1862,7 +1773,7 @@ exception-safe way.</p>
                     <p>Provided by the <a href="../modules/ember.html">ember</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_compare.js.html#l40"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;compare.js:40</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_compare.js.html#l26"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;compare.js:26</code></a>
         </p>
 
 
@@ -1870,34 +1781,18 @@ exception-safe way.</p>
     </div>
 
     <div class="description">
-        <p>Compares two javascript values and returns:</p>
+        <p>This will compare two javascript values of possibly different types.
+It will tell you which one is greater than the other by returning:</p>
 <ul>
 <li>-1 if the first is smaller than the second,</li>
 <li>0 if both are equal,</li>
 <li>1 if the first is greater than the second.</li>
 </ul>
+<p>The order is calculated based on <code>Ember.ORDER_DEFINITION</code>, if types are different.
+In case they have the same type an appropriate comparison for this type is made.</p>
 <pre class="code prettyprint"><code class="language-javascript">Ember.compare('hello', 'hello');  // 0
 Ember.compare('abc', 'dfg');      // -1
 Ember.compare(2, 1);              // 1
-</code></pre>
-<p>If the types of the two objects are different precedence occurs in the
-following order, with types earlier in the list considered <code>&lt;</code> types
-later in the list:</p>
-<ul>
-<li>undefined</li>
-<li>null</li>
-<li>boolean</li>
-<li>number</li>
-<li>string</li>
-<li>array</li>
-<li>object</li>
-<li>instance</li>
-<li>function</li>
-<li>class</li>
-<li>date</li>
-</ul>
-<pre class="code prettyprint"><code class="language-javascript">Ember.compare('hello', 50);       // 1
-Ember.compare(50, 'hello');       // -1
 </code></pre>
 
     </div>
@@ -1985,7 +1880,7 @@ Ember.compare(50, 'hello');       // -1
                         <code>obj</code>
                 </li>
                 <li class="arg">
-                        <code class="optional">[deep=false]</code>
+                        <code>deep</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -2005,7 +1900,7 @@ Ember.compare(50, 'hello');       // -1
                     <p>Provided by the <a href="../modules/ember.html">ember</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_copy.js.html#l66"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;copy.js:66</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_copy.js.html#l64"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;copy.js:64</code></a>
         </p>
 
 
@@ -2013,13 +1908,12 @@ Ember.compare(50, 'hello');       // -1
     </div>
 
     <div class="description">
-        <p>Creates a shallow copy of the passed object. A deep copy of the object is
-returned if the optional <code>deep</code> argument is <code>true</code>.</p>
-<p>If the passed object implements the <code>Ember.Copyable</code> interface, then this
-function will delegate to the object's <code>copy()</code> method and return the
-result. See <code>Ember.Copyable</code> for further details.</p>
-<p>For primitive values (which are immutable in JavaScript), the passed object
-is simply returned.</p>
+        <p>Creates a clone of the passed object. This function can take just about
+any type of object and create a clone of it, including primitive values
+(which are not actually cloned because they are immutable).</p>
+<p>If the passed object implements the <code>copy()</code> method, then this function
+will simply call that method and return the result. Please see
+<code>Ember.Copyable</code> for further details.</p>
 
     </div>
 
@@ -2039,13 +1933,12 @@ is simply returned.</p>
 
                 </li>
                 <li class="param">
-                        <code class="param-name optional">[deep=false]</code>
+                        <code class="param-name">deep</code>
                         <span class="type">Boolean</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
 
 
                     <div class="param-description">
-                        <p>If true, a deep copy of the object is made.</p>
+                        <p>If true, a deep copy of the object is made</p>
 
                     </div>
 
@@ -2058,7 +1951,7 @@ is simply returned.</p>
 
             <div class="returns-description">
                         <span class="type">Object</span>:
-                    <p>The copied object</p>
+                    <p>The cloned object</p>
 
             </div>
         </div>
@@ -2161,7 +2054,7 @@ container type itself.</p>
                     <p>Provided by the <a href="../modules/ember-debug.html">ember-debug</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-debug_lib_index.js.html#l73"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;index.js:73</code></a>
+        <a href="../files/ember.js_packages_ember-debug_lib_main.js.html#l80"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;main.js:80</code></a>
         </p>
 
 
@@ -2228,7 +2121,7 @@ container type itself.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_properties.js.html#l70"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;properties.js:70</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_properties.js.html#l41"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;properties.js:41</code></a>
         </p>
 
 
@@ -2259,9 +2152,9 @@ Ember.defineProperty(contact, 'firstName', {
 Ember.defineProperty(contact, 'lastName', undefined, 'Jolley');
 
 // define a computed property
-Ember.defineProperty(contact, 'fullName', Ember.computed('firstName', 'lastName', function() {
+Ember.defineProperty(contact, 'fullName', Ember.computed(function() {
   return this.firstName+' '+this.lastName;
-}));
+}).property('firstName', 'lastName'));
 </code></pre>
 
     </div>
@@ -2354,7 +2247,7 @@ become the explicit value of this property.</p>
                     <p>Provided by the <a href="../modules/ember-debug.html">ember-debug</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-debug_lib_deprecate.js.html#l96"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;deprecate.js:96</code></a>
+        <a href="../files/ember.js_packages_ember-debug_lib_main.js.html#l96"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;main.js:96</code></a>
         </p>
 
 
@@ -2385,12 +2278,13 @@ become the explicit value of this property.</p>
                 </li>
                 <li class="param">
                         <code class="param-name">test</code>
-                        <span class="type">Boolean</span>
+                        <span class="type">Boolean | <a href="../classes/Function.html" class="crosslink">Function</a></span>
 
 
                     <div class="param-description">
-                        <p>A boolean. If falsy, the deprecation
-will be displayed.</p>
+                        <p>An optional boolean. If falsy, the deprecation
+will be displayed. If this is a function, it will be executed and its return
+value will be used as condition.</p>
 
                     </div>
 
@@ -2401,7 +2295,7 @@ will be displayed.</p>
 
 
                     <div class="param-description">
-                        <p>An object that can be used to pass
+                        <p>An optional object that can be used to pass
 in a <code>url</code> to the transition guide on the <a href="http://emberjs.com">emberjs.com</a> website, and a unique
 <code>id</code> for this deprecation. The <code>id</code> can be used by Ember debugging tools
 to change the behavior (raise, log or silence) for that specific deprecation.
@@ -2448,7 +2342,7 @@ The <code>id</code> should be namespaced by dots, e.g. &quot;view.helper.select&
                     <p>Provided by the <a href="../modules/ember-debug.html">ember-debug</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-debug_lib_index.js.html#l99"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;index.js:99</code></a>
+        <a href="../files/ember.js_packages_ember-debug_lib_main.js.html#l176"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;main.js:176</code></a>
         </p>
 
 
@@ -2512,7 +2406,7 @@ no warnings will be shown in production.</p>
 
             <div class="returns-description">
                         <span class="type"><a href="../classes/Function.html" class="crosslink">Function</a></span>:
-                    <p>A new function that wraps the original function with a deprecation warning</p>
+                    <p>a new function that wrapped the original function with a deprecation warning</p>
 
             </div>
         </div>
@@ -2544,7 +2438,7 @@ no warnings will be shown in production.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_watching.js.html#l73"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;watching.js:73</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_watching.js.html#l67"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;watching.js:67</code></a>
         </p>
 
 
@@ -2601,7 +2495,7 @@ Multiple calls will have no effect.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l212"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:212</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l228"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:228</code></a>
         </p>
 
 
@@ -2641,7 +2535,7 @@ Multiple calls will have no effect.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_expand_properties.js.html#l11"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;expand_properties.js:11</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_expand_properties.js.html#l10"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;expand_properties.js:10</code></a>
         </p>
 
 
@@ -2659,7 +2553,7 @@ Ember.expandProperties('foo.bar', echo);              //=&gt; 'foo.bar'
 Ember.expandProperties('{foo,bar}', echo);            //=&gt; 'foo', 'bar'
 Ember.expandProperties('foo.{bar,baz}', echo);        //=&gt; 'foo.bar', 'foo.baz'
 Ember.expandProperties('{foo,bar}.baz', echo);        //=&gt; 'foo.baz', 'bar.baz'
-Ember.expandProperties('foo.{bar,baz}.[]', echo)      //=&gt; 'foo.bar.[]', 'foo.baz.[]'
+Ember.expandProperties('foo.{bar,baz}.[]', echo)   //=&gt; 'foo.bar.[]', 'foo.baz.[]'
 Ember.expandProperties('{foo,bar}.{spam,eggs}', echo) //=&gt; 'foo.spam', 'foo.eggs', 'bar.spam', 'bar.eggs'
 Ember.expandProperties('{foo}.bar.{baz}')             //=&gt; 'foo.bar.baz'
 </code></pre>
@@ -2798,7 +2692,7 @@ controller is generated.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l129"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:129</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l165"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:165</code></a>
         </p>
 
 
@@ -2887,7 +2781,7 @@ separate the guid into separate namespaces.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_get.js.html#l15"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_get.js:15</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_property_get.js.html#l23"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_get.js:23</code></a>
         </p>
 
 
@@ -2946,100 +2840,6 @@ an error.</p>
             <div class="returns-description">
                         <span class="type">Object</span>:
                     <p>the property value or <code>null</code>.</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_getOwner" class="method item public">
-    <h3 class="name"><code>getOwner</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>object</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_container_lib_owner.js.html#l11"><code>ember.js&#x2F;packages&#x2F;container&#x2F;lib&#x2F;owner.js:11</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Framework objects in an Ember application (components, services, routes, etc.)
-are created via a factory and dependency injection system. Each of these
-objects is the responsibility of an &quot;owner&quot;, which handled its
-instantiation and manages its lifetime.</p>
-<p><code>getOwner</code> fetches the owner object responsible for an instance. This can
-be used to lookup or resolve other class instances, or register new factories
-into the owner.</p>
-<p>For example, this component dynamically looks up a service based on the
-<code>audioType</code> passed as an attribute:</p>
-<pre class="code prettyprint"><code>// app/components/play-audio.js
-import Ember from 'ember';
-
-// Usage:
-//
-//   {{play-audio audioType=model.audioType audioFile=model.file}}
-//
-export default Ember.Component.extend({
-  audioService: Ember.computed('audioType', function() {
-    let owner = Ember.getOwner(this);
-    return owner.lookup(<code>service:${this.get(&#x27;audioType&#x27;)}</code>);
-  }),
-  click() {
-    let player = this.get('audioService');
-    player.play(this.get('audioFile'));
-  }
-});
-</code></pre>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">object</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        <p>An object with an owner.</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>An owner object.</p>
 
             </div>
         </div>
@@ -3133,105 +2933,7 @@ with an object followed by a list of strings or an array:</p>
 
 
 </div>
-<div id="method_getWithDefault" class="method item public">
-    <h3 class="name"><code>getWithDefault</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>obj</code>
-                </li>
-                <li class="arg">
-                        <code>keyName</code>
-                </li>
-                <li class="arg">
-                        <code>defaultValue</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_get.js.html#l93"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_get.js:93</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Retrieves the value of a property from an Object, or a default value in the
-case that the property returns <code>undefined</code>.</p>
-<pre class="code prettyprint"><code class="language-javascript">Ember.getWithDefault(person, 'lastName', 'Doe');
-</code></pre>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">obj</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        <p>The object to retrieve from.</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">keyName</code>
-                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
-
-
-                    <div class="param-description">
-                        <p>The name of the property to retrieve</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">defaultValue</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        <p>The value to return if the property value is undefined</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>The property value or the defaultValue.</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_guidFor" class="method item public">
+<div id="method_guidFor" class="method item private">
     <h3 class="name"><code>guidFor</code></h3>
 
         <div class="args">
@@ -3247,7 +2949,7 @@ case that the property returns <code>undefined</code>.</p>
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -3256,7 +2958,7 @@ case that the property returns <code>undefined</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l167"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:167</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l203"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:203</code></a>
         </p>
 
 
@@ -3327,7 +3029,7 @@ property.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l249"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:249</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l348"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:348</code></a>
         </p>
 
 
@@ -3368,39 +3070,6 @@ property.</p>
 
 
 </div>
-<div id="method_info" class="method item private">
-    <h3 class="name"><code>info</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-debug.html">ember-debug</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-debug_lib_index.js.html#l89"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;index.js:89</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Display an info notice.</p>
-
-    </div>
-
-
-
-
-</div>
 <div id="method_inspect" class="method item private">
     <h3 class="name"><code>inspect</code></h3>
 
@@ -3426,7 +3095,7 @@ property.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l415"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:415</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l500"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:500</code></a>
         </p>
 
 
@@ -3507,14 +3176,14 @@ use something like JSDump: <a href="https://github.com/NV/jsDump">https://github
 
     <div class="description">
         <p>Returns true if the passed object is an array or Array-like.</p>
-<p>Objects are considered Array-like if any of the following are true:</p>
+<p>Ember Array Protocol:</p>
 <ul>
-<li>the object is a native Array</li>
 <li>the object has an objectAt property</li>
+<li>the object is a native Array</li>
 <li>the object is an Object, and has a length property</li>
 </ul>
 <p>Unlike <code>Ember.typeOf</code> this method returns true even if the passed object is
-not formally an array but appears to be array-like (i.e. implements <code>Ember.Array</code>)</p>
+not formally array but appears to be array-like (i.e. implements <code>Ember.Array</code>)</p>
 <pre class="code prettyprint"><code class="language-javascript">Ember.isArray();                                          // false
 Ember.isArray([]);                                        // true
 Ember.isArray(Ember.ArrayProxy.create({ content: [] }));  // true
@@ -3677,8 +3346,6 @@ Ember.isEmpty([]);              // true
 Ember.isEmpty({});              // false
 Ember.isEmpty('Adam Hawkins');  // false
 Ember.isEmpty([0,1,2]);         // false
-Ember.isEmpty('\n\t');          // false
-Ember.isEmpty('  ');            // false
 </code></pre>
 
     </div>
@@ -3737,10 +3404,10 @@ Ember.isEmpty('  ');            // false
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember.html">ember</a> module.</p>
+                    <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_is-equal.js.html#l1"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;is-equal.js:1</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_core.js.html#l6"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;core.js:6</code></a>
         </p>
 
 
@@ -3748,26 +3415,13 @@ Ember.isEmpty('  ');            // false
     </div>
 
     <div class="description">
-        <p>Compares two objects, returning true if they are equal.</p>
-<pre class="code prettyprint"><code class="language-javascript">Ember.isEqual('hello', 'hello');                   // true
-Ember.isEqual(1, 2);                               // false
-</code></pre>
-<p><code>isEqual</code> is a more specific comparison than a triple equal comparison.
-It will call the <code>isEqual</code> instance method on the objects being
-compared, allowing finer control over when objects should be considered
-equal to each other.</p>
-<pre class="code prettyprint"><code class="language-javascript">let Person = Ember.Object.extend({
-  isEqual(other) { return this.ssn == other.ssn; }
-});
-
-let personA = Person.create({name: 'Muhammad Ali', ssn: '123-45-6789'});
-let personB = Person.create({name: 'Cassius Clay', ssn: '123-45-6789'});
-
-Ember.isEqual(personA, personB); // true
-</code></pre>
-<p>Due to the expense of array comparisons, collections will never be equal to
-each other even if each of their items are equal to each other.</p>
-<pre class="code prettyprint"><code class="language-javascript">Ember.isEqual([4, 2], [4, 2]);                     // false
+        <p>Compares two objects, returning true if they are logically equal. This is
+a deeper comparison than a simple triple equal. For sets it will compare the
+internal objects. For any other object that implements <code>isEqual()</code> it will
+respect that method.</p>
+<pre class="code prettyprint"><code class="language-javascript">Ember.isEqual('hello', 'hello');  // true
+Ember.isEqual(1, 2);              // false
+Ember.isEqual([4, 2], [4, 2]);    // false
 </code></pre>
 
     </div>
@@ -3806,6 +3460,72 @@ each other even if each of their items are equal to each other.</p>
 
             <div class="returns-description">
                         <span class="type">Boolean</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isGlobalPath" class="method item private">
+    <h3 class="name"><code>isGlobalPath</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>path</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l39"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:39</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns true if the provided path is global (e.g., <code>MyApp.fooController.bar</code>)
+instead of local (<code>foo.bar.baz</code>).</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">path</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                    <p>Boolean</p>
+
             </div>
         </div>
 
@@ -3853,7 +3573,7 @@ Ember.isNone(null);          // true
 Ember.isNone(undefined);     // true
 Ember.isNone('');            // false
 Ember.isNone([]);            // false
-Ember.isNone(function() {}); // false
+Ember.isNone(function() {});  // false
 </code></pre>
 
     </div>
@@ -3925,19 +3645,14 @@ Ember.isNone(function() {}); // false
 <pre class="code prettyprint"><code class="language-javascript">Ember.isPresent();                // false
 Ember.isPresent(null);            // false
 Ember.isPresent(undefined);       // false
+Ember.isPresent(false);           // false
 Ember.isPresent('');              // false
-Ember.isPresent('  ');            // false
-Ember.isPresent('\n\t');          // false
 Ember.isPresent([]);              // false
-Ember.isPresent({ length: 0 })    // false
-Ember.isPresent(false);           // true
-Ember.isPresent(true);            // true
-Ember.isPresent('string');        // true
-Ember.isPresent(0);               // true
-Ember.isPresent(function() {})    // true
+Ember.isPresent('\n\t');          // false
+Ember.isPresent('  ');            // false
 Ember.isPresent({});              // true
-Ember.isPresent(false);           // true
 Ember.isPresent('\n\t Hello');    // true
+Ember.isPresent('Hello world');   // true
 Ember.isPresent([1,2,3]);         // true
 </code></pre>
 
@@ -3990,7 +3705,7 @@ Ember.isPresent([1,2,3]);         // true
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l150"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:150</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l152"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:152</code></a>
         </p>
 
 
@@ -4008,6 +3723,75 @@ Ember.isPresent([1,2,3]);         // true
 
             <div class="returns-description">
                         <span class="type">Object</span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_keys" class="method item private">
+    <h3 class="name"><code>keys</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>obj</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                    <p>Provided by the <a href="../modules/ember.html">ember</a> module.</p>
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-metal_lib_keys.js.html#l1"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;keys.js:1</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Returns all of the keys defined on an object or hash. This is useful
+when inspecting objects for debugging. On browsers that support it, this
+uses the native <code>Object.keys</code> implementation.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Array containing keys of obj</p>
+
             </div>
         </div>
 
@@ -4038,7 +3822,7 @@ Ember.isPresent([1,2,3]);         // true
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l262"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:262</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l362"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:362</code></a>
         </p>
 
 
@@ -4104,7 +3888,7 @@ Ember.isPresent([1,2,3]);         // true
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l387"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:387</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l472"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:472</code></a>
         </p>
 
 
@@ -4185,7 +3969,7 @@ Ember.makeArray(controller) === controller;  // true
                     <p>Provided by the <a href="../modules/ember.html">ember</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_merge.js.html#l4"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;merge.js:4</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_merge.js.html#l1"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;merge.js:1</code></a>
         </p>
 
 
@@ -4269,7 +4053,7 @@ Ember.merge(a, b); // a == {first: 'Yehuda', last: 'Katz'}, b == {last: 'Katz'}
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_meta.js.html#l317"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;meta.js:317</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l307"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:307</code></a>
         </p>
 
 
@@ -4357,7 +4141,7 @@ the meta hash, allowing the method to avoid making an unnecessary copy.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l416"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:416</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l477"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:477</code></a>
         </p>
 
 
@@ -4407,7 +4191,91 @@ the meta hash, allowing the method to avoid making an unnecessary copy.</p>
 
 
 </div>
-<div id="method_observer" class="method item public">
+<div id="method_normalizeTuple" class="method item private">
+    <h3 class="name"><code>normalizeTuple</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>target</code>
+                </li>
+                <li class="arg">
+                        <code>path</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+        <span class="flag private">private</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-metal_lib_property_get.js.html#l90"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_get.js:90</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Normalizes a target/path pair to reflect that actual target/path that should
+be observed, etc. This takes into account passing in global property
+paths (i.e. a path beginning with a capital letter not defined on the
+target).</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">target</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The current target. May be <code>null</code>.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">path</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>A path on the target or a global property path.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>a temporary array with the normalized target/path pair.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_observer" class="method item private">
     <h3 class="name"><code>observer</code></h3>
 
         <div class="args">
@@ -4426,7 +4294,7 @@ the meta hash, allowing the method to avoid making an unnecessary copy.</p>
         </span>
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -4435,7 +4303,7 @@ the meta hash, allowing the method to avoid making an unnecessary copy.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l728"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:728</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l782"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:782</code></a>
         </p>
 
 
@@ -4522,7 +4390,7 @@ enabled.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l285"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:285</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l385"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:385</code></a>
         </p>
 
 
@@ -4689,7 +4557,7 @@ resolved from a string into the object:</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l64"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:64</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l61"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:61</code></a>
         </p>
 
 
@@ -4773,7 +4641,7 @@ before the property value changes.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l24"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:24</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_property_events.js.html#l21"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_events.js:21</code></a>
         </p>
 
 
@@ -4954,7 +4822,7 @@ after the property value changes.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l117"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:117</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l144"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:144</code></a>
         </p>
 
 
@@ -5128,7 +4996,7 @@ after the property value changes.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l675"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:675</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_mixin.js.html#l733"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:733</code></a>
         </p>
 
 
@@ -5167,7 +5035,7 @@ after the property value changes.</p>
                     <p>Provided by the <a href="../modules/ember-debug.html">ember-debug</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-debug_lib_index.js.html#l136"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;index.js:136</code></a>
+        <a href="../files/ember.js_packages_ember-debug_lib_main.js.html#l213"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;main.js:213</code></a>
         </p>
 
 
@@ -5315,7 +5183,7 @@ loading. Triggers any callbacks registered for this event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l200"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:200</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l299"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:299</code></a>
         </p>
 
 
@@ -5421,7 +5289,7 @@ is not passed, the actions stored on the passed object are invoked.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_set.js.html#l24"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_set.js:24</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_property_set.js.html#l16"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_set.js:16</code></a>
         </p>
 
 
@@ -5482,75 +5350,6 @@ method then that will be invoked as well.</p>
             <div class="returns-description">
                         <span class="type">Object</span>:
                     <p>the passed value.</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_setOwner" class="method item public">
-    <h3 class="name"><code>setOwner</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>object</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_container_lib_owner.js.html#l54"><code>ember.js&#x2F;packages&#x2F;container&#x2F;lib&#x2F;owner.js:54</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p><code>setOwner</code> forces a new owner on a given object instance. This is primarily
-useful in some testing cases.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">object</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        <p>An object with an owner.</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>An owner object.</p>
 
             </div>
         </div>
@@ -5679,7 +5478,7 @@ anObject.setProperties({
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l145"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:145</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l192"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:192</code></a>
         </p>
 
 
@@ -5791,7 +5590,7 @@ setting that property.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l167"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:167</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l232"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:232</code></a>
         </p>
 
 
@@ -5897,7 +5696,7 @@ setting that property.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l355"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:355</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l440"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:440</code></a>
         </p>
 
 
@@ -5997,7 +5796,7 @@ Ember.tryInvoke(d, 'noSuchMethod', [2014]); // undefined
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_property_set.js.html#l143"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_set.js:143</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_property_set.js.html#l131"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;property_set.js:131</code></a>
         </p>
 
 
@@ -6089,7 +5888,7 @@ an object has been destroyed.</p>
     </div>
 
     <div class="description">
-        <p>Returns a consistent type for the passed object.</p>
+        <p>Returns a consistent type for the passed item.</p>
 <p>Use this instead of the built-in <code>typeof</code> to get the type of an item.
 It will return the same result across all browsers and includes a bit
 more detail. Here is what will be returned:</p>
@@ -6232,9 +6031,6 @@ injected type encountered.</p>
                 <li class="arg">
                         <code>test</code>
                 </li>
-                <li class="arg">
-                        <code>options</code>
-                </li>
             </ul><span class="paren">)</span>
         </div>
 
@@ -6250,7 +6046,7 @@ injected type encountered.</p>
                     <p>Provided by the <a href="../modules/ember-debug.html">ember-debug</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-debug_lib_warn.js.html#l26"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;warn.js:26</code></a>
+        <a href="../files/ember.js_packages_ember-debug_lib_main.js.html#l61"><code>ember.js&#x2F;packages&#x2F;ember-debug&#x2F;lib&#x2F;main.js:61</code></a>
         </p>
 
 
@@ -6290,20 +6086,6 @@ will be displayed.</p>
                     </div>
 
                 </li>
-                <li class="param">
-                        <code class="param-name">options</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        <p>An object that can be used to pass a unique
-<code>id</code> for this warning.  The <code>id</code> can be used by Ember debugging tools
-to change the behavior (raise, log, or silence) for that specific warning.
-The <code>id</code> should be namespaced by dots, e.g. &quot;ember-debug.feature-flag-with-features-stripped&quot;</p>
-
-                    </div>
-
-                </li>
             </ul>
         </div>
 
@@ -6335,7 +6117,7 @@ The <code>id</code> should be namespaced by dots, e.g. &quot;ember-debug.feature
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_watching.js.html#l24"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;watching.js:24</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_watching.js.html#l21"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;watching.js:21</code></a>
         </p>
 
 
@@ -6403,7 +6185,7 @@ this method directly but instead use higher level methods like
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l188"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:188</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_events.js.html#l276"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;events.js:276</code></a>
         </p>
 
 
@@ -6463,7 +6245,7 @@ this method directly but instead use higher level methods like
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l275"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:275</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l366"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:366</code></a>
         </p>
 
 
@@ -6535,7 +6317,7 @@ calls to super.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l69"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:69</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l60"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:60</code></a>
         </p>
 
 
@@ -6565,7 +6347,7 @@ hash must be created before loading Ember.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l103"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:103</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l94"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:94</code></a>
         </p>
 
 
@@ -6601,7 +6383,7 @@ namespace.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l94"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:94</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l105"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:105</code></a>
         </p>
 
 
@@ -6632,7 +6414,7 @@ disabled so they won't show up when you iterate over your properties.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l30"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:30</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_utils.js.html#l33"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;utils.js:33</code></a>
         </p>
 
 
@@ -6658,7 +6440,7 @@ disabled so they won't show up when you iterate over your properties.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l31"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:31</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l26"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:26</code></a>
         </p>
 
 
@@ -6687,7 +6469,7 @@ can also enable this from the console or temporarily.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l128"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:128</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l119"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:119</code></a>
         </p>
 
 
@@ -6715,7 +6497,7 @@ a full stack trace during deprecation warnings.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l139"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:139</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l141"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:141</code></a>
         </p>
 
 
@@ -6728,6 +6510,34 @@ dependent libraries in use.</p>
     </div>
 
         <p><strong>Default:</strong> true</p>
+
+
+</div>
+<div id="property_SHIM_ES5" class="property item public">
+    <h3 class="name"><code>SHIM_ES5</code></h3>
+    <span class="type">Boolean</span>
+
+
+        <span class="flag public">public</span>
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l130"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:130</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The <code>SHIM_ES5</code> property, when true, tells Ember to add ECMAScript 5 Array
+shims to older browsers.</p>
+
+    </div>
+
+        <p><strong>Default:</strong> Ember.EXTEND_PROTOTYPES</p>
 
 
 </div>
@@ -6744,7 +6554,7 @@ dependent libraries in use.</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_index.js.html#l158"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;index.js:158</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l129"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:129</code></a>
         </p>
 
 
@@ -6770,10 +6580,10 @@ hash.</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-htmlbars.html">ember-htmlbars</a> module.</p>
+                    <p>Provided by the <a href="../modules/ember-views.html">ember-views</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_index.js.html#l165"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;index.js:165</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l47"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:47</code></a>
         </p>
 
 
@@ -6802,7 +6612,7 @@ separate files that get loaded into JavaScript at buildtime.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l58"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:58</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_core.js.html#l49"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;core.js:49</code></a>
         </p>
 
 
@@ -6835,7 +6645,7 @@ separate files that get loaded into JavaScript at buildtime.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember.js_packages_ember-metal_lib_index.js.html#l332"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;index.js:332</code></a>
+                            <a href="../files/ember.js_packages_ember-metal_lib_main.js.html#l357"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;main.js:357</code></a>
                             </p>
                     
                     

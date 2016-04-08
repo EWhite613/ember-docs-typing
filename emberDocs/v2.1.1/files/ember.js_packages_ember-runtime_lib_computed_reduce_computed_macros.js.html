@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -190,21 +194,17 @@
 @submodule ember-runtime
 */
 
-import { assert } from &#x27;ember-metal/debug&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;; // Ember.assert
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import EmberError from &#x27;ember-metal/error&#x27;;
 import { ComputedProperty, computed } from &#x27;ember-metal/computed&#x27;;
 import { addObserver, removeObserver } from &#x27;ember-metal/observer&#x27;;
 import compare from &#x27;ember-runtime/compare&#x27;;
 import { isArray } from &#x27;ember-runtime/utils&#x27;;
-import { A as emberA } from &#x27;ember-runtime/system/native_array&#x27;;
-import isNone from &#x27;ember-metal/is_none&#x27;;
-import getProperties from &#x27;ember-metal/get_properties&#x27;;
-import WeakMap from &#x27;ember-metal/weak_map&#x27;;
 
 function reduceMacro(dependentKey, callback, initialValue) {
   return computed(&#x60;${dependentKey}.[]&#x60;, function() {
-    let arr = get(this, dependentKey);
+    const arr = get(this, dependentKey);
 
     if (arr === null || typeof arr !== &#x27;object&#x27;) { return initialValue; }
 
@@ -227,9 +227,9 @@ function arrayMacro(dependentKey, callback) {
   return computed(dependentKey, function() {
     var value = get(this, propertyName);
     if (isArray(value)) {
-      return emberA(callback.call(this, value));
+      return Ember.A(callback.call(this, value));
     } else {
-      return emberA();
+      return Ember.A();
     }
   }).readOnly();
 }
@@ -238,14 +238,14 @@ function multiArrayMacro(dependentKeys, callback) {
   var args = dependentKeys.map(key =&gt; &#x60;${key}.[]&#x60;);
 
   args.push(function() {
-    return emberA(callback.call(this, dependentKeys));
+    return Ember.A(callback.call(this, dependentKeys));
   });
 
   return computed.apply(this, args).readOnly();
 }
 
 /**
-  A computed property that returns the sum of the values
+  A computed property that returns the sum of the value
   in the dependent array.
 
   @method sum
@@ -406,11 +406,8 @@ export function map(dependentKey, callback) {
   @public
 */
 export function mapBy(dependentKey, propertyKey) {
-  assert(
-    &#x27;Ember.computed.mapBy expects a property string for its second argument, &#x27; +
-    &#x27;perhaps you meant to use &quot;map&quot;&#x27;,
-    typeof propertyKey === &#x27;string&#x27;
-  );
+  Ember.assert(&#x27;Ember.computed.mapBy expects a property string for its second argument, &#x27; +
+    &#x27;perhaps you meant to use &quot;map&quot;&#x27;, typeof propertyKey === &#x27;string&#x27;);
 
   return map(&#x60;${dependentKey}.@each.${propertyKey}&#x60;, item =&gt; get(item, propertyKey));
 }
@@ -533,7 +530,7 @@ export function filterBy(dependentKey, propertyKey, value) {
 */
 export function uniq(...args) {
   return multiArrayMacro(args, function(dependentKeys) {
-    var uniq = emberA();
+    var uniq = Ember.A();
 
     dependentKeys.forEach(dependentKey =&gt; {
       var value = get(this, dependentKey);
@@ -612,7 +609,7 @@ export function intersect(...args) {
     });
 
 
-    return emberA(results);
+    return Ember.A(results);
   });
 }
 
@@ -658,54 +655,11 @@ export function setDiff(setAProperty, setBProperty) {
     var setA = this.get(setAProperty);
     var setB = this.get(setBProperty);
 
-    if (!isArray(setA)) { return emberA(); }
-    if (!isArray(setB)) { return emberA(setA); }
+    if (!isArray(setA)) { return Ember.A(); }
+    if (!isArray(setB)) { return Ember.A(setA); }
 
     return setA.filter(x =&gt; setB.indexOf(x) === -1);
   }).readOnly();
-}
-
-/**
-  A computed property that returns the array of values
-  for the provided dependent properties.
-
-  Example
-
-  &#x60;&#x60;&#x60;javascript
-  var Hamster = Ember.Object.extend({
-    clothes: Ember.computed.collect(&#x27;hat&#x27;, &#x27;shirt&#x27;)
-  });
-
-  var hamster = Hamster.create();
-
-  hamster.get(&#x27;clothes&#x27;); // [null, null]
-  hamster.set(&#x27;hat&#x27;, &#x27;Camp Hat&#x27;);
-  hamster.set(&#x27;shirt&#x27;, &#x27;Camp Shirt&#x27;);
-  hamster.get(&#x27;clothes&#x27;); // [&#x27;Camp Hat&#x27;, &#x27;Camp Shirt&#x27;]
-  &#x60;&#x60;&#x60;
-
-  @method collect
-  @for Ember.computed
-  @param {String} dependentKey*
-  @return {Ember.ComputedProperty} computed property which maps
-  values of all passed in properties to an array.
-  @public
-*/
-export function collect(...dependentKeys) {
-  return multiArrayMacro(dependentKeys, function() {
-    var properties = getProperties(this, dependentKeys);
-    var res = emberA();
-    for (var key in properties) {
-      if (properties.hasOwnProperty(key)) {
-        if (isNone(properties[key])) {
-          res.push(null);
-        } else {
-          res.push(properties[key]);
-        }
-      }
-    }
-    return res;
-  });
 }
 
 /**
@@ -774,11 +728,8 @@ export function collect(...dependentKeys) {
   @public
 */
 export function sort(itemsKey, sortDefinition) {
-  assert(
-    &#x27;Ember.computed.sort requires two arguments: an array key to sort and &#x27; +
-    &#x27;either a sort properties key or sort function&#x27;,
-    arguments.length === 2
-  );
+  Ember.assert(&#x27;Ember.computed.sort requires two arguments: an array key to sort and &#x27; +
+    &#x27;either a sort properties key or sort function&#x27;, arguments.length === 2);
 
   if (typeof sortDefinition === &#x27;function&#x27;) {
     return customSort(itemsKey, sortDefinition);
@@ -796,76 +747,55 @@ function customSort(itemsKey, comparator) {
 // This one needs to dynamically set up and tear down observers on the itemsKey
 // depending on the sortProperties
 function propertySort(itemsKey, sortPropertiesKey) {
-  let cp = new ComputedProperty(function(key) {
-    let itemsKeyIsAtThis = (itemsKey === &#x27;@this&#x27;);
-    let sortProperties = get(this, sortPropertiesKey);
-
-    assert(
-      &#x60;The sort definition for &#x27;${key}&#x27; on ${this} must be a function or an array of strings&#x60;,
-      isArray(sortProperties) &amp;&amp; sortProperties.every(s =&gt; typeof s === &#x27;string&#x27;)
-    );
-
-    let normalizedSortProperties = normalizeSortProperties(sortProperties);
-
-    // Add/remove property observers as required.
-    let activeObserversMap = cp._activeObserverMap || (cp._activeObserverMap = new WeakMap());
-    let activeObservers = activeObserversMap.get(this);
-
-    if (activeObservers) {
-      activeObservers.forEach(args =&gt; {
-        removeObserver.apply(null, args);
-      });
-    }
-
-    function sortPropertyDidChange() {
+  var cp = new ComputedProperty(function(key) {
+    function didChange() {
       this.notifyPropertyChange(key);
     }
 
-    activeObservers = normalizedSortProperties.map(([prop]) =&gt; {
-      let path = itemsKeyIsAtThis ? &#x60;@each.${prop}&#x60; : &#x60;${itemsKey}.@each.${prop}&#x60;;
-      let args = [this, path, sortPropertyDidChange];
-      addObserver.apply(null, args);
-      return args;
+    var items = itemsKey === &#x27;@this&#x27; ? this : get(this, itemsKey);
+    var sortProperties = get(this, sortPropertiesKey);
+
+    if (items === null || typeof items !== &#x27;object&#x27;) { return Ember.A(); }
+
+    // TODO: Ideally we&#x27;d only do this if things have changed
+    if (cp._sortPropObservers) {
+      cp._sortPropObservers.forEach(args =&gt; removeObserver.apply(null, args));
+    }
+
+    cp._sortPropObservers = [];
+
+    if (!isArray(sortProperties)) { return items; }
+
+    // Normalize properties
+    var normalizedSort = sortProperties.map(p =&gt; {
+      let [prop, direction] = p.split(&#x27;:&#x27;);
+      direction = direction || &#x27;asc&#x27;;
+
+      return [prop, direction];
     });
 
-    activeObserversMap.set(this, activeObservers);
+    // TODO: Ideally we&#x27;d only do this if things have changed
+    // Add observers
+    normalizedSort.forEach(prop =&gt; {
+      var args = [this, &#x60;${itemsKey}.@each.${prop[0]}&#x60;, didChange];
+      cp._sortPropObservers.push(args);
+      addObserver.apply(null, args);
+    });
 
-    // Sort and return the array.
-    let items = itemsKeyIsAtThis ? this : get(this, itemsKey);
-
-    if (isArray(items)) {
-      return sortByNormalizedSortProperties(items, normalizedSortProperties);
-    } else {
-      return emberA();
-    }
-  });
-
-  cp._activeObserverMap = undefined;
-
-  return cp.property(&#x60;${sortPropertiesKey}.[]&#x60;).readOnly();
-}
-
-function normalizeSortProperties(sortProperties) {
-  return sortProperties.map(p =&gt; {
-    let [prop, direction] = p.split(&#x27;:&#x27;);
-    direction = direction || &#x27;asc&#x27;;
-
-    return [prop, direction];
-  });
-}
-
-function sortByNormalizedSortProperties(items, normalizedSortProperties) {
-  return emberA(items.slice().sort((itemA, itemB) =&gt; {
-    for (let i = 0; i &lt; normalizedSortProperties.length; i++) {
-      let [prop, direction] = normalizedSortProperties[i];
-      let result = compare(get(itemA, prop), get(itemB, prop));
-      if (result !== 0) {
-        return (direction === &#x27;desc&#x27;) ? (-1 * result) : result;
+    return Ember.A(items.slice().sort((itemA, itemB) =&gt; {
+      for (var i = 0; i &lt; normalizedSort.length; ++i) {
+        var [prop, direction] = normalizedSort[i];
+        var result = compare(get(itemA, prop), get(itemB, prop));
+        if (result !== 0) {
+          return (direction === &#x27;desc&#x27;) ? (-1 * result) : result;
+        }
       }
-    }
 
-    return 0;
-  }));
+      return 0;
+    }));
+  });
+
+  return cp.property(&#x60;${itemsKey}.[]&#x60;, &#x60;${sortPropertiesKey}.[]&#x60;).readOnly();
 }
 
     </pre>

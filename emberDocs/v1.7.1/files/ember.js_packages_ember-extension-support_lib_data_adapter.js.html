@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
+                                <li><a href="../classes/Ember.DAG.html">Ember.DAG</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
-                                <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
-                                <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
-                                <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,36 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
-                                <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
+                                <li><a href="../classes/Ember.RenderBuffer.html">Ember.RenderBuffer</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
-                                <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
+                                <li><a href="../classes/Ember.State.html">Ember.State</a></li>
+                                <li><a href="../classes/Ember.StateManager.html">Ember.StateManager</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
-                                <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
                 
@@ -138,14 +185,12 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
-                                <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
-                                <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
-                                <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
-                                <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -185,19 +230,14 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import { get } from &#x27;ember-metal/property_get&#x27;;
-import run from &#x27;ember-metal/run_loop&#x27;;
-import { dasherize } from &#x27;ember-runtime/system/string&#x27;;
-import Namespace from &#x27;ember-runtime/system/namespace&#x27;;
-import EmberObject from &#x27;ember-runtime/system/object&#x27;;
-import { A as emberA } from &#x27;ember-runtime/system/native_array&#x27;;
-import Application from &#x27;ember-application/system/application&#x27;;
-import { getOwner } from &#x27;container/owner&#x27;;
-import {
-  addArrayObserver,
-  removeArrayObserver,
-  objectAt
-} from &#x27;ember-runtime/mixins/array&#x27;;
+import Ember from &quot;ember-metal/core&quot;;
+import { get } from &quot;ember-metal/property_get&quot;;
+import run from &quot;ember-metal/run_loop&quot;;
+import { dasherize } from &quot;ember-runtime/system/string&quot;;
+import Namespace from &quot;ember-runtime/system/namespace&quot;;
+import EmberObject from &quot;ember-runtime/system/object&quot;;
+import { A as emberA } from &quot;ember-runtime/system/native_array&quot;;
+import Application from &quot;ember-application/system/application&quot;;
 
 /**
 @module ember
@@ -227,7 +267,7 @@ import {
   * &#x60;observeRecord&#x60;
 
   The adapter will need to be registered
-  in the application&#x27;s container as &#x60;dataAdapter:main&#x60;.
+  in the application&#x27;s container as &#x60;dataAdapter:main&#x60;
 
   Example:
 
@@ -235,7 +275,7 @@ import {
   Application.initializer({
     name: &quot;data-adapter&quot;,
 
-    initialize: function(application) {
+    initialize: function(container, application) {
       application.register(&#x27;data-adapter:main&#x27;, DS.DataAdapter);
     }
   });
@@ -244,13 +284,24 @@ import {
   @class DataAdapter
   @namespace Ember
   @extends EmberObject
-  @public
 */
 export default EmberObject.extend({
-  init() {
-    this._super(...arguments);
+  init: function() {
+    this._super();
     this.releaseMethods = emberA();
   },
+
+  /**
+    The container of the application being debugged.
+    This property will be injected
+    on creation.
+
+    @property container
+    @default null
+    @since 1.3.0
+  */
+  container: null,
+
 
   /**
     The container-debug-adapter which is used
@@ -259,12 +310,11 @@ export default EmberObject.extend({
     @property containerDebugAdapter
     @default undefined
     @since 1.5.0
-    @public
   **/
   containerDebugAdapter: undefined,
 
   /**
-    The number of attributes to send
+    Number of attributes to send
     as columns. (Enough to make the record
     identifiable).
 
@@ -274,20 +324,6 @@ export default EmberObject.extend({
     @since 1.3.0
   */
   attributeLimit: 3,
-
-  /**
-     Ember Data &gt; v1.0.0-beta.18
-     requires string model names to be passed
-     around instead of the actual factories.
-
-     This is a stamp for the Ember Inspector
-     to differentiate between the versions
-     to be able to support older versions too.
-
-     @public
-     @property acceptsModelName
-   */
-  acceptsModelName: true,
 
   /**
     Stores all methods that clear observers.
@@ -309,7 +345,7 @@ export default EmberObject.extend({
     @return {Array} List of objects defining filters.
      The object should have a &#x60;name&#x60; and &#x60;desc&#x60; property.
   */
-  getFilters() {
+  getFilters: function() {
     return emberA();
   },
 
@@ -327,31 +363,30 @@ export default EmberObject.extend({
 
     @return {Function} Method to call to remove all observers
   */
-  watchModelTypes(typesAdded, typesUpdated) {
-    var modelTypes = this.getModelTypes();
-    var releaseMethods = emberA();
-    var typesToSend;
+  watchModelTypes: function(typesAdded, typesUpdated) {
+    var modelTypes = this.getModelTypes(),
+        self = this, typesToSend, releaseMethods = emberA();
 
-    typesToSend = modelTypes.map((type) =&gt; {
+    typesToSend = modelTypes.map(function(type) {
       var klass = type.klass;
-      var wrapped = this.wrapModelType(klass, type.name);
-      releaseMethods.push(this.observeModelType(type.name, typesUpdated));
+      var wrapped = self.wrapModelType(klass, type.name);
+      releaseMethods.push(self.observeModelType(klass, typesUpdated));
       return wrapped;
     });
 
     typesAdded(typesToSend);
 
-    var release = () =&gt; {
-      releaseMethods.forEach((fn) =&gt; fn() );
-      this.releaseMethods.removeObject(release);
+    var release = function() {
+      releaseMethods.forEach(function(fn) { fn(); });
+      self.releaseMethods.removeObject(release);
     };
     this.releaseMethods.pushObject(release);
     return release;
   },
 
-  _nameToClass(type) {
+  _nameToClass: function(type) {
     if (typeof type === &#x27;string&#x27;) {
-      type = getOwner(this)._lookupFactory(&#x60;model:${type}&#x60;);
+      type = this.container.lookupFactory(&#x27;model:&#x27; + type);
     }
     return type;
   },
@@ -362,45 +397,40 @@ export default EmberObject.extend({
     @public
     @method watchRecords
 
-    @param {String} modelName The model name.
-
     @param {Function} recordsAdded Callback to call to add records.
     Takes an array of objects containing wrapped records.
     The object should have the following properties:
-      columnValues: {Object} The key and value of a table cell.
-      object: {Object} The actual record object.
+      columnValues: {Object} key and value of a table cell
+      object: {Object} the actual record object
 
     @param {Function} recordsUpdated Callback to call when a record has changed.
     Takes an array of objects containing wrapped records.
 
     @param {Function} recordsRemoved Callback to call when a record has removed.
     Takes the following parameters:
-      index: The array index where the records were removed.
-      count: The number of records removed.
+      index: the array index where the records were removed
+      count: the number of records removed
 
-    @return {Function} Method to call to remove all observers.
+    @return {Function} Method to call to remove all observers
   */
-  watchRecords(modelName, recordsAdded, recordsUpdated, recordsRemoved) {
-    var releaseMethods = emberA();
-    var klass = this._nameToClass(modelName);
-    var records = this.getRecords(klass, modelName);
-    var release;
+  watchRecords: function(type, recordsAdded, recordsUpdated, recordsRemoved) {
+    var self = this, releaseMethods = emberA(), records = this.getRecords(type), release;
 
     var recordUpdated = function(updatedRecord) {
       recordsUpdated([updatedRecord]);
     };
 
-    var recordsToSend = records.map((record) =&gt; {
-      releaseMethods.push(this.observeRecord(record, recordUpdated));
-      return this.wrapRecord(record);
+    var recordsToSend = records.map(function(record) {
+      releaseMethods.push(self.observeRecord(record, recordUpdated));
+      return self.wrapRecord(record);
     });
 
 
-    var contentDidChange = (array, idx, removedCount, addedCount) =&gt; {
+    var contentDidChange = function(array, idx, removedCount, addedCount) {
       for (var i = idx; i &lt; idx + addedCount; i++) {
-        var record = objectAt(array, i);
-        var wrapped = this.wrapRecord(record);
-        releaseMethods.push(this.observeRecord(record, recordUpdated));
+        var record = array.objectAt(i);
+        var wrapped = self.wrapRecord(record);
+        releaseMethods.push(self.observeRecord(record, recordUpdated));
         recordsAdded([wrapped]);
       }
 
@@ -409,13 +439,13 @@ export default EmberObject.extend({
       }
     };
 
-    var observer = { didChange: contentDidChange, willChange() { return this; } };
-    addArrayObserver(records, this, observer);
+    var observer = { didChange: contentDidChange, willChange: Ember.K };
+    records.addArrayObserver(self, observer);
 
-    release = () =&gt; {
+    release = function() {
       releaseMethods.forEach(function(fn) { fn(); });
-      removeArrayObserver(records, this, observer);
-      this.releaseMethods.removeObject(release);
+      records.removeArrayObserver(self, observer);
+      self.releaseMethods.removeObject(release);
     };
 
     recordsAdded(recordsToSend);
@@ -429,8 +459,8 @@ export default EmberObject.extend({
     @private
     @method willDestroy
   */
-  willDestroy() {
-    this._super(...arguments);
+  willDestroy: function() {
+    this._super();
     this.releaseMethods.forEach(function(fn) {
       fn();
     });
@@ -440,14 +470,14 @@ export default EmberObject.extend({
     Detect whether a class is a model.
 
     Test that against the model class
-    of your persistence library.
+    of your persistence library
 
     @private
     @method detect
-    @param {Class} klass The class to test.
-    @return boolean Whether the class is a model class or not.
+    @param {Class} klass The class to test
+    @return boolean Whether the class is a model class or not
   */
-  detect(klass) {
+  detect: function(klass) {
     return false;
   },
 
@@ -456,12 +486,12 @@ export default EmberObject.extend({
 
     @private
     @method columnsForType
-    @param {Class} type The model type.
+    @param {Class} type The model type
     @return {Array} An array of columns of the following format:
-     name: {String} The name of the column.
-     desc: {String} Humanized description (what would show in a table column name).
+     name: {String} name of the column
+     desc: {String} Humanized description (what would show in a table column name)
   */
-  columnsForType(type) {
+  columnsForType: function(type) {
     return emberA();
   },
 
@@ -470,29 +500,28 @@ export default EmberObject.extend({
 
     @private
     @method observeModelType
-    @param {String} modelName The model type name.
+    @param {Class} type The model type class
     @param {Function} typesUpdated Called when a type is modified.
-    @return {Function} The function to call to remove observers.
+    @return {Function} The function to call to remove observers
   */
 
-  observeModelType(modelName, typesUpdated) {
-    var klass = this._nameToClass(modelName);
-    var records = this.getRecords(klass, modelName);
+  observeModelType: function(type, typesUpdated) {
+    var self = this, records = this.getRecords(type);
 
-    var onChange = () =&gt; {
-      typesUpdated([this.wrapModelType(klass, modelName)]);
+    var onChange = function() {
+      typesUpdated([self.wrapModelType(type)]);
     };
     var observer = {
-      didChange() {
+      didChange: function() {
         run.scheduleOnce(&#x27;actions&#x27;, this, onChange);
       },
-      willChange() { return this; }
+      willChange: Ember.K
     };
 
-    addArrayObserver(records, this, observer);
+    records.addArrayObserver(this, observer);
 
-    var release = () =&gt; {
-      removeArrayObserver(records, this, observer);
+    var release = function() {
+      records.removeArrayObserver(self, observer);
     };
 
     return release;
@@ -504,27 +533,27 @@ export default EmberObject.extend({
 
     @private
     @method wrapModelType
-    @param {Class} klass A model class.
-    @param {String} modelName Name of the class.
-    @return {Object} Contains the wrapped type and the function to remove observers
+    @param {Class} type A model class
+    @param {String}  Optional name of the class
+    @return {Object} contains the wrapped type and the function to remove observers
     Format:
-      type: {Object} The wrapped type.
+      type: {Object} the wrapped type
         The wrapped type has the following format:
-          name: {String} The name of the type.
-          count: {Integer} The number of records available.
-          columns: {Columns} An array of columns to describe the record.
-          object: {Class} The actual Model type class.
-      release: {Function} The function to remove observers.
+          name: {String} name of the type
+          count: {Integer} number of records available
+          columns: {Columns} array of columns to describe the record
+          object: {Class} the actual Model type class
+      release: {Function} The function to remove observers
   */
-  wrapModelType(klass, name) {
-    var records = this.getRecords(klass, name);
-    var typeToSend;
+  wrapModelType: function(type, name) {
+    var release, records = this.getRecords(type),
+        typeToSend, self = this;
 
     typeToSend = {
-      name,
+      name: name || type.toString(),
       count: get(records, &#x27;length&#x27;),
-      columns: this.columnsForType(klass),
-      object: klass
+      columns: this.columnsForType(type),
+      object: type
     };
 
 
@@ -537,11 +566,11 @@ export default EmberObject.extend({
 
     @private
     @method getModelTypes
-    @return {Array} Array of model types.
+    @return {Array} Array of model types
   */
-  getModelTypes() {
-    var containerDebugAdapter = this.get(&#x27;containerDebugAdapter&#x27;);
-    var types;
+  getModelTypes: function() {
+    var types, self = this,
+        containerDebugAdapter = this.get(&#x27;containerDebugAdapter&#x27;);
 
     if (containerDebugAdapter.canCatalogEntriesByType(&#x27;model&#x27;)) {
       types = containerDebugAdapter.catalogEntriesByType(&#x27;model&#x27;);
@@ -549,15 +578,15 @@ export default EmberObject.extend({
       types = this._getObjectsOnNamespaces();
     }
 
-    // New adapters return strings instead of classes.
-    types = emberA(types).map((name) =&gt; {
+    // New adapters return strings instead of classes
+    types = emberA(types).map(function(name) {
       return {
-        klass: this._nameToClass(name),
+        klass: self._nameToClass(name),
         name: name
       };
     });
-    types = emberA(types).filter((type) =&gt; {
-      return this.detect(type.klass);
+    types = emberA(types).filter(function(type) {
+      return self.detect(type.klass);
     });
 
     return emberA(types);
@@ -565,26 +594,27 @@ export default EmberObject.extend({
 
   /**
     Loops over all namespaces and all objects
-    attached to them.
+    attached to them
 
     @private
     @method _getObjectsOnNamespaces
-    @return {Array} Array of model type strings.
+    @return {Array} Array of model type strings
   */
-  _getObjectsOnNamespaces() {
-    var namespaces = emberA(Namespace.NAMESPACES);
-    var types = emberA();
+  _getObjectsOnNamespaces: function() {
+    var namespaces = emberA(Namespace.NAMESPACES),
+        types = emberA(),
+        self = this;
 
-    namespaces.forEach((namespace) =&gt; {
+    namespaces.forEach(function(namespace) {
       for (var key in namespace) {
         if (!namespace.hasOwnProperty(key)) { continue; }
         // Even though we will filter again in &#x60;getModelTypes&#x60;,
-        // we should not call &#x60;lookupFactory&#x60; on non-models
+        // we should not call &#x60;lookupContainer&#x60; on non-models
         // (especially when &#x60;Ember.MODEL_FACTORY_INJECTIONS&#x60; is &#x60;true&#x60;)
-        if (!this.detect(namespace[key])) { continue; }
+        if (!self.detect(namespace[key])) { continue; }
         var name = dasherize(key);
         if (!(namespace instanceof Application) &amp;&amp; namespace.toString()) {
-          name = &#x60;${namespace}/${name}&#x60;;
+          name = namespace + &#x27;/&#x27; + name;
         }
         types.push(name);
       }
@@ -601,7 +631,7 @@ export default EmberObject.extend({
      This array will be observed for changes,
      so it should update when new records are added/removed.
   */
-  getRecords(type) {
+  getRecords: function(type) {
     return emberA();
   },
 
@@ -615,8 +645,8 @@ export default EmberObject.extend({
     columnValues: {Array}
     searchKeywords: {Array}
   */
-  wrapRecord(record) {
-    var recordToSend = { object: record };
+  wrapRecord: function(record) {
+    var recordToSend = { object: record }, columnValues = {}, self = this;
 
     recordToSend.columnValues = this.getRecordColumnValues(record);
     recordToSend.searchKeywords = this.getRecordKeywords(record);
@@ -634,7 +664,7 @@ export default EmberObject.extend({
     @return {Object} Keys should match column names defined
     by the model type.
   */
-  getRecordColumnValues(record) {
+  getRecordColumnValues: function(record) {
     return {};
   },
 
@@ -645,7 +675,7 @@ export default EmberObject.extend({
     @method getRecordKeywords
     @return {Array} Relevant keywords for search.
   */
-  getRecordKeywords(record) {
+  getRecordKeywords: function(record) {
     return emberA();
   },
 
@@ -654,10 +684,10 @@ export default EmberObject.extend({
 
     @private
     @method getRecordFilterValues
-    @param {Object} record The record instance.
-    @return {Object} The filter values.
+    @param {Object} record The record instance
+    @return {Object} The filter values
   */
-  getRecordFilterValues(record) {
+  getRecordFilterValues: function(record) {
     return {};
   },
 
@@ -667,10 +697,10 @@ export default EmberObject.extend({
     @private
     @method getRecordColor
     @param {Object} record The record instance
-    @return {String} The records color.
-      Possible options: black, red, blue, green.
+    @return {String} The record&#x27;s color
+      Possible options: black, red, blue, green
   */
-  getRecordColor(record) {
+  getRecordColor: function(record) {
     return null;
   },
 
@@ -680,12 +710,12 @@ export default EmberObject.extend({
 
     @private
     @method observerRecord
-    @param {Object} record The record instance.
+    @param {Object} record The record instance
     @param {Function} recordUpdated The callback to call when a record is updated.
     @return {Function} The function to call to remove all observers.
   */
-  observeRecord(record, recordUpdated) {
-    return function() {};
+  observeRecord: function(record, recordUpdated) {
+    return function(){};
   }
 });
 

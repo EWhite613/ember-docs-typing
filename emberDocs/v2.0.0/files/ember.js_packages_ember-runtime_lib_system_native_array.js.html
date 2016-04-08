@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -210,7 +210,7 @@ import copy from &#x27;ember-runtime/copy&#x27;;
   Array support Ember.MutableArray and all of its dependent APIs. Unless you
   have &#x60;Ember.EXTEND_PROTOTYPES&#x60; or &#x60;Ember.EXTEND_PROTOTYPES.Array&#x60; set to
   false, this will be applied automatically. Otherwise you can apply the mixin
-  at anytime by calling &#x60;Ember.NativeArray.apply(Array.prototype)&#x60;.
+  at anytime by calling &#x60;Ember.NativeArray.activate&#x60;.
 
   @class NativeArray
   @namespace Ember
@@ -224,7 +224,7 @@ var NativeArray = Mixin.create(MutableArray, Observable, Copyable, {
   // because length is a built-in property we need to know to just get the
   // original property.
   get(key) {
-    if (key === &#x27;length&#x27;) {
+    if (key===&#x27;length&#x27;) {
       return this.length;
     } else if (&#x27;number&#x27; === typeof key) {
       return this[key];
@@ -239,6 +239,7 @@ var NativeArray = Mixin.create(MutableArray, Observable, Copyable, {
 
   // primitive for array support.
   replace(idx, amt, objects) {
+
     if (this.isFrozen) {
       throw FROZEN_ERROR;
     }
@@ -302,13 +303,12 @@ NativeArray = NativeArray.without.apply(NativeArray, ignore);
   Example
 
   &#x60;&#x60;&#x60;js
-  export default Ember.Component.extend({
+  var Pagination = Ember.CollectionView.extend({
     tagName: &#x27;ul&#x27;,
     classNames: [&#x27;pagination&#x27;],
 
-    init() {
-      this._super(...arguments);
-
+    init: function() {
+      this._super.apply(this, arguments);
       if (!this.get(&#x27;content&#x27;)) {
         this.set(&#x27;content&#x27;, Ember.A());
       }
@@ -321,15 +321,39 @@ NativeArray = NativeArray.without.apply(NativeArray, ignore);
   @return {Ember.NativeArray}
   @public
 */
-var A;
+var A = function(arr) {
+  if (arr === undefined) { arr = []; }
+  return EmberArray.detect(arr) ? arr : NativeArray.apply(arr);
+};
+
+/**
+  Activates the mixin on the Array.prototype if not already applied. Calling
+  this method more than once is safe. This will be called when ember is loaded
+  unless you have &#x60;Ember.EXTEND_PROTOTYPES&#x60; or &#x60;Ember.EXTEND_PROTOTYPES.Array&#x60;
+  set to &#x60;false&#x60;.
+
+  Example
+
+  &#x60;&#x60;&#x60;js
+  if (Ember.EXTEND_PROTOTYPES === true || Ember.EXTEND_PROTOTYPES.Array) {
+    Ember.NativeArray.activate();
+  }
+  &#x60;&#x60;&#x60;
+
+  @method activate
+  @for Ember.NativeArray
+  @static
+  @return {void}
+  @private
+*/
+NativeArray.activate = function() {
+  NativeArray.apply(Array.prototype);
+
+  A = function(arr) { return arr || []; };
+};
 
 if (Ember.EXTEND_PROTOTYPES === true || Ember.EXTEND_PROTOTYPES.Array) {
-  NativeArray.apply(Array.prototype);
-  A = function (arr = []) { return arr; };
-} else {
-  A = function (arr = []) {
-    return EmberArray.detect(arr) ? arr : NativeArray.apply(arr);
-  };
+  NativeArray.activate();
 }
 
 Ember.A = A; // ES6TODO: Setting A onto the object returned by ember-metal/core to avoid circles

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,7 +186,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l458"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:458</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l510"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:510</code></a>
         </div>
 
             Module: <a href="../modules/ember-metal.html">ember-metal</a><br>
@@ -199,63 +199,35 @@
     <p>This helper returns a new property descriptor that wraps the passed
 computed property function. You can use this helper to define properties
 with mixins or via <code>Ember.defineProperty()</code>.</p>
-<p>If you pass a function as an argument, it will be used as a getter. A computed
-property defined in this way might look like this:</p>
-<pre class="code prettyprint"><code class="language-js">let Person = Ember.Object.extend({
-  init() {
-    this._super(...arguments);
+<p>The function you pass will be used to both get and set property values.
+The function should accept two parameters, key and value. If value is not
+undefined you should set the value first. In either case return the
+current value of the property.</p>
+<p>A computed property defined in this way might look like this:</p>
+<pre class="code prettyprint"><code class="language-js">var Person = Ember.Object.extend({
+  firstName: 'Betty',
+  lastName: 'Jones',
 
-    this.firstName = 'Betty';
-    this.lastName = 'Jones';
-  },
-
-  fullName: Ember.computed('firstName', 'lastName', function() {
-    return <code>${this.get(&#x27;firstName&#x27;)} ${this.get(&#x27;lastName&#x27;)}</code>;
+  fullName: Ember.computed('firstName', 'lastName', function(key, value) {
+    return this.get('firstName') + ' ' + this.get('lastName');
   })
 });
 
-let client = Person.create();
+var client = Person.create();
 
 client.get('fullName'); // 'Betty Jones'
 
 client.set('lastName', 'Fuller');
 client.get('fullName'); // 'Betty Fuller'
 </code></pre>
-<p>You can pass a hash with two functions, <code>get</code> and <code>set</code>, as an
-argument to provide both a getter and setter:</p>
-<pre class="code prettyprint"><code class="language-js">let Person = Ember.Object.extend({
-  init() {
-    this._super(...arguments);
-
-    this.firstName = 'Betty';
-    this.lastName = 'Jones';
-  },
-
-  fullName: Ember.computed('firstName', 'lastName', {
-    get(key) {
-      return <code>${this.get(&#x27;firstName&#x27;)} ${this.get(&#x27;lastName&#x27;)}</code>;
-    },
-    set(key, value) {
-      let [firstName, lastName] = value.split(/\s+/);
-      this.setProperties({ firstName, lastName });
-      return value;
-    }
-  });
-})
-
-let client = Person.create();
-client.get('firstName'); // 'Betty'
-
-client.set('fullName', 'Carroll Fuller');
-client.get('firstName'); // 'Carroll'
-</code></pre>
-<p>The <code>set</code> function should accept two parameters, <code>key</code> and <code>value</code>. The value
-returned from <code>set</code> will be the new value of the property.</p>
 <p><em>Note: This is the preferred way to define computed properties when writing third-party
 libraries that depend on or use Ember, since there is no guarantee that the user
-will have <a href="http://emberjs.com/guides/configuring-ember/disabling-prototype-extensions/">prototype Extensions</a> enabled.</em></p>
-<p>The alternative syntax, with prototype extensions, might look like:</p>
-<pre class="code prettyprint"><code class="language-js">fullName() {
+will have prototype extensions enabled.</em></p>
+<p>You might use this method if you disabled
+<a href="http://emberjs.com/guides/configuring-ember/disabling-prototype-extensions/">Prototype Extensions</a>.
+The alternative syntax might look like this
+(if prototype extensions are enabled, which is the default behavior):</p>
+<pre class="code prettyprint"><code class="language-js">fullName: function () {
   return this.get('firstName') + ' ' + this.get('lastName');
 }.property('firstName', 'lastName')
 </code></pre>
@@ -293,7 +265,7 @@ will have <a href="http://emberjs.com/guides/configuring-ember/disabling-prototy
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l458"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:458</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l510"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:510</code></a>
         </p>
 
 
@@ -522,7 +494,7 @@ will have <a href="http://emberjs.com/guides/configuring-ember/disabling-prototy
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l480"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:480</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l520"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:520</code></a>
         </p>
 
 
@@ -768,10 +740,9 @@ to boolean the original value for property</p>
 
 
     <div class="meta">
-                    <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l481"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:481</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l480"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:480</code></a>
         </p>
 
 
@@ -852,7 +823,7 @@ values of all passed in properties to an array.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l596"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:596</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l636"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:636</code></a>
         </p>
 
 
@@ -1103,7 +1074,7 @@ the original value for property is equal to the given value.</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l231"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:231</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l224"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:224</code></a>
         </p>
 
 
@@ -1208,7 +1179,7 @@ hamster.get('remainingChores'); // [{name: 'write more unit tests', done: false}
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l274"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:274</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l267"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:267</code></a>
         </p>
 
 
@@ -1497,7 +1468,7 @@ the original value for property is greater or equal then given value.</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l378"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:378</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l371"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:371</code></a>
         </p>
 
 
@@ -1768,7 +1739,7 @@ the original value for property is less or equal than given value.</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l151"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:151</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l147"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:147</code></a>
         </p>
 
 
@@ -1866,7 +1837,7 @@ hamster.get('excitingChores'); // ['CLEAN!', 'WRITE MORE UNIT TESTS!']
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l191"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:191</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l187"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:187</code></a>
         </p>
 
 
@@ -1973,7 +1944,7 @@ lordByron.get('childAges'); // [7, 5, 8]
     <div class="description">
         <p>A computed property which matches the original value for the
 dependent property against a given RegExp, returning <code>true</code>
-if the value matches the RegExp and <code>false</code> if it does not.</p>
+if they values matches the RegExp and <code>false</code> if it does not.</p>
 <p>Example</p>
 <pre class="code prettyprint"><code class="language-javascript">var User = Ember.Object.extend({
   hasValidEmail: Ember.computed.match('email', /^.+@.+\..+$/)
@@ -2056,7 +2027,7 @@ the original value for property against a given RegExp</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l75"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:75</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l71"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:71</code></a>
         </p>
 
 
@@ -2146,7 +2117,7 @@ lordByron.get('maxChildAge'); // 8
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l113"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:113</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l109"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:109</code></a>
         </p>
 
 
@@ -2475,7 +2446,7 @@ original value for property is not empty.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l508"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:508</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l548"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:548</code></a>
         </p>
 
 
@@ -2644,7 +2615,7 @@ a logical <code>or</code> on the values of all the original values for propertie
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l557"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:557</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l597"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:597</code></a>
         </p>
 
 
@@ -2732,7 +2703,7 @@ one way computed property to the original value for property.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l545"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:545</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed_macros.js.html#l585"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed_macros.js:585</code></a>
         </p>
 
 
@@ -2804,7 +2775,7 @@ one way computed property to the original value for property.</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l433"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:433</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l426"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:426</code></a>
         </p>
 
 
@@ -2903,7 +2874,7 @@ dependent array</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l524"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:524</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l474"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:474</code></a>
         </p>
 
 
@@ -3029,7 +3000,7 @@ on the sort property array or callback function</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l60"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:60</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l56"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:56</code></a>
         </p>
 
 
@@ -3038,7 +3009,7 @@ on the sort property array or callback function</p>
     </div>
 
     <div class="description">
-        <p>A computed property that returns the sum of the values
+        <p>A computed property that returns the sum of the value
 in the dependent array.</p>
 
     </div>
@@ -3098,7 +3069,7 @@ in the dependent array.</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l366"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:366</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l359"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:359</code></a>
         </p>
 
 
@@ -3167,7 +3138,7 @@ unique elements from the dependent array</p>
                     <p>Provided by the <a href="../modules/ember-runtime.html">ember-runtime</a> module.</p>
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l317"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:317</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_computed_reduce_computed_macros.js.html#l310"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;computed&#x2F;reduce_computed_macros.js:310</code></a>
         </p>
 
 

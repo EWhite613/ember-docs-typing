@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -189,8 +189,8 @@
 @module ember
 @submodule ember-views
 */
+import Ember from &#x27;ember-metal/core&#x27;; // Ember.assert
 
-import { assert } from &#x27;ember-metal/debug&#x27;;
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import { set } from &#x27;ember-metal/property_set&#x27;;
 import isNone from &#x27;ember-metal/is_none&#x27;;
@@ -199,12 +199,7 @@ import EmberObject from &#x27;ember-runtime/system/object&#x27;;
 import jQuery from &#x27;ember-views/system/jquery&#x27;;
 import ActionManager from &#x27;ember-views/system/action_manager&#x27;;
 import View from &#x27;ember-views/views/view&#x27;;
-import assign from &#x27;ember-metal/assign&#x27;;
-import { getOwner } from &#x27;container/owner&#x27;;
-import environment from &#x27;ember-metal/environment&#x27;;
-
-let ROOT_ELEMENT_CLASS = &#x27;ember-application&#x27;;
-let ROOT_ELEMENT_SELECTOR = &#x27;.&#x27; + ROOT_ELEMENT_CLASS;
+import merge from &#x27;ember-metal/merge&#x27;;
 
 /**
   &#x60;Ember.EventDispatcher&#x60; handles delegating browser events to their
@@ -221,29 +216,12 @@ export default EmberObject.extend({
 
   /**
     The set of events names (and associated handler function names) to be setup
-    and dispatched by the &#x60;EventDispatcher&#x60;. Modifications to this list can be done
-    at setup time, generally via the &#x60;Ember.Application.customEvents&#x60; hash.
+    and dispatched by the &#x60;EventDispatcher&#x60;. Custom events can added to this list at setup
+    time, generally via the &#x60;Ember.Application.customEvents&#x60; hash. Only override this
+    default set to prevent the EventDispatcher from listening on some events all together.
 
-    To add new events to be listened to:
+    This set will be modified by &#x60;setup&#x60; to also include any events added at that time.
 
-    &#x60;&#x60;&#x60;javascript
-    var App = Ember.Application.create({
-      customEvents: {
-        paste: &#x27;paste&#x27;
-      }
-    });
-    &#x60;&#x60;&#x60;
-
-    To prevent default events from being listened to:
-
-    &#x60;&#x60;&#x60;javascript
-    var App = Ember.Application.create({
-      customEvents: {
-        mouseenter: null,
-        mouseleave: null
-      }
-    });
-    &#x60;&#x60;&#x60;
     @property events
     @type Object
     @private
@@ -324,11 +302,6 @@ export default EmberObject.extend({
   */
   canDispatchToEventManager: true,
 
-  init() {
-    this._super();
-    assert(&#x27;EventDispatcher should never be instantiated in fastboot mode. Please report this as an Ember bug.&#x27;, environment.hasDOM);
-  },
-
   /**
     Sets up event listeners for standard browser events.
 
@@ -343,7 +316,9 @@ export default EmberObject.extend({
   */
   setup(addedEvents, rootElement) {
     var event;
-    var events = this._finalEvents = assign({}, get(this, &#x27;events&#x27;), addedEvents);
+    var events = get(this, &#x27;events&#x27;);
+
+    merge(events, addedEvents || {});
 
     if (!isNone(rootElement)) {
       set(this, &#x27;rootElement&#x27;, rootElement);
@@ -351,13 +326,13 @@ export default EmberObject.extend({
 
     rootElement = jQuery(get(this, &#x27;rootElement&#x27;));
 
-    assert(&#x60;You cannot use the same root element (${rootElement.selector || rootElement[0].tagName}) multiple times in an Ember.Application&#x60;, !rootElement.is(ROOT_ELEMENT_SELECTOR));
-    assert(&#x27;You cannot make a new Ember.Application using a root element that is a descendent of an existing Ember.Application&#x27;, !rootElement.closest(ROOT_ELEMENT_SELECTOR).length);
-    assert(&#x27;You cannot make a new Ember.Application using a root element that is an ancestor of an existing Ember.Application&#x27;, !rootElement.find(ROOT_ELEMENT_SELECTOR).length);
+    Ember.assert(&#x60;You cannot use the same root element (${rootElement.selector || rootElement[0].tagName}) multiple times in an Ember.Application&#x60;, !rootElement.is(&#x27;.ember-application&#x27;));
+    Ember.assert(&#x27;You cannot make a new Ember.Application using a root element that is a descendent of an existing Ember.Application&#x27;, !rootElement.closest(&#x27;.ember-application&#x27;).length);
+    Ember.assert(&#x27;You cannot make a new Ember.Application using a root element that is an ancestor of an existing Ember.Application&#x27;, !rootElement.find(&#x27;.ember-application&#x27;).length);
 
-    rootElement.addClass(ROOT_ELEMENT_CLASS);
+    rootElement.addClass(&#x27;ember-application&#x27;);
 
-    assert(&#x60;Unable to add &#x27;${ROOT_ELEMENT_CLASS}&#x27; class to rootElement. Make sure you set rootElement to the body or an element in the body.&#x60;, rootElement.is(ROOT_ELEMENT_SELECTOR));
+    Ember.assert(&#x27;Unable to add &quot;ember-application&quot; class to rootElement. Make sure you set rootElement to the body or an element in the body.&#x27;, rootElement.is(&#x27;.ember-application&#x27;));
 
     for (event in events) {
       if (events.hasOwnProperty(event)) {
@@ -382,13 +357,7 @@ export default EmberObject.extend({
   */
   setupHandler(rootElement, event, eventName) {
     var self = this;
-
-    let owner = getOwner(this);
-    let viewRegistry = owner &amp;&amp; owner.lookup(&#x27;-view-registry:main&#x27;) || View.views;
-
-    if (eventName === null) {
-      return;
-    }
+    var viewRegistry = this.container &amp;&amp; this.container.lookup(&#x27;-view-registry:main&#x27;) || View.views;
 
     rootElement.on(event + &#x27;.ember&#x27;, &#x27;.ember-view&#x27;, function(evt, triggeringManager) {
       var view = viewRegistry[this.id];
@@ -455,12 +424,12 @@ export default EmberObject.extend({
   },
 
   _bubbleEvent(view, evt, eventName) {
-    return view.handleEvent(eventName, evt);
+    return run.join(view, view.handleEvent, eventName, evt);
   },
 
   destroy() {
     var rootElement = get(this, &#x27;rootElement&#x27;);
-    jQuery(rootElement).off(&#x27;.ember&#x27;, &#x27;**&#x27;).removeClass(ROOT_ELEMENT_CLASS);
+    jQuery(rootElement).off(&#x27;.ember&#x27;, &#x27;**&#x27;).removeClass(&#x27;ember-application&#x27;);
     return this._super(...arguments);
   },
 

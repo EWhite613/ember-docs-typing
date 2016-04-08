@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,9 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
+                                <li><a href="../classes/Ember.Engine.html">Ember.Engine</a></li>
+                                <li><a href="../classes/Ember.EngineInstance.html">Ember.EngineInstance</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +110,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +135,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -213,6 +220,10 @@ import {
 function UNDEFINED() { }
 
 const DEEP_EACH_REGEX = /\.@each\.[^.]+\./;
+
+// ..........................................................
+// COMPUTED PROPERTY
+//
 
 /**
   A computed property transforms an object literal with object&#x27;s accessor function(s) into a property.
@@ -316,6 +327,7 @@ const DEEP_EACH_REGEX = /\.@each\.[^.]+\./;
 
   @class ComputedProperty
   @namespace Ember
+  @constructor
   @public
 */
 function ComputedProperty(config, opts) {
@@ -480,6 +492,7 @@ ComputedPropertyPrototype.property = function() {
   @chainable
   @public
 */
+
 ComputedPropertyPrototype.meta = function(meta) {
   if (arguments.length === 0) {
     return this._meta || {};
@@ -510,6 +523,33 @@ ComputedPropertyPrototype.didChange = function(obj, keyName) {
   }
 };
 
+/**
+  Access the value of the function backing the computed property.
+  If this property has already been cached, return the cached result.
+  Otherwise, call the function passing the property name as an argument.
+
+  &#x60;&#x60;&#x60;javascript
+  let Person = Ember.Object.extend({
+    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, function(keyName) {
+      // the keyName parameter is &#x27;fullName&#x27; in this case.
+      return this.get(&#x27;firstName&#x27;) + &#x27; &#x27; + this.get(&#x27;lastName&#x27;);
+    })
+  });
+
+
+  let tom = Person.create({
+    firstName: &#x27;Tom&#x27;,
+    lastName: &#x27;Dale&#x27;
+  });
+
+  tom.get(&#x27;fullName&#x27;) // &#x27;Tom Dale&#x27;
+  &#x60;&#x60;&#x60;
+
+  @method get
+  @param {String} keyName The key being accessed.
+  @return {Object} The return value of the function backing the CP.
+  @public
+*/
 ComputedPropertyPrototype.get = function(obj, keyName) {
   if (this._volatile) {
     return this._getter.call(obj, keyName);
@@ -541,6 +581,54 @@ ComputedPropertyPrototype.get = function(obj, keyName) {
   return ret;
 };
 
+/**
+  Set the value of a computed property. If the function that backs your
+  computed property does not accept arguments then the default action for
+  setting would be to define the property on the current object, and set
+  the value of the property to the value being set.
+
+  Generally speaking if you intend for your computed property to be set
+  you should pass &#x60;set(key, value)&#x60; function in hash as argument to &#x60;Ember.computed()&#x60; along with &#x60;get(key)&#x60; function.
+
+  &#x60;&#x60;&#x60;javascript
+  let Person = Ember.Object.extend({
+    // these will be supplied by &#x60;create&#x60;
+    firstName: null,
+    lastName: null,
+
+    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, {
+      // getter
+      get() {
+        let firstName = this.get(&#x27;firstName&#x27;);
+        let lastName = this.get(&#x27;lastName&#x27;);
+
+        return firstName + &#x27; &#x27; + lastName;
+      },
+      // setter
+      set(key, value) {
+        let [firstName, lastName] = value.split(&#x27; &#x27;);
+
+        this.set(&#x27;firstName&#x27;, firstName);
+        this.set(&#x27;lastName&#x27;, lastName);
+
+        return value;
+      }
+    })
+  });
+
+  let person = Person.create();
+
+  person.set(&#x27;fullName&#x27;, &#x27;Peter Wagenet&#x27;);
+  person.get(&#x27;firstName&#x27;); // &#x27;Peter&#x27;
+  person.get(&#x27;lastName&#x27;);  // &#x27;Wagenet&#x27;
+  &#x60;&#x60;&#x60;
+
+  @method set
+  @param {String} keyName The key being accessed.
+  @param {Object} newValue The new value being assigned.
+  @return {Object} The return value of the function backing the CP.
+  @public
+*/
 ComputedPropertyPrototype.set = function computedPropertySetEntry(obj, keyName, value) {
   if (this._readOnly) {
     this._throwReadOnlyError(obj, keyName);
@@ -684,7 +772,7 @@ ComputedPropertyPrototype.teardown = function(obj, keyName) {
       this.lastName = &#x27;Jones&#x27;;
     },
 
-    fullName: Ember.computed(&#x27;firstName&#x27;, &#x27;lastName&#x27;, {
+    fullName: Ember.computed({
       get(key) {
         return &#x60;${this.get(&#x27;firstName&#x27;)} ${this.get(&#x27;lastName&#x27;)}&#x60;;
       },

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -185,7 +185,7 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import { assert } from &#x27;ember-metal/debug&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;; // Ember.assert
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import {
   _addBeforeObserver,
@@ -197,8 +197,6 @@ import {
   propertyDidChange,
   propertyWillChange
 } from &#x27;ember-metal/property_events&#x27;;
-import EmptyObject from &#x27;ember-metal/empty_object&#x27;;
-import { objectAt } from &#x27;ember-runtime/mixins/array&#x27;;
 
 /**
   This is the object instance returned when you get the &#x60;@each&#x60; property on an
@@ -210,14 +208,10 @@ import { objectAt } from &#x27;ember-runtime/mixins/array&#x27;;
 function EachProxy(content) {
   this._content = content;
   this._keys = undefined;
-  this.__ember_meta__ = null;
+  this.__ember_meta__ = undefined;
 }
 
 EachProxy.prototype = {
-  __defineNonEnumerable(property) {
-    this[property.name] = property.descriptor.value;
-  },
-
   // ..........................................................
   // ARRAY CHANGES
   // Invokes whenever the content array itself changes.
@@ -226,7 +220,10 @@ EachProxy.prototype = {
     let keys = this._keys;
     let lim = removedCnt &gt; 0 ? idx + removedCnt : -1;
     for (let key in keys) {
-      if (lim &gt; 0) {
+      if (!keys.hasOwnProperty(key)) {
+        continue;
+      }
+      if (lim&gt;0) {
         removeObserverForContentKey(content, key, this, idx, lim);
       }
       propertyWillChange(this, key);
@@ -235,9 +232,12 @@ EachProxy.prototype = {
 
   arrayDidChange(content, idx, removedCnt, addedCnt) {
     let keys = this._keys;
-    let lim = addedCnt &gt; 0 ? idx + addedCnt : -1;
+    let lim = addedCnt&gt;0 ? idx+addedCnt : -1;
     for (let key in keys) {
-      if (lim &gt; 0) {
+      if (!keys.hasOwnProperty(key)) {
+        continue;
+      }
+      if (lim&gt;0) {
         addObserverForContentKey(content, key, this, idx, lim);
       }
       propertyDidChange(this, key);
@@ -261,15 +261,15 @@ EachProxy.prototype = {
   // Actual watch keys on the source content.
 
   beginObservingContentKey(keyName) {
-    let keys = this._keys;
+    var keys = this._keys;
     if (!keys) {
-      keys = this._keys = new EmptyObject();
+      keys = this._keys = {};
     }
 
     if (!keys[keyName]) {
       keys[keyName] = 1;
-      let content = this._content;
-      let len = get(content, &#x27;length&#x27;);
+      var content = this._content;
+      var len = get(content, &#x27;length&#x27;);
 
       addObserverForContentKey(content, keyName, this, 0, len);
     } else {
@@ -278,10 +278,10 @@ EachProxy.prototype = {
   },
 
   stopObservingContentKey(keyName) {
-    let keys = this._keys;
-    if (keys &amp;&amp; (keys[keyName] &gt; 0) &amp;&amp; (--keys[keyName] &lt;= 0)) {
-      let content = this._content;
-      let len     = get(content, &#x27;length&#x27;);
+    var keys = this._keys;
+    if (keys &amp;&amp; (keys[keyName]&gt;0) &amp;&amp; (--keys[keyName]&lt;=0)) {
+      var content = this._content;
+      var len     = get(content, &#x27;length&#x27;);
 
       removeObserverForContentKey(content, keyName, this, 0, len);
     }
@@ -298,9 +298,9 @@ EachProxy.prototype = {
 
 function addObserverForContentKey(content, keyName, proxy, idx, loc) {
   while (--loc &gt;= idx) {
-    let item = objectAt(content, loc);
+    var item = content.objectAt(loc);
     if (item) {
-      assert(&#x27;When using @each to observe the array &#x27; + content + &#x27;, the array must return an object&#x27;, typeof item === &#x27;object&#x27;);
+      Ember.assert(&#x27;When using @each to observe the array &#x27; + content + &#x27;, the array must return an object&#x27;, typeof item === &#x27;object&#x27;);
       _addBeforeObserver(item, keyName, proxy, &#x27;contentKeyWillChange&#x27;);
       addObserver(item, keyName, proxy, &#x27;contentKeyDidChange&#x27;);
     }
@@ -309,7 +309,7 @@ function addObserverForContentKey(content, keyName, proxy, idx, loc) {
 
 function removeObserverForContentKey(content, keyName, proxy, idx, loc) {
   while (--loc &gt;= idx) {
-    let item = objectAt(content, loc);
+    var item = content.objectAt(loc);
     if (item) {
       _removeBeforeObserver(item, keyName, proxy, &#x27;contentKeyWillChange&#x27;);
       removeObserver(item, keyName, proxy, &#x27;contentKeyDidChange&#x27;);

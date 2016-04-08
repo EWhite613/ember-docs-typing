@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,6 +38,7 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/@Ember.ApplicationInstance.BootOptions.html">@Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
                                 <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
@@ -48,7 +49,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -267,7 +272,7 @@ var stringCache  = {};
   @private
   @return {String} interned version of the provided string
 */
-export function intern(str) {
+function intern(str) {
   var obj = {};
   obj[str] = 1;
   for (var key in obj) {
@@ -276,6 +281,14 @@ export function intern(str) {
     }
   }
   return str;
+}
+
+export function symbol(debugName) {
+  // TODO: Investigate using platform symbols, but we do not
+  // want to require non-enumerability for this API, which
+  // would introduce a large cost.
+
+  return intern(debugName + &#x27; [id=&#x27; + GUID_KEY + Math.floor(Math.random() * new Date()) + &#x27;]&#x27;);
 }
 
 /**
@@ -511,7 +524,6 @@ function _wrap(func, superFunc) {
 
   superWrapper.wrappedFunction = func;
   superWrapper.__ember_observes__ = func.__ember_observes__;
-  superWrapper.__ember_observesBefore__ = func.__ember_observesBefore__;
   superWrapper.__ember_listens__ = func.__ember_listens__;
 
   return superWrapper;
@@ -569,7 +581,7 @@ export function tryInvoke(obj, methodName, args) {
 // TYPING &amp; ARRAY MESSAGING
 //
 
-var objectToString = Object.prototype.toString;
+var toString = Object.prototype.toString;
 
 /**
   Forces the passed object to be part of an array. If the object is already
@@ -629,7 +641,7 @@ export function inspect(obj) {
     return &#x27;&#x27; + obj;
   }
   // overridden toString
-  if (typeof obj.toString === &#x27;function&#x27; &amp;&amp; obj.toString !== objectToString) {
+  if (typeof obj.toString === &#x27;function&#x27; &amp;&amp; obj.toString !== toString) {
     return obj.toString();
   }
 
@@ -643,7 +655,7 @@ export function inspect(obj) {
       if (typeof v === &#x27;function&#x27;) { v = &#x27;function() { ... }&#x27;; }
 
       if (v &amp;&amp; typeof v.toString !== &#x27;function&#x27;) {
-        ret.push(key + &#x27;: &#x27; + objectToString.call(v));
+        ret.push(key + &#x27;: &#x27; + toString.call(v));
       } else {
         ret.push(key + &#x27;: &#x27; + v);
       }
@@ -692,38 +704,11 @@ export function applyStr(t, m, a) {
   }
 }
 
-export function lookupDescriptor(obj, keyName) {
-  let current = obj;
-  while (current) {
-    let descriptor = Object.getOwnPropertyDescriptor(current, keyName);
-
-    if (descriptor) {
-      return descriptor;
-    }
-
-    current = Object.getPrototypeOf(current);
-  }
-
-  return null;
-}
-
-// A &#x60;toString&#x60; util function that supports objects without a &#x60;toString&#x60;
-// method, e.g. an object created with &#x60;Object.create(null)&#x60;.
-export function toString(obj) {
-  if (obj &amp;&amp; obj.toString) {
-    return obj.toString();
-  } else {
-    return objectToString.call(obj);
-  }
-}
-
 export {
   GUID_KEY,
   makeArray,
   canInvoke
 };
-
-
 
     </pre>
 </div>

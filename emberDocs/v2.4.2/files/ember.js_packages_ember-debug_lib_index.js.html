@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,9 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
+                                <li><a href="../classes/Ember.Engine.html">Ember.Engine</a></li>
+                                <li><a href="../classes/Ember.EngineInstance.html">Ember.EngineInstance</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +110,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +135,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -192,7 +199,7 @@ import {
   debug,
   setDebugFunction
 } from &#x27;ember-metal/debug&#x27;;
-import isEnabled, { FEATURES, KNOWN_FEATURES } from &#x27;ember-metal/features&#x27;;
+import isEnabled, { FEATURES } from &#x27;ember-metal/features&#x27;;
 import EmberError from &#x27;ember-metal/error&#x27;;
 import Logger from &#x27;ember-metal/logger&#x27;;
 import environment from &#x27;ember-metal/environment&#x27;;
@@ -219,8 +226,7 @@ import { generateTestAsFunctionDeprecation } from &#x27;ember-debug/handlers&#x2
 /**
   Define an assertion that will throw an exception if the condition is not
   met. Ember build tools will remove any calls to &#x60;Ember.assert()&#x60; when
-  doing an Ember.js framework production build and will make the assertion a
-  no-op for an application production build. Example:
+  doing a production build. Example:
 
   &#x60;&#x60;&#x60;javascript
   // Test for truthiness
@@ -300,7 +306,7 @@ setDebugFunction(&#x27;info&#x27;, function info() {
   @param {String} message A description of the deprecation.
   @param {Object} [options] The options object for Ember.deprecate.
   @param {Function} func The new function called to replace its deprecated counterpart.
-  @return {Function} A new function that wraps the original function with a deprecation warning
+  @return {Function} a new function that wrapped the original function with a deprecation warning
   @private
 */
 setDebugFunction(&#x27;deprecateFunc&#x27;, function deprecateFunc(...args) {
@@ -361,18 +367,14 @@ setDebugFunction(&#x27;warn&#x27;, _warn);
   @method _warnIfUsingStrippedFeatureFlags
   @return {void}
 */
-export function _warnIfUsingStrippedFeatureFlags(FEATURES, knownFeatures, featuresWereStripped) {
+export function _warnIfUsingStrippedFeatureFlags(FEATURES, featuresWereStripped) {
   if (featuresWereStripped) {
     warn(&#x27;Ember.ENV.ENABLE_OPTIONAL_FEATURES is only available in canary builds.&#x27;, !Ember.ENV.ENABLE_OPTIONAL_FEATURES, { id: &#x27;ember-debug.feature-flag-with-features-stripped&#x27; });
 
-    let keys = Object.keys(FEATURES);
-    for (let i = 0; i &lt; keys.length; i++) {
-      let key = keys[i];
-      if (key === &#x27;isEnabled&#x27; || !(key in knownFeatures)) {
-        continue;
+    for (var key in FEATURES) {
+      if (FEATURES.hasOwnProperty(key) &amp;&amp; key !== &#x27;isEnabled&#x27;) {
+        warn(&#x27;FEATURE[&quot;&#x27; + key + &#x27;&quot;] is set as enabled, but FEATURE flags are only available in canary builds.&#x27;, !FEATURES[key], { id: &#x27;ember-debug.feature-flag-with-features-stripped&#x27; });
       }
-
-      warn(&#x27;FEATURE[&quot;&#x27; + key + &#x27;&quot;] is set as enabled, but FEATURE flags are only available in canary builds.&#x27;, !FEATURES[key], { id: &#x27;ember-debug.feature-flag-with-features-stripped&#x27; });
     }
   }
 }
@@ -387,7 +389,7 @@ if (!Ember.testing) {
   }
 
   delete FEATURES[&#x27;features-stripped-test&#x27;];
-  _warnIfUsingStrippedFeatureFlags(Ember.ENV.FEATURES, KNOWN_FEATURES, featuresWereStripped);
+  _warnIfUsingStrippedFeatureFlags(Ember.ENV.FEATURES, featuresWereStripped);
 
   // Inform the developer about the Ember Inspector if not installed.
   var isFirefox = environment.isFirefox;
@@ -415,72 +417,73 @@ if (!Ember.testing) {
 */
 Ember.Debug = { };
 
-/**
-  Allows for runtime registration of handler functions that override the default deprecation behavior.
-  Deprecations are invoked by calls to [Ember.deprecate](http://emberjs.com/api/classes/Ember.html#method_deprecate).
-  The following example demonstrates its usage by registering a handler that throws an error if the
-  message contains the word &quot;should&quot;, otherwise defers to the default handler.
+if (isEnabled(&#x27;ember-debug-handlers&#x27;)) {
+  /**
+    Allows for runtime registration of handler functions that override the default deprecation behavior.
+    Deprecations are invoked by calls to [Ember.deprecate](http://emberjs.com/api/classes/Ember.html#method_deprecate).
+    The following example demonstrates its usage by registering a handler that throws an error if the
+    message contains the word &quot;should&quot;, otherwise defers to the default handler.
 
-  &#x60;&#x60;&#x60;javascript
-  Ember.Debug.registerDeprecationHandler((message, options, next) =&gt; {
-    if (message.indexOf(&#x27;should&#x27;) !== -1) {
-      throw new Error(&#x60;Deprecation message with should: ${message}&#x60;);
-    } else {
-      // defer to whatever handler was registered before this one
-      next(message, options);
+    &#x60;&#x60;&#x60;javascript
+    Ember.Debug.registerDeprecationHandler((message, options, next) =&gt; {
+      if (message.indexOf(&#x27;should&#x27;) !== -1) {
+        throw new Error(&#x60;Deprecation message with should: ${message}&#x60;);
+      } else {
+        // defer to whatever handler was registered before this one
+        next(message, options);
+      }
     }
-  }
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;
 
-  The handler function takes the following arguments:
+    The handler function takes the following arguments:
 
-  &lt;ul&gt;
-    &lt;li&gt; &lt;code&gt;message&lt;/code&gt; - The message received from the deprecation call.&lt;/li&gt;
-    &lt;li&gt; &lt;code&gt;options&lt;/code&gt; - An object passed in with the deprecation call containing additional information including:&lt;/li&gt;
-      &lt;ul&gt;
-        &lt;li&gt; &lt;code&gt;id&lt;/code&gt; - An id of the deprecation in the form of &lt;code&gt;package-name.specific-deprecation&lt;/code&gt;.&lt;/li&gt;
-        &lt;li&gt; &lt;code&gt;until&lt;/code&gt; - The Ember version number the feature and deprecation will be removed in.&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;li&gt; &lt;code&gt;next&lt;/code&gt; - A function that calls into the previously registered handler.&lt;/li&gt;
-  &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt; &lt;code&gt;message&lt;/code&gt; - The message received from the deprecation call. &lt;/li&gt;
+      &lt;li&gt; &lt;code&gt;options&lt;/code&gt; - An object passed in with the deprecation call containing additional information including:&lt;/li&gt;
+        &lt;ul&gt;
+          &lt;li&gt; &lt;code&gt;id&lt;/code&gt; - an id of the deprecation in the form of &lt;code&gt;package-name.specific-deprecation&lt;/code&gt;.&lt;/li&gt;
+          &lt;li&gt; &lt;code&gt;until&lt;/code&gt; - is the version number Ember the feature and deprecation will be removed in.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;li&gt; &lt;code&gt;next&lt;/code&gt; - a function that calls into the previously registered handler.&lt;/li&gt;
+    &lt;/ul&gt;
 
-  @public
-  @static
-  @method registerDeprecationHandler
-  @param handler {Function} A function to handle deprecation calls.
-  @since 2.1.0
-*/
-Ember.Debug.registerDeprecationHandler = registerDeprecationHandler;
-/**
-  Allows for runtime registration of handler functions that override the default warning behavior.
-  Warnings are invoked by calls made to [Ember.warn](http://emberjs.com/api/classes/Ember.html#method_warn).
-  The following example demonstrates its usage by registering a handler that does nothing overriding Ember&#x27;s
-  default warning behavior.
+    @public
+    @static
+    @method registerDeprecationHandler
+    @param handler {Function} a function to handle deprecation calls
+    @since 2.1.0
+  */
+  Ember.Debug.registerDeprecationHandler = registerDeprecationHandler;
+  /**
+    Allows for runtime registration of handler functions that override the default warning behavior.
+    Warnings are invoked by calls made to [Ember.warn](http://emberjs.com/api/classes/Ember.html#method_warn).
+    The following example demonstrates its usage by registering a handler that does nothing overriding Ember&#x27;s
+    default warning behavior.
 
-  &#x60;&#x60;&#x60;javascript
-  // next is not called, so no warnings get the default behavior
-  Ember.Debug.registerWarnHandler(() =&gt; {});
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;javascript
+    // next is not called, so no warnings get the default behavior
+    Ember.Debug.registerWarnHandler(() =&gt; {});
+    &#x60;&#x60;&#x60;
 
-  The handler function takes the following arguments:
+    The handler function takes the following arguments:
 
-  &lt;ul&gt;
-    &lt;li&gt; &lt;code&gt;message&lt;/code&gt; - The message received from the warn call. &lt;/li&gt;
-    &lt;li&gt; &lt;code&gt;options&lt;/code&gt; - An object passed in with the warn call containing additional information including:&lt;/li&gt;
-      &lt;ul&gt;
-        &lt;li&gt; &lt;code&gt;id&lt;/code&gt; - An id of the warning in the form of &lt;code&gt;package-name.specific-warning&lt;/code&gt;.&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;li&gt; &lt;code&gt;next&lt;/code&gt; - A function that calls into the previously registered handler.&lt;/li&gt;
-  &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt; &lt;code&gt;message&lt;/code&gt; - The message received from the warn call. &lt;/li&gt;
+      &lt;li&gt; &lt;code&gt;options&lt;/code&gt; - An object passed in with the warn call containing additional information including:&lt;/li&gt;
+        &lt;ul&gt;
+          &lt;li&gt; &lt;code&gt;id&lt;/code&gt; - an id of the warning in the form of &lt;code&gt;package-name.specific-warning&lt;/code&gt;.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;li&gt; &lt;code&gt;next&lt;/code&gt; - a function that calls into the previously registered handler.&lt;/li&gt;
+    &lt;/ul&gt;
 
-  @public
-  @static
-  @method registerWarnHandler
-  @param handler {Function} A function to handle warnings.
-  @since 2.1.0
-*/
-Ember.Debug.registerWarnHandler = registerWarnHandler;
-
+    @public
+    @static
+    @method registerWarnHandler
+    @param handler {Function} a function to handle warnings
+    @since 2.1.0
+  */
+  Ember.Debug.registerWarnHandler = registerWarnHandler;
+}
 /*
   We are transitioning away from &#x60;ember.js&#x60; to &#x60;ember.debug.js&#x60; to make
   it much clearer that it is only for local development purposes.

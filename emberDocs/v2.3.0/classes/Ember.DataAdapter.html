@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -189,7 +194,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l20"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:20</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l15"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:15</code></a>
         </div>
 
             Module: <a href="../modules/ember-extension-support.html">ember-extension-support</a><br>
@@ -219,7 +224,7 @@ library-specific code.</p>
 <li><code>observeRecord</code></li>
 </ul>
 <p>The adapter will need to be registered
-in the application's container as <code>dataAdapter:main</code>.</p>
+in the application's container as <code>dataAdapter:main</code></p>
 <p>Example:</p>
 <pre class="code prettyprint"><code class="language-javascript">Application.initializer({
   name: &quot;data-adapter&quot;,
@@ -368,7 +373,7 @@ in the application's container as <code>dataAdapter:main</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l379"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:379</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l374"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:374</code></a>
         </p>
 
 
@@ -377,7 +382,7 @@ in the application's container as <code>dataAdapter:main</code>.</p>
 
     <div class="description">
         <p>Loops over all namespaces and all objects
-attached to them.</p>
+attached to them</p>
 
     </div>
 
@@ -387,7 +392,7 @@ attached to them.</p>
 
             <div class="returns-description">
                         <span class="type">Array</span>:
-                    <p>Array of model type strings.</p>
+                    <p>Array of model type strings</p>
 
             </div>
         </div>
@@ -419,7 +424,7 @@ attached to them.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l267"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:267</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l262"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:262</code></a>
         </p>
 
 
@@ -441,7 +446,7 @@ attached to them.</p>
 
 
                     <div class="param-description">
-                        <p>The model type.</p>
+                        <p>The model type</p>
 
                     </div>
 
@@ -455,8 +460,8 @@ attached to them.</p>
             <div class="returns-description">
                         <span class="type">Array</span>:
                     <p>An array of columns of the following format:
-name: {String} The name of the column.
-desc: {String} Humanized description (what would show in a table column name).</p>
+name: {String} name of the column
+desc: {String} Humanized description (what would show in a table column name)</p>
 
             </div>
         </div>
@@ -488,7 +493,7 @@ desc: {String} Humanized description (what would show in a table column name).</
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l252"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:252</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l247"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:247</code></a>
         </p>
 
 
@@ -498,7 +503,7 @@ desc: {String} Humanized description (what would show in a table column name).</
     <div class="description">
         <p>Detect whether a class is a model.</p>
 <p>Test that against the model class
-of your persistence library.</p>
+of your persistence library</p>
 
     </div>
 
@@ -512,7 +517,7 @@ of your persistence library.</p>
 
 
                     <div class="param-description">
-                        <p>The class to test.</p>
+                        <p>The class to test</p>
 
                     </div>
 
@@ -524,7 +529,7 @@ of your persistence library.</p>
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                    <p>boolean Whether the class is a model class or not.</p>
+                    <p>boolean Whether the class is a model class or not</p>
 
             </div>
         </div>
@@ -550,7 +555,7 @@ of your persistence library.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l115"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:115</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l110"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:110</code></a>
         </p>
 
 
@@ -597,7 +602,7 @@ The object should have a <code>name</code> and <code>desc</code> property.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l348"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:348</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l343"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:343</code></a>
         </p>
 
 
@@ -615,7 +620,7 @@ The object should have a <code>name</code> and <code>desc</code> property.</p>
 
             <div class="returns-description">
                         <span class="type">Array</span>:
-                    <p>Array of model types.</p>
+                    <p>Array of model types</p>
 
             </div>
         </div>
@@ -647,7 +652,7 @@ The object should have a <code>name</code> and <code>desc</code> property.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l477"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:477</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l472"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:472</code></a>
         </p>
 
 
@@ -682,8 +687,8 @@ The object should have a <code>name</code> and <code>desc</code> property.</p>
 
             <div class="returns-description">
                         <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>:
-                    <p>The records color.
-Possible options: black, red, blue, green.</p>
+                    <p>The record's color
+Possible options: black, red, blue, green</p>
 
             </div>
         </div>
@@ -709,7 +714,7 @@ Possible options: black, red, blue, green.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l442"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:442</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l437"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:437</code></a>
         </p>
 
 
@@ -760,7 +765,7 @@ by the model type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l465"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:465</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l460"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:460</code></a>
         </p>
 
 
@@ -782,7 +787,7 @@ by the model type.</p>
 
 
                     <div class="param-description">
-                        <p>The record instance.</p>
+                        <p>The record instance</p>
 
                     </div>
 
@@ -795,7 +800,7 @@ by the model type.</p>
 
             <div class="returns-description">
                         <span class="type">Object</span>:
-                    <p>The filter values.</p>
+                    <p>The filter values</p>
 
             </div>
         </div>
@@ -821,7 +826,7 @@ by the model type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l454"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:454</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l449"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:449</code></a>
         </p>
 
 
@@ -865,7 +870,7 @@ by the model type.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l408"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:408</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l403"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:403</code></a>
         </p>
 
 
@@ -920,7 +925,7 @@ so it should update when new records are added/removed.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l281"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:281</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l276"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:276</code></a>
         </p>
 
 
@@ -942,7 +947,7 @@ so it should update when new records are added/removed.</p>
 
 
                     <div class="param-description">
-                        <p>The model type name.</p>
+                        <p>The model type name</p>
 
                     </div>
 
@@ -966,7 +971,7 @@ so it should update when new records are added/removed.</p>
 
             <div class="returns-description">
                         <span class="type"><a href="../classes/Function.html" class="crosslink">Function</a></span>:
-                    <p>The function to call to remove observers.</p>
+                    <p>The function to call to remove observers</p>
 
             </div>
         </div>
@@ -1001,7 +1006,7 @@ so it should update when new records are added/removed.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l490"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:490</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l485"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:485</code></a>
         </p>
 
 
@@ -1024,7 +1029,7 @@ when a change occurs.</p>
 
 
                     <div class="param-description">
-                        <p>The record instance.</p>
+                        <p>The record instance</p>
 
                     </div>
 
@@ -1083,7 +1088,7 @@ when a change occurs.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l129"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:129</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l124"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:124</code></a>
         </p>
 
 
@@ -1172,7 +1177,7 @@ Takes an array of objects containing wrapped types.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l172"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:172</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l167"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:167</code></a>
         </p>
 
 
@@ -1194,7 +1199,7 @@ Takes an array of objects containing wrapped types.</p>
 
 
                     <div class="param-description">
-                        <p>The model name.</p>
+                        <p>The model name</p>
 
                     </div>
 
@@ -1208,8 +1213,8 @@ Takes an array of objects containing wrapped types.</p>
                         <p>Callback to call to add records.
 Takes an array of objects containing wrapped records.
 The object should have the following properties:
-columnValues: {Object} The key and value of a table cell.
-object: {Object} The actual record object.</p>
+columnValues: {Object} key and value of a table cell
+object: {Object} the actual record object</p>
 
                     </div>
 
@@ -1234,8 +1239,8 @@ Takes an array of objects containing wrapped records.</p>
                     <div class="param-description">
                         <p>Callback to call when a record has removed.
 Takes the following parameters:
-index: The array index where the records were removed.
-count: The number of records removed.</p>
+index: the array index where the records were removed
+count: the number of records removed</p>
 
                     </div>
 
@@ -1248,7 +1253,7 @@ count: The number of records removed.</p>
 
             <div class="returns-description">
                         <span class="type"><a href="../classes/Function.html" class="crosslink">Function</a></span>:
-                    <p>Method to call to remove all observers.</p>
+                    <p>Method to call to remove all observers</p>
 
             </div>
         </div>
@@ -1271,7 +1276,7 @@ count: The number of records removed.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l240"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:240</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l235"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:235</code></a>
         </p>
 
 
@@ -1315,7 +1320,7 @@ count: The number of records removed.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l315"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:315</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l310"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:310</code></a>
         </p>
 
 
@@ -1337,7 +1342,7 @@ count: The number of records removed.</p>
 
 
                     <div class="param-description">
-                        <p>A model class.</p>
+                        <p>A model class</p>
 
                     </div>
 
@@ -1348,7 +1353,7 @@ count: The number of records removed.</p>
 
 
                     <div class="param-description">
-                        <p>Name of the class.</p>
+                        <p>Name of the class</p>
 
                     </div>
 
@@ -1361,15 +1366,15 @@ count: The number of records removed.</p>
 
             <div class="returns-description">
                         <span class="type">Object</span>:
-                    <p>Contains the wrapped type and the function to remove observers
+                    <p>contains the wrapped type and the function to remove observers
 Format:
-type: {Object} The wrapped type.
+type: {Object} the wrapped type
 The wrapped type has the following format:
-name: {String} The name of the type.
-count: {Integer} The number of records available.
-columns: {Columns} An array of columns to describe the record.
-object: {Class} The actual Model type class.
-release: {Function} The function to remove observers.</p>
+name: {String} name of the type
+count: {Integer} number of records available
+columns: {Columns} array of columns to describe the record
+object: {Class} the actual Model type class
+release: {Function} The function to remove observers</p>
 
             </div>
         </div>
@@ -1401,7 +1406,7 @@ release: {Function} The function to remove observers.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l421"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:421</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l416"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:416</code></a>
         </p>
 
 
@@ -1462,7 +1467,7 @@ searchKeywords: {Array}</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l91"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:91</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l86"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:86</code></a>
         </p>
 
 
@@ -1493,7 +1498,7 @@ to be able to support older versions too.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l79"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:79</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l74"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:74</code></a>
         </p>
 
 
@@ -1501,7 +1506,7 @@ to be able to support older versions too.</p>
     </div>
 
     <div class="description">
-        <p>The number of attributes to send
+        <p>Number of attributes to send
 as columns. (Enough to make the record
 identifiable).</p>
 
@@ -1523,7 +1528,7 @@ identifiable).</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l68"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:68</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l63"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:63</code></a>
         </p>
 
 
@@ -1552,7 +1557,7 @@ to list all models.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l105"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:105</code></a>
+        <a href="../files/ember.js_packages_ember-extension-support_lib_data_adapter.js.html#l100"><code>ember.js&#x2F;packages&#x2F;ember-extension-support&#x2F;lib&#x2F;data_adapter.js:100</code></a>
         </p>
 
 

@@ -17,10 +17,12 @@ YUI.add("yuidoc-meta", function(Y) {
         "Ember.Binding",
         "Ember.Checkbox",
         "Ember.ClassNamesSupport",
+        "Ember.CollectionView",
         "Ember.Comparable",
         "Ember.Component",
         "Ember.ComputedProperty",
         "Ember.ContainerDebugAdapter",
+        "Ember.ContainerView",
         "Ember.Controller",
         "Ember.ControllerMixin",
         "Ember.Copyable",
@@ -30,6 +32,9 @@ YUI.add("yuidoc-meta", function(Y) {
         "Ember.Debug",
         "Ember.DefaultResolver",
         "Ember.EachProxy",
+        "Ember.EmptyViewSupport",
+        "Ember.Engine",
+        "Ember.EngineInstance",
         "Ember.Enumerable",
         "Ember.Error",
         "Ember.EventDispatcher",
@@ -63,6 +68,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Ember.ProxyMixin",
         "Ember.Route",
         "Ember.Router",
+        "Ember.Select",
         "Ember.Service",
         "Ember.String",
         "Ember.TargetActionSupport",
@@ -92,6 +98,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "RegistryProxyMixin",
         "RoutingService",
         "String",
+        "TransformEachInToHash",
         "TransformInputOnToOnEvent"
     ],
     "modules": [
@@ -127,7 +134,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "ember-extension-support",
             "name": "ember-extension-support",
-            "description": "The `ContainerDebugAdapter` helps the container and resolver interface\nwith tools that debug Ember such as the\n[Ember Extension](https://github.com/tildeio/ember-extension)\nfor Chrome and Firefox.\n\nThis class can be extended by a custom resolver implementer\nto override some of the methods with library-specific code.\n\nThe methods likely to be overridden are:\n\n* `canCatalogEntriesByType`\n* `catalogEntriesByType`\n\nThe adapter will need to be registered\nin the application's container as `container-debug-adapter:main`.\n\nExample:\n\n```javascript\nApplication.initializer({\n  name: \"containerDebugAdapter\",\n\n  initialize: function(application) {\n    application.register('container-debug-adapter:main', require('app/container-debug-adapter'));\n  }\n});\n```"
+            "description": "The `ContainerDebugAdapter` helps the container and resolver interface\nwith tools that debug Ember such as the\n[Ember Extension](https://github.com/tildeio/ember-extension)\nfor Chrome and Firefox.\n\nThis class can be extended by a custom resolver implementer\nto override some of the methods with library-specific code.\n\nThe methods likely to be overridden are:\n\n* `canCatalogEntriesByType`\n* `catalogEntriesByType`\n\nThe adapter will need to be registered\nin the application's container as `container-debug-adapter:main`\n\nExample:\n\n```javascript\nApplication.initializer({\n  name: \"containerDebugAdapter\",\n\n  initialize: function(application) {\n    application.register('container-debug-adapter:main', require('app/container-debug-adapter'));\n  }\n});\n```"
         },
         {
             "displayName": "ember-htmlbars",
@@ -137,7 +144,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "ember-metal",
             "name": "ember-metal",
-            "description": "This namespace contains all Ember methods and functions. Future versions of\nEmber may overwrite this namespace and therefore, you should avoid adding any\nnew properties.\n\nAt the heart of Ember is Ember-Runtime, a set of core functions that provide\ncross-platform compatibility and object property observing.  Ember-Runtime is\nsmall and performance-focused so you can use it alongside other\ncross-platform libraries such as jQuery. For more details, see\n[Ember-Runtime](http://emberjs.com/api/modules/ember-runtime.html)."
+            "description": "This namespace contains all Ember methods and functions. Future versions of\nEmber may overwrite this namespace and therefore, you should avoid adding any\nnew properties.\n\nYou can also use the shorthand `Em` instead of `Ember`.\n\nAt the heart of Ember is Ember-Runtime, a set of core functions that provide\ncross-platform compatibility and object property observing.  Ember-Runtime is\nsmall and performance-focused so you can use it alongside other\ncross-platform libraries such as jQuery. For more details, see\n[Ember-Runtime](http://emberjs.com/api/modules/ember-runtime.html)."
         },
         {
             "displayName": "ember-routing",

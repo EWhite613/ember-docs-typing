@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -187,8 +187,6 @@
     <pre class="code prettyprint linenums">
 /*globals Ember:true,ENV,EmberENV */
 
-import require from &#x27;require&#x27;;
-
 /**
 @module ember
 @submodule ember-metal
@@ -198,6 +196,8 @@ import require from &#x27;require&#x27;;
   This namespace contains all Ember methods and functions. Future versions of
   Ember may overwrite this namespace and therefore, you should avoid adding any
   new properties.
+
+  You can also use the shorthand &#x60;Em&#x60; instead of &#x60;Ember&#x60;.
 
   At the heart of Ember is Ember-Runtime, a set of core functions that provide
   cross-platform compatibility and object property observing.  Ember-Runtime is
@@ -232,15 +232,6 @@ Ember.isNamespace = true;
 
 Ember.toString = function() { return &#x27;Ember&#x27;; };
 
-// The debug functions are exported to globals with &#x60;require&#x60; to
-// prevent babel-plugin-filter-imports from removing them.
-let debugModule = require(&#x27;ember-metal/debug&#x27;);
-Ember.assert = debugModule.assert;
-Ember.warn = debugModule.warn;
-Ember.debug = debugModule.debug;
-Ember.deprecate = debugModule.deprecate;
-Ember.deprecateFunc = debugModule.deprecateFunc;
-Ember.runInDebug = debugModule.runInDebug;
 
 /**
   The semantic version.
@@ -276,12 +267,12 @@ if (Ember.ENV) {
   Ember.ENV = {};
 }
 
-// ENABLE_ALL_FEATURES was documented, but you can&#x27;t actually enable non optional features.
-if (Ember.ENV.ENABLE_ALL_FEATURES) {
-  Ember.ENV.ENABLE_OPTIONAL_FEATURES = Ember.ENV.ENABLE_ALL_FEATURES;
-}
-
 Ember.config = Ember.config || {};
+
+// We disable the RANGE API by default for performance reasons
+if (&#x27;undefined&#x27; === typeof Ember.ENV.DISABLE_RANGE_API) {
+  Ember.ENV.DISABLE_RANGE_API = true;
+}
 
 // ..........................................................
 // BOOTSTRAP
@@ -324,6 +315,17 @@ if (typeof Ember.EXTEND_PROTOTYPES === &#x27;undefined&#x27;) {
 Ember.LOG_STACKTRACE_ON_DEPRECATION = (Ember.ENV.LOG_STACKTRACE_ON_DEPRECATION !== false);
 
 /**
+  The &#x60;SHIM_ES5&#x60; property, when true, tells Ember to add ECMAScript 5 Array
+  shims to older browsers.
+
+  @property SHIM_ES5
+  @type Boolean
+  @default Ember.EXTEND_PROTOTYPES
+  @public
+*/
+Ember.SHIM_ES5 = (Ember.ENV.SHIM_ES5 === false) ? false : Ember.EXTEND_PROTOTYPES;
+
+/**
   The &#x60;LOG_VERSION&#x60; property, when true, tells Ember to log versions of all
   dependent libraries in use.
 
@@ -345,6 +347,17 @@ function K() { return this; }
 export { K };
 Ember.K = K;
 //TODO: ES6 GLOBAL TODO
+
+// Stub out the methods defined by the ember-debug package in case it&#x27;s not loaded
+
+if (&#x27;undefined&#x27; === typeof Ember.assert) { Ember.assert = K; }
+if (&#x27;undefined&#x27; === typeof Ember.warn) { Ember.warn = K; }
+if (&#x27;undefined&#x27; === typeof Ember.debug) { Ember.debug = K; }
+if (&#x27;undefined&#x27; === typeof Ember.runInDebug) { Ember.runInDebug = K; }
+if (&#x27;undefined&#x27; === typeof Ember.deprecate) { Ember.deprecate = K; }
+if (&#x27;undefined&#x27; === typeof Ember.deprecateFunc) {
+  Ember.deprecateFunc = function(...args) { return args[args.length - 1]; };
+}
 
 export default Ember;
 

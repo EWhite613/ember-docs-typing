@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,9 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
+                                <li><a href="../classes/Ember.Engine.html">Ember.Engine</a></li>
+                                <li><a href="../classes/Ember.EngineInstance.html">Ember.EngineInstance</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +110,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +135,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -187,21 +194,18 @@
     <pre class="code prettyprint linenums">
 import Ember from &#x27;ember-metal/core&#x27;; // Ember.LOG_BINDINGS
 import Logger from &#x27;ember-metal/logger&#x27;;
-import run from &#x27;ember-metal/run_loop&#x27;;
 import { assert } from &#x27;ember-metal/debug&#x27;;
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import { trySet } from &#x27;ember-metal/property_set&#x27;;
 import { guidFor } from &#x27;ember-metal/utils&#x27;;
-import { addListener } from &#x27;ember-metal/events&#x27;;
 import {
   addObserver,
   removeObserver,
   _suspendObserver
 } from &#x27;ember-metal/observer&#x27;;
+import run from &#x27;ember-metal/run_loop&#x27;;
 import {
-  isGlobalPath,
-  getFirstKey,
-  getTailPath
+  isGlobal as isGlobalPath
 } from &#x27;ember-metal/path_cache&#x27;;
 
 
@@ -228,22 +232,31 @@ import {
 */
 Ember.LOG_BINDINGS = false || !!Ember.ENV.LOG_BINDINGS;
 
+/**
+  Returns true if the provided path is global (e.g., &#x60;MyApp.fooController.bar&#x60;)
+  instead of local (&#x60;foo.bar.baz&#x60;).
+
+  @method isGlobalPath
+  @for Ember
+  @private
+  @param {String} path
+  @return Boolean
+*/
+
+function getWithGlobals(obj, path) {
+  return get(isGlobalPath(path) ? Ember.lookup : obj, path);
+}
+
 // ..........................................................
 // BINDING
 //
 
 function Binding(toPath, fromPath) {
-  // Configuration
-  this._from = fromPath;
-  this._to = toPath;
-  this._oneWay = undefined;
-
-  // State
   this._direction = undefined;
+  this._from = fromPath;
+  this._to   = toPath;
   this._readyToSync = undefined;
-  this._fromObj = undefined;
-  this._fromPath = undefined;
-  this._toObj = undefined;
+  this._oneWay = undefined;
 }
 
 /**
@@ -280,7 +293,7 @@ Binding.prototype = {
     &#x60;get()&#x60; - see that method for more information.
 
     @method from
-    @param {String} path The property path to connect to.
+    @param {String} path the property path to connect to
     @return {Ember.Binding} &#x60;this&#x60;
     @public
   */
@@ -299,7 +312,7 @@ Binding.prototype = {
     &#x60;get()&#x60; - see that method for more information.
 
     @method to
-    @param {String|Tuple} path A property path or tuple.
+    @param {String|Tuple} path A property path or tuple
     @return {Ember.Binding} &#x60;this&#x60;
     @public
   */
@@ -350,41 +363,19 @@ Binding.prototype = {
   connect(obj) {
     assert(&#x27;Must pass a valid object to Ember.Binding.connect()&#x27;, !!obj);
 
-    let fromObj, fromPath;
+    var fromPath = this._from;
+    var toPath = this._to;
+    trySet(obj, toPath, getWithGlobals(obj, fromPath));
 
-    // If the binding&#x27;s &quot;from&quot; path could be interpreted as a global, verify
-    // whether the path refers to a global or not by consulting &#x60;Ember.lookup&#x60;.
-    if (isGlobalPath(this._from)) {
-      let name = getFirstKey(this._from);
-      let possibleGlobal = Ember.lookup[name];
+    // add an observer on the object to be notified when the binding should be updated
+    addObserver(obj, fromPath, this, this.fromDidChange);
 
-      if (possibleGlobal) {
-        fromObj = possibleGlobal;
-        fromPath = getTailPath(this._from);
-      }
-    }
-
-    if (fromObj === undefined) {
-      fromObj = obj;
-      fromPath = this._from;
-    }
-
-    trySet(obj, this._to, get(fromObj, fromPath));
-
-    // Add an observer on the object to be notified when the binding should be updated.
-    addObserver(fromObj, fromPath, this, &#x27;fromDidChange&#x27;);
-
-    // If the binding is a two-way binding, also set up an observer on the target.
+    // if the binding is a two-way binding, also set up an observer on the target
     if (!this._oneWay) {
-      addObserver(obj, this._to, this, &#x27;toDidChange&#x27;);
+      addObserver(obj, toPath, this, this.toDidChange);
     }
-
-    addListener(obj, &#x27;willDestroy&#x27;, this, &#x27;disconnect&#x27;);
 
     this._readyToSync = true;
-    this._fromObj = fromObj;
-    this._fromPath = fromPath;
-    this._toObj = obj;
 
     return this;
   },
@@ -394,22 +385,25 @@ Binding.prototype = {
     will not usually need to call this method.
 
     @method disconnect
+    @param {Object} obj The root object you passed when connecting the binding.
     @return {Ember.Binding} &#x60;this&#x60;
     @public
   */
-  disconnect() {
-    assert(&#x27;Must pass a valid object to Ember.Binding.disconnect()&#x27;, !!this._toObj);
+  disconnect(obj) {
+    assert(&#x27;Must pass a valid object to Ember.Binding.disconnect()&#x27;, !!obj);
 
-    // Remove an observer on the object so we&#x27;re no longer notified of
+    var twoWay = !this._oneWay;
+
+    // remove an observer on the object so we&#x27;re no longer notified of
     // changes that should update bindings.
-    removeObserver(this._fromObj, this._fromPath, this, &#x27;fromDidChange&#x27;);
+    removeObserver(obj, this._from, this, this.fromDidChange);
 
-    // If the binding is two-way, remove the observer from the target as well.
-    if (!this._oneWay) {
-      removeObserver(this._toObj, this._to, this, &#x27;toDidChange&#x27;);
+    // if the binding is two-way, remove the observer from the target as well
+    if (twoWay) {
+      removeObserver(obj, this._to, this, this.toDidChange);
     }
 
-    this._readyToSync = false; // Disable scheduled syncs...
+    this._readyToSync = false; // disable scheduled syncs...
     return this;
   },
 
@@ -417,22 +411,22 @@ Binding.prototype = {
   // PRIVATE
   //
 
-  /* Called when the from side changes. */
+  /* called when the from side changes */
   fromDidChange(target) {
-    this._scheduleSync(&#x27;fwd&#x27;);
+    this._scheduleSync(target, &#x27;fwd&#x27;);
   },
 
-  /* Called when the to side changes. */
+  /* called when the to side changes */
   toDidChange(target) {
-    this._scheduleSync(&#x27;back&#x27;);
+    this._scheduleSync(target, &#x27;back&#x27;);
   },
 
-  _scheduleSync(dir) {
+  _scheduleSync(obj, dir) {
     var existingDir = this._direction;
 
-    // If we haven&#x27;t scheduled the binding yet, schedule it.
+    // if we haven&#x27;t scheduled the binding yet, schedule it
     if (existingDir === undefined) {
-      run.schedule(&#x27;sync&#x27;, this, &#x27;_sync&#x27;);
+      run.schedule(&#x27;sync&#x27;, this, this._sync, obj);
       this._direction  = dir;
     }
 
@@ -443,44 +437,42 @@ Binding.prototype = {
     }
   },
 
-  _sync() {
+  _sync(obj) {
     var log = Ember.LOG_BINDINGS;
 
-    let toObj = this._toObj;
+    // don&#x27;t synchronize destroyed objects or disconnected bindings
+    if (obj.isDestroyed || !this._readyToSync) { return; }
 
-    // Don&#x27;t synchronize destroyed objects or disconnected bindings.
-    if (toObj.isDestroyed || !this._readyToSync) { return; }
-
-    // Get the direction of the binding for the object we are
-    // synchronizing from.
+    // get the direction of the binding for the object we are
+    // synchronizing from
     var direction = this._direction;
 
-    var fromObj = this._fromObj;
-    var fromPath = this._fromPath;
+    var fromPath = this._from;
+    var toPath = this._to;
 
     this._direction = undefined;
 
-    // If we&#x27;re synchronizing from the remote object...
+    // if we&#x27;re synchronizing from the remote object...
     if (direction === &#x27;fwd&#x27;) {
-      var fromValue = get(fromObj, fromPath);
+      var fromValue = getWithGlobals(obj, this._from);
       if (log) {
-        Logger.log(&#x27; &#x27;, this.toString(), &#x27;-&gt;&#x27;, fromValue, fromObj);
+        Logger.log(&#x27; &#x27;, this.toString(), &#x27;-&gt;&#x27;, fromValue, obj);
       }
       if (this._oneWay) {
-        trySet(toObj, this._to, fromValue);
+        trySet(obj, toPath, fromValue);
       } else {
-        _suspendObserver(toObj, this._to, this, &#x27;toDidChange&#x27;, function() {
-          trySet(toObj, this._to, fromValue);
+        _suspendObserver(obj, toPath, this, this.toDidChange, function () {
+          trySet(obj, toPath, fromValue);
         });
       }
-    // If we&#x27;re synchronizing *to* the remote object.
+    // if we&#x27;re synchronizing *to* the remote object
     } else if (direction === &#x27;back&#x27;) {
-      var toValue = get(toObj, this._to);
+      var toValue = get(obj, this._to);
       if (log) {
-        Logger.log(&#x27; &#x27;, this.toString(), &#x27;&lt;-&#x27;, toValue, toObj);
+        Logger.log(&#x27; &#x27;, this.toString(), &#x27;&lt;-&#x27;, toValue, obj);
       }
-      _suspendObserver(fromObj, fromPath, this, &#x27;fromDidChange&#x27;, function() {
-        trySet(fromObj, fromPath, toValue);
+      _suspendObserver(obj, fromPath, this, this.fromDidChange, function () {
+        trySet(isGlobalPath(fromPath) ? Ember.lookup : obj, fromPath, toValue);
       });
     }
   }
@@ -523,7 +515,7 @@ mixinProperties(Binding, {
   An &#x60;Ember.Binding&#x60; connects the properties of two objects so that whenever
   the value of one property changes, the other property will be changed also.
 
-  ## Automatic Creation of Bindings with &#x60;/^*Binding/&#x60;-named Properties.
+  ## Automatic Creation of Bindings with &#x60;/^*Binding/&#x60;-named Properties
 
   You do not usually create Binding objects directly but instead describe
   bindings in your class or object definition using automatic binding
@@ -572,7 +564,7 @@ mixinProperties(Binding, {
   All of the examples above show you how to configure a custom binding, but the
   result of these customizations will be a binding template, not a fully active
   Binding instance. The binding will actually become active only when you
-  instantiate the object the binding belongs to. It is useful, however, to
+  instantiate the object the binding belongs to. It is useful however, to
   understand what actually happens when the binding is activated.
 
   For a binding to function it must have at least a &#x60;from&#x60; property and a &#x60;to&#x60;
@@ -671,7 +663,8 @@ export function bind(obj, to, from) {
 }
 
 export {
-  Binding
+  Binding,
+  isGlobalPath
 };
 
     </pre>

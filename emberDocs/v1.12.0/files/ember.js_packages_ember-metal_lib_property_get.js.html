@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
+                                <li><a href="../classes/Ember.AttributeBindingsSupport.html">Ember.AttributeBindingsSupport</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
-                                <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
                                 <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
+                                <li><a href="../classes/Ember.HTMLBars.Helper.html">Ember.HTMLBars.Helper</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
                                 <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
                                 <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,44 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
                                 <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
+                                <li><a href="../classes/Ember.ViewChildViewsSupport.html">Ember.ViewChildViewsSupport</a></li>
+                                <li><a href="../classes/Ember.ViewsContextSupport.html">Ember.ViewsContextSupport</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
                                 <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
+                                <li><a href="../classes/HandlebarsCompatibleHelper.html">HandlebarsCompatibleHelper</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
+                                <li><a href="../classes/TransformWithAsToHash.html">TransformWithAsToHash</a></li>
                             </ul>
                 
                 
@@ -138,6 +193,7 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
                                 <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
@@ -145,7 +201,6 @@
                                 <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
                                 <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -189,8 +244,16 @@
 @module ember-metal
 */
 
-import { assert } from &#x27;ember-metal/debug&#x27;;
-import { isPath, hasThis } from &#x27;ember-metal/path_cache&#x27;;
+import Ember from &quot;ember-metal/core&quot;;
+import EmberError from &quot;ember-metal/error&quot;;
+import {
+  isGlobal as detectIsGlobal,
+  isPath,
+  hasThis as pathHasThis
+} from &quot;ember-metal/path_cache&quot;;
+import { hasPropertyAccessors } from &quot;ember-metal/platform/define_property&quot;;
+
+var FIRST_KEY = /^([^\.]+)/;
 
 // ..........................................................
 // GET AND SET
@@ -222,21 +285,28 @@ import { isPath, hasThis } from &#x27;ember-metal/path_cache&#x27;;
   @param {Object} obj The object to retrieve from.
   @param {String} keyName The property key to retrieve
   @return {Object} the property value or &#x60;null&#x60;.
-  @public
 */
 export function get(obj, keyName) {
-  assert(&#x60;Get must be called with two arguments; an object and a property key&#x60;, arguments.length === 2);
-  assert(&#x60;Cannot call get with &#x27;${keyName}&#x27; on an undefined object.&#x60;, obj !== undefined &amp;&amp; obj !== null);
-  assert(&#x60;The key provided to get must be a string, you passed ${keyName}&#x60;, typeof keyName === &#x27;string&#x27;);
-  assert(&#x60;&#x27;this&#x27; in paths is not supported&#x60;, !hasThis(keyName));
-
   // Helpers that operate with &#x27;this&#x27; within an #each
   if (keyName === &#x27;&#x27;) {
     return obj;
   }
 
-  var value = obj[keyName];
-  var desc = (value !== null &amp;&amp; typeof value === &#x27;object&#x27; &amp;&amp; value.isDescriptor) ? value : undefined;
+  if (!keyName &amp;&amp; &#x27;string&#x27; === typeof obj) {
+    keyName = obj;
+    obj = Ember.lookup;
+  }
+
+  Ember.assert(&#x60;Cannot call get with ${keyName} key.&#x60;, !!keyName);
+  Ember.assert(&#x60;Cannot call get with &#x27;${keyName}&#x27; on an undefined object.&#x60;, obj !== undefined);
+
+  if (!obj) {
+    return _getPath(obj, keyName);
+  }
+
+  var meta = obj[&#x27;__ember_meta__&#x27;];
+  var possibleDesc = obj[keyName];
+  var desc = (possibleDesc !== null &amp;&amp; typeof possibleDesc === &#x27;object&#x27; &amp;&amp; possibleDesc.isDescriptor) ? possibleDesc : undefined;
   var ret;
 
   if (desc === undefined &amp;&amp; isPath(keyName)) {
@@ -246,7 +316,15 @@ export function get(obj, keyName) {
   if (desc) {
     return desc.get(obj, keyName);
   } else {
-    ret = value;
+    if (Ember.FEATURES.isEnabled(&#x27;mandatory-setter&#x27;)) {
+      if (hasPropertyAccessors &amp;&amp; meta &amp;&amp; meta.watching[keyName] &gt; 0) {
+        ret = meta.values[keyName];
+      } else {
+        ret = obj[keyName];
+      }
+    } else {
+      ret = obj[keyName];
+    }
 
     if (ret === undefined &amp;&amp;
         &#x27;object&#x27; === typeof obj &amp;&amp; !(keyName in obj) &amp;&amp; &#x27;function&#x27; === typeof obj.unknownProperty) {
@@ -257,42 +335,77 @@ export function get(obj, keyName) {
   }
 }
 
-export function _getPath(root, path) {
-  let obj = root;
-  let parts = path.split(&#x27;.&#x27;);
-  let len = parts.length;
+/**
+  Normalizes a target/path pair to reflect that actual target/path that should
+  be observed, etc. This takes into account passing in global property
+  paths (i.e. a path beginning with a capital letter not defined on the
+  target).
 
-  for (let i = 0; i &lt; len; i++) {
-    if (obj == null) {
-      return obj;
-    }
+  @private
+  @method normalizeTuple
+  @for Ember
+  @param {Object} target The current target. May be &#x60;null&#x60;.
+  @param {String} path A path on the target or a global property path.
+  @return {Array} a temporary array with the normalized target/path pair.
+*/
+export function normalizeTuple(target, path) {
+  var hasThis  = pathHasThis(path);
+  var isGlobal = !hasThis &amp;&amp; detectIsGlobal(path);
+  var key;
 
-    obj = get(obj, parts[i]);
-
-    if (obj &amp;&amp; obj.isDestroyed) {
-      return undefined;
-    }
+  if (!target &amp;&amp; !isGlobal) {
+    return [undefined, &#x27;&#x27;];
   }
 
-  return obj;
+  if (hasThis) {
+    path = path.slice(5);
+  }
+
+  if (!target || isGlobal) {
+    target = Ember.lookup;
+  }
+
+  if (isGlobal &amp;&amp; isPath(path)) {
+    key = path.match(FIRST_KEY)[0];
+    target = get(target, key);
+    path   = path.slice(key.length+1);
+  }
+
+  // must return some kind of path to be valid else other things will break.
+  validateIsPath(path);
+
+  return [target, path];
 }
 
-/**
-  Retrieves the value of a property from an Object, or a default value in the
-  case that the property returns &#x60;undefined&#x60;.
 
-  &#x60;&#x60;&#x60;javascript
-  Ember.getWithDefault(person, &#x27;lastName&#x27;, &#x27;Doe&#x27;);
-  &#x60;&#x60;&#x60;
+function validateIsPath(path) {
+  if (!path || path.length===0) {
+    throw new EmberError(&#x60;Object in path ${path} could not be found or was destroyed.&#x60;);
+  }
+}
 
-  @method getWithDefault
-  @for Ember
-  @param {Object} obj The object to retrieve from.
-  @param {String} keyName The name of the property to retrieve
-  @param {Object} defaultValue The value to return if the property value is undefined
-  @return {Object} The property value or the defaultValue.
-  @public
-*/
+export function _getPath(root, path) {
+  var hasThis, parts, tuple, idx, len;
+
+  // detect complicated paths and normalize them
+  hasThis = pathHasThis(path);
+
+  if (!root || hasThis) {
+    tuple = normalizeTuple(root, path);
+    root = tuple[0];
+    path = tuple[1];
+    tuple.length = 0;
+  }
+
+  parts = path.split(&quot;.&quot;);
+  len = parts.length;
+  for (idx = 0; root != null &amp;&amp; idx &lt; len; idx++) {
+    root = get(root, parts[idx], true);
+    if (root &amp;&amp; root.isDestroyed) { return undefined; }
+  }
+  return root;
+}
+
 export function getWithDefault(root, key, defaultValue) {
   var value = get(root, key);
 

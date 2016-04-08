@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
+                                <li><a href="../classes/Ember.DAG.html">Ember.DAG</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
-                                <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
-                                <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
-                                <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,36 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
-                                <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
+                                <li><a href="../classes/Ember.RenderBuffer.html">Ember.RenderBuffer</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
-                                <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
+                                <li><a href="../classes/Ember.State.html">Ember.State</a></li>
+                                <li><a href="../classes/Ember.StateManager.html">Ember.StateManager</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
-                                <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
                 
@@ -138,14 +185,12 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
-                                <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
-                                <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
-                                <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
-                                <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -186,7 +231,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l14"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:14</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l17"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:17</code></a>
         </div>
 
             Module: <a href="../modules/ember-testing.html">ember-testing</a><br>
@@ -223,48 +268,44 @@ your application.</li>
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_click">click</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_currentPath">currentPath</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_currentRouteName">currentRouteName</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_currentURL">currentURL</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_fillIn">fillIn</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_find">find</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_findWithAssert">findWithAssert</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_injectTestHelpers">injectTestHelpers</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_keyEvent">keyEvent</a>
 
                             </li>
                             <li class="index-item method public">
                                 <a href="#method_onInjectHelpers">onInjectHelpers</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_pauseTest">pauseTest</a>
 
                             </li>
                             <li class="index-item method public">
@@ -291,11 +332,11 @@ your application.</li>
                                 <a href="#method_resolve">resolve</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_setupForTesting">setupForTesting</a>
 
                             </li>
-                            <li class="index-item method private">
+                            <li class="index-item method">
                                 <a href="#method_setupForTesting">setupForTesting</a>
 
                             </li>
@@ -303,7 +344,7 @@ your application.</li>
                                 <a href="#method_testCheckboxClick">testCheckboxClick</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_triggerEvent">triggerEvent</a>
 
                             </li>
@@ -315,11 +356,11 @@ your application.</li>
                                 <a href="#method_unregisterWaiter">unregisterWaiter</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_visit">visit</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_wait">wait</a>
 
                             </li>
@@ -338,7 +379,7 @@ your application.</li>
                                 <a href="#property_adapter">adapter</a>
 
                             </li>
-                            <li class="index-item property private">
+                            <li class="index-item property">
                                 <a href="#property_helperContainer">helperContainer</a>
 
                             </li>
@@ -346,11 +387,11 @@ your application.</li>
                                 <a href="#property_originalMethods">originalMethods</a>
 
                             </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_testHelpers">testHelpers</a>
 
                             </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_testing">testing</a>
 
                             </li>
@@ -363,7 +404,7 @@ your application.</li>
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method_click" class="method item public">
+<div id="method_click" class="method item">
     <h3 class="name"><code>click</code></h3>
 
         <div class="args">
@@ -379,7 +420,6 @@ your application.</li>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -388,7 +428,7 @@ your application.</li>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l354"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:354</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l207"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:207</code></a>
         </p>
 
 
@@ -434,7 +474,7 @@ event.</p>
 
 
 </div>
-<div id="method_currentPath" class="method item public">
+<div id="method_currentPath" class="method item">
     <h3 class="name"><code>currentPath</code></h3>
 
         <span class="paren">()</span>
@@ -444,7 +484,6 @@ event.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -453,7 +492,7 @@ event.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l497"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:497</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l343"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:343</code></a>
         </p>
 
 
@@ -464,7 +503,7 @@ event.</p>
     <div class="description">
         <p>Returns the current path.</p>
 <p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">function validateURL() {
+<pre class="code prettyprint"><code class="language-javascript">function validateURL(){
 equal(currentPath(), 'some.path.index', &quot;correct path was transitioned into.&quot;);
 }
 
@@ -486,7 +525,7 @@ click('#some-link-id').then(validateURL);
 
 
 </div>
-<div id="method_currentRouteName" class="method item public">
+<div id="method_currentRouteName" class="method item">
     <h3 class="name"><code>currentRouteName</code></h3>
 
         <span class="paren">()</span>
@@ -496,7 +535,6 @@ click('#some-link-id').then(validateURL);
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -505,7 +543,7 @@ click('#some-link-id').then(validateURL);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l477"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:477</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l324"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:324</code></a>
         </p>
 
 
@@ -516,7 +554,7 @@ click('#some-link-id').then(validateURL);
     <div class="description">
         <p>Returns the currently active route name.</p>
 <p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">function validateRouteName() {
+<pre class="code prettyprint"><code class="language-javascript">function validateRouteName(){
 equal(currentRouteName(), 'some.path', &quot;correct route was transitioned into.&quot;);
 }
 
@@ -538,7 +576,7 @@ visit('/some/path').then(validateRouteName)
 
 
 </div>
-<div id="method_currentURL" class="method item public">
+<div id="method_currentURL" class="method item">
     <h3 class="name"><code>currentURL</code></h3>
 
         <span class="paren">()</span>
@@ -548,7 +586,6 @@ visit('/some/path').then(validateRouteName)
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -557,7 +594,7 @@ visit('/some/path').then(validateRouteName)
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l517"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:517</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l362"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:362</code></a>
         </p>
 
 
@@ -568,7 +605,7 @@ visit('/some/path').then(validateRouteName)
     <div class="description">
         <p>Returns the current URL.</p>
 <p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">function validateURL() {
+<pre class="code prettyprint"><code class="language-javascript">function validateURL(){
 equal(currentURL(), '/some/path', &quot;correct URL was transitioned into.&quot;);
 }
 
@@ -590,7 +627,7 @@ click('#some-link-id').then(validateURL);
 
 
 </div>
-<div id="method_fillIn" class="method item public">
+<div id="method_fillIn" class="method item">
     <h3 class="name"><code>fillIn</code></h3>
 
         <div class="args">
@@ -609,7 +646,6 @@ click('#some-link-id').then(validateURL);
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -618,7 +654,7 @@ click('#some-link-id').then(validateURL);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l394"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:394</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l245"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:245</code></a>
         </p>
 
 
@@ -675,7 +711,7 @@ to fill text with</p>
 
 
 </div>
-<div id="method_find" class="method item public">
+<div id="method_find" class="method item">
     <h3 class="name"><code>find</code></h3>
 
         <div class="args">
@@ -691,7 +727,6 @@ to fill text with</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -700,7 +735,7 @@ to fill text with</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l414"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:414</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l264"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:264</code></a>
         </p>
 
 
@@ -746,7 +781,7 @@ for <code>app.$(selector)</code>.</p>
 
 
 </div>
-<div id="method_findWithAssert" class="method item public">
+<div id="method_findWithAssert" class="method item">
     <h3 class="name"><code>findWithAssert</code></h3>
 
         <div class="args">
@@ -762,7 +797,6 @@ for <code>app.$(selector)</code>.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -771,7 +805,7 @@ for <code>app.$(selector)</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l431"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:431</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l280"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:280</code></a>
         </p>
 
 
@@ -826,14 +860,13 @@ the DOM</p>
         </div>
 
 </div>
-<div id="method_injectTestHelpers" class="method item public">
+<div id="method_injectTestHelpers" class="method item">
     <h3 class="name"><code>injectTestHelpers</code></h3>
 
         <span class="paren">()</span>
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -842,7 +875,7 @@ the DOM</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l401"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:401</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l400"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:400</code></a>
         </p>
 
 
@@ -867,7 +900,7 @@ helpers have been injected.</p>
 
 
 </div>
-<div id="method_keyEvent" class="method item public">
+<div id="method_keyEvent" class="method item">
     <h3 class="name"><code>keyEvent</code></h3>
 
         <div class="args">
@@ -889,7 +922,6 @@ helpers have been injected.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -898,7 +930,7 @@ helpers have been injected.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l373"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:373</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l225"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:225</code></a>
         </p>
 
 
@@ -988,7 +1020,7 @@ helpers have been injected.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l138"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:138</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l140"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:140</code></a>
         </p>
 
 
@@ -1034,58 +1066,6 @@ is called.</p>
 
 
 </div>
-<div id="method_pauseTest" class="method item public">
-    <h3 class="name"><code>pauseTest</code></h3>
-
-        <span class="paren">()</span>
-
-        <span class="returns-inline">
-            <span class="type">Object</span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l537"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:537</code></a>
-        </p>
-
-
-
-            <p>Available since 1.9.0</p>
-    </div>
-
-    <div class="description">
-        <p>Pauses the current test - this is useful for debugging while testing or for test-driving.
-It allows you to inspect the state of your application at any point.</p>
-<p>Example (The test will pause before clicking the button):</p>
-<pre class="code prettyprint"><code class="language-javascript">visit('/')
-return pauseTest();
-
-click('.btn');
-</code></pre>
-
-    </div>
-
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Object</span>:
-                    <p>A promise that will never resolve</p>
-
-            </div>
-        </div>
-
-
-</div>
 <div id="method_promise" class="method item public">
     <h3 class="name"><code>promise</code></h3>
 
@@ -1093,9 +1073,6 @@ click('.btn');
             <span class="paren">(</span><ul class="args-list inline commas">
                 <li class="arg">
                         <code>resolver</code>
-                </li>
-                <li class="arg">
-                        <code>label</code>
                 </li>
             </ul><span class="paren">)</span>
         </div>
@@ -1111,7 +1088,7 @@ click('.btn');
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l166"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:166</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l168"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:168</code></a>
         </p>
 
 
@@ -1137,17 +1114,6 @@ callback in the last chained then.</p>
 
                     <div class="param-description">
                         <p>The function used to resolve the promise.</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">label</code>
-                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
-
-
-                    <div class="param-description">
-                        <p>An optional string for identifying the promise.</p>
 
                     </div>
 
@@ -1183,7 +1149,7 @@ callback in the last chained then.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l73"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:73</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l75"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:75</code></a>
         </p>
 
 
@@ -1277,7 +1243,7 @@ deletePost(3);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l36"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:36</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l38"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:38</code></a>
         </p>
 
 
@@ -1441,7 +1407,7 @@ with which your callback will be invoked.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l445"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:445</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l432"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:432</code></a>
         </p>
 
 
@@ -1519,53 +1485,13 @@ an instance of <code>Ember.Test.Promise</code></p>
 
 
 </div>
-<div id="method_setupForTesting" class="method item public">
+<div id="method_setupForTesting" class="method item">
     <h3 class="name"><code>setupForTesting</code></h3>
 
         <span class="paren">()</span>
 
 
 
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l363"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:363</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>This hook defers the readiness of the application, so that you can start
-the app when your tests are ready to run. It also sets the router's
-location to 'none', so that the window's location will not be modified
-(preventing both accidental leaking of state between tests and interference
-with your testing framework).</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code>App.setupForTesting();
-</code></pre>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_setupForTesting" class="method item private">
-    <h3 class="name"><code>setupForTesting</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-        <span class="flag private">private</span>
 
 
 
@@ -1595,6 +1521,44 @@ application testing).</p>
 
 
 </div>
+<div id="method_setupForTesting" class="method item">
+    <h3 class="name"><code>setupForTesting</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l364"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:364</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This hook defers the readiness of the application, so that you can start
+the app when your tests are ready to run. It also sets the router's
+location to 'none', so that the window's location will not be modified
+(preventing both accidental leaking of state between tests and interference
+with your testing framework).</p>
+<p>Example:</p>
+<pre class="code prettyprint"><code>App.setupForTesting();
+</code></pre>
+
+    </div>
+
+
+
+
+</div>
 <div id="method_testCheckboxClick" class="method item private">
     <h3 class="name"><code>testCheckboxClick</code></h3>
 
@@ -1611,7 +1575,7 @@ application testing).</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_support.js.html#l13"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;support.js:13</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_support.js.html#l11"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;support.js:11</code></a>
         </p>
 
 
@@ -1629,7 +1593,7 @@ of jQuery (e.g 1.8.3).</p>
 
 
 </div>
-<div id="method_triggerEvent" class="method item public">
+<div id="method_triggerEvent" class="method item">
     <h3 class="name"><code>triggerEvent</code></h3>
 
         <div class="args">
@@ -1654,7 +1618,6 @@ of jQuery (e.g 1.8.3).</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1663,7 +1626,7 @@ of jQuery (e.g 1.8.3).</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l557"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:557</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l381"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:381</code></a>
         </p>
 
 
@@ -1768,7 +1731,7 @@ argument to find only within the context's children</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l120"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:120</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l122"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:122</code></a>
         </p>
 
 
@@ -1874,7 +1837,7 @@ registered with <code>registerWaiter</code>.</p>
 
 
 </div>
-<div id="method_visit" class="method item public">
+<div id="method_visit" class="method item">
     <h3 class="name"><code>visit</code></h3>
 
         <div class="args">
@@ -1890,7 +1853,6 @@ registered with <code>registerWaiter</code>.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1899,7 +1861,7 @@ registered with <code>registerWaiter</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l334"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:334</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l188"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:188</code></a>
         </p>
 
 
@@ -1946,7 +1908,7 @@ using your app.</p>
 
 
 </div>
-<div id="method_wait" class="method item public">
+<div id="method_wait" class="method item">
     <h3 class="name"><code>wait</code></h3>
 
         <div class="args">
@@ -1962,7 +1924,6 @@ using your app.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1971,7 +1932,7 @@ using your app.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l449"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:449</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_helpers.js.html#l297"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;helpers.js:297</code></a>
         </p>
 
 
@@ -1987,7 +1948,7 @@ any async operations from other helpers (or your assertions) have been processed
 <pre class="code prettyprint"><code class="language-javascript">Ember.Test.registerAsyncHelper('loginUser', function(app, username, password) {
   visit('secured/path/here')
   .fillIn('#username', username)
-  .fillIn('#password', password)
+  .fillIn('#password', username)
   .click('.submit')
 
   return app.testHelpers.wait();
@@ -2040,7 +2001,7 @@ any async operations from other helpers (or your assertions) have been processed
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l27"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:27</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l29"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:29</code></a>
         </p>
 
 
@@ -2088,12 +2049,11 @@ framework.</p>
 
 
 </div>
-<div id="property_helperContainer" class="property item private">
+<div id="property_helperContainer" class="property item">
     <h3 class="name"><code>helperContainer</code></h3>
     <span class="type">Object The object to be used for test helpers.</span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -2129,7 +2089,7 @@ default the helpers are injected into <code>window</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l334"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:334</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l336"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:336</code></a>
         </p>
 
 
@@ -2148,19 +2108,18 @@ on the <code>helperContainer</code> before <code>injectTestHelpers</code> is cal
 
 
 </div>
-<div id="property_testHelpers" class="property item public">
+<div id="property_testHelpers" class="property item">
     <h3 class="name"><code>testHelpers</code></h3>
     <span class="type">Object</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l321"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:321</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l324"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:324</code></a>
         </p>
 
 
@@ -2178,19 +2137,18 @@ default, but can be used from this object on the individual application also.</p
 
 
 </div>
-<div id="property_testing" class="property item public">
+<div id="property_testing" class="property item">
     <h3 class="name"><code>testing</code></h3>
     <span class="type">Boolean</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l350"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:350</code></a>
+        <a href="../files/ember.js_packages_ember-testing_lib_test.js.html#l352"><code>ember.js&#x2F;packages&#x2F;ember-testing&#x2F;lib&#x2F;test.js:352</code></a>
         </p>
 
 

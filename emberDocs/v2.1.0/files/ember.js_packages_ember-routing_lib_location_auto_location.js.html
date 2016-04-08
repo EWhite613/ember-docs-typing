@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -185,11 +189,10 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import { assert } from &#x27;ember-metal/debug&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;; // FEATURES
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import { set } from &#x27;ember-metal/property_set&#x27;;
 import { tryInvoke } from &#x27;ember-metal/utils&#x27;;
-import { getOwner } from &#x27;container/owner&#x27;;
 
 import EmberObject from &#x27;ember-runtime/system/object&#x27;;
 import environment from &#x27;ember-metal/environment&#x27;;
@@ -304,7 +307,7 @@ export default EmberObject.extend({
   detect() {
     var rootURL = this.rootURL;
 
-    assert(&#x27;rootURL must end with a trailing forward slash e.g. &quot;/app/&quot;&#x27;,
+    Ember.assert(&#x27;rootURL must end with a trailing forward slash e.g. &quot;/app/&quot;&#x27;,
                  rootURL.charAt(rootURL.length - 1) === &#x27;/&#x27;);
 
     var implementation = detectImplementation({
@@ -321,10 +324,10 @@ export default EmberObject.extend({
       implementation = &#x27;none&#x27;;
     }
 
-    var concrete = getOwner(this).lookup(&#x60;location:${implementation}&#x60;);
+    var concrete = this.container.lookup(&#x60;location:${implementation}&#x60;);
     set(concrete, &#x27;rootURL&#x27;, rootURL);
 
-    assert(&#x60;Could not find location &#x27;${implementation}&#x27;.&#x60;, !!concrete);
+    Ember.assert(&#x60;Could not find location &#x27;${implementation}&#x27;.&#x60;, !!concrete);
 
     set(this, &#x27;concreteImplementation&#x27;, concrete);
   },
@@ -348,7 +351,7 @@ export default EmberObject.extend({
 function delegateToConcreteImplementation(methodName) {
   return function(...args) {
     var concreteImplementation = get(this, &#x27;concreteImplementation&#x27;);
-    assert(&#x27;AutoLocation\&#x27;s detect() method should be called before calling any other hooks.&#x27;, !!concreteImplementation);
+    Ember.assert(&#x27;AutoLocation\&#x27;s detect() method should be called before calling any other hooks.&#x27;, !!concreteImplementation);
     return tryInvoke(concreteImplementation, methodName, args);
   };
 }
@@ -432,7 +435,7 @@ export function getHistoryPath(rootURL, location) {
   var rootURLIndex = path.indexOf(rootURL);
   var routeHash, hashParts;
 
-  assert(&#x60;Path ${path} does not start with the provided rootURL ${rootURL}&#x60;, rootURLIndex === 0);
+  Ember.assert(&#x60;Path ${path} does not start with the provided rootURL ${rootURL}&#x60;, rootURLIndex === 0);
 
   // By convention, Ember.js routes using HashLocation are required to start
   // with &#x60;#/&#x60;. Anything else should NOT be considered a route and should

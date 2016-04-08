@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,7 +186,6 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 import Ember from &#x27;ember-metal/core&#x27;; // FEATURES, A, deprecate, assert, Logger
-import { assert, deprecate, info } from &#x27;ember-metal/debug&#x27;;
 import isEnabled from &#x27;ember-metal/features&#x27;;
 import EmberError from &#x27;ember-metal/error&#x27;;
 import { get } from &#x27;ember-metal/property_get&#x27;;
@@ -194,7 +193,7 @@ import { set } from &#x27;ember-metal/property_set&#x27;;
 import getProperties from &#x27;ember-metal/get_properties&#x27;;
 import isNone from &#x27;ember-metal/is_none&#x27;;
 import { computed } from &#x27;ember-metal/computed&#x27;;
-import assign from &#x27;ember-metal/assign&#x27;;
+import merge from &#x27;ember-metal/merge&#x27;;
 import {
   typeOf
 } from &#x27;ember-runtime/utils&#x27;;
@@ -204,7 +203,6 @@ import {
   classify
 } from &#x27;ember-runtime/system/string&#x27;;
 import EmberObject from &#x27;ember-runtime/system/object&#x27;;
-import { A as emberA } from &#x27;ember-runtime/system/native_array&#x27;;
 import Evented from &#x27;ember-runtime/mixins/evented&#x27;;
 import ActionHandler, { deprecateUnderscoreActions } from &#x27;ember-runtime/mixins/action_handler&#x27;;
 import generateController from &#x27;ember-routing/system/generate_controller&#x27;;
@@ -216,8 +214,7 @@ import {
   normalizeControllerQueryParams,
   calculateCacheKey
 } from &#x27;ember-routing/utils&#x27;;
-import { getOwner } from &#x27;container/owner&#x27;;
-import isEmpty from &#x27;ember-metal/is_empty&#x27;;
+
 var slice = Array.prototype.slice;
 
 function K() { return this; }
@@ -305,7 +302,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     var controllerProto, combinedQueryParameterConfiguration;
 
     var controllerName = this.controllerName || this.routeName;
-    var definedControllerClass = getOwner(this)._lookupFactory(&#x60;controller:${controllerName}&#x60;);
+    var definedControllerClass = this.container.lookupFactory(&#x60;controller:${controllerName}&#x60;);
     var queryParameterConfiguraton = get(this, &#x27;queryParams&#x27;);
     var hasRouterDefinedQueryParams = !!Object.keys(queryParameterConfiguraton).length;
 
@@ -322,13 +319,15 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
 
       if (isEnabled(&#x27;ember-routing-route-configured-query-params&#x27;)) {
         if (controllerDefinedQueryParameterConfiguration.length) {
-          deprecate(&#x60;Configuring query parameters on a controller is deprecated. Migrate the query parameters configuration from the &#x27;${controllerName}&#x27; controller to the &#x27;${this.routeName}&#x27; route: ${combinedQueryParameterConfiguration}&#x60;, false, { id: &#x27;ember-routing.controller-configured-query-params&#x27;, until: &#x27;3.0.0&#x27; });
+          Ember.deprecate(&#x60;Configuring query parameters on a controller is deprecated. Migrate the query parameters configuration from the &#x27;${controllerName}&#x27; controller to the &#x27;${this.routeName}&#x27; route: ${combinedQueryParameterConfiguration}&#x60;, false, { id: &#x27;ember-routing.controller-configured-query-params&#x27;, until: &#x27;3.0.0&#x27; });
         }
       }
+
+
     } else if (hasRouterDefinedQueryParams) {
       // the developer has not defined a controller but *has* supplied route query params.
       // Generate a class for them so we can later insert default values
-      var generatedControllerClass = generateControllerFactory(getOwner(this), controllerName);
+      var generatedControllerClass = generateControllerFactory(this.container, controllerName);
       controllerProto = generatedControllerClass.proto();
       combinedQueryParameterConfiguration = queryParameterConfiguraton;
     }
@@ -373,7 +372,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
       var defaultValue = get(controllerProto, propName);
 
       if (Array.isArray(defaultValue)) {
-        defaultValue = emberA(defaultValue.slice());
+        defaultValue = Ember.A(defaultValue.slice());
       }
 
       var type = desc.type || typeOf(defaultValue);
@@ -509,7 +508,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     @public
   */
   paramsFor(name) {
-    var route = getOwner(this).lookup(&#x60;route:${name}&#x60;);
+    var route = this.container.lookup(&#x60;route:${name}&#x60;);
 
     if (!route) {
       return {};
@@ -519,8 +518,8 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     var state = transition ? transition.state : this.router.router.state;
 
     var params = {};
-    assign(params, state.params[name]);
-    assign(params, getQueryParamsFor(route, state));
+    merge(params, state.params[name]);
+    merge(params, getQueryParamsFor(route, state));
 
     return params;
   },
@@ -576,7 +575,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     } else if (defaultValueType === &#x27;number&#x27;) {
       return (Number(value)).valueOf();
     } else if (defaultValueType === &#x27;array&#x27;) {
-      return emberA(JSON.parse(value));
+      return Ember.A(JSON.parse(value));
     }
     return value;
   },
@@ -598,7 +597,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     App.ArticlesRoute = Ember.Route.extend({
       // ...
 
-      resetController: function(controller, isExiting, transition) {
+      resetController: function (controller, isExiting, transition) {
         if (isExiting) {
           controller.set(&#x27;page&#x27;, 1);
         }
@@ -754,11 +753,6 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     subsequent &#x60;willTransition&#x60; actions to fire for the redirecting
     transition, you must first explicitly call
     &#x60;transition.abort()&#x60;.
-
-    To allow the &#x60;willTransition&#x60; event to continue bubbling to the parent
-    route, use &#x60;return true;&#x60;. When the &#x60;willTransition&#x60; method has a
-    return value of &#x60;true&#x60; then the parent route&#x27;s &#x60;willTransition&#x60; method
-    will be fired, enabling &quot;bubbling&quot; behavior for the event.
 
     @event willTransition
     @param {Transition} transition
@@ -946,7 +940,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
       var totalChanged = Object.keys(changed).concat(Object.keys(removed));
       for (var i = 0, len = totalChanged.length; i &lt; len; ++i) {
         var qp = qpMap[totalChanged[i]];
-        if (qp &amp;&amp; get(this._optionsForQueryParam(qp), &#x27;refreshModel&#x27;) &amp;&amp; this.router.currentState) {
+        if (qp &amp;&amp; get(this._optionsForQueryParam(qp), &#x27;refreshModel&#x27;)) {
           this.refresh();
         }
       }
@@ -962,7 +956,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
 
       var handlerInfos = transition.state.handlerInfos;
       var router = this.router;
-      var qpMeta = router._queryParamsFor(handlerInfos[handlerInfos.length - 1].name);
+      var qpMeta = router._queryParamsFor(handlerInfos[handlerInfos.length-1].name);
       var changes = router._qpUpdates;
       var replaceUrl;
 
@@ -1293,7 +1287,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
       transitioning to the route.
     @return {Transition} the transition object associated with this
       attempted transition
-    @public
+    @private
   */
   replaceWith() {
     var router = this.router;
@@ -1407,9 +1401,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
 
     this.setupController(controller, context, transition);
 
-    if (!this._environment || this._environment.options.shouldRender) {
-      this.renderTemplate(controller, context);
-    }
+    this.renderTemplate(controller, context);
   },
 
   /*
@@ -1427,6 +1419,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     if (cache) {
       cache.stash(cacheKey, prop, value);
     }
+
   },
   /**
     This hook is the first of the route entry validation hooks
@@ -1586,7 +1579,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     });
     &#x60;&#x60;&#x60;
 
-    The model for the &#x60;post&#x60; route is &#x60;store.findRecord(&#x27;post&#x27;, params.post_id)&#x60;.
+    The model for the &#x60;post&#x60; route is &#x60;store.find(&#x27;post&#x27;, params.post_id)&#x60;.
 
     By default, if your route has a dynamic segment ending in &#x60;_id&#x60;:
 
@@ -1611,7 +1604,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     this.transitionTo(&#x27;posts&#x27;);
 
     // model passed in, so model hook not called
-    thePost = store.findRecord(&#x27;post&#x27;, 1);
+    thePost = store.find(&#x27;post&#x27;, 1);
     this.transitionTo(&#x27;post&#x27;, thePost);
 
     // integer passed in, model hook is called
@@ -1619,7 +1612,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
 
     // model id passed in, model hook is called
     // useful for forcing the hook to execute
-    thePost = store.findRecord(&#x27;post&#x27;, 1);
+    thePost = store.find(&#x27;post&#x27;, 1);
     this.transitionTo(&#x27;post&#x27;, thePost.id);
     &#x60;&#x60;&#x60;
 
@@ -1634,7 +1627,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     &#x60;&#x60;&#x60;javascript
     App.PostRoute = Ember.Route.extend({
       model: function(params) {
-        return this.store.findRecord(&#x27;post&#x27;, params.post_id);
+        return this.store.find(&#x27;post&#x27;, params.post_id);
       }
     });
     &#x60;&#x60;&#x60;
@@ -1669,7 +1662,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     } else if (!name) {
       if (transition.resolveIndex &lt; 1) { return; }
 
-      var parentModel = transition.state.handlerInfos[transition.resolveIndex - 1].context;
+      var parentModel = transition.state.handlerInfos[transition.resolveIndex-1].context;
 
       return parentModel;
     }
@@ -1717,20 +1710,20 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     @private
   */
   store: computed(function() {
-    var owner = getOwner(this);
+    var container = this.container;
     var routeName = this.routeName;
     var namespace = get(this, &#x27;router.namespace&#x27;);
 
     return {
       find(name, value) {
-        var modelClass = owner._lookupFactory(&#x60;model:${name}&#x60;);
+        var modelClass = container.lookupFactory(&#x60;model:${name}&#x60;);
 
-        assert(
+        Ember.assert(
           &#x60;You used the dynamic segment ${name}_id in your route ${routeName}, but ${namespace}.${classify(name)} did not exist and you did not override your route&#x27;s \&#x60;model\&#x60; hook.&#x60;, !!modelClass);
 
         if (!modelClass) { return; }
 
-        assert(&#x60;${classify(name)} has no method \&#x60;find\&#x60;.&#x60;, typeof modelClass.find === &#x27;function&#x27;);
+        Ember.assert(&#x60;${classify(name)} has no method \&#x60;find\&#x60;.&#x60;, typeof modelClass.find === &#x27;function&#x27;);
 
         return modelClass.find(value);
       }
@@ -1811,10 +1804,10 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     &#x60;&#x60;&#x60;javascript
     App.PhotosRoute = Ember.Route.extend({
       model: function() {
-        return this.store.findAll(&#x27;photo&#x27;);
+        return this.store.find(&#x27;photo&#x27;);
       },
 
-      setupController: function(controller, model) {
+      setupController: function (controller, model) {
         // Call _super for default behavior
         this._super(controller, model);
         // Implement your custom setup after
@@ -1882,20 +1875,20 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     @public
   */
   controllerFor(name, _skipAssert) {
-    var owner = getOwner(this);
-    var route = owner.lookup(&#x60;route:${name}&#x60;);
+    var container = this.container;
+    var route = container.lookup(&#x60;route:${name}&#x60;);
     var controller;
 
     if (route &amp;&amp; route.controllerName) {
       name = route.controllerName;
     }
 
-    controller = owner.lookup(&#x60;controller:${name}&#x60;);
+    controller = container.lookup(&#x60;controller:${name}&#x60;);
 
     // NOTE: We&#x27;re specifically checking that skipAssert is true, because according
     //   to the old API the second parameter was model. We do not want people who
     //   passed a model to skip the assertion.
-    assert(&#x60;The controller named &#x27;${name}&#x27; could not be found. Make sure that this route exists and has already been entered at least once. If you are accessing a controller not associated with a route, make sure the controller class is explicitly defined.&#x60;, controller || _skipAssert === true);
+    Ember.assert(&#x60;The controller named &#x27;${name}&#x27; could not be found. Make sure that this route exists and has already been entered at least once. If you are accessing a controller not associated with a route, make sure the controller class is explicitly defined.&#x60;, controller || _skipAssert === true);
 
     return controller;
   },
@@ -1920,11 +1913,11 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     @private
   */
   generateController(name, model) {
-    var owner = getOwner(this);
+    var container = this.container;
 
     model = model || this.modelFor(name);
 
-    return generateController(owner, name, model);
+    return generateController(container, name, model);
   },
 
   /**
@@ -1959,7 +1952,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     @public
   */
   modelFor(name) {
-    var route = getOwner(this).lookup(&#x60;route:${name}&#x60;);
+    var route = this.container.lookup(&#x60;route:${name}&#x60;);
     var transition = this.router ? this.router.router.activeTransition : null;
 
     // If we are mid-transition, we want to try and look up
@@ -2106,7 +2099,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     //
     this.render(&#x27;post&#x27;, {  // the template name associated with &#x27;post&#x27; Route
       into: &#x27;application&#x27;, // the parent route to &#x27;post&#x27; Route
-      outlet: &#x27;main&#x27;,      // {{outlet}} and {{outlet &#x27;main&#x27;}} are synonymous,
+      outlet: &#x27;main&#x27;,      // {{outlet}} and {{outlet &#x27;main&#x27; are synonymous}},
       view: &#x27;post&#x27;,        // the view associated with the &#x27;post&#x27; Route
       controller: &#x27;post&#x27;,  // the controller associated with the &#x27;post&#x27; Route
     })
@@ -2129,10 +2122,10 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
     @public
   */
   render(_name, options) {
-    assert(&#x27;The name in the given arguments is undefined&#x27;, arguments.length &gt; 0 ? !isNone(arguments[0]) : true);
+    Ember.assert(&#x27;The name in the given arguments is undefined&#x27;, arguments.length &gt; 0 ? !isNone(arguments[0]) : true);
 
     var namePassed = typeof _name === &#x27;string&#x27; &amp;&amp; !!_name;
-    var isDefaultRender = arguments.length === 0 || isEmpty(arguments[0]);
+    var isDefaultRender = arguments.length === 0 || Ember.isEmpty(arguments[0]);
     var name;
 
     if (typeof _name === &#x27;object&#x27; &amp;&amp; !options) {
@@ -2189,7 +2182,7 @@ var Route = EmberObject.extend(ActionHandler, Evented, {
 
     @method disconnectOutlet
     @param {Object|String} options the options hash or outlet name
-    @public
+    @private
   */
   disconnectOutlet(options) {
     var outletName;
@@ -2274,9 +2267,9 @@ function handlerInfoFor(route, handlerInfos, _offset) {
 
   var offset = _offset || 0;
   var current;
-  for (var i = 0, l = handlerInfos.length; i &lt; l; i++) {
+  for (var i=0, l=handlerInfos.length; i&lt;l; i++) {
     current = handlerInfos[i].handler;
-    if (current === route) { return handlerInfos[i + offset]; }
+    if (current === route) { return handlerInfos[i+offset]; }
   }
 }
 
@@ -2289,7 +2282,6 @@ function buildRenderOptions(route, namePassed, isDefaultRender, name, options) {
   var LOG_VIEW_LOOKUPS = get(route.router, &#x27;namespace.LOG_VIEW_LOOKUPS&#x27;);
   var into = options &amp;&amp; options.into &amp;&amp; options.into.replace(/\//g, &#x27;.&#x27;);
   var outlet = (options &amp;&amp; options.outlet) || &#x27;main&#x27;;
-  let owner = getOwner(route);
 
   if (name) {
     name = name.replace(/\//g, &#x27;.&#x27;);
@@ -2301,15 +2293,15 @@ function buildRenderOptions(route, namePassed, isDefaultRender, name, options) {
 
   if (!controller) {
     if (namePassed) {
-      controller = owner.lookup(&#x60;controller:${name}&#x60;) || route.controllerName || route.routeName;
+      controller = route.container.lookup(&#x60;controller:${name}&#x60;) || route.controllerName || route.routeName;
     } else {
-      controller = route.controllerName || owner.lookup(&#x60;controller:${name}&#x60;);
+      controller = route.controllerName || route.container.lookup(&#x60;controller:${name}&#x60;);
     }
   }
 
   if (typeof controller === &#x27;string&#x27;) {
     var controllerName = controller;
-    controller = owner.lookup(&#x60;controller:${controllerName}&#x60;);
+    controller = route.container.lookup(&#x60;controller:${controllerName}&#x60;);
     if (!controller) {
       throw new EmberError(&#x60;You passed \&#x60;controller: &#x27;${controllerName}&#x27;\&#x60; into the \&#x60;render\&#x60; method, but no such controller could be found.&#x60;);
     }
@@ -2324,8 +2316,15 @@ function buildRenderOptions(route, namePassed, isDefaultRender, name, options) {
   }
 
   viewName = options &amp;&amp; options.view || namePassed &amp;&amp; name || route.viewName || name;
-  ViewClass = owner._lookupFactory(&#x60;view:${viewName}&#x60;);
-  template = owner.lookup(&#x60;template:${templateName}&#x60;);
+  ViewClass = route.container.lookupFactory(&#x60;view:${viewName}&#x60;);
+  template = route.container.lookup(&#x60;template:${templateName}&#x60;);
+  if (!ViewClass &amp;&amp; !template) {
+    Ember.assert(&#x60;Could not find &quot;${name}&quot; template or view.&#x60;, isDefaultRender);
+    if (LOG_VIEW_LOOKUPS) {
+      var fullName = &#x60;template:${name}&#x60;;
+      Ember.Logger.info(&#x60;Could not find &quot;${name}&quot; template or view. Nothing will be rendered&#x60;, { fullName: fullName });
+    }
+  }
 
   var parent;
   if (into &amp;&amp; (parent = parentRoute(route)) &amp;&amp; into === parentRoute(route).routeName) {
@@ -2333,35 +2332,13 @@ function buildRenderOptions(route, namePassed, isDefaultRender, name, options) {
   }
 
   var renderOptions = {
-    owner,
-    into,
-    outlet,
-    name,
-    controller,
-    ViewClass,
-    template: template || route._topLevelViewTemplate
+    into: into,
+    outlet: outlet,
+    name: name,
+    controller: controller,
+    ViewClass: ViewClass,
+    template: template
   };
-
-  let Component;
-  if (isEnabled(&#x27;ember-routing-routable-components&#x27;)) {
-    let componentName = options &amp;&amp; options.component || namePassed &amp;&amp; name || route.componentName || name;
-    let componentLookup = owner.lookup(&#x27;component-lookup:main&#x27;);
-    Component = componentLookup.lookupFactory(componentName);
-    let isGlimmerComponent = Component &amp;&amp; Component.proto().isGlimmerComponent;
-    if (!template &amp;&amp; !ViewClass &amp;&amp; Component &amp;&amp; isGlimmerComponent) {
-      renderOptions.Component = Component;
-      renderOptions.ViewClass = undefined;
-      renderOptions.attrs = { model: get(controller, &#x27;model&#x27;) };
-    }
-  }
-
-  if (!ViewClass &amp;&amp; !template &amp;&amp; !Component) {
-    assert(&#x60;Could not find &quot;${name}&quot; template, view, or component.&#x60;, isDefaultRender);
-    if (LOG_VIEW_LOOKUPS) {
-      var fullName = &#x60;template:${name}&#x60;;
-      info(&#x60;Could not find &quot;${name}&quot; template or view. Nothing will be rendered&#x60;, { fullName: fullName });
-    }
-  }
 
   return renderOptions;
 }
@@ -2370,9 +2347,9 @@ function getFullQueryParams(router, state) {
   if (state.fullQueryParams) { return state.fullQueryParams; }
 
   state.fullQueryParams = {};
-  assign(state.fullQueryParams, state.queryParams);
+  merge(state.fullQueryParams, state.queryParams);
 
-  var targetRouteName = state.handlerInfos[state.handlerInfos.length - 1].name;
+  var targetRouteName = state.handlerInfos[state.handlerInfos.length-1].name;
   router._deserializeQueryParams(targetRouteName, state.fullQueryParams);
   return state.fullQueryParams;
 }
@@ -2405,7 +2382,7 @@ function getQueryParamsFor(route, state) {
 
 function copyDefaultValue(value) {
   if (Array.isArray(value)) {
-    return emberA(value.slice());
+    return Ember.A(value.slice());
   }
   return value;
 }
@@ -2436,8 +2413,8 @@ function mergeEachQueryParams(controllerQP, routeQP) {
     if (!controllerQP.hasOwnProperty(cqpName)) { continue; }
 
     var newControllerParameterConfiguration = {};
-    assign(newControllerParameterConfiguration, controllerQP[cqpName]);
-    assign(newControllerParameterConfiguration, routeQP[cqpName]);
+    merge(newControllerParameterConfiguration, controllerQP[cqpName]);
+    merge(newControllerParameterConfiguration, routeQP[cqpName]);
 
     qps[cqpName] = newControllerParameterConfiguration;
 
@@ -2451,7 +2428,7 @@ function mergeEachQueryParams(controllerQP, routeQP) {
     if (!routeQP.hasOwnProperty(rqpName) || keysAlreadyMergedOrSkippable[rqpName]) { continue; }
 
     var newRouteParameterConfiguration = {};
-    assign(newRouteParameterConfiguration, routeQP[rqpName], controllerQP[rqpName]);
+    merge(newRouteParameterConfiguration, routeQP[rqpName], controllerQP[rqpName]);
     qps[rqpName] = newRouteParameterConfiguration;
   }
 
@@ -2465,7 +2442,7 @@ function addQueryParamsObservers(controller, propNames) {
 }
 
 function deprecateQueryParamDefaultValuesSetOnController(controllerName, routeName, propName) {
-  deprecate(&#x60;Configuring query parameter default values on controllers is deprecated. Please move the value for the property &#x27;${propName}&#x27; from the &#x27;${controllerName}&#x27; controller to the &#x27;${routeName}&#x27; route in the format: {queryParams: ${propName}: {defaultValue: &lt;default value&gt; }}&#x60;, false, { id: &#x27;ember-routing.deprecate-query-param-default-values-set-on-controller&#x27;, until: &#x27;3.0.0&#x27; });
+  Ember.deprecate(&#x60;Configuring query parameter default values on controllers is deprecated. Please move the value for the property &#x27;${propName}&#x27; from the &#x27;${controllerName}&#x27; controller to the &#x27;${routeName}&#x27; route in the format: {queryParams: ${propName}: {defaultValue: &lt;default value&gt; }}&#x60;, false, { id: &#x27;ember-routing.deprecate-query-param-default-values-set-on-controller&#x27;, until: &#x27;3.0.0&#x27; });
 }
 
 export default Route;

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,7 +191,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l30"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:30</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l32"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:32</code></a>
         </div>
 
             Module: <a href="../modules/ember-metal.html">ember-metal</a><br>
@@ -287,6 +292,40 @@ person.set('fullName', 'Peter Wagenet'); // Uncaught Error: Cannot set read-only
 
 </div>
 
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_Ember.ComputedProperty" class="method item public">
+    <h3 class="name"><code>Ember.ComputedProperty</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l32"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:32</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+    </div>
 
 <div id="classdocs" class="tabview">
     <ul class="api-class-tabs">
@@ -304,6 +343,10 @@ person.set('fullName', 'Peter Wagenet'); // Uncaught Error: Cannot set read-only
 
                     <ul class="index-list methods">
                             <li class="index-item method public">
+                                <a href="#method_get">get</a>
+
+                            </li>
+                            <li class="index-item method public">
                                 <a href="#method_meta">meta</a>
 
                             </li>
@@ -313,6 +356,10 @@ person.set('fullName', 'Peter Wagenet'); // Uncaught Error: Cannot set read-only
                             </li>
                             <li class="index-item method public">
                                 <a href="#method_readOnly">readOnly</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#method_set">set</a>
 
                             </li>
                             <li class="index-item method public">
@@ -329,6 +376,90 @@ person.set('fullName', 'Peter Wagenet'); // Uncaught Error: Cannot set read-only
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
+<div id="method_get" class="method item public">
+    <h3 class="name"><code>get</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>keyName</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l328"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:328</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Access the value of the function backing the computed property.
+If this property has already been cached, return the cached result.
+Otherwise, call the function passing the property name as an argument.</p>
+<pre class="code prettyprint"><code class="language-javascript">let Person = Ember.Object.extend({
+  fullName: Ember.computed('firstName', 'lastName', function(keyName) {
+    // the keyName parameter is 'fullName' in this case.
+    return this.get('firstName') + ' ' + this.get('lastName');
+  })
+});
+
+
+let tom = Person.create({
+  firstName: 'Tom',
+  lastName: 'Dale'
+});
+
+tom.get('fullName') // 'Tom Dale'
+</code></pre>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">keyName</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>The key being accessed.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>The return value of the function backing the CP.</p>
+
+            </div>
+        </div>
+
+
+</div>
 <div id="method_meta" class="method item public">
     <h3 class="name"><code>meta</code></h3>
 
@@ -352,7 +483,7 @@ person.set('fullName', 'Peter Wagenet'); // Uncaught Error: Cannot set read-only
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l271"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:271</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l272"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:272</code></a>
         </p>
 
 
@@ -423,7 +554,7 @@ via the <code>metaForProperty()</code> function.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l220"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:220</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l223"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:223</code></a>
         </p>
 
 
@@ -503,7 +634,7 @@ president.get('fullName'); // 'Barack Obama'
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l193"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:193</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l196"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:196</code></a>
         </p>
 
 
@@ -539,6 +670,123 @@ person.set('guid', 'new-guid'); // will throw an exception
 
 
 </div>
+<div id="method_set" class="method item public">
+    <h3 class="name"><code>set</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>keyName</code>
+                </li>
+                <li class="arg">
+                        <code>newValue</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+        <span class="flag public">public</span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l386"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:386</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Set the value of a computed property. If the function that backs your
+computed property does not accept arguments then the default action for
+setting would be to define the property on the current object, and set
+the value of the property to the value being set.</p>
+<p>Generally speaking if you intend for your computed property to be set
+you should pass <code>set(key, value)</code> function in hash as argument to <code>Ember.computed()</code> along with <code>get(key)</code> function.</p>
+<pre class="code prettyprint"><code class="language-javascript">let Person = Ember.Object.extend({
+  // these will be supplied by <code>create</code>
+  firstName: null,
+  lastName: null,
+
+  fullName: Ember.computed('firstName', 'lastName', {
+    // getter
+    get() {
+      let firstName = this.get('firstName');
+      let lastName = this.get('lastName');
+
+      return firstName + ' ' + lastName;
+    },
+    // setter
+    set(key, value) {
+      let [firstName, lastName] = value.split(' ');
+
+      this.set('firstName', firstName);
+      this.set('lastName', lastName);
+
+      return value;
+    }
+  })
+});
+
+let person = Person.create();
+
+person.set('fullName', 'Peter Wagenet');
+person.get('firstName'); // 'Peter'
+person.get('lastName');  // 'Wagenet'
+</code></pre>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">keyName</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>The key being accessed.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">newValue</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The new value being assigned.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>The return value of the function backing the CP.</p>
+
+            </div>
+        </div>
+
+
+</div>
 <div id="method_volatile" class="method item public">
     <h3 class="name"><code>volatile</code></h3>
 
@@ -559,7 +807,7 @@ person.set('guid', 'new-guid'); // will throw an exception
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l165"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:165</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_computed.js.html#l168"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;computed.js:168</code></a>
         </p>
 
 

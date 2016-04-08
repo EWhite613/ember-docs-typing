@@ -9,7 +9,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "Ember.ActionHandler",
         "Ember.Application",
         "Ember.ApplicationInstance",
-        "Ember.ApplicationInstance.BootOptions",
         "Ember.AriaRoleSupport",
         "Ember.Array",
         "Ember.ArrayProxy",
@@ -17,10 +16,12 @@ YUI.add("yuidoc-meta", function(Y) {
         "Ember.Binding",
         "Ember.Checkbox",
         "Ember.ClassNamesSupport",
+        "Ember.CollectionView",
         "Ember.Comparable",
         "Ember.Component",
         "Ember.ComputedProperty",
         "Ember.ContainerDebugAdapter",
+        "Ember.ContainerView",
         "Ember.Controller",
         "Ember.ControllerMixin",
         "Ember.Copyable",
@@ -30,6 +31,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Ember.Debug",
         "Ember.DefaultResolver",
         "Ember.EachProxy",
+        "Ember.EmptyViewSupport",
         "Ember.Enumerable",
         "Ember.Error",
         "Ember.EventDispatcher",
@@ -63,6 +65,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Ember.ProxyMixin",
         "Ember.Route",
         "Ember.Router",
+        "Ember.Select",
         "Ember.Service",
         "Ember.String",
         "Ember.TargetActionSupport",
@@ -92,6 +95,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "RegistryProxyMixin",
         "RoutingService",
         "String",
+        "TransformEachInToHash",
         "TransformInputOnToOnEvent"
     ],
     "modules": [
@@ -127,7 +131,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "ember-extension-support",
             "name": "ember-extension-support",
-            "description": "The `ContainerDebugAdapter` helps the container and resolver interface\nwith tools that debug Ember such as the\n[Ember Extension](https://github.com/tildeio/ember-extension)\nfor Chrome and Firefox.\n\nThis class can be extended by a custom resolver implementer\nto override some of the methods with library-specific code.\n\nThe methods likely to be overridden are:\n\n* `canCatalogEntriesByType`\n* `catalogEntriesByType`\n\nThe adapter will need to be registered\nin the application's container as `container-debug-adapter:main`.\n\nExample:\n\n```javascript\nApplication.initializer({\n  name: \"containerDebugAdapter\",\n\n  initialize: function(application) {\n    application.register('container-debug-adapter:main', require('app/container-debug-adapter'));\n  }\n});\n```"
+            "description": "The `ContainerDebugAdapter` helps the container and resolver interface\nwith tools that debug Ember such as the\n[Ember Extension](https://github.com/tildeio/ember-extension)\nfor Chrome and Firefox.\n\nThis class can be extended by a custom resolver implementer\nto override some of the methods with library-specific code.\n\nThe methods likely to be overridden are:\n\n* `canCatalogEntriesByType`\n* `catalogEntriesByType`\n\nThe adapter will need to be registered\nin the application's container as `container-debug-adapter:main`\n\nExample:\n\n```javascript\nApplication.initializer({\n  name: \"containerDebugAdapter\",\n\n  initialize: function(application) {\n    application.register('container-debug-adapter:main', require('app/container-debug-adapter'));\n  }\n});\n```"
         },
         {
             "displayName": "ember-htmlbars",
@@ -137,7 +141,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "ember-metal",
             "name": "ember-metal",
-            "description": "This namespace contains all Ember methods and functions. Future versions of\nEmber may overwrite this namespace and therefore, you should avoid adding any\nnew properties.\n\nAt the heart of Ember is Ember-Runtime, a set of core functions that provide\ncross-platform compatibility and object property observing.  Ember-Runtime is\nsmall and performance-focused so you can use it alongside other\ncross-platform libraries such as jQuery. For more details, see\n[Ember-Runtime](http://emberjs.com/api/modules/ember-runtime.html)."
+            "description": "This namespace contains all Ember methods and functions. Future versions of\nEmber may overwrite this namespace and therefore, you should avoid adding any\nnew properties.\n\nYou can also use the shorthand `Em` instead of `Ember`.\n\nAt the heart of Ember is Ember-Runtime, a set of core functions that provide\ncross-platform compatibility and object property observing.  Ember-Runtime is\nsmall and performance-focused so you can use it alongside other\ncross-platform libraries such as jQuery. For more details, see\n[Ember-Runtime](http://emberjs.com/api/modules/ember-runtime.html)."
         },
         {
             "displayName": "ember-routing",
@@ -175,7 +179,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "ember-views",
             "name": "ember-views",
-            "description": "An `Ember.Component` is a view that is completely\nisolated. Properties accessed in its templates go\nto the view object and actions are targeted at\nthe view object. There is no access to the\nsurrounding context or outer controller; all\ncontextual information must be passed in.\n\nThe easiest way to create an `Ember.Component` is via\na template. If you name a template\n`components/my-foo`, you will be able to use\n`{{my-foo}}` in other templates, which will make\nan instance of the isolated component.\n\n```handlebars\n{{app-profile person=currentUser}}\n```\n\n```handlebars\n<!-- app-profile template -->\n<h1>{{person.title}}</h1>\n<img src={{person.avatar}}>\n<p class='signature'>{{person.signature}}</p>\n```\n\nYou can use `yield` inside a template to\ninclude the **contents** of any block attached to\nthe component. The block will be executed in the\ncontext of the surrounding context or outer controller:\n\n```handlebars\n{{#app-profile person=currentUser}}\n  <p>Admin mode</p>\n  {{! Executed in the controller's context. }}\n{{/app-profile}}\n```\n\n```handlebars\n<!-- app-profile template -->\n<h1>{{person.title}}</h1>\n{{! Executed in the components context. }}\n{{yield}} {{! block contents }}\n```\n\nIf you want to customize the component, in order to\nhandle events or actions, you implement a subclass\nof `Ember.Component` named after the name of the\ncomponent. Note that `Component` needs to be appended to the name of\nyour subclass like `AppProfileComponent`.\n\nFor example, you could implement the action\n`hello` for the `app-profile` component:\n\n```javascript\nApp.AppProfileComponent = Ember.Component.extend({\n  actions: {\n    hello: function(name) {\n      console.log(\"Hello\", name);\n    }\n  }\n});\n```\n\nAnd then use it in the component's template:\n\n```handlebars\n<!-- app-profile template -->\n\n<h1>{{person.title}}</h1>\n{{yield}} <!-- block contents -->\n\n<button {{action 'hello' person.name}}>\n  Say Hello to {{person.name}}\n</button>\n```\n\nComponents must have a `-` in their name to avoid\nconflicts with built-in controls that wrap HTML\nelements. This is consistent with the same\nrequirement in web components."
+            "description": "`TextSupport` is a shared mixin used by both `Ember.TextField` and\n`Ember.TextArea`. `TextSupport` adds a number of methods that allow you to\nspecify a controller action to invoke when a certain event is fired on your\ntext field or textarea. The specifed controller action would get the current\nvalue of the field passed in as the only argument unless the value of\nthe field is empty. In that case, the instance of the field itself is passed\nin as the only argument.\n\nLet's use the pressing of the escape key as an example. If you wanted to\ninvoke a controller action when a user presses the escape key while on your\nfield, you would use the `escape-press` attribute on your field like so:\n\n```handlebars\n  {{! application.hbs}}\n\n  {{input escape-press='alertUser'}}\n```\n\n```javascript\n    App = Ember.Application.create();\n\n    App.ApplicationController = Ember.Controller.extend({\n      actions: {\n        alertUser: function ( currentValue ) {\n          alert( 'escape pressed, current value: ' + currentValue );\n        }\n      }\n    });\n```\n\nThe following chart is a visual representation of what takes place when the\nescape key is pressed in this scenario:\n\n```\nThe Template\n+---------------------------+\n|                           |\n| escape-press='alertUser'  |\n|                           |          TextSupport Mixin\n+----+----------------------+          +-------------------------------+\n     |                                 | cancel method                 |\n     |      escape button pressed      |                               |\n     +-------------------------------> | checks for the `escape-press` |\n                                       | attribute and pulls out the   |\n     +-------------------------------+ | `alertUser` value             |\n     |     action name 'alertUser'     +-------------------------------+\n     |     sent to controller\n     v\nController\n+------------------------------------------ +\n|                                           |\n|  actions: {                               |\n|     alertUser: function( currentValue ){  |\n|       alert( 'the esc key was pressed!' ) |\n|     }                                     |\n|  }                                        |\n|                                           |\n+-------------------------------------------+\n```\n\nHere are the events that we currently support along with the name of the\nattribute you would need to use on your field. To reiterate, you would use the\nattribute name like so:\n\n```handlebars\n  {{input attribute-name='controllerAction'}}\n```\n\n```\n+--------------------+----------------+\n|                    |                |\n| event              | attribute name |\n+--------------------+----------------+\n| new line inserted  | insert-newline |\n|                    |                |\n| enter key pressed  | insert-newline |\n|                    |                |\n| cancel key pressed | escape-press   |\n|                    |                |\n| focusin            | focus-in       |\n|                    |                |\n| focusout           | focus-out      |\n|                    |                |\n| keypress           | key-press      |\n|                    |                |\n| keyup              | key-up         |\n|                    |                |\n| keydown            | key-down       |\n+--------------------+----------------+\n```"
         }
     ],
     "elements": []

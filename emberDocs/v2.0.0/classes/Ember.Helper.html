@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -192,7 +192,6 @@
             Module: <a href="../modules/ember-templates.html">ember-templates</a><br>
             Parent Module: <a href="../modules/ember.html">ember</a>
 
-        <p>Available since 1.13.0</p>
 </div>
 
 
@@ -201,7 +200,7 @@
 For example, this code calls a helper named <code>format-currency</code>:</p>
 <pre class="code prettyprint"><code class="language-handlebars">&lt;div&gt;{{format-currency cents currency=&quot;$&quot;}}&lt;/div&gt;
 </code></pre>
-<p>Additionally, a helper can be called as a nested helper (sometimes called a
+<p>Additionally a helper can be called as a nested helper (sometimes called a
 subexpression). In this example, the computed value of a helper is passed
 to a component named <code>show-money</code>:</p>
 <pre class="code prettyprint"><code class="language-handlebars">{{show-money amount=(format-currency cents currency=&quot;$&quot;)}}
@@ -217,7 +216,7 @@ to a component named <code>show-money</code>:</p>
 </code></pre>
 <p>Each time the input to a helper changes, the <code>compute</code> function will be
 called again.</p>
-<p>As instances, these helpers also have access to the container and will accept
+<p>As instances, these helpers also have access to the container an will accept
 injected dependencies.</p>
 <p>Additionally, class helpers can call <code>recompute</code> to force a new computation.</p>
 
@@ -244,22 +243,9 @@ injected dependencies.</p>
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#method_compute">compute</a>
-
-                            </li>
-                            <li class="index-item method public">
                                 <a href="#method_helper">helper</a>
 
                                     <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_helper">helper</a>
-
-                                    <span class="flag static">static</span>
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#method_recompute">recompute</a>
-
                             </li>
                             <li class="index-item method public">
                                 <a href="#method_recompute">recompute</a>
@@ -300,82 +286,11 @@ injected dependencies.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helper.js.html#l77"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helper.js:77</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_helper.js.html#l77"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helper.js:77</code></a>
         </p>
 
 
 
-            <p>Available since 1.13.0</p>
-    </div>
-
-    <div class="description">
-        <p>Override this function when writing a class-based helper.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">params</code>
-                        <span class="type">Array</span>
-
-
-                    <div class="param-description">
-                        <p>The positional arguments to the helper</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">hash</code>
-                        <span class="type">Object</span>
-
-
-                    <div class="param-description">
-                        <p>The named arguments to the helper</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_compute" class="method item public">
-    <h3 class="name"><code>compute</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>params</code>
-                </li>
-                <li class="arg">
-                        <code>hash</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_helper.js.html#l79"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helper.js:79</code></a>
-        </p>
-
-
-
-            <p>Available since 1.13.0</p>
     </div>
 
     <div class="description">
@@ -438,78 +353,11 @@ injected dependencies.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helper.js.html#l92"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helper.js:92</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_helper.js.html#l91"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helper.js:91</code></a>
         </p>
 
 
 
-            <p>Available since 1.13.0</p>
-    </div>
-
-    <div class="description">
-        <p>In many cases, the ceremony of a full <code>Ember.Helper</code> class is not required.
-The <code>helper</code> method create pure-function helpers without instances. For
-example:</p>
-<pre class="code prettyprint"><code class="language-js">// app/helpers/format-currency.js
-export default Ember.Helper.helper(function(params, hash) {
-  let cents = params[0];
-  let currency = hash.currency;
-  return <code>${currency}${cents * 0.01}</code>;
-});
-</code></pre>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">helper</code>
-                        <span class="type"><a href="../classes/Function.html" class="crosslink">Function</a></span>
-
-
-                    <div class="param-description">
-                        <p>The helper function</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-
-
-</div>
-<div id="method_helper" class="method item public">
-    <h3 class="name"><code>helper</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>helper</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-
-
-        <span class="flag public">public</span>
-
-
-        <span class="flag static">static</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_helper.js.html#l94"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helper.js:94</code></a>
-        </p>
-
-
-
-            <p>Available since 1.13.0</p>
     </div>
 
     <div class="description">
@@ -563,59 +411,11 @@ export default Ember.Helper.helper(function(params, hash) {
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_helper.js.html#l51"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;helper.js:51</code></a>
+        <a href="../files/ember.js_packages_ember-htmlbars_lib_helper.js.html#l50"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helper.js:50</code></a>
         </p>
 
 
 
-            <p>Available since 1.13.0</p>
-    </div>
-
-    <div class="description">
-        <p>On a class-based helper, it may be useful to force a recomputation of that
-helpers value. This is akin to <code>rerender</code> on a component.</p>
-<p>For example, this component will rerender when the <code>currentUser</code> on a
-session service changes:</p>
-<pre class="code prettyprint"><code class="language-js">// app/helpers/current-user-email.js
-export default Ember.Helper.extend({
-  session: Ember.inject.service(),
-  onNewUser: Ember.observer('session.currentUser', function() {
-    this.recompute();
-  }),
-  compute() {
-    return this.get('session.currentUser.email');
-  }
-});
-</code></pre>
-
-    </div>
-
-
-
-
-</div>
-<div id="method_recompute" class="method item public">
-    <h3 class="name"><code>recompute</code></h3>
-
-        <span class="paren">()</span>
-
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-htmlbars_lib_helper.js.html#l51"><code>ember.js&#x2F;packages&#x2F;ember-htmlbars&#x2F;lib&#x2F;helper.js:51</code></a>
-        </p>
-
-
-
-            <p>Available since 1.13.0</p>
     </div>
 
     <div class="description">

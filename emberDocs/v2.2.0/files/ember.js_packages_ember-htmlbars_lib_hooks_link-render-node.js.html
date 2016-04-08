@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,6 +38,7 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/@Ember.ApplicationInstance.BootOptions.html">@Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
                                 <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
@@ -48,7 +49,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -193,69 +198,46 @@
 import subscribe from &#x27;ember-htmlbars/utils/subscribe&#x27;;
 import { isArray } from &#x27;ember-runtime/utils&#x27;;
 import { chain, read, isStream, addDependency } from &#x27;ember-metal/streams/utils&#x27;;
-import { CONTAINS_DOT_CACHE } from &#x27;ember-htmlbars/system/lookup-helper&#x27;;
-import {
-  COMPONENT_HASH,
-  isComponentCell,
-  mergeInNewHash
-} from &#x27;ember-htmlbars/keywords/closure-component&#x27;;
 
 export default function linkRenderNode(renderNode, env, scope, path, params, hash) {
   if (renderNode.streamUnsubscribers) {
     return true;
   }
 
-  let keyword = env.hooks.keywords[path];
+  var keyword = env.hooks.keywords[path];
   if (keyword &amp;&amp; keyword.link) {
     keyword.link(renderNode.getState(), params, hash);
   } else {
     switch (path) {
       case &#x27;unbound&#x27;: return true;
       case &#x27;unless&#x27;:
-      case &#x27;if&#x27;: params[0] = shouldDisplay(params[0], toBool); break;
+      case &#x27;if&#x27;: params[0] = shouldDisplay(params[0]); break;
       case &#x27;each&#x27;: params[0] = eachParam(params[0]); break;
-      case &#x27;with&#x27;: params[0] = shouldDisplay(params[0], identity); break;
-    }
-  }
-
-  // If there is a dot in the path, we need to subscribe to the arguments in the
-  // closure component as well.
-
-  if (CONTAINS_DOT_CACHE.get(path)) {
-    let stream = env.hooks.get(env, scope, path);
-    let componentCell = stream.value();
-
-    if (isComponentCell(componentCell)) {
-      let closureAttrs = mergeInNewHash(componentCell[COMPONENT_HASH], hash);
-
-      for (let key in closureAttrs) {
-        subscribe(renderNode, env, scope, closureAttrs[key]);
-      }
     }
   }
 
   if (params &amp;&amp; params.length) {
-    for (let i = 0; i &lt; params.length; i++) {
+    for (var i = 0; i &lt; params.length; i++) {
       subscribe(renderNode, env, scope, params[i]);
     }
   }
 
   if (hash) {
-    for (let key in hash) {
+    for (var key in hash) {
       subscribe(renderNode, env, scope, hash[key]);
     }
   }
 
-  // The params and hash can be reused. They don&#x27;t need to be
+  // The params and hash can be reused; they don&#x27;t need to be
   // recomputed on subsequent re-renders because they are
   // streams.
   return true;
 }
 
 function eachParam(list) {
-  let listChange = getKey(list, &#x27;[]&#x27;);
+  var listChange = getKey(list, &#x27;[]&#x27;);
 
-  let stream = chain(list, function() {
+  var stream = chain(list, function() {
     read(listChange);
     return read(list);
   }, &#x27;each&#x27;);
@@ -264,38 +246,30 @@ function eachParam(list) {
   return stream;
 }
 
-function shouldDisplay(predicate, coercer) {
-  let length = getKey(predicate, &#x27;length&#x27;);
-  let isTruthy = getKey(predicate, &#x27;isTruthy&#x27;);
+function shouldDisplay(predicate) {
+  var length = getKey(predicate, &#x27;length&#x27;);
+  var isTruthy = getKey(predicate, &#x27;isTruthy&#x27;);
 
-  let stream = chain(predicate, function() {
-    let predicateVal = read(predicate);
-    let lengthVal = read(length);
-    let isTruthyVal = read(isTruthy);
+  var stream = chain(predicate, function() {
+    var predicateVal = read(predicate);
+    var lengthVal = read(length);
+    var isTruthyVal = read(isTruthy);
 
     if (isArray(predicateVal)) {
-      return lengthVal &gt; 0 ? coercer(predicateVal) : false;
+      return lengthVal &gt; 0;
     }
 
     if (typeof isTruthyVal === &#x27;boolean&#x27;) {
-      return isTruthyVal ? coercer(predicateVal) : false;
+      return isTruthyVal;
     }
 
-    return coercer(predicateVal);
+    return !!predicateVal;
   }, &#x27;ShouldDisplay&#x27;);
 
   addDependency(stream, length);
   addDependency(stream, isTruthy);
 
   return stream;
-}
-
-function toBool(value) {
-  return !!value;
-}
-
-function identity(value) {
-  return value;
 }
 
 function getKey(obj, key) {

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,108 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._BoundView.html">Ember._BoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
                                 <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
+                                <li><a href="../classes/Ember.HTMLBars.Helper.html">Ember.HTMLBars.Helper</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +151,39 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
+                                <li><a href="../classes/HandlebarsCompatibleHelper.html">HandlebarsCompatibleHelper</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
+                                <li><a href="../classes/TransformWithAsToHash.html">TransformWithAsToHash</a></li>
                             </ul>
                 
                 
@@ -138,14 +192,16 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
                                 <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
                                 <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -186,11 +242,10 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l335"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:335</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l330"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:330</code></a>
         </div>
 
-            Module: <a href="../modules/ember-metal.html">ember-metal</a><br>
-            Parent Module: <a href="../modules/ember.html">ember</a>
+            Module: <a href="../modules/ember-metal.html">ember-metal</a>
 
         <p>Available since Ember 0.9</p>
 </div>
@@ -199,7 +254,7 @@
 <div class="box intro">
     <p>An <code>Ember.Binding</code> connects the properties of two objects so that whenever
 the value of one property changes, the other property will be changed also.</p>
-<h2>Automatic Creation of Bindings with <code>/^*Binding/</code>-named Properties.</h2>
+<h2>Automatic Creation of Bindings with <code>/^*Binding/</code>-named Properties</h2>
 <p>You do not usually create Binding objects directly but instead describe
 bindings in your class or object definition using automatic binding
 detection.</p>
@@ -234,7 +289,7 @@ to monitor it for changes (such as in the example above).</p>
 <p>All of the examples above show you how to configure a custom binding, but the
 result of these customizations will be a binding template, not a fully active
 Binding instance. The binding will actually become active only when you
-instantiate the object the binding belongs to. It is useful, however, to
+instantiate the object the binding belongs to. It is useful however, to
 understand what actually happens when the binding is activated.</p>
 <p>For a binding to function it must have at least a <code>from</code> property and a <code>to</code>
 property. The <code>from</code> property path points to the object/key that you want to
@@ -305,31 +360,35 @@ available, even if you understand how it works underneath.</p>
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_connect">connect</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_copy">copy</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_disconnect">disconnect</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_from">from</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_oneWay">oneWay</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
+                                <a href="#method_oneWay">oneWay</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_to">to</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_toString">toString</a>
 
                             </li>
@@ -343,7 +402,7 @@ available, even if you understand how it works underneath.</p>
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method_connect" class="method item public">
+<div id="method_connect" class="method item">
     <h3 class="name"><code>connect</code></h3>
 
         <div class="args">
@@ -359,7 +418,6 @@ available, even if you understand how it works underneath.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -368,7 +426,7 @@ available, even if you understand how it works underneath.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l153"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:153</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l149"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:149</code></a>
         </p>
 
 
@@ -412,7 +470,7 @@ from/to properties yet.</p>
 
 
 </div>
-<div id="method_copy" class="method item public">
+<div id="method_copy" class="method item">
     <h3 class="name"><code>copy</code></h3>
 
         <span class="paren">()</span>
@@ -422,7 +480,6 @@ from/to properties yet.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -431,7 +488,7 @@ from/to properties yet.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l69"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:69</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l70"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:70</code></a>
         </p>
 
 
@@ -456,17 +513,22 @@ from/to properties yet.</p>
 
 
 </div>
-<div id="method_disconnect" class="method item public">
+<div id="method_disconnect" class="method item">
     <h3 class="name"><code>disconnect</code></h3>
 
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>obj</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
 
         <span class="returns-inline">
             <span class="type"><a href="../classes/Ember.Binding.html" class="crosslink">Ember.Binding</a></span>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -475,7 +537,7 @@ from/to properties yet.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l205"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:205</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l178"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:178</code></a>
         </p>
 
 
@@ -488,6 +550,23 @@ will not usually need to call this method.</p>
 
     </div>
 
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The root object you passed when connecting the binding.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
 
         <div class="returns">
             <h4>Returns:</h4>
@@ -501,7 +580,7 @@ will not usually need to call this method.</p>
 
 
 </div>
-<div id="method_from" class="method item public">
+<div id="method_from" class="method item">
     <h3 class="name"><code>from</code></h3>
 
         <div class="args">
@@ -517,7 +596,6 @@ will not usually need to call this method.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -553,7 +631,7 @@ you pass when you <code>connect()</code> the binding. It follows the same rules 
 
 
                     <div class="param-description">
-                        <p>The property path to connect to.</p>
+                        <p>the property path to connect to</p>
 
                     </div>
 
@@ -573,7 +651,7 @@ you pass when you <code>connect()</code> the binding. It follows the same rules 
 
 
 </div>
-<div id="method_oneWay" class="method item public">
+<div id="method_oneWay" class="method item">
     <h3 class="name"><code>oneWay</code></h3>
 
         <span class="paren">()</span>
@@ -583,7 +661,6 @@ you pass when you <code>connect()</code> the binding. It follows the same rules 
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -592,7 +669,7 @@ you pass when you <code>connect()</code> the binding. It follows the same rules 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l124"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:124</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l122"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:122</code></a>
         </p>
 
 
@@ -620,7 +697,95 @@ a different value.</p>
 
 
 </div>
-<div id="method_to" class="method item public">
+<div id="method_oneWay" class="method item">
+    <h3 class="name"><code>oneWay</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>from</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[flag]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Ember.Binding.html" class="crosslink">Ember.Binding</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l308"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:308</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates a new Binding instance and makes it apply in a single direction.
+A one-way binding will relay changes on the <code>from</code> side object (supplied
+as the <code>from</code> argument) the <code>to</code> side, but not the other way around.
+This means that if you change the &quot;to&quot; side directly, the &quot;from&quot; side may have
+a different value.</p>
+<p>See <code>Binding.oneWay</code>.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">from</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+
+                    <div class="param-description">
+                        <p>from path.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[flag]</code>
+                        <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>(Optional) passing nothing here will make the
+binding <code>oneWay</code>. You can instead pass <code>false</code> to disable <code>oneWay</code>, making the
+binding two way again.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="../classes/Ember.Binding.html" class="crosslink">Ember.Binding</a></span>:
+                    <p><code>this</code></p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_to" class="method item">
     <h3 class="name"><code>to</code></h3>
 
         <div class="args">
@@ -636,7 +801,6 @@ a different value.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -645,7 +809,7 @@ a different value.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l105"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:105</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l104"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:104</code></a>
         </p>
 
 
@@ -672,7 +836,7 @@ you pass when you <code>connect()</code> the binding. It follows the same rules 
 
 
                     <div class="param-description">
-                        <p>A property path or tuple.</p>
+                        <p>A property path or tuple</p>
 
                     </div>
 
@@ -692,7 +856,7 @@ you pass when you <code>connect()</code> the binding. It follows the same rules 
 
 
 </div>
-<div id="method_toString" class="method item public">
+<div id="method_toString" class="method item">
     <h3 class="name"><code>toString</code></h3>
 
         <span class="paren">()</span>
@@ -702,7 +866,6 @@ you pass when you <code>connect()</code> the binding. It follows the same rules 
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -711,7 +874,7 @@ you pass when you <code>connect()</code> the binding. It follows the same rules 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l139"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:139</code></a>
+        <a href="../files/ember.js_packages_ember-metal_lib_binding.js.html#l136"><code>ember.js&#x2F;packages&#x2F;ember-metal&#x2F;lib&#x2F;binding.js:136</code></a>
         </p>
 
 

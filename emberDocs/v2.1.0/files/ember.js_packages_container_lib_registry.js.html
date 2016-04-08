@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -185,10 +189,8 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-import isEnabled from &#x27;ember-metal/features&#x27;;
-import { assert, deprecate } from &#x27;ember-metal/debug&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;; // Ember.assert
 import dictionary from &#x27;ember-metal/dictionary&#x27;;
-import EmptyObject from &#x27;ember-metal/empty_object&#x27;;
 import assign from &#x27;ember-metal/assign&#x27;;
 import Container from &#x27;./container&#x27;;
 
@@ -210,13 +212,7 @@ var VALID_FULL_NAME_REGEXP = /^[^:]+.+:[^:]+$/;
 function Registry(options) {
   this.fallback = options &amp;&amp; options.fallback ? options.fallback : null;
 
-  if (options &amp;&amp; options.resolver) {
-    this.resolver = options.resolver;
-
-    if (typeof this.resolver === &#x27;function&#x27;) {
-      deprecateResolverFunction(this);
-    }
-  }
+  this.resolver = options &amp;&amp; options.resolver ? options.resolver : function() {};
 
   this.registrations  = dictionary(options &amp;&amp; options.registrations ? options.registrations : null);
 
@@ -225,7 +221,6 @@ function Registry(options) {
   this._factoryTypeInjections = dictionary(null);
   this._factoryInjections     = dictionary(null);
 
-  this._localLookupCache      = new EmptyObject();
   this._normalizeCache        = dictionary(null);
   this._resolveCache          = dictionary(null);
   this._failCache             = dictionary(null);
@@ -245,11 +240,9 @@ Registry.prototype = {
   fallback: null,
 
   /**
-   An object that has a &#x60;resolve&#x60; method that resolves a name.
-
    @private
    @property resolver
-   @type Resolver
+   @type function
    */
   resolver: null,
 
@@ -355,8 +348,8 @@ Registry.prototype = {
    @param {Function} factory
    @param {Object} options
    */
-  register(fullName, factory, options = {}) {
-    assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
+  register(fullName, factory, options) {
+    Ember.assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
 
     if (factory === undefined) {
       throw new TypeError(&#x27;Attempting to register an unknown factory: &#x60;&#x27; + fullName + &#x27;&#x60;&#x27;);
@@ -370,7 +363,7 @@ Registry.prototype = {
 
     delete this._failCache[normalizedName];
     this.registrations[normalizedName] = factory;
-    this._options[normalizedName] = options;
+    this._options[normalizedName] = (options || {});
   },
 
   /**
@@ -391,11 +384,9 @@ Registry.prototype = {
    @param {String} fullName
    */
   unregister(fullName) {
-    assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
+    Ember.assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
 
     var normalizedName = this.normalize(fullName);
-
-    this._localLookupCache = new EmptyObject();
 
     delete this.registrations[normalizedName];
     delete this._resolveCache[normalizedName];
@@ -434,15 +425,13 @@ Registry.prototype = {
    @private
    @method resolve
    @param {String} fullName
-   @param {Object} [options]
-   @param {String} [options.source] the fullname of the request source (used for local lookups)
    @return {Function} fullName&#x27;s factory
    */
-  resolve(fullName, options) {
-    assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
-    let factory = resolve(this, this.normalize(fullName), options);
+  resolve(fullName) {
+    Ember.assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
+    var factory = resolve(this, this.normalize(fullName));
     if (factory === undefined &amp;&amp; this.fallback) {
-      factory = this.fallback.resolve(...arguments);
+      factory = this.fallback.resolve(fullName);
     }
     return factory;
   },
@@ -461,13 +450,7 @@ Registry.prototype = {
    @return {string} described fullName
    */
   describe(fullName) {
-    if (this.resolver &amp;&amp; this.resolver.lookupDescription) {
-      return this.resolver.lookupDescription(fullName);
-    } else if (this.fallback) {
-      return this.fallback.describe(fullName);
-    } else {
-      return fullName;
-    }
+    return fullName;
   },
 
   /**
@@ -479,13 +462,7 @@ Registry.prototype = {
    @return {string} normalized fullName
    */
   normalizeFullName(fullName) {
-    if (this.resolver &amp;&amp; this.resolver.normalize) {
-      return this.resolver.normalize(fullName);
-    } else if (this.fallback) {
-      return this.fallback.normalizeFullName(fullName);
-    } else {
-      return fullName;
-    }
+    return fullName;
   },
 
   /**
@@ -511,13 +488,7 @@ Registry.prototype = {
    @return {function} toString function
    */
   makeToString(factory, fullName) {
-    if (this.resolver &amp;&amp; this.resolver.makeToString) {
-      return this.resolver.makeToString(factory, fullName);
-    } else if (this.fallback) {
-      return this.fallback.makeToString(factory, fullName);
-    } else {
-      return factory.toString();
-    }
+    return factory.toString();
   },
 
   /**
@@ -527,19 +498,11 @@ Registry.prototype = {
    @private
    @method has
    @param {String} fullName
-   @param {Object} [options]
-   @param {String} [options.source] the fullname of the request source (used for local lookups)
    @return {Boolean}
    */
-  has(fullName, options) {
-    assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
-
-    let source;
-    if (isEnabled(&#x27;ember-htmlbars-local-lookup&#x27;)) {
-      source = options &amp;&amp; options.source &amp;&amp; this.normalize(options.source);
-    }
-
-    return has(this, this.normalize(fullName), source);
+  has(fullName) {
+    Ember.assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
+    return has(this, this.normalize(fullName));
   },
 
   /**
@@ -589,7 +552,8 @@ Registry.prototype = {
    @param {String} fullName
    @param {Object} options
    */
-  options(fullName, options = {}) {
+  options(fullName, options) {
+    options = options || {};
     var normalizedName = this.normalize(fullName);
     this._options[normalizedName] = options;
   },
@@ -657,7 +621,7 @@ Registry.prototype = {
    @param {String} fullName
    */
   typeInjection(type, property, fullName) {
-    assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
+    Ember.assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
 
     var fullNameType = fullName.split(&#x27;:&#x27;)[0];
     if (fullNameType === type) {
@@ -728,7 +692,7 @@ Registry.prototype = {
       return this.typeInjection(fullName, property, normalizedInjectionName);
     }
 
-    assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
+    Ember.assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
     var normalizedName = this.normalize(fullName);
 
     var injections = this._injections[normalizedName] ||
@@ -872,7 +836,7 @@ Registry.prototype = {
       fallbackKnown = this.fallback.knownForType(type);
     }
 
-    if (this.resolver &amp;&amp; this.resolver.knownForType) {
+    if (this.resolver.knownForType) {
       resolverKnown = this.resolver.knownForType(type);
     }
 
@@ -905,7 +869,7 @@ Registry.prototype = {
 
     for (var key in hash) {
       if (hash.hasOwnProperty(key)) {
-        assert(&#x27;Expected a proper full name, given \&#x27;&#x27; + hash[key] + &#x27;\&#x27;&#x27;, this.validateFullName(hash[key]));
+        Ember.assert(&#x27;Expected a proper full name, given \&#x27;&#x27; + hash[key] + &#x27;\&#x27;&#x27;, this.validateFullName(hash[key]));
 
         injections.push({
           property: key,
@@ -950,122 +914,25 @@ Registry.prototype = {
   }
 };
 
-function deprecateResolverFunction(registry) {
-  deprecate(&#x27;Passing a &#x60;resolver&#x60; function into a Registry is deprecated. Please pass in a Resolver object with a &#x60;resolve&#x60; method.&#x27;,
-            false,
-            { id: &#x27;ember-application.registry-resolver-as-function&#x27;, until: &#x27;3.0.0&#x27;, url: &#x27;http://emberjs.com/deprecations/v2.x#toc_registry-resolver-as-function&#x27; });
-  registry.resolver = {
-    resolve: registry.resolver
-  };
-}
-
-if (isEnabled(&#x27;ember-htmlbars-local-lookup&#x27;)) {
-  /**
-    Given a fullName and a source fullName returns the fully resolved
-    fullName. Used to allow for local lookup.
-
-    &#x60;&#x60;&#x60;javascript
-    var registry = new Registry();
-
-    // the twitter factory is added to the module system
-    registry.expandLocalLookup(&#x27;component:post-title&#x27;, { source: &#x27;template:post&#x27; }) // =&gt; component:post/post-title
-    &#x60;&#x60;&#x60;
-
-    @private
-    @method expandLocalLookup
-    @param {String} fullName
-    @param {Object} [options]
-    @param {String} [options.source] the fullname of the request source (used for local lookups)
-    @return {String} fullName
-  */
-  Registry.prototype.expandLocalLookup = function Registry_expandLocalLookup(fullName, options) {
-    if (this.resolver &amp;&amp; this.resolver.expandLocalLookup) {
-      assert(&#x27;fullName must be a proper full name&#x27;, this.validateFullName(fullName));
-      assert(&#x27;options.source must be provided to expandLocalLookup&#x27;, options &amp;&amp; options.source);
-      assert(&#x27;options.source must be a proper full name&#x27;, this.validateFullName(options.source));
-
-      let normalizedFullName = this.normalize(fullName);
-      let normalizedSource = this.normalize(options.source);
-
-      return expandLocalLookup(this, normalizedFullName, normalizedSource);
-    } else if (this.fallback) {
-      return this.fallback.expandLocalLookup(fullName, options);
-    } else {
-      return null;
-    }
-  };
-}
-
-function expandLocalLookup(registry, normalizedName, normalizedSource) {
-  let cache = registry._localLookupCache;
-  let normalizedNameCache = cache[normalizedName];
-
-  if (!normalizedNameCache) {
-    normalizedNameCache = cache[normalizedName] = new EmptyObject();
-  }
-
-  let cached = normalizedNameCache[normalizedSource];
-
-  if (cached !== undefined) { return cached; }
-
-  let expanded = registry.resolver.expandLocalLookup(normalizedName, normalizedSource);
-
-  return normalizedNameCache[normalizedSource] = expanded;
-}
-
-function resolve(registry, normalizedName, options) {
-  if (isEnabled(&#x27;ember-htmlbars-local-lookup&#x27;)) {
-    if (options &amp;&amp; options.source) {
-      // when &#x60;source&#x60; is provided expand normalizedName
-      // and source into the full normalizedName
-      normalizedName = registry.expandLocalLookup(normalizedName, options);
-
-      // if expandLocalLookup returns falsey, we do not support local lookup
-      if (!normalizedName) { return; }
-    }
-  }
-
+function resolve(registry, normalizedName) {
   var cached = registry._resolveCache[normalizedName];
-  if (cached !== undefined) { return cached; }
+  if (cached) { return cached; }
   if (registry._failCache[normalizedName]) { return; }
 
-  let resolved;
+  var resolved = registry.resolver(normalizedName) || registry.registrations[normalizedName];
 
-  if (registry.resolver) {
-    resolved = registry.resolver.resolve(normalizedName);
-  }
-
-  if (resolved === undefined) {
-    resolved = registry.registrations[normalizedName];
-  }
-
-  if (resolved === undefined) {
-    registry._failCache[normalizedName] = true;
-  } else {
+  if (resolved) {
     registry._resolveCache[normalizedName] = resolved;
+  } else {
+    registry._failCache[normalizedName] = true;
   }
 
   return resolved;
 }
 
-function has(registry, fullName, source) {
-  return registry.resolve(fullName, { source }) !== undefined;
+function has(registry, fullName) {
+  return registry.resolve(fullName) !== undefined;
 }
-
-import { intern } from &#x27;ember-metal/utils&#x27;;
-import dict from &#x27;ember-metal/dictionary&#x27;;
-
-const privateNames = dict(null);
-const privateSuffix = Math.floor(Math.random() * new Date()) + &#x27;&#x27;;
-
-export function privatize([fullName]) {
-  let name = privateNames[fullName];
-  if (name) { return name; }
-
-  let [type, rawName] = fullName.split(&#x27;:&#x27;);
-  return privateNames[fullName] = intern(&#x60;${type}:${rawName}-${privateSuffix}&#x60;);
-}
-
 
 export default Registry;
 

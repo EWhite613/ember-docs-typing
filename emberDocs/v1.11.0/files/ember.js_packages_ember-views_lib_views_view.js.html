@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementers must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementers must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
                                 <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
+                                <li><a href="../classes/Ember.HTMLBars.Helper.html">Ember.HTMLBars.Helper</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,43 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
+                                <li><a href="../classes/Ember.stream.html">Ember.stream</a></li>
+                                <li><a href="../classes/Ember.stream.Ember.stream.html">Ember.stream.Ember.stream</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
+                                <li><a href="../classes/HandlebarsCompatibleHelper.html">HandlebarsCompatibleHelper</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
+                                <li><a href="../classes/TransformWithAsToHash.html">TransformWithAsToHash</a></li>
                             </ul>
                 
                 
@@ -138,6 +192,7 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
                                 <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
@@ -145,7 +200,6 @@
                                 <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
                                 <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -185,31 +239,68 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
+// Ember.assert, Ember.deprecate, Ember.warn, Ember.TEMPLATES,
 // jQuery, Ember.lookup,
+// Ember.ContainerView circular dependency
 // Ember.ENV
 import Ember from &#x27;ember-metal/core&#x27;;
-import { deprecate } from &#x27;ember-metal/debug&#x27;;
 
-import &#x27;ember-views/system/ext&#x27;;  // for the side effect of extending Ember.run.queues
+import Evented from &quot;ember-runtime/mixins/evented&quot;;
+import EmberObject from &quot;ember-runtime/system/object&quot;;
+import EmberError from &quot;ember-metal/error&quot;;
+import { get } from &quot;ember-metal/property_get&quot;;
+import run from &quot;ember-metal/run_loop&quot;;
+import { addObserver, removeObserver } from &quot;ember-metal/observer&quot;;
+import { guidFor } from &quot;ember-metal/utils&quot;;
+import { computed } from &quot;ember-metal/computed&quot;;
+import {
+  Mixin,
+  observer,
+  beforeObserver
+} from &quot;ember-metal/mixin&quot;;
+import { deprecateProperty } from &quot;ember-metal/deprecate_property&quot;;
+import {
+  propertyWillChange,
+  propertyDidChange
+} from &quot;ember-metal/property_events&quot;;
 
-import CoreView from &#x27;ember-views/views/core_view&#x27;;
-import ViewContextSupport from &#x27;ember-views/mixins/view_context_support&#x27;;
-import ViewChildViewsSupport from &#x27;ember-views/mixins/view_child_views_support&#x27;;
-import ViewLegacyChildViewsSupport from &#x27;ember-views/mixins/legacy_child_views_support&#x27;;
-import ViewStateSupport from &#x27;ember-views/mixins/view_state_support&#x27;;
-import TemplateRenderingSupport from &#x27;ember-views/mixins/template_rendering_support&#x27;;
-import ClassNamesSupport from &#x27;ember-views/mixins/class_names_support&#x27;;
-import LegacyViewSupport from &#x27;ember-views/mixins/legacy_view_support&#x27;;
-import InstrumentationSupport from &#x27;ember-views/mixins/instrumentation_support&#x27;;
-import AriaRoleSupport from &#x27;ember-views/mixins/aria_role_support&#x27;;
-import VisibilitySupport from &#x27;ember-views/mixins/visibility_support&#x27;;
-import CompatAttrsProxy from &#x27;ember-views/compat/attrs-proxy&#x27;;
-import ViewMixin from &#x27;ember-views/mixins/view_support&#x27;;
-import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
+import jQuery from &quot;ember-views/system/jquery&quot;;
+import &quot;ember-views/system/ext&quot;;  // for the side effect of extending Ember.run.queues
+
+import CoreView from &quot;ember-views/views/core_view&quot;;
+import ViewStreamSupport from &quot;ember-views/mixins/view_stream_support&quot;;
+import ViewKeywordSupport from &quot;ember-views/mixins/view_keyword_support&quot;;
+import ViewContextSupport from &quot;ember-views/mixins/view_context_support&quot;;
+import { default as ViewChildViewsSupport, childViewsProperty } from &quot;ember-views/mixins/view_child_views_support&quot;;
+import ViewStateSupport from &quot;ember-views/mixins/view_state_support&quot;;
+import TemplateRenderingSupport from &quot;ember-views/mixins/template_rendering_support&quot;;
+import ClassNamesSupport from &quot;ember-views/mixins/class_names_support&quot;;
+import AttributeBindingsSupport from &quot;ember-views/mixins/attribute_bindings_support&quot;;
+import LegacyViewSupport from &quot;ember-views/mixins/legacy_view_support&quot;;
+import InstrumentationSupport from &quot;ember-views/mixins/instrumentation_support&quot;;
+import VisibilitySupport from &quot;ember-views/mixins/visibility_support&quot;;
+
+function K() { return this; }
+
 /**
 @module ember
 @submodule ember-views
 */
+
+Ember.warn(&quot;The VIEW_PRESERVES_CONTEXT flag has been removed and the functionality can no longer be disabled.&quot;, Ember.ENV.VIEW_PRESERVES_CONTEXT !== false);
+
+/**
+  Global hash of shared templates. This will automatically be populated
+  by the build tools so that you can store your Handlebars templates in
+  separate files that get loaded into JavaScript at buildtime.
+
+  @property TEMPLATES
+  @for Ember
+  @type Hash
+*/
+Ember.TEMPLATES = {};
+
+var EMPTY_ARRAY = [];
 
 /**
   &#x60;Ember.View&#x60; is the class in Ember responsible for encapsulating templates of
@@ -260,9 +351,9 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   MyView = Ember.View.extend({
     classNameBindings: [&#x27;propertyA&#x27;, &#x27;propertyB&#x27;],
     propertyA: &#x27;from-a&#x27;,
-    propertyB: Ember.computed(function() {
+    propertyB: function() {
       if (someLogic) { return &#x27;from-b&#x27;; }
-    })
+    }.property()
   });
   &#x60;&#x60;&#x60;
 
@@ -388,7 +479,7 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   &lt;div id=&quot;ember1&quot; class=&quot;ember-view disabled&quot;&gt;&lt;/div&gt;
   &#x60;&#x60;&#x60;
 
-  Updates to the value of a class name binding will result in automatic
+  Updates to the the value of a class name binding will result in automatic
   update of the  HTML &#x60;class&#x60; attribute in the view&#x27;s rendered HTML
   representation. If the value becomes &#x60;false&#x60; or &#x60;undefined&#x60; the class name
   will be removed.
@@ -452,20 +543,21 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   &#x60;&#x60;&#x60;
 
   If the return value of an &#x60;attributeBindings&#x60; monitored property is a boolean
-  the property&#x27;s value will be set as a coerced string:
+  the property will follow HTML&#x27;s pattern of repeating the attribute&#x27;s name as
+  its value:
 
   &#x60;&#x60;&#x60;javascript
   MyTextInput = Ember.View.extend({
     tagName: &#x27;input&#x27;,
     attributeBindings: [&#x27;disabled&#x27;],
-    disabled: false
+    disabled: true
   });
   &#x60;&#x60;&#x60;
 
-  Will result in a view instance with an HTML representation of:
+  Will result in view instances with an HTML representation of:
 
   &#x60;&#x60;&#x60;html
-  &lt;input id=&quot;ember1&quot; class=&quot;ember-view&quot; disabled=&quot;false&quot; /&gt;
+  &lt;input id=&quot;ember1&quot; class=&quot;ember-view&quot; disabled=&quot;disabled&quot; /&gt;
   &#x60;&#x60;&#x60;
 
   &#x60;attributeBindings&#x60; can refer to computed properties:
@@ -474,28 +566,17 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   MyTextInput = Ember.View.extend({
     tagName: &#x27;input&#x27;,
     attributeBindings: [&#x27;disabled&#x27;],
-    disabled: Ember.computed(function() {
+    disabled: function() {
       if (someLogic) {
         return true;
       } else {
         return false;
       }
-    })
+    }.property()
   });
   &#x60;&#x60;&#x60;
 
-  To prevent setting an attribute altogether, use &#x60;null&#x60; or &#x60;undefined&#x60; as the
-  return value of the &#x60;attributeBindings&#x60; monitored property:
-
-  &#x60;&#x60;&#x60;javascript
-  MyTextInput = Ember.View.extend({
-    tagName: &#x27;form&#x27;,
-    attributeBindings: [&#x27;novalidate&#x27;],
-    novalidate: null
-  });
-  &#x60;&#x60;&#x60;
-
-  Updates to the property of an attribute binding will result in automatic
+  Updates to the the property of an attribute binding will result in automatic
   update of the  HTML attribute in the view&#x27;s rendered HTML representation.
 
   &#x60;attributeBindings&#x60; is a concatenated property. See [Ember.Object](/api/classes/Ember.Object.html)
@@ -507,11 +588,11 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   template. Templates can be any function that accepts an optional context
   parameter and returns a string of HTML that will be inserted within the
   view&#x27;s tag. Most typically in Ember this function will be a compiled
-  template.
+  &#x60;Ember.Handlebars&#x60; template.
 
   &#x60;&#x60;&#x60;javascript
   AView = Ember.View.extend({
-    template: Ember.HTMLBars.compile(&#x27;I am the template&#x27;)
+    template: Ember.Handlebars.compile(&#x27;I am the template&#x27;)
   });
   &#x60;&#x60;&#x60;
 
@@ -538,7 +619,7 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   });
   &#x60;&#x60;&#x60;
 
-  If you have nested routes, your Handlebars template will look like this:
+  If you have nested resources, your Handlebars template will look like this:
 
   &#x60;&#x60;&#x60;html
   &lt;script type=&#x27;text/x-handlebars&#x27; data-template-name=&#x27;posts/new&#x27;&gt;
@@ -554,18 +635,18 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   });
   &#x60;&#x60;&#x60;
 
-  Using a value for &#x60;templateName&#x60; that does not have a template
+  Using a value for &#x60;templateName&#x60; that does not have a Handlebars template
   with a matching &#x60;data-template-name&#x60; attribute will throw an error.
 
   For views classes that may have a template later defined (e.g. as the block
-  portion of a &#x60;{{view}}&#x60; helper call in another template or in
+  portion of a &#x60;{{view}}&#x60; Handlebars helper call in another template or in
   a subclass), you can provide a &#x60;defaultTemplate&#x60; property set to compiled
   template function. If a template is not later provided for the view instance
   the &#x60;defaultTemplate&#x60; value will be used:
 
   &#x60;&#x60;&#x60;javascript
   AView = Ember.View.extend({
-    defaultTemplate: Ember.HTMLBars.compile(&#x27;I was the default&#x27;),
+    defaultTemplate: Ember.Handlebars.compile(&#x27;I was the default&#x27;),
     template: null,
     templateName: null
   });
@@ -582,11 +663,11 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
 
   &#x60;&#x60;&#x60;javascript
   AView = Ember.View.extend({
-    defaultTemplate: Ember.HTMLBars.compile(&#x27;I was the default&#x27;)
+    defaultTemplate: Ember.Handlebars.compile(&#x27;I was the default&#x27;)
   });
 
   aView = AView.create({
-    template: Ember.HTMLBars.compile(&#x27;I was the template, not default&#x27;)
+    template: Ember.Handlebars.compile(&#x27;I was the template, not default&#x27;)
   });
   &#x60;&#x60;&#x60;
 
@@ -602,14 +683,14 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
 
   &#x60;&#x60;&#x60;javascript
   AView = Ember.View.extend({
-    template: Ember.HTMLBars.compile(&#x27;Hello {{excitedGreeting}}&#x27;)
+    template: Ember.Handlebars.compile(&#x27;Hello {{excitedGreeting}}&#x27;)
   });
 
   aController = Ember.Object.create({
     firstName: &#x27;Barry&#x27;,
-    excitedGreeting: Ember.computed(&#x27;content.firstName&#x27;, function() {
-      return this.get(&#x27;content.firstName&#x27;) + &#x27;!!!&#x27;;
-    })
+    excitedGreeting: function() {
+      return this.get(&quot;content.firstName&quot;) + &quot;!!!&quot;
+    }.property()
   });
 
   aView = AView.create({
@@ -635,19 +716,20 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   view&#x27;s tag. Views whose HTML element is self closing (e.g. &#x60;&lt;input /&gt;&#x60;)
   cannot have a layout and this property will be ignored.
 
-  Most typically in Ember a layout will be a compiled template.
+  Most typically in Ember a layout will be a compiled &#x60;Ember.Handlebars&#x60;
+  template.
 
   A view&#x27;s layout can be set directly with the &#x60;layout&#x60; property or reference
-  an existing template by name with the &#x60;layoutName&#x60; property.
+  an existing Handlebars template by name with the &#x60;layoutName&#x60; property.
 
-  A template used as a layout must contain a single use of the
+  A template used as a layout must contain a single use of the Handlebars
   &#x60;{{yield}}&#x60; helper. The HTML contents of a view&#x27;s rendered &#x60;template&#x60; will be
   inserted at this location:
 
   &#x60;&#x60;&#x60;javascript
   AViewWithLayout = Ember.View.extend({
-    layout: Ember.HTMLBars.compile(&quot;&lt;div class=&#x27;my-decorative-class&#x27;&gt;{{yield}}&lt;/div&gt;&quot;),
-    template: Ember.HTMLBars.compile(&quot;I got wrapped&quot;)
+    layout: Ember.Handlebars.compile(&quot;&lt;div class=&#x27;my-decorative-class&#x27;&gt;{{yield}}&lt;/div&gt;&quot;),
+    template: Ember.Handlebars.compile(&quot;I got wrapped&quot;)
   });
   &#x60;&#x60;&#x60;
 
@@ -661,7 +743,7 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   &lt;/div&gt;
   &#x60;&#x60;&#x60;
 
-  See [Ember.Templates.helpers.yield](/api/classes/Ember.Templates.helpers.html#method_yield)
+  See [Ember.Handlebars.helpers.yield](/api/classes/Ember.Handlebars.helpers.html#method_yield)
   for more information.
 
   ## Responding to Browser Events
@@ -679,7 +761,7 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   &#x60;&#x60;&#x60;javascript
   AView = Ember.View.extend({
     click: function(event) {
-      // will be called when an instance&#x27;s
+      // will be called when when an instance&#x27;s
       // rendered element is clicked
     }
   });
@@ -700,7 +782,7 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   AView = Ember.View.extend({
     eventManager: Ember.Object.create({
       doubleClick: function(event, view) {
-        // will be called when an instance&#x27;s
+        // will be called when when an instance&#x27;s
         // rendered element or any rendering
         // of this view&#x27;s descendant
         // elements is clicked
@@ -735,7 +817,7 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   &#x60;&#x60;&#x60;javascript
   var App = Ember.Application.create();
   App.OuterView = Ember.View.extend({
-    template: Ember.HTMLBars.compile(&quot;outer {{#view &#x27;inner&#x27;}}inner{{/view}} outer&quot;),
+    template: Ember.Handlebars.compile(&quot;outer {{#view &#x27;inner&#x27;}}inner{{/view}} outer&quot;),
     eventManager: Ember.Object.create({
       mouseEnter: function(event, view) {
         // view might be instance of either
@@ -758,9 +840,9 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   });
   &#x60;&#x60;&#x60;
 
-  ### &#x60;{{action}}&#x60; Helper
+  ### Handlebars &#x60;{{action}}&#x60; Helper
 
-  See [Ember.Templates.helpers.action](/api/classes/Ember.Templates.helpers.html#method_action).
+  See [Handlebars.helpers.action](/api/classes/Ember.Handlebars.helpers.html#method_action).
 
   ### Event Names
 
@@ -813,73 +895,702 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   * &#x60;dragEnd&#x60;
   * &#x60;drop&#x60;
 
-  ## &#x60;{{view}}&#x60; Helper
+  ## Handlebars &#x60;{{view}}&#x60; Helper
 
   Other &#x60;Ember.View&#x60; instances can be included as part of a view&#x27;s template by
-  using the &#x60;{{view}}&#x60; helper. See [Ember.Templates.helpers.view](/api/classes/Ember.Templates.helpers.html#method_view)
+  using the &#x60;{{view}}&#x60; Handlebars helper. See [Ember.Handlebars.helpers.view](/api/classes/Ember.Handlebars.helpers.html#method_view)
   for additional information.
 
   @class View
   @namespace Ember
   @extends Ember.CoreView
-  @deprecated See http://emberjs.com/deprecations/v1.x/#toc_ember-view
-  @uses Ember.ViewSupport
-  @uses Ember.ViewContextSupport
-  @uses Ember.ViewChildViewsSupport
-  @uses Ember.TemplateRenderingSupport
-  @uses Ember.ClassNamesSupport
-  @uses Ember.AttributeBindingsSupport
-  @uses Ember.LegacyViewSupport
-  @uses Ember.InstrumentationSupport
-  @uses Ember.VisibilitySupport
-  @uses Ember.AriaRoleSupport
-  @public
 */
 // jscs:disable validateIndentation
 var View = CoreView.extend(
+  ViewStreamSupport,
+  ViewKeywordSupport,
   ViewContextSupport,
   ViewChildViewsSupport,
-  ViewLegacyChildViewsSupport,
   ViewStateSupport,
   TemplateRenderingSupport,
   ClassNamesSupport,
+  AttributeBindingsSupport,
   LegacyViewSupport,
   InstrumentationSupport,
-  VisibilitySupport,
-  CompatAttrsProxy,
-  AriaRoleSupport,
-  ViewMixin, {
-    init() {
-      this._super(...arguments);
+  VisibilitySupport, {
 
-      if (!this._viewRegistry) {
-        this._viewRegistry = View.views;
+  /**
+    @property isView
+    @type Boolean
+    @default true
+    @static
+  */
+  isView: true,
+
+  // ..........................................................
+  // TEMPLATE SUPPORT
+  //
+
+  /**
+    The name of the template to lookup if no template is provided.
+
+    By default &#x60;Ember.View&#x60; will lookup a template with this name in
+    &#x60;Ember.TEMPLATES&#x60; (a shared global object).
+
+    @property templateName
+    @type String
+    @default null
+  */
+  templateName: null,
+
+  /**
+    The name of the layout to lookup if no layout is provided.
+
+    By default &#x60;Ember.View&#x60; will lookup a template with this name in
+    &#x60;Ember.TEMPLATES&#x60; (a shared global object).
+
+    @property layoutName
+    @type String
+    @default null
+  */
+  layoutName: null,
+
+  /**
+    The template used to render the view. This should be a function that
+    accepts an optional context parameter and returns a string of HTML that
+    will be inserted into the DOM relative to its parent view.
+
+    In general, you should set the &#x60;templateName&#x60; property instead of setting
+    the template yourself.
+
+    @property template
+    @type Function
+  */
+  template: computed(&#x27;templateName&#x27;, function(key, value) {
+    if (value !== undefined) { return value; }
+
+    var templateName = get(this, &#x27;templateName&#x27;);
+    var template = this.templateForName(templateName, &#x27;template&#x27;);
+
+    Ember.assert(&quot;You specified the templateName &quot; + templateName + &quot; for &quot; + this + &quot;, but it did not exist.&quot;, !templateName || !!template);
+
+    return template || get(this, &#x27;defaultTemplate&#x27;);
+  }),
+
+  /**
+    A view may contain a layout. A layout is a regular template but
+    supersedes the &#x60;template&#x60; property during rendering. It is the
+    responsibility of the layout template to retrieve the &#x60;template&#x60;
+    property from the view (or alternatively, call &#x60;Handlebars.helpers.yield&#x60;,
+    &#x60;{{yield}}&#x60;) to render it in the correct location.
+
+    This is useful for a view that has a shared wrapper, but which delegates
+    the rendering of the contents of the wrapper to the &#x60;template&#x60; property
+    on a subclass.
+
+    @property layout
+    @type Function
+  */
+  layout: computed(function(key) {
+    var layoutName = get(this, &#x27;layoutName&#x27;);
+    var layout = this.templateForName(layoutName, &#x27;layout&#x27;);
+
+    Ember.assert(&quot;You specified the layoutName &quot; + layoutName + &quot; for &quot; + this + &quot;, but it did not exist.&quot;, !layoutName || !!layout);
+
+    return layout || get(this, &#x27;defaultLayout&#x27;);
+  }).property(&#x27;layoutName&#x27;),
+
+  _yield: function(context, options, morph) {
+    var template = get(this, &#x27;template&#x27;);
+
+    if (template) {
+      if (template.isHTMLBars) {
+        return template.render(context, options, morph.contextualElement);
+      } else {
+        return template(context, options);
       }
-    },
-
-    /**
-      Given a property name, returns a dasherized version of that
-      property name if the property evaluates to a non-falsy value.
-
-      For example, if the view has property &#x60;isUrgent&#x60; that evaluates to true,
-      passing &#x60;isUrgent&#x60; to this method will return &#x60;&quot;is-urgent&quot;&#x60;.
-
-      @method _classStringForProperty
-      @param property
-      @private
-    */
-    _classStringForProperty(parsedPath) {
-      return View._classStringForValue(parsedPath.path, parsedPath.stream.value(), parsedPath.className, parsedPath.falsyClassName);
     }
-  });
+  },
 
-deprecateProperty(View.prototype, &#x27;currentState&#x27;, &#x27;_currentState&#x27;, {
-  id: &#x27;ember-view.current-state&#x27;,
-  until: &#x27;2.3.0&#x27;,
-  url: &#x27;http://emberjs.com/deprecations/v2.x/#toc_ember-component-currentstate&#x27;
+  _blockArguments: EMPTY_ARRAY,
+
+  templateForName: function(name, type) {
+    if (!name) { return; }
+    Ember.assert(&quot;templateNames are not allowed to contain periods: &quot;+name, name.indexOf(&#x27;.&#x27;) === -1);
+
+    if (!this.container) {
+      throw new EmberError(&#x27;Container was not found when looking up a views template. &#x27; +
+                 &#x27;This is most likely due to manually instantiating an Ember.View. &#x27; +
+                 &#x27;See: http://git.io/EKPpnA&#x27;);
+    }
+
+    return this.container.lookup(&#x27;template:&#x27; + name);
+  },
+
+  /**
+    If a value that affects template rendering changes, the view should be
+    re-rendered to reflect the new value.
+
+    @method _contextDidChange
+    @private
+  */
+  _contextDidChange: observer(&#x27;context&#x27;, function() {
+    this.rerender();
+  }),
+
+  // When it&#x27;s a virtual view, we need to notify the parent that their
+  // childViews will change.
+  _childViewsWillChange: beforeObserver(&#x27;childViews&#x27;, function() {
+    if (this.isVirtual) {
+      var parentView = get(this, &#x27;parentView&#x27;);
+      if (parentView) { propertyWillChange(parentView, &#x27;childViews&#x27;); }
+    }
+  }),
+
+  // When it&#x27;s a virtual view, we need to notify the parent that their
+  // childViews did change.
+  _childViewsDidChange: observer(&#x27;childViews&#x27;, function() {
+    if (this.isVirtual) {
+      var parentView = get(this, &#x27;parentView&#x27;);
+      if (parentView) { propertyDidChange(parentView, &#x27;childViews&#x27;); }
+    }
+  }),
+
+  /**
+    Return the nearest ancestor that is an instance of the provided
+    class or mixin.
+
+    @method nearestOfType
+    @param {Class,Mixin} klass Subclass of Ember.View (or Ember.View itself),
+           or an instance of Ember.Mixin.
+    @return Ember.View
+  */
+  nearestOfType: function(klass) {
+    var view = get(this, &#x27;parentView&#x27;);
+    var isOfType = klass instanceof Mixin ?
+                   function(view) { return klass.detect(view); } :
+                   function(view) { return klass.detect(view.constructor); };
+
+    while (view) {
+      if (isOfType(view)) { return view; }
+      view = get(view, &#x27;parentView&#x27;);
+    }
+  },
+
+  /**
+    Return the nearest ancestor that has a given property.
+
+    @method nearestWithProperty
+    @param {String} property A property name
+    @return Ember.View
+  */
+  nearestWithProperty: function(property) {
+    var view = get(this, &#x27;parentView&#x27;);
+
+    while (view) {
+      if (property in view) { return view; }
+      view = get(view, &#x27;parentView&#x27;);
+    }
+  },
+
+  /**
+    When the parent view changes, recursively invalidate &#x60;controller&#x60;
+
+    @method _parentViewDidChange
+    @private
+  */
+  _parentViewDidChange: observer(&#x27;_parentView&#x27;, function() {
+    if (this.isDestroying) { return; }
+
+    this._setupKeywords();
+    this.trigger(&#x27;parentViewDidChange&#x27;);
+
+    if (get(this, &#x27;parentView.controller&#x27;) &amp;&amp; !get(this, &#x27;controller&#x27;)) {
+      this.notifyPropertyChange(&#x27;controller&#x27;);
+    }
+  }),
+
+  _controllerDidChange: observer(&#x27;controller&#x27;, function() {
+    if (this.isDestroying) { return; }
+
+    this.rerender();
+
+    this.forEachChildView(function(view) {
+      view.propertyDidChange(&#x27;controller&#x27;);
+    });
+  }),
+
+  /**
+    Renders the view again. This will work regardless of whether the
+    view is already in the DOM or not. If the view is in the DOM, the
+    rendering process will be deferred to give bindings a chance
+    to synchronize.
+
+    If children were added during the rendering process using &#x60;appendChild&#x60;,
+    &#x60;rerender&#x60; will remove them, because they will be added again
+    if needed by the next &#x60;render&#x60;.
+
+    In general, if the display of your view changes, you should modify
+    the DOM element directly instead of manually calling &#x60;rerender&#x60;, which can
+    be slow.
+
+    @method rerender
+  */
+  rerender: function() {
+    return this.currentState.rerender(this);
+  },
+
+  /**
+    Given a property name, returns a dasherized version of that
+    property name if the property evaluates to a non-falsy value.
+
+    For example, if the view has property &#x60;isUrgent&#x60; that evaluates to true,
+    passing &#x60;isUrgent&#x60; to this method will return &#x60;&quot;is-urgent&quot;&#x60;.
+
+    @method _classStringForProperty
+    @param property
+    @private
+  */
+  _classStringForProperty: function(parsedPath) {
+    return View._classStringForValue(parsedPath.path, parsedPath.stream.value(), parsedPath.className, parsedPath.falsyClassName);
+  },
+
+  // ..........................................................
+  // ELEMENT SUPPORT
+  //
+
+  /**
+    Returns the current DOM element for the view.
+
+    @property element
+    @type DOMElement
+  */
+  element: null,
+
+  /**
+    Returns a jQuery object for this view&#x27;s element. If you pass in a selector
+    string, this method will return a jQuery object, using the current element
+    as its buffer.
+
+    For example, calling &#x60;view.$(&#x27;li&#x27;)&#x60; will return a jQuery object containing
+    all of the &#x60;li&#x60; elements inside the DOM element of this view.
+
+    @method $
+    @param {String} [selector] a jQuery-compatible selector string
+    @return {jQuery} the jQuery object for the DOM node
+  */
+  $: function(sel) {
+    Ember.assert(&#x27;You cannot access this.$() on a component with &#x60;tagName: \&#x27;\&#x27;&#x60; specified.&#x27;, this.tagName !== &#x27;&#x27;);
+    return this.currentState.$(this, sel);
+  },
+
+  forEachChildView: function(callback) {
+    var childViews = this._childViews;
+
+    if (!childViews) { return this; }
+
+    var len = childViews.length;
+    var view, idx;
+
+    for (idx = 0; idx &lt; len; idx++) {
+      view = childViews[idx];
+      callback(view);
+    }
+
+    return this;
+  },
+
+  /**
+    Appends the view&#x27;s element to the specified parent element.
+
+    If the view does not have an HTML representation yet, &#x60;createElement()&#x60;
+    will be called automatically.
+
+    Note that this method just schedules the view to be appended; the DOM
+    element will not be appended to the given element until all bindings have
+    finished synchronizing.
+
+    This is not typically a function that you will need to call directly when
+    building your application. You might consider using &#x60;Ember.ContainerView&#x60;
+    instead. If you do need to use &#x60;appendTo&#x60;, be sure that the target element
+    you are providing is associated with an &#x60;Ember.Application&#x60; and does not
+    have an ancestor element that is associated with an Ember view.
+
+    @method appendTo
+    @param {String|DOMElement|jQuery} A selector, element, HTML string, or jQuery object
+    @return {Ember.View} receiver
+  */
+  appendTo: function(selector) {
+    var target = jQuery(selector);
+
+    Ember.assert(&quot;You tried to append to (&quot; + selector + &quot;) but that isn&#x27;t in the DOM&quot;, target.length &gt; 0);
+    Ember.assert(&quot;You cannot append to an existing Ember.View. Consider using Ember.ContainerView instead.&quot;, !target.is(&#x27;.ember-view&#x27;) &amp;&amp; !target.parents().is(&#x27;.ember-view&#x27;));
+
+    this.renderer.appendTo(this, target[0]);
+
+    return this;
+  },
+
+  /**
+    Replaces the content of the specified parent element with this view&#x27;s
+    element. If the view does not have an HTML representation yet,
+    the element will be generated automatically.
+
+    Note that this method just schedules the view to be appended; the DOM
+    element will not be appended to the given element until all bindings have
+    finished synchronizing
+
+    @method replaceIn
+    @param {String|DOMElement|jQuery} target A selector, element, HTML string, or jQuery object
+    @return {Ember.View} received
+  */
+  replaceIn: function(selector) {
+    var target = jQuery(selector);
+
+    Ember.assert(&quot;You tried to replace in (&quot; + selector + &quot;) but that isn&#x27;t in the DOM&quot;, target.length &gt; 0);
+    Ember.assert(&quot;You cannot replace an existing Ember.View. Consider using Ember.ContainerView instead.&quot;, !target.is(&#x27;.ember-view&#x27;) &amp;&amp; !target.parents().is(&#x27;.ember-view&#x27;));
+
+    this.renderer.replaceIn(this, target[0]);
+
+    return this;
+  },
+
+  /**
+    Appends the view&#x27;s element to the document body. If the view does
+    not have an HTML representation yet
+    the element will be generated automatically.
+
+    If your application uses the &#x60;rootElement&#x60; property, you must append
+    the view within that element. Rendering views outside of the &#x60;rootElement&#x60;
+    is not supported.
+
+    Note that this method just schedules the view to be appended; the DOM
+    element will not be appended to the document body until all bindings have
+    finished synchronizing.
+
+    @method append
+    @return {Ember.View} receiver
+  */
+  append: function() {
+    return this.appendTo(document.body);
+  },
+
+  /**
+    Removes the view&#x27;s element from the element to which it is attached.
+
+    @method remove
+    @return {Ember.View} receiver
+  */
+  remove: function() {
+    // What we should really do here is wait until the end of the run loop
+    // to determine if the element has been re-appended to a different
+    // element.
+    // In the interim, we will just re-render if that happens. It is more
+    // important than elements get garbage collected.
+    if (!this.removedFromDOM) { this.destroyElement(); }
+  },
+
+  /**
+    The HTML &#x60;id&#x60; of the view&#x27;s element in the DOM. You can provide this
+    value yourself but it must be unique (just as in HTML):
+
+    &#x60;&#x60;&#x60;handlebars
+      {{my-component elementId=&quot;a-really-cool-id&quot;}}
+    &#x60;&#x60;&#x60;
+
+    If not manually set a default value will be provided by the framework.
+
+    Once rendered an element&#x27;s &#x60;elementId&#x60; is considered immutable and you
+    should never change it.
+
+    @property elementId
+    @type String
+  */
+  elementId: null,
+
+  /**
+    Attempts to discover the element in the parent element. The default
+    implementation looks for an element with an ID of &#x60;elementId&#x60; (or the
+    view&#x27;s guid if &#x60;elementId&#x60; is null). You can override this method to
+    provide your own form of lookup. For example, if you want to discover your
+    element using a CSS class name instead of an ID.
+
+    @method findElementInParentElement
+    @param {DOMElement} parentElement The parent&#x27;s DOM element
+    @return {DOMElement} The discovered element
+  */
+  findElementInParentElement: function(parentElem) {
+    var id = &quot;#&quot; + this.elementId;
+    return jQuery(id)[0] || jQuery(id, parentElem)[0];
+  },
+
+  /**
+    Creates a DOM representation of the view and all of its child views by
+    recursively calling the &#x60;render()&#x60; method.
+
+    After the element has been inserted into the DOM, &#x60;didInsertElement&#x60; will
+    be called on this view and all of its child views.
+
+    @method createElement
+    @return {Ember.View} receiver
+  */
+  createElement: function() {
+    if (this.element) { return this; }
+
+    this._didCreateElementWithoutMorph = true;
+    this.renderer.renderTree(this);
+
+    return this;
+  },
+
+  /**
+    Called when a view is going to insert an element into the DOM.
+
+    @event willInsertElement
+  */
+  willInsertElement: K,
+
+  /**
+    Called when the element of the view has been inserted into the DOM
+    or after the view was re-rendered. Override this function to do any
+    set up that requires an element in the document body.
+
+    When a view has children, didInsertElement will be called on the
+    child view(s) first, bubbling upwards through the hierarchy.
+
+    @event didInsertElement
+  */
+  didInsertElement: K,
+
+  /**
+    Called when the view is about to rerender, but before anything has
+    been torn down. This is a good opportunity to tear down any manual
+    observers you have installed based on the DOM state
+
+    @event willClearRender
+  */
+  willClearRender: K,
+
+  /**
+    Destroys any existing element along with the element for any child views
+    as well. If the view does not currently have a element, then this method
+    will do nothing.
+
+    If you implement &#x60;willDestroyElement()&#x60; on your view, then this method will
+    be invoked on your view before your element is destroyed to give you a
+    chance to clean up any event handlers, etc.
+
+    If you write a &#x60;willDestroyElement()&#x60; handler, you can assume that your
+    &#x60;didInsertElement()&#x60; handler was called earlier for the same element.
+
+    You should not call or override this method yourself, but you may
+    want to implement the above callbacks.
+
+    @method destroyElement
+    @return {Ember.View} receiver
+  */
+  destroyElement: function() {
+    return this.currentState.destroyElement(this);
+  },
+
+  /**
+    Called when the element of the view is going to be destroyed. Override
+    this function to do any teardown that requires an element, like removing
+    event listeners.
+
+    Please note: any property changes made during this event will have no
+    effect on object observers.
+
+    @event willDestroyElement
+  */
+  willDestroyElement: K,
+
+  /**
+    Called when the parentView property has changed.
+
+    @event parentViewDidChange
+  */
+  parentViewDidChange: K,
+
+  applyAttributesToBuffer: function(buffer) {
+    // Creates observers for all registered class name and attribute bindings,
+    // then adds them to the element.
+
+    this._applyClassNameBindings();
+
+    // Pass the render buffer so the method can apply attributes directly.
+    // This isn&#x27;t needed for class name bindings because they use the
+    // existing classNames infrastructure.
+    this._applyAttributeBindings(buffer);
+
+    buffer.setClasses(this.classNames);
+    buffer.id(this.elementId);
+
+    var role = get(this, &#x27;ariaRole&#x27;);
+    if (role) {
+      buffer.attr(&#x27;role&#x27;, role);
+    }
+
+    if (get(this, &#x27;isVisible&#x27;) === false) {
+      buffer.style(&#x27;display&#x27;, &#x27;none&#x27;);
+    }
+  },
+
+  // ..........................................................
+  // STANDARD RENDER PROPERTIES
+  //
+
+  /**
+    Tag name for the view&#x27;s outer element. The tag name is only used when an
+    element is first created. If you change the &#x60;tagName&#x60; for an element, you
+    must destroy and recreate the view element.
+
+    By default, the render buffer will use a &#x60;&lt;div&gt;&#x60; tag for views.
+
+    @property tagName
+    @type String
+    @default null
+  */
+
+  // We leave this null by default so we can tell the difference between
+  // the default case and a user-specified tag.
+  tagName: null,
+
+  /**
+    The WAI-ARIA role of the control represented by this view. For example, a
+    button may have a role of type &#x27;button&#x27;, or a pane may have a role of
+    type &#x27;alertdialog&#x27;. This property is used by assistive software to help
+    visually challenged users navigate rich web applications.
+
+    The full list of valid WAI-ARIA roles is available at:
+    [http://www.w3.org/TR/wai-aria/roles#roles_categorization](http://www.w3.org/TR/wai-aria/roles#roles_categorization)
+
+    @property ariaRole
+    @type String
+    @default null
+  */
+  ariaRole: null,
+
+  // .......................................................
+  // CORE DISPLAY METHODS
+  //
+
+  /**
+    Setup a view, but do not finish waking it up.
+
+    * configure &#x60;childViews&#x60;
+    * register the view with the global views hash, which is used for event
+      dispatch
+
+    @method init
+    @private
+  */
+  init: function() {
+    if (!this.isVirtual &amp;&amp; !this.elementId) {
+      this.elementId = guidFor(this);
+    }
+
+    this._super.apply(this, arguments);
+  },
+
+  __defineNonEnumerable: function(property) {
+    this[property.name] = property.descriptor.value;
+  },
+
+  appendAttr: function(node) {
+    return this.currentState.appendAttr(this, node);
+  },
+
+  /**
+    Removes the view from its &#x60;parentView&#x60;, if one is found. Otherwise
+    does nothing.
+
+    @method removeFromParent
+    @return {Ember.View} receiver
+  */
+  removeFromParent: function() {
+    var parent = this._parentView;
+
+    // Remove DOM element from parent
+    this.remove();
+
+    if (parent) { parent.removeChild(this); }
+    return this;
+  },
+
+  /**
+    You must call &#x60;destroy&#x60; on a view to destroy the view (and all of its
+    child views). This will remove the view from any parent node, then make
+    sure that the DOM element managed by the view can be released by the
+    memory manager.
+
+    @method destroy
+  */
+  destroy: function() {
+    // get parentView before calling super because it&#x27;ll be destroyed
+    var nonVirtualParentView = get(this, &#x27;parentView&#x27;);
+    var viewName = this.viewName;
+
+    if (!this._super.apply(this, arguments)) { return; }
+
+    // remove from non-virtual parent view if viewName was specified
+    if (viewName &amp;&amp; nonVirtualParentView) {
+      nonVirtualParentView.set(viewName, null);
+    }
+
+    return this;
+  },
+
+  // .......................................................
+  // EVENT HANDLING
+  //
+
+  /**
+    Handle events from &#x60;Ember.EventDispatcher&#x60;
+
+    @method handleEvent
+    @param eventName {String}
+    @param evt {Event}
+    @private
+  */
+  handleEvent: function(eventName, evt) {
+    return this.currentState.handleEvent(this, eventName, evt);
+  },
+
+  registerObserver: function(root, path, target, observer) {
+    if (!observer &amp;&amp; &#x27;function&#x27; === typeof target) {
+      observer = target;
+      target = null;
+    }
+
+    if (!root || typeof root !== &#x27;object&#x27;) {
+      return;
+    }
+
+    var scheduledObserver = this._wrapAsScheduled(observer);
+
+    addObserver(root, path, target, scheduledObserver);
+
+    this.one(&#x27;willClearRender&#x27;, function() {
+      removeObserver(root, path, target, scheduledObserver);
+    });
+  },
+
+  _wrapAsScheduled: function(fn) {
+    var view = this;
+    var stateCheckedFn = function() {
+      view.currentState.invokeObserver(this, fn);
+    };
+    var scheduledFn = function() {
+      run.scheduleOnce(&#x27;render&#x27;, this, stateCheckedFn);
+    };
+    return scheduledFn;
+  }
 });
-
 // jscs:enable validateIndentation
+
+deprecateProperty(View.prototype, &#x27;state&#x27;, &#x27;_state&#x27;);
+deprecateProperty(View.prototype, &#x27;states&#x27;, &#x27;_states&#x27;);
 
 /*
   Describe how the specified actions should behave in the various
@@ -908,46 +1619,39 @@ deprecateProperty(View.prototype, &#x27;currentState&#x27;, &#x27;_currentState&
 // once the view has been inserted into the DOM, legal manipulations
 // are done on the DOM element.
 
-View.reopenClass({
-  /**
-    Global views hash
-
-    @property views
-    @static
-    @type Object
-    @private
-  */
-  views: {}
-});
-
-function viewDeprecationMessage() {
-  deprecate(
-    &#x60;Ember.View is deprecated. Consult the Deprecations Guide for a migration strategy.&#x60;,
-    !!Ember.ENV._ENABLE_LEGACY_VIEW_SUPPORT,
-    {
-      url: &#x27;http://emberjs.com/deprecations/v1.x/#toc_ember-view&#x27;,
-      id: &#x27;ember-views.view-deprecated&#x27;,
-      until: &#x27;2.4.0&#x27;
-    }
-  );
-}
-
-var DeprecatedView = View.extend({
-  init() {
-    viewDeprecationMessage();
-    this._super(...arguments);
-  }
-});
-
-DeprecatedView.reopen = function() {
-  viewDeprecationMessage();
-  View.reopen(...arguments);
-  return this;
+var mutation = EmberObject.extend(Evented).create();
+// TODO MOVE TO RENDERER HOOKS
+View.addMutationListener = function(callback) {
+  mutation.on(&#x27;change&#x27;, callback);
 };
+
+View.removeMutationListener = function(callback) {
+  mutation.off(&#x27;change&#x27;, callback);
+};
+
+View.notifyMutationListeners = function() {
+  mutation.trigger(&#x27;change&#x27;);
+};
+
+/**
+  Global views hash
+
+  @property views
+  @static
+  @type Hash
+*/
+View.views = {};
+
+// If someone overrides the child views computed property when
+// defining their class, we want to be able to process the user&#x27;s
+// supplied childViews and then restore the original computed property
+// at view initialization time. This happens in Ember.ContainerView&#x27;s init
+// method.
+View.childViewsProperty = childViewsProperty;
 
 export default View;
 
-export { ViewContextSupport, ViewChildViewsSupport, ViewStateSupport, TemplateRenderingSupport, ClassNamesSupport, DeprecatedView };
+export { ViewKeywordSupport, ViewStreamSupport, ViewContextSupport, ViewChildViewsSupport, ViewStateSupport, TemplateRenderingSupport, ClassNamesSupport, AttributeBindingsSupport };
 
     </pre>
 </div>

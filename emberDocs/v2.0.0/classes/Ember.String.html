@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,7 +186,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l144"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:144</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l141"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:141</code></a>
         </div>
 
             Module: <a href="../modules/ember-runtime.html">ember-runtime</a><br>
@@ -295,7 +295,7 @@ added to the <code>String.prototype</code> as well.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l263"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:263</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l260"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:260</code></a>
         </p>
 
 
@@ -369,7 +369,7 @@ added to the <code>String.prototype</code> as well.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l319"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:319</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l316"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:316</code></a>
         </p>
 
 
@@ -382,7 +382,7 @@ added to the <code>String.prototype</code> as well.</p>
 'action_name'.capitalize()       // 'Action_name'
 'css-class-name'.capitalize()    // 'Css-class-name'
 'my favorite items'.capitalize() // 'My favorite items'
-'privateDocs/ownerInvoice'.capitalize(); // 'PrivateDocs/ownerInvoice'
+'privateDocs/ownerInvoice'.capitalize(); // 'PrivateDocs/OwnerInvoice'
 </code></pre>
 
     </div>
@@ -442,7 +442,7 @@ added to the <code>String.prototype</code> as well.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l282"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:282</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l279"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:279</code></a>
         </p>
 
 
@@ -515,7 +515,7 @@ added to the <code>String.prototype</code> as well.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l245"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:245</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l242"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:242</code></a>
         </p>
 
 
@@ -588,7 +588,7 @@ added to the <code>String.prototype</code> as well.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l228"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:228</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l225"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:225</code></a>
         </p>
 
 
@@ -653,7 +653,7 @@ added to the <code>String.prototype</code> as well.</p>
             <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
         </span>
 
-        <span class="flag deprecated" title="Use ES6 template strings instead: http://babeljs.io/docs/learn-es2015/#template-strings">deprecated</span>
+        <span class="flag deprecated" title="Use ES6 template strings instead: https://babeljs.io/docs/learn-es6/#template-strings&#x27;);">deprecated</span>
 
         <span class="flag public">public</span>
 
@@ -664,11 +664,11 @@ added to the <code>String.prototype</code> as well.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l155"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:155</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l152"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:152</code></a>
         </p>
 
 
-            <p>Deprecated: Use ES6 template strings instead: http://babeljs.io/docs/learn-es2015/#template-strings</p>
+            <p>Deprecated: Use ES6 template strings instead: https://babeljs.io/docs/learn-es6/#template-strings&#x27;);</p>
 
     </div>
 
@@ -770,7 +770,7 @@ ensure Ember's rendering layer does not escape the HTML.</p>
 
             <div class="returns-description">
                         <span class="type">Handlebars.SafeString</span>:
-                    <p>A string that will not be HTML escaped by Handlebars.</p>
+                    <p>a string that will not be html escaped by Handlebars</p>
 
             </div>
         </div>
@@ -805,7 +805,7 @@ ensure Ember's rendering layer does not escape the HTML.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l179"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:179</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l176"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:176</code></a>
         </p>
 
 
@@ -896,7 +896,7 @@ Ember.String.loc(&quot;_Hello %@ %@&quot;, [&quot;John&quot;, &quot;Smith&quot;]
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l300"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:300</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l297"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:297</code></a>
         </p>
 
 
@@ -970,7 +970,7 @@ form of a string.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l206"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:206</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_string.js.html#l203"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;string.js:203</code></a>
         </p>
 
 

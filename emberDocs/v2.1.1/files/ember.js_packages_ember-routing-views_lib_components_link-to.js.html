@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -327,7 +331,8 @@
   ### Keeping a link active for other routes
 
   If you need a link to be &#x27;active&#x27; even when it doesn&#x27;t match
-  the current route, you can use the &#x60;current-when&#x60; argument.
+  the current route, you can use the the &#x60;current-when&#x60;
+  argument.
 
   &#x60;&#x60;&#x60;handlebars
   {{#link-to &#x27;photoGallery&#x27; current-when=&#x27;photos&#x27;}}
@@ -358,7 +363,7 @@
   the model context of the linked route:
 
   &#x60;&#x60;&#x60;javascript
-  Router.map(function() {
+  App.Router.map(function() {
     this.route(&quot;photoGallery&quot;, {path: &quot;hamster-photos/:photo_id&quot;});
   });
   &#x60;&#x60;&#x60;
@@ -383,7 +388,7 @@
   route with the dynamic segments:
 
   &#x60;&#x60;&#x60;javascript
-  Router.map(function() {
+  App.Router.map(function() {
     this.route(&quot;photoGallery&quot;, { path: &quot;hamster-photos/:photo_id&quot; }, function() {
       this.route(&quot;comment&quot;, {path: &quot;comments/:comment_id&quot;});
     });
@@ -410,7 +415,7 @@
   of the dynamic segment:
 
   &#x60;&#x60;&#x60;javascript
-  Router.map(function() {
+  App.Router.map(function() {
     this.route(&quot;photoGallery&quot;, { path: &quot;hamster-photos/:photo_id&quot; });
   });
   &#x60;&#x60;&#x60;
@@ -498,25 +503,20 @@
 @submodule ember-routing-views
 */
 
-import isEnabled from &#x27;ember-metal/features&#x27;;
-import Logger from &#x27;ember-metal/logger&#x27;;
-import { assert, deprecate } from &#x27;ember-metal/debug&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;; // FEATURES, Logger, assert
+
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import { computed } from &#x27;ember-metal/computed&#x27;;
 import { deprecatingAlias } from &#x27;ember-metal/computed_macros&#x27;;
 import { isSimpleClick } from &#x27;ember-views/system/utils&#x27;;
-import EmberComponent from &#x27;ember-views/components/component&#x27;;
+import EmberComponent from &#x27;ember-views/views/component&#x27;;
 import inject from &#x27;ember-runtime/inject&#x27;;
 import &#x27;ember-runtime/system/service&#x27;; // creates inject.service
 import ControllerMixin from &#x27;ember-runtime/mixins/controller&#x27;;
 import { HAS_BLOCK } from &#x27;ember-htmlbars/node-managers/component-node-manager&#x27;;
-import htmlbarsTemplate from &#x27;ember-htmlbars/templates/link-to&#x27;;
-import require from &#x27;require&#x27;;
 
-let layout = htmlbarsTemplate;
-if (isEnabled(&#x27;ember-glimmer&#x27;)) {
-  layout = require(&#x27;ember-glimmer/templates/link-to&#x27;).default;
-}
+import linkToTemplate from &#x27;ember-htmlbars/templates/link-to&#x27;;
+linkToTemplate.meta.revision = &#x27;Ember@VERSION_STRING_PLACEHOLDER&#x27;;
 
 
 /**
@@ -535,7 +535,7 @@ if (isEnabled(&#x27;ember-glimmer&#x27;)) {
   @private
 **/
 let LinkComponent = EmberComponent.extend({
-  layout,
+  layout: linkToTemplate,
 
   tagName: &#x27;a&#x27;,
 
@@ -654,7 +654,7 @@ let LinkComponent = EmberComponent.extend({
 
     @property classNameBindings
     @type Array
-    @default [&#x27;active&#x27;, &#x27;loading&#x27;, &#x27;disabled&#x27;, &#x27;ember-transitioning-in&#x27;, &#x27;ember-transitioning-out&#x27;]
+    @default [&#x27;active&#x27;, &#x27;loading&#x27;, &#x27;disabled&#x27;]
     @public
   */
   classNameBindings: [&#x27;active&#x27;, &#x27;loading&#x27;, &#x27;disabled&#x27;, &#x27;transitioningIn&#x27;, &#x27;transitioningOut&#x27;],
@@ -695,14 +695,14 @@ let LinkComponent = EmberComponent.extend({
     &#x60;&#x60;&#x60;javascript
     App.MyLinkComponent = Ember.LinkComponent.extend({
       init: function() {
-        this._super(...arguments);
+        this._super.apply(this, arguments);
         Ember.Logger.log(&#x27;Event is &#x27; + this.get(&#x27;eventName&#x27;));
       }
     });
     &#x60;&#x60;&#x60;
 
     NOTE: If you do override &#x60;init&#x60; for a framework class like &#x60;Ember.View&#x60;,
-    be sure to call &#x60;this._super(...arguments)&#x60; in your
+    be sure to call &#x60;this._super.apply(this, arguments)&#x60; in your
     &#x60;init&#x60; declaration! If you don&#x27;t, Ember may not have an opportunity to
     do important setup work, and you&#x27;ll see strange behavior in your
     application.
@@ -814,25 +814,24 @@ let LinkComponent = EmberComponent.extend({
   _invoke(event) {
     if (!isSimpleClick(event)) { return true; }
 
-    let preventDefault = get(this, &#x27;preventDefault&#x27;);
-    let targetAttribute = get(this, &#x27;target&#x27;);
-
-    if (preventDefault !== false) {
+    if (this.attrs.preventDefault !== false) {
+      let targetAttribute = this.attrs.target;
       if (!targetAttribute || targetAttribute === &#x27;_self&#x27;) {
         event.preventDefault();
       }
     }
 
-    if (get(this, &#x27;bubbles&#x27;) === false) { event.stopPropagation(); }
+    if (this.attrs.bubbles === false) { event.stopPropagation(); }
 
     if (get(this, &#x27;_isDisabled&#x27;)) { return false; }
 
     if (get(this, &#x27;loading&#x27;)) {
-      Logger.warn(&#x27;This link-to is in an inactive loading state because at least one of its parameters presently has a null/undefined value, or the provided route name is invalid.&#x27;);
+      Ember.Logger.warn(&#x27;This link-to is in an inactive loading state because at least one of its parameters presently has a null/undefined value, or the provided route name is invalid.&#x27;);
       return false;
     }
 
-    if (targetAttribute &amp;&amp; targetAttribute !== &#x27;_self&#x27;) {
+    let targetAttribute2 = this.attrs.target;
+    if (targetAttribute2 &amp;&amp; targetAttribute2 !== &#x27;_self&#x27;) {
       return false;
     }
 
@@ -840,7 +839,7 @@ let LinkComponent = EmberComponent.extend({
     let qualifiedRouteName = get(this, &#x27;qualifiedRouteName&#x27;);
     let models = get(this, &#x27;models&#x27;);
     let queryParamValues = get(this, &#x27;queryParams.values&#x27;);
-    let shouldReplace = get(this, &#x27;replace&#x27;);
+    let shouldReplace = get(this, &#x27;attrs.replace&#x27;);
 
     routing.transitionTo(qualifiedRouteName, models, queryParamValues, shouldReplace);
   },
@@ -916,29 +915,6 @@ let LinkComponent = EmberComponent.extend({
     return true;
   }),
 
-  _getModels(params) {
-    let modelCount = params.length - 1;
-    let models = new Array(modelCount);
-
-    for (let i = 0; i &lt; modelCount; i++) {
-      let value = params[i + 1];
-
-      while (ControllerMixin.detect(value)) {
-        deprecate(
-          &#x27;Providing &#x60;{{link-to}}&#x60; with a param that is wrapped in a controller is deprecated. &#x27; +
-            (this.parentView ? &#x27;Please update &#x60;&#x27; + this.parentView + &#x27;&#x60; to use &#x60;{{link-to &quot;post&quot; someController.model}}&#x60; instead.&#x27; : &#x27;&#x27;),
-          false,
-          { id: &#x27;ember-routing-views.controller-wrapped-param&#x27;, until: &#x27;3.0.0&#x27; }
-        );
-        value = value.get(&#x27;model&#x27;);
-      }
-
-      models[i] = value;
-    }
-
-    return models;
-  },
-
   /**
     The default href value to use while a link-to is loading.
     Only applies when tagName is &#x27;a&#x27;
@@ -953,14 +929,15 @@ let LinkComponent = EmberComponent.extend({
   willRender() {
     let queryParams;
 
+    let attrs = this.attrs;
+
     // Do not mutate params in place
     let params = get(this, &#x27;params&#x27;).slice();
 
-    assert(&#x27;You must provide one or more parameters to the link-to component.&#x27;, params.length);
+    Ember.assert(&#x27;You must provide one or more parameters to the link-to component.&#x27;, params.length);
 
-    let disabledWhen = get(this, &#x27;disabledWhen&#x27;);
-    if (disabledWhen !== undefined) {
-      this.set(&#x27;disabled&#x27;, disabledWhen);
+    if (attrs.disabledWhen) {
+      this.set(&#x27;disabled&#x27;, attrs.disabledWhen);
     }
 
     // Process the positional arguments, in order.
@@ -983,11 +960,25 @@ let LinkComponent = EmberComponent.extend({
     this.set(&#x27;queryParams&#x27;, queryParams);
 
     // 4. Any remaining indices (excepting &#x60;targetRouteName&#x60; at 0) are &#x60;models&#x60;.
-    if (params.length &gt; 1) {
-      this.set(&#x27;models&#x27;, this._getModels(params));
-    } else {
-      this.set(&#x27;models&#x27;, []);
+    let models = [];
+
+    for (let i = 1; i &lt; params.length; i++) {
+      let value = params[i];
+
+      while (ControllerMixin.detect(value)) {
+        Ember.deprecate(
+          &#x27;Providing &#x60;{{link-to}}&#x60; with a param that is wrapped in a controller is deprecated. &#x27; +
+            (this.parentView ? &#x27;Please update &#x60;&#x27; + this.parentView + &#x27;&#x60; to use &#x60;{{link-to &quot;post&quot; someController.model}}&#x60; instead.&#x27; : &#x27;&#x27;),
+          false,
+          { id: &#x27;ember-routing-views.controller-wrapped-param&#x27;, until: &#x27;3.0.0&#x27; }
+        );
+        value = value.get(&#x27;model&#x27;);
+      }
+
+      models.push(value);
     }
+
+    this.set(&#x27;models&#x27;, models);
   }
 });
 

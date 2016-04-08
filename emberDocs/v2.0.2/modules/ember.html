@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,7 +186,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l27"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:27</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l59"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:59</code></a>
         </div>
 
 </div>
@@ -213,11 +213,6 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/ContainerProxyMixin.html">
-                        ContainerProxyMixin
-                    </a>
-                </li>
-                <li class="module-class">
                     <a href="../classes/Ember.html">
                         Ember
                     </a>
@@ -240,16 +235,6 @@
                 <li class="module-class">
                     <a href="../classes/Ember.Application.html">
                         Ember.Application
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.ApplicationInstance.html">
-                        Ember.ApplicationInstance
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.ApplicationInstance.BootOptions.html">
-                        Ember.ApplicationInstance.BootOptions
                     </a>
                 </li>
                 <li class="module-class">
@@ -288,6 +273,11 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.CollectionView.html">
+                        Ember.CollectionView
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.Comparable.html">
                         Ember.Comparable
                     </a>
@@ -310,6 +300,11 @@
                 <li class="module-class">
                     <a href="../classes/Ember.ContainerDebugAdapter.html">
                         Ember.ContainerDebugAdapter
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.ContainerView.html">
+                        Ember.ContainerView
                     </a>
                 </li>
                 <li class="module-class">
@@ -343,11 +338,6 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.Debug.html">
-                        Ember.Debug
-                    </a>
-                </li>
-                <li class="module-class">
                     <a href="../classes/Ember.DefaultResolver.html">
                         Ember.DefaultResolver
                     </a>
@@ -355,6 +345,11 @@
                 <li class="module-class">
                     <a href="../classes/Ember.EachProxy.html">
                         Ember.EachProxy
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.EmptyViewSupport.html">
+                        Ember.EmptyViewSupport
                     </a>
                 </li>
                 <li class="module-class">
@@ -528,6 +523,11 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.Select.html">
+                        Ember.Select
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.Service.html">
                         Ember.Service
                     </a>
@@ -613,11 +613,6 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/RegistryProxyMixin.html">
-                        RegistryProxyMixin
-                    </a>
-                </li>
-                <li class="module-class">
                     <a href="../classes/RoutingService.html">
                         RoutingService
                     </a>
@@ -625,6 +620,11 @@
                 <li class="module-class">
                     <a href="../classes/String.html">
                         String
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/TransformEachInToHash.html">
+                        TransformEachInToHash
                     </a>
                 </li>
                 <li class="module-class">
@@ -646,24 +646,140 @@
                     </a>
 
                     <div class="module-submodule-description">
-                        The <code>ApplicationInstance</code> encapsulates all of the stateful aspects of a
-running <code>Application</code>.
+                        An instance of <code>Ember.Application</code> is the starting point for every Ember
+application. It helps to instantiate, initialize and coordinate the many
+objects that make up your app.
 
-At a high-level, we break application boot into two distinct phases:
+Each Ember app has one and only one <code>Ember.Application</code> object. In fact, the
+very first thing you should do in your application is create the instance:
 
-* Definition time, where all of the classes, templates, and other
-  dependencies are loaded (typically in the browser).
-* Run time, where we begin executing the application once everything
-  has loaded.
+<code>&#x60;</code>javascript
+window.App = Ember.Application.create();
+<code>&#x60;</code>
 
-Definition time can be expensive and only needs to happen once since it is
-an idempotent operation. For example, between test runs and FastBoot
-requests, the application stays the same. It is only the state that we want
-to reset.
+Typically, the application object is the only global variable. All other
+classes in your app should be properties on the <code>Ember.Application</code> instance,
+which highlights its first role: a global namespace.
 
-That state is what the <code>ApplicationInstance</code> manages: it is responsible for
-creating the container that contains all application state, and disposing of
-it once the particular test run or FastBoot request has finished.
+For example, if you define a view class, it might look like this:
+
+<code>&#x60;</code>javascript
+App.MyView = Ember.View.extend();
+<code>&#x60;</code>
+
+By default, calling <code>Ember.Application.create()</code> will automatically initialize
+your application by calling the <code>Ember.Application.initialize()</code> method. If
+you need to delay initialization, you can call your app's <code>deferReadiness()</code>
+method. When you are ready for your app to be initialized, call its
+<code>advanceReadiness()</code> method.
+
+You can define a <code>ready</code> method on the <code>Ember.Application</code> instance, which
+will be run by Ember when the application is initialized.
+
+Because <code>Ember.Application</code> inherits from <code>Ember.Namespace</code>, any classes
+you create will have useful string representations when calling <code>toString()</code>.
+See the <code>Ember.Namespace</code> documentation for more information.
+
+While you can think of your <code>Ember.Application</code> as a container that holds the
+other classes in your application, there are several other responsibilities
+going on under-the-hood that you may want to understand.
+
+### Event Delegation
+
+Ember uses a technique called _event delegation_. This allows the framework
+to set up a global, shared event listener instead of requiring each view to
+do it manually. For example, instead of each view registering its own
+<code>mousedown</code> listener on its associated element, Ember sets up a <code>mousedown</code>
+listener on the <code>body</code>.
+
+If a <code>mousedown</code> event occurs, Ember will look at the target of the event and
+start walking up the DOM node tree, finding corresponding views and invoking
+their <code>mouseDown</code> method as it goes.
+
+<code>Ember.Application</code> has a number of default events that it listens for, as
+well as a mapping from lowercase events to camel-cased view method names. For
+example, the <code>keypress</code> event causes the <code>keyPress</code> method on the view to be
+called, the <code>dblclick</code> event causes <code>doubleClick</code> to be called, and so on.
+
+If there is a bubbling browser event that Ember does not listen for by
+default, you can specify custom events and their corresponding view method
+names by setting the application's <code>customEvents</code> property:
+
+<code>&#x60;</code>javascript
+var App = Ember.Application.create({
+  customEvents: {
+    // add support for the paste event
+    paste: 'paste'
+  }
+});
+<code>&#x60;</code>
+
+By default, the application sets up these event listeners on the document
+body. However, in cases where you are embedding an Ember application inside
+an existing page, you may want it to set up the listeners on an element
+inside the body.
+
+For example, if only events inside a DOM element with the ID of <code>ember-app</code>
+should be delegated, set your application's <code>rootElement</code> property:
+
+<code>&#x60;</code>javascript
+var App = Ember.Application.create({
+  rootElement: '#ember-app'
+});
+<code>&#x60;</code>
+
+The <code>rootElement</code> can be either a DOM element or a jQuery-compatible selector
+string. Note that *views appended to the DOM outside the root element will
+not receive events.* If you specify a custom root element, make sure you only
+append views inside it!
+
+To learn more about the advantages of event delegation and the Ember view
+layer, and a list of the event listeners that are setup by default, visit the
+[Ember View Layer guide](http://emberjs.com/guides/understanding-ember/the-view-layer/#toc_event-delegation).
+
+### Initializers
+
+Libraries on top of Ember can add initializers, like so:
+
+<code>&#x60;</code>javascript
+Ember.Application.initializer({
+  name: 'api-adapter',
+
+  initialize: function(container, application) {
+    application.register('api-adapter:main', ApiAdapter);
+  }
+});
+<code>&#x60;</code>
+
+Initializers provide an opportunity to access the container, which
+organizes the different components of an Ember application. Additionally
+they provide a chance to access the instantiated application. Beyond
+being used for libraries, initializers are also a great way to organize
+dependency injection or setup in your own application.
+
+### Routing
+
+In addition to creating your application's router, <code>Ember.Application</code> is
+also responsible for telling the router when to start routing. Transitions
+between routes can be logged with the <code>LOG_TRANSITIONS</code> flag, and more
+detailed intra-transition logging can be logged with
+the <code>LOG_TRANSITIONS_INTERNAL</code> flag:
+
+<code>&#x60;</code>javascript
+var App = Ember.Application.create({
+  LOG_TRANSITIONS: true, // basic logging of successful transitions
+  LOG_TRANSITIONS_INTERNAL: true // detailed logging of all routing steps
+});
+<code>&#x60;</code>
+
+By default, the router will begin trying to translate the current URL into
+application state once the browser emits the <code>DOMContentReady</code> event. If you
+need to defer routing, you can call the application's <code>deferReadiness()</code>
+method. Once routing can begin, call the <code>advanceReadiness()</code> method.
+
+If there is any setup required before routing begins, you can implement a
+<code>ready()</code> method on your app that will be invoked immediately before routing
+begins.
                     </div>
                 </li>
                 <li class="module-submodule">
@@ -695,7 +811,7 @@ The methods likely to be overridden are:
 * <code>catalogEntriesByType</code>
 
 The adapter will need to be registered
-in the application's container as <code>container-debug-adapter:main</code>.
+in the application's container as <code>container-debug-adapter:main</code>
 
 Example:
 
@@ -703,7 +819,7 @@ Example:
 Application.initializer({
   name: "containerDebugAdapter",
 
-  initialize: function(application) {
+  initialize: function(container, application) {
     application.register('container-debug-adapter:main', require('app/container-debug-adapter'));
   }
 });
@@ -861,9 +977,9 @@ Calling setURL or replaceURL will not trigger onUpdateURL callbacks.
 transition of the application's instance of <code>Ember.Router</code> to
 a supplied route by name.
 
-<code>Ember.LinkComponent</code> components are invoked with {{#link-to}}. Properties
-of this class can be overridden with <code>reopen</code> to customize application-wide
-behavior.
+Instances of <code>LinkComponent</code> will most likely be created through
+the <code>link-to</code> Handlebars helper, but properties of this class
+can be overridden to customize application-wide behavior.
                     </div>
                 </li>
                 <li class="module-submodule">
@@ -984,85 +1100,96 @@ by an adapter for various test frameworks.
                     </a>
 
                     <div class="module-submodule-description">
-                        An <code>Ember.Component</code> is a view that is completely
-isolated. Properties accessed in its templates go
-to the view object and actions are targeted at
-the view object. There is no access to the
-surrounding context or outer controller; all
-contextual information must be passed in.
+                        <code>TextSupport</code> is a shared mixin used by both <code>Ember.TextField</code> and
+<code>Ember.TextArea</code>. <code>TextSupport</code> adds a number of methods that allow you to
+specify a controller action to invoke when a certain event is fired on your
+text field or textarea. The specifed controller action would get the current
+value of the field passed in as the only argument unless the value of
+the field is empty. In that case, the instance of the field itself is passed
+in as the only argument.
 
-The easiest way to create an <code>Ember.Component</code> is via
-a template. If you name a template
-<code>components&#x2F;my-foo</code>, you will be able to use
-<code>{{my-foo}}</code> in other templates, which will make
-an instance of the isolated component.
-
-<code>&#x60;</code>handlebars
-{{app-profile person=currentUser}}
-<code>&#x60;</code>
+Let's use the pressing of the escape key as an example. If you wanted to
+invoke a controller action when a user presses the escape key while on your
+field, you would use the <code>escape-press</code> attribute on your field like so:
 
 <code>&#x60;</code>handlebars
-<!-- app-profile template -->
-<h1>{{person.title}}</h1>
-<img src={{person.avatar}}>
-<p class='signature'>{{person.signature}}</p>
+  {{! application.hbs}}
+
+  {{input escape-press='alertUser'}}
 <code>&#x60;</code>
-
-You can use <code>yield</code> inside a template to
-include the **contents** of any block attached to
-the component. The block will be executed in the
-context of the surrounding context or outer controller:
-
-<code>&#x60;</code>handlebars
-{{#app-profile person=currentUser}}
-  <p>Admin mode</p>
-  {{! Executed in the controller's context. }}
-{{/app-profile}}
-<code>&#x60;</code>
-
-<code>&#x60;</code>handlebars
-<!-- app-profile template -->
-<h1>{{person.title}}</h1>
-{{! Executed in the components context. }}
-{{yield}} {{! block contents }}
-<code>&#x60;</code>
-
-If you want to customize the component, in order to
-handle events or actions, you implement a subclass
-of <code>Ember.Component</code> named after the name of the
-component. Note that <code>Component</code> needs to be appended to the name of
-your subclass like <code>AppProfileComponent</code>.
-
-For example, you could implement the action
-<code>hello</code> for the <code>app-profile</code> component:
 
 <code>&#x60;</code>javascript
-App.AppProfileComponent = Ember.Component.extend({
-  actions: {
-    hello: function(name) {
-      console.log("Hello", name);
-    }
-  }
-});
+    App = Ember.Application.create();
+
+    App.ApplicationController = Ember.Controller.extend({
+      actions: {
+        alertUser: function ( currentValue ) {
+          alert( 'escape pressed, current value: ' + currentValue );
+        }
+      }
+    });
 <code>&#x60;</code>
 
-And then use it in the component's template:
+The following chart is a visual representation of what takes place when the
+escape key is pressed in this scenario:
+
+<code>&#x60;</code>
+The Template
++---------------------------+
+|                           |
+| escape-press='alertUser'  |
+|                           |          TextSupport Mixin
++----+----------------------+          +-------------------------------+
+     |                                 | cancel method                 |
+     |      escape button pressed      |                               |
+     +-------------------------------> | checks for the <code>escape-press</code> |
+                                       | attribute and pulls out the   |
+     +-------------------------------+ | <code>alertUser</code> value             |
+     |     action name 'alertUser'     +-------------------------------+
+     |     sent to controller
+     v
+Controller
++------------------------------------------ +
+|                                           |
+|  actions: {                               |
+|     alertUser: function( currentValue ){  |
+|       alert( 'the esc key was pressed!' ) |
+|     }                                     |
+|  }                                        |
+|                                           |
++-------------------------------------------+
+<code>&#x60;</code>
+
+Here are the events that we currently support along with the name of the
+attribute you would need to use on your field. To reiterate, you would use the
+attribute name like so:
 
 <code>&#x60;</code>handlebars
-<!-- app-profile template -->
-
-<h1>{{person.title}}</h1>
-{{yield}} <!-- block contents -->
-
-<button {{action 'hello' person.name}}>
-  Say Hello to {{person.name}}
-</button>
+  {{input attribute-name='controllerAction'}}
 <code>&#x60;</code>
 
-Components must have a <code>-</code> in their name to avoid
-conflicts with built-in controls that wrap HTML
-elements. This is consistent with the same
-requirement in web components.
+<code>&#x60;</code>
++--------------------+----------------+
+|                    |                |
+| event              | attribute name |
++--------------------+----------------+
+| new line inserted  | insert-newline |
+|                    |                |
+| enter key pressed  | insert-newline |
+|                    |                |
+| cancel key pressed | escape-press   |
+|                    |                |
+| focusin            | focus-in       |
+|                    |                |
+| focusout           | focus-out      |
+|                    |                |
+| keypress           | key-press      |
+|                    |                |
+| keyup              | key-up         |
+|                    |                |
+| keydown            | key-down       |
++--------------------+----------------+
+<code>&#x60;</code>
                     </div>
                 </li>
             </ul>

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,6 +38,7 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/@Ember.ApplicationInstance.BootOptions.html">@Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
                                 <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
@@ -48,7 +49,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -196,7 +201,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l21"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:21</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l23"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:23</code></a>
         </div>
 
             Module: <a href="../modules/ember.html">ember</a>
@@ -422,7 +427,7 @@ in your applications.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__lazyInjections">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l912"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:912</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l914"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:914</code></a>
         </p>
 
 
@@ -464,7 +469,7 @@ properties will lookup on the container lazily.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__onLookup">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l903"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:903</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l905"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:905</code></a>
         </p>
 
 
@@ -496,7 +501,7 @@ properties will lookup on the container lazily.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__scheduledDestroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l465"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:465</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l466"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:466</code></a>
         </p>
 
 
@@ -541,7 +546,7 @@ scheduled for execution by the <code>destroy</code> method.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_addObserver">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l333"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:333</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l332"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:332</code></a>
         </p>
 
 
@@ -642,7 +647,7 @@ any of these values, to write an observer that has no parameters at all.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_beginPropertyChanges">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l231"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:231</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l230"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:230</code></a>
         </p>
 
 
@@ -697,7 +702,7 @@ deferring.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_cacheFor">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l490"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:490</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l489"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:489</code></a>
         </p>
 
 
@@ -769,7 +774,7 @@ generated lazily.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_decrementProperty">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l453"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:453</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l452"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:452</code></a>
         </p>
 
 
@@ -844,7 +849,7 @@ orc.decrementProperty('health', 5);
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_destroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l434"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:434</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l435"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:435</code></a>
         </p>
 
 
@@ -893,7 +898,7 @@ happen immediately.  It will set an isDestroying flag immediately.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_endPropertyChanges">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l251"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:251</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l250"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:250</code></a>
         </p>
 
 
@@ -947,7 +952,7 @@ deliver the deferred change notifications and end deferring.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_get">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l100"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:100</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l99"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:99</code></a>
         </p>
 
 
@@ -1036,7 +1041,7 @@ not defined upfront.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_getProperties">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l143"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:143</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l142"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:142</code></a>
         </p>
 
 
@@ -1112,7 +1117,7 @@ with a list of strings or an array:</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_getWithDefault">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l415"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:415</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l414"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:414</code></a>
         </p>
 
 
@@ -1260,7 +1265,7 @@ property returns <code>undefined</code>.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_hasObserverFor">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l400"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:400</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l399"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:399</code></a>
         </p>
 
 
@@ -1331,7 +1336,7 @@ on the object.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_incrementProperty">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l433"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:433</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l432"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:432</code></a>
         </p>
 
 
@@ -1403,7 +1408,7 @@ team.incrementProperty('score', 2);
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_init">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l234"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:234</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l235"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:235</code></a>
         </p>
 
 
@@ -1427,7 +1432,7 @@ var steve = App.Person.create({
 // alerts 'Name is Steve'.
 </code></pre>
 <p>NOTE: If you do override <code>init</code> for a framework class like <code>Ember.View</code>,
-be sure to call <code>this._super(...arguments)</code> in your
+be sure to call <code>this._super.apply(this, arguments)</code> in your
 <code>init</code> declaration! If you don't, Ember may not have an opportunity to
 do important setup work, and you'll see strange behavior in your
 application.</p>
@@ -1463,7 +1468,7 @@ application.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_notifyPropertyChange">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l318"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:318</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l317"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:317</code></a>
         </p>
 
 
@@ -1826,7 +1831,7 @@ becomes the function.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_propertyDidChange">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l294"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:294</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l293"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:293</code></a>
         </p>
 
 
@@ -1900,7 +1905,7 @@ like.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_propertyWillChange">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l270"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:270</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l269"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:269</code></a>
         </p>
 
 
@@ -1977,7 +1982,7 @@ like.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_removeObserver">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l385"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:385</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l384"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:384</code></a>
         </p>
 
 
@@ -2050,7 +2055,7 @@ target will no longer receive notifications.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_reopen">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l703"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:703</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l704"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:704</code></a>
         </p>
 
 
@@ -2103,7 +2108,7 @@ see <code>reopenClass</code></p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_reopenClass">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l739"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:739</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l740"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:740</code></a>
         </p>
 
 
@@ -2277,7 +2282,7 @@ action target function returns <code>true</code>.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_set">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l168"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:168</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l167"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:167</code></a>
         </p>
 
 
@@ -2379,7 +2384,7 @@ coalesced manner.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_setProperties">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l213"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:213</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l212"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:212</code></a>
         </p>
 
 
@@ -2450,7 +2455,7 @@ observers will be buffered.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_toggleProperty">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l473"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:473</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l472"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:472</code></a>
         </p>
 
 
@@ -2514,7 +2519,7 @@ current value.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_toString">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l484"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:484</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l485"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:485</code></a>
         </p>
 
 
@@ -2586,7 +2591,7 @@ teacher.toString(); //=&gt; &quot;&lt;App.Teacher:ember1026:Tom Dale&gt;&quot;
                 Ember.Evented
             </a>
             but overwritten in
-        <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l79"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:79</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l83"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:83</code></a>
         </p>
 
 
@@ -2635,7 +2640,7 @@ also call methods with the given name.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_willDestroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l457"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:457</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l458"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:458</code></a>
         </p>
 
 
@@ -2719,7 +2724,7 @@ Component object:</p>
   }
 });
 </code></pre>
-<p>It is also possible to call <code>this._super(...arguments)</code> from within an
+<p>It is also possible to call <code>this._super.apply(this, arguments)</code> from within an
 action handler if it overrides a handler defined on a parent
 class or mixin:</p>
 <p>Take for example the following routes:</p>
@@ -2735,7 +2740,7 @@ App.AnnoyingDebugRoute = Ember.Route.extend(App.DebugRoute, {
   actions: {
     debugRouteInformation: function() {
       // also call the debugRouteInformation of mixed in App.DebugRoute
-      this._super(...arguments);
+      this._super.apply(this, arguments);
 
       // show additional annoyance
       window.alert(...);
@@ -2791,7 +2796,7 @@ App.AlbumSongRoute = Ember.Route.extend({
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_concatenatedProperties">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l272"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:272</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l273"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:273</code></a>
         </p>
 
 
@@ -2865,7 +2870,7 @@ mislead your users to think they can override the property in a subclass).</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_isDestroyed">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l410"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:410</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l411"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:411</code></a>
         </p>
 
 
@@ -2894,7 +2899,7 @@ removed by the effect of calling the <code>destroy()</code> method.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_isDestroying">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l422"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:422</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l423"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:423</code></a>
         </p>
 
 
@@ -2923,7 +2928,7 @@ the <code>isDestroyed</code> flag is set.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_mergedProperties">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l341"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:341</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l342"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:342</code></a>
         </p>
 
 
@@ -3003,7 +3008,7 @@ mislead your users to think they can override the property in a subclass).</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l60"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:60</code></a>
+        <a href="../files/ember.js_packages_ember-views_lib_views_core_view.js.html#l62"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:62</code></a>
         </p>
 
 

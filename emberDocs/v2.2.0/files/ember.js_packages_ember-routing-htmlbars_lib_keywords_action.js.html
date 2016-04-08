@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,6 +38,7 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/@Ember.ApplicationInstance.BootOptions.html">@Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
                                 <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
@@ -48,7 +49,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -211,13 +216,13 @@ import closureAction from &#x27;ember-routing-htmlbars/keywords/closure-action&#
   &#x60;&#x60;&#x60;
 
   In these contexts,
-  the helper is called a &quot;closure action&quot; helper. Its behavior is simple:
+  the helper is called a &quot;closure action&quot; helper. It&#x27;s behavior is simple:
   If passed a function name, read that function off the &#x60;actions&#x60; property
   of the current context. Once that function is read (or if a function was
   passed), create a closure over that function and any arguments.
 
   The resulting value of an action helper used this way is simply a function.
-  For example, in the attribute context:
+  For example with this attribute context example:
 
   &#x60;&#x60;&#x60;handlebars
   {{! An example of attribute context }}
@@ -238,7 +243,7 @@ import closureAction from &#x27;ember-routing-htmlbars/keywords/closure-action&#
 
   Thus when the div is clicked, the action on that context is called.
   Because the &#x60;actionFunction&#x60; is just a function, closure actions can be
-  passed between components and still execute in the correct context.
+  passed between components the still execute in the correct context.
 
   Here is an example action handler on a component:
 
@@ -286,8 +291,8 @@ import closureAction from &#x27;ember-routing-htmlbars/keywords/closure-action&#
   &#x60;&#x60;&#x60;
 
   The first argument (&#x60;model&#x60;) was curried over, and the run-time argument (&#x60;event&#x60;)
-  becomes a second argument. Action calls can be nested this way because each simply
-  returns a function. Any function can be passed to the &#x60;{{action}}&#x60; helper, including
+  becomes a second argument. Action calls be nested this way because each simply
+  returns a function. Any function can be passed to the &#x60;{{action&#x60; helper, including
   other actions.
 
   Actions invoked with &#x60;sendAction&#x60; have the same currying behavior as demonstrated
@@ -317,9 +322,9 @@ import closureAction from &#x27;ember-routing-htmlbars/keywords/closure-action&#
   });
   &#x60;&#x60;&#x60;
 
-  ### Attaching actions to DOM elements
+  ### Attaching actions to DOM
 
-  The third context of the &#x60;{{action}}&#x60; helper can be called &quot;element space&quot;.
+  The third context the &#x60;{{action&#x60; helper can be used in we call &quot;element space&quot;.
   For example:
 
   &#x60;&#x60;&#x60;handlebars
@@ -328,7 +333,7 @@ import closureAction from &#x27;ember-routing-htmlbars/keywords/closure-action&#
   &#x60;&#x60;&#x60;
 
   Used this way, the &#x60;{{action}}&#x60; helper provides a useful shortcut for
-  registering an HTML element in a template for a single DOM event and
+  registering an HTML element within a template for a single DOM event and
   forwarding that interaction to the template&#x27;s context (controller or component).
 
   If the context of a template is a controller, actions used this way will
@@ -337,8 +342,7 @@ import closureAction from &#x27;ember-routing-htmlbars/keywords/closure-action&#
 
   ### Event Propagation
 
-  &#x60;{{action}}&#x60; helpers called in element space can control event bubbling. Note
-  that the closure style actions cannot.
+  &#x60;{{action&#x60; helpers called in element space can control event bubbling.
 
   Events triggered through the action helper will automatically have
   &#x60;.preventDefault()&#x60; called on them. You do not need to do so in your event
@@ -358,54 +362,31 @@ import closureAction from &#x27;ember-routing-htmlbars/keywords/closure-action&#
   &lt;button {{action &#x27;edit&#x27; post bubbles=false}}&gt;Edit&lt;/button&gt;
   &#x60;&#x60;&#x60;
 
-  To disable bubbling with closure style actions you must create your own
-  wrapper helper that makes use of &#x60;event.stopPropagation()&#x60;:
-
-  &#x60;&#x60;&#x60;handlebars
-  &lt;div onclick={{disable-bubbling (action &quot;sayHello&quot;)}}&gt;Hello&lt;/div&gt;
-  &#x60;&#x60;&#x60;
-
-  &#x60;&#x60;&#x60;js
-  // app/helpers/disable-bubbling.js
-  import Ember from &#x27;ember&#x27;;
-
-  export function disableBubbling([action]) {
-    return function(event) {
-      event.stopPropagation();
-
-      return action(event);
-    };
-  }
-
-  export default Ember.Helper.helper(disableBubbling);
-  &#x60;&#x60;&#x60;
-
   If you need the default handler to trigger you should either register your
-  own event handler, or use event methods on your view class. See
-  [&quot;Responding to Browser Events&quot;](/api/classes/Ember.View.html#toc_responding-to-browser-events)
-  in the documentation for Ember.View for more information.
+  own event handler, or use event methods on your view class. See [Ember.View](/api/classes/Ember.View.html)
+  &#x27;Responding to Browser Events&#x27; for more information.
 
   ### Specifying DOM event type
 
-  &#x60;{{action}}&#x60; helpers called in element space can specify an event type.
+  &#x60;{{action&#x60; helpers called in element space can specify an event type.
 
   By default the &#x60;{{action}}&#x60; helper registers for DOM &#x60;click&#x60; events. You can
   supply an &#x60;on&#x60; option to the helper to specify a different DOM event name:
 
   &#x60;&#x60;&#x60;handlebars
-  &lt;div {{action &quot;anActionName&quot; on=&quot;doubleClick&quot;}}&gt;
+  &lt;div {{action &quot;anActionName&quot; on=&quot;double-click&quot;}}&gt;
     click me
   &lt;/div&gt;
   &#x60;&#x60;&#x60;
 
-  See [&quot;Event Names&quot;](/api/classes/Ember.View.html#toc_event-names) for a list of
+  See [Event Names](/api/classes/Ember.View.html#toc_event-names) for a list of
   acceptable DOM event names.
 
   ### Specifying whitelisted modifier keys
 
-  &#x60;{{action}}&#x60; helpers called in element space can specify modifier keys.
+  &#x60;{{action&#x60; helpers called in element space can specify modifier keys.
 
-  By default the &#x60;{{action}}&#x60; helper will ignore click events with pressed modifier
+  By default the &#x60;{{action}}&#x60; helper will ignore click event with pressed modifier
   keys. You can supply an &#x60;allowedKeys&#x60; option to specify which keys should not be ignored.
 
   &#x60;&#x60;&#x60;handlebars
@@ -414,7 +395,7 @@ import closureAction from &#x27;ember-routing-htmlbars/keywords/closure-action&#
   &lt;/div&gt;
   &#x60;&#x60;&#x60;
 
-  This way the action will fire when clicking with the alt key pressed down.
+  This way the &#x60;{{action}}&#x60; will fire when clicking with the alt key pressed down.
 
   Alternatively, supply &quot;any&quot; to the &#x60;allowedKeys&#x60; option to accept any combination of modifier keys.
 

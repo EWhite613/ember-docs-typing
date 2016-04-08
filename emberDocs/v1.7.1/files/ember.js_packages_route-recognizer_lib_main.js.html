@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember.js/packages/route-recognizer/lib/main.js - The Ember API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
+                                <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
+                                <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
+                                <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
+                                <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
+                                <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
+                                <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
+                                <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
+                                <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
+                                <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
+                                <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
+                                <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
+                                <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
+                                <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
+                                <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
+                                <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
+                                <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
+                                <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
+                                <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
+                                <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
+                                <li><a href="../classes/Ember.DAG.html">Ember.DAG</a></li>
+                                <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
+                                <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
+                                <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
+                                <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
+                                <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
+                                <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
+                                <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
+                                <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
+                                <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
+                                <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
+                                <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
+                                <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
+                                <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
+                                <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
+                                <li><a href="../classes/Ember.MapWithDefault.html">Ember.MapWithDefault</a></li>
+                                <li><a href="../classes/Ember.Mixin.html">Ember.Mixin</a></li>
+                                <li><a href="../classes/Ember.MutableArray.html">Ember.MutableArray</a></li>
+                                <li><a href="../classes/Ember.MutableEnumerable.html">Ember.MutableEnumerable</a></li>
+                                <li><a href="../classes/Ember.Namespace.html">Ember.Namespace</a></li>
+                                <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
+                                <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
+                                <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
+                                <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
+                                <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
+                                <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
+                                <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
+                                <li><a href="../classes/Ember.RenderBuffer.html">Ember.RenderBuffer</a></li>
+                                <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
+                                <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
+                                <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
+                                <li><a href="../classes/Ember.State.html">Ember.State</a></li>
+                                <li><a href="../classes/Ember.StateManager.html">Ember.StateManager</a></li>
+                                <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
+                                <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
+                                <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
+                                <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
+                                <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
+                                <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
+                                <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
+                                <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
+                                <li><a href="../classes/Ember.View.html">Ember.View</a></li>
+                                <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
+                                <li><a href="../classes/Function.html">Function</a></li>
+                                <li><a href="../classes/String.html">String</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/ember.html">ember</a></li>
+                                <li><a href="../modules/ember-application.html">ember-application</a></li>
+                                <li><a href="../modules/ember-debug.html">ember-debug</a></li>
+                                <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
+                                <li><a href="../modules/ember-metal.html">ember-metal</a></li>
+                                <li><a href="../modules/ember-routing.html">ember-routing</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
+                                <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
+                                <li><a href="../modules/ember-testing.html">ember-testing</a></li>
+                                <li><a href="../modules/ember-views.html">ember-views</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: ember.js/packages/route-recognizer/lib/main.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+define(&quot;route-recognizer&quot;,
+  [&quot;route-recognizer/dsl&quot;,&quot;exports&quot;],
+  function(__dependency1__, __exports__) {
+    &quot;use strict&quot;;
+    var map = __dependency1__[&quot;default&quot;];
+
+    var specials = [
+      &#x27;/&#x27;, &#x27;.&#x27;, &#x27;*&#x27;, &#x27;+&#x27;, &#x27;?&#x27;, &#x27;|&#x27;,
+      &#x27;(&#x27;, &#x27;)&#x27;, &#x27;[&#x27;, &#x27;]&#x27;, &#x27;{&#x27;, &#x27;}&#x27;, &#x27;\\&#x27;
+    ];
+
+    var escapeRegex = new RegExp(&#x27;(\\&#x27; + specials.join(&#x27;|\\&#x27;) + &#x27;)&#x27;, &#x27;g&#x27;);
+
+    function isArray(test) {
+      return Object.prototype.toString.call(test) === &quot;[object Array]&quot;;
+    }
+
+    // A Segment represents a segment in the original route description.
+    // Each Segment type provides an &#x60;eachChar&#x60; and &#x60;regex&#x60; method.
+    //
+    // The &#x60;eachChar&#x60; method invokes the callback with one or more character
+    // specifications. A character specification consumes one or more input
+    // characters.
+    //
+    // The &#x60;regex&#x60; method returns a regex fragment for the segment. If the
+    // segment is a dynamic of star segment, the regex fragment also includes
+    // a capture.
+    //
+    // A character specification contains:
+    //
+    // * &#x60;validChars&#x60;: a String with a list of all valid characters, or
+    // * &#x60;invalidChars&#x60;: a String with a list of all invalid characters
+    // * &#x60;repeat&#x60;: true if the character specification can repeat
+
+    function StaticSegment(string) { this.string = string; }
+    StaticSegment.prototype = {
+      eachChar: function(callback) {
+        var string = this.string, ch;
+
+        for (var i=0, l=string.length; i&lt;l; i++) {
+          ch = string.charAt(i);
+          callback({ validChars: ch });
+        }
+      },
+
+      regex: function() {
+        return this.string.replace(escapeRegex, &#x27;\\$1&#x27;);
+      },
+
+      generate: function() {
+        return this.string;
+      }
+    };
+
+    function DynamicSegment(name) { this.name = name; }
+    DynamicSegment.prototype = {
+      eachChar: function(callback) {
+        callback({ invalidChars: &quot;/&quot;, repeat: true });
+      },
+
+      regex: function() {
+        return &quot;([^/]+)&quot;;
+      },
+
+      generate: function(params) {
+        return params[this.name];
+      }
+    };
+
+    function StarSegment(name) { this.name = name; }
+    StarSegment.prototype = {
+      eachChar: function(callback) {
+        callback({ invalidChars: &quot;&quot;, repeat: true });
+      },
+
+      regex: function() {
+        return &quot;(.+)&quot;;
+      },
+
+      generate: function(params) {
+        return params[this.name];
+      }
+    };
+
+    function EpsilonSegment() {}
+    EpsilonSegment.prototype = {
+      eachChar: function() {},
+      regex: function() { return &quot;&quot;; },
+      generate: function() { return &quot;&quot;; }
+    };
+
+    function parse(route, names, types) {
+      // normalize route as not starting with a &quot;/&quot;. Recognition will
+      // also normalize.
+      if (route.charAt(0) === &quot;/&quot;) { route = route.substr(1); }
+
+      var segments = route.split(&quot;/&quot;), results = [];
+
+      for (var i=0, l=segments.length; i&lt;l; i++) {
+        var segment = segments[i], match;
+
+        if (match = segment.match(/^:([^\/]+)$/)) {
+          results.push(new DynamicSegment(match[1]));
+          names.push(match[1]);
+          types.dynamics++;
+        } else if (match = segment.match(/^\*([^\/]+)$/)) {
+          results.push(new StarSegment(match[1]));
+          names.push(match[1]);
+          types.stars++;
+        } else if(segment === &quot;&quot;) {
+          results.push(new EpsilonSegment());
+        } else {
+          results.push(new StaticSegment(segment));
+          types.statics++;
+        }
+      }
+
+      return results;
+    }
+
+    // A State has a character specification and (&#x60;charSpec&#x60;) and a list of possible
+    // subsequent states (&#x60;nextStates&#x60;).
+    //
+    // If a State is an accepting state, it will also have several additional
+    // properties:
+    //
+    // * &#x60;regex&#x60;: A regular expression that is used to extract parameters from paths
+    //   that reached this accepting state.
+    // * &#x60;handlers&#x60;: Information on how to convert the list of captures into calls
+    //   to registered handlers with the specified parameters
+    // * &#x60;types&#x60;: How many static, dynamic or star segments in this route. Used to
+    //   decide which route to use if multiple registered routes match a path.
+    //
+    // Currently, State is implemented naively by looping over &#x60;nextStates&#x60; and
+    // comparing a character specification against a character. A more efficient
+    // implementation would use a hash of keys pointing at one or more next states.
+
+    function State(charSpec) {
+      this.charSpec = charSpec;
+      this.nextStates = [];
+    }
+
+    State.prototype = {
+      get: function(charSpec) {
+        var nextStates = this.nextStates;
+
+        for (var i=0, l=nextStates.length; i&lt;l; i++) {
+          var child = nextStates[i];
+
+          var isEqual = child.charSpec.validChars === charSpec.validChars;
+          isEqual = isEqual &amp;&amp; child.charSpec.invalidChars === charSpec.invalidChars;
+
+          if (isEqual) { return child; }
+        }
+      },
+
+      put: function(charSpec) {
+        var state;
+
+        // If the character specification already exists in a child of the current
+        // state, just return that state.
+        if (state = this.get(charSpec)) { return state; }
+
+        // Make a new state for the character spec
+        state = new State(charSpec);
+
+        // Insert the new state as a child of the current state
+        this.nextStates.push(state);
+
+        // If this character specification repeats, insert the new state as a child
+        // of itself. Note that this will not trigger an infinite loop because each
+        // transition during recognition consumes a character.
+        if (charSpec.repeat) {
+          state.nextStates.push(state);
+        }
+
+        // Return the new state
+        return state;
+      },
+
+      // Find a list of child states matching the next character
+      match: function(ch) {
+        // DEBUG &quot;Processing &#x60;&quot; + ch + &quot;&#x60;:&quot;
+        var nextStates = this.nextStates,
+            child, charSpec, chars;
+
+        // DEBUG &quot;  &quot; + debugState(this)
+        var returned = [];
+
+        for (var i=0, l=nextStates.length; i&lt;l; i++) {
+          child = nextStates[i];
+
+          charSpec = child.charSpec;
+
+          if (typeof (chars = charSpec.validChars) !== &#x27;undefined&#x27;) {
+            if (chars.indexOf(ch) !== -1) { returned.push(child); }
+          } else if (typeof (chars = charSpec.invalidChars) !== &#x27;undefined&#x27;) {
+            if (chars.indexOf(ch) === -1) { returned.push(child); }
+          }
+        }
+
+        return returned;
+      }
+
+      /** IF DEBUG
+      , debug: function() {
+        var charSpec = this.charSpec,
+            debug = &quot;[&quot;,
+            chars = charSpec.validChars || charSpec.invalidChars;
+
+        if (charSpec.invalidChars) { debug += &quot;^&quot;; }
+        debug += chars;
+        debug += &quot;]&quot;;
+
+        if (charSpec.repeat) { debug += &quot;+&quot;; }
+
+        return debug;
+      }
+      END IF **/
+    };
+
+    /** IF DEBUG
+    function debug(log) {
+      console.log(log);
+    }
+
+    function debugState(state) {
+      return state.nextStates.map(function(n) {
+        if (n.nextStates.length === 0) { return &quot;( &quot; + n.debug() + &quot; [accepting] )&quot;; }
+        return &quot;( &quot; + n.debug() + &quot; &lt;then&gt; &quot; + n.nextStates.map(function(s) { return s.debug() }).join(&quot; or &quot;) + &quot; )&quot;;
+      }).join(&quot;, &quot;)
+    }
+    END IF **/
+
+    // This is a somewhat naive strategy, but should work in a lot of cases
+    // A better strategy would properly resolve /posts/:id/new and /posts/edit/:id.
+    //
+    // This strategy generally prefers more static and less dynamic matching.
+    // Specifically, it
+    //
+    //  * prefers fewer stars to more, then
+    //  * prefers using stars for less of the match to more, then
+    //  * prefers fewer dynamic segments to more, then
+    //  * prefers more static segments to more
+    function sortSolutions(states) {
+      return states.sort(function(a, b) {
+        if (a.types.stars !== b.types.stars) { return a.types.stars - b.types.stars; }
+
+        if (a.types.stars) {
+          if (a.types.statics !== b.types.statics) { return b.types.statics - a.types.statics; }
+          if (a.types.dynamics !== b.types.dynamics) { return b.types.dynamics - a.types.dynamics; }
+        }
+
+        if (a.types.dynamics !== b.types.dynamics) { return a.types.dynamics - b.types.dynamics; }
+        if (a.types.statics !== b.types.statics) { return b.types.statics - a.types.statics; }
+
+        return 0;
+      });
+    }
+
+    function recognizeChar(states, ch) {
+      var nextStates = [];
+
+      for (var i=0, l=states.length; i&lt;l; i++) {
+        var state = states[i];
+
+        nextStates = nextStates.concat(state.match(ch));
+      }
+
+      return nextStates;
+    }
+
+    var oCreate = Object.create || function(proto) {
+      function F() {}
+      F.prototype = proto;
+      return new F();
+    };
+
+    function RecognizeResults(queryParams) {
+      this.queryParams = queryParams || {};
+    }
+    RecognizeResults.prototype = oCreate({
+      splice: Array.prototype.splice,
+      slice:  Array.prototype.slice,
+      push:   Array.prototype.push,
+      length: 0,
+      queryParams: null
+    });
+
+    function findHandler(state, path, queryParams) {
+      var handlers = state.handlers, regex = state.regex;
+      var captures = path.match(regex), currentCapture = 1;
+      var result = new RecognizeResults(queryParams);
+
+      for (var i=0, l=handlers.length; i&lt;l; i++) {
+        var handler = handlers[i], names = handler.names, params = {};
+
+        for (var j=0, m=names.length; j&lt;m; j++) {
+          params[names[j]] = captures[currentCapture++];
+        }
+
+        result.push({ handler: handler.handler, params: params, isDynamic: !!names.length });
+      }
+
+      return result;
+    }
+
+    function addSegment(currentState, segment) {
+      segment.eachChar(function(ch) {
+        var state;
+
+        currentState = currentState.put(ch);
+      });
+
+      return currentState;
+    }
+
+    // The main interface
+
+    var RouteRecognizer = function() {
+      this.rootState = new State();
+      this.names = {};
+    };
+
+
+    RouteRecognizer.prototype = {
+      add: function(routes, options) {
+        var currentState = this.rootState, regex = &quot;^&quot;,
+            types = { statics: 0, dynamics: 0, stars: 0 },
+            handlers = [], allSegments = [], name;
+
+        var isEmpty = true;
+
+        for (var i=0, l=routes.length; i&lt;l; i++) {
+          var route = routes[i], names = [];
+
+          var segments = parse(route.path, names, types);
+
+          allSegments = allSegments.concat(segments);
+
+          for (var j=0, m=segments.length; j&lt;m; j++) {
+            var segment = segments[j];
+
+            if (segment instanceof EpsilonSegment) { continue; }
+
+            isEmpty = false;
+
+            // Add a &quot;/&quot; for the new segment
+            currentState = currentState.put({ validChars: &quot;/&quot; });
+            regex += &quot;/&quot;;
+
+            // Add a representation of the segment to the NFA and regex
+            currentState = addSegment(currentState, segment);
+            regex += segment.regex();
+          }
+
+          var handler = { handler: route.handler, names: names };
+          handlers.push(handler);
+        }
+
+        if (isEmpty) {
+          currentState = currentState.put({ validChars: &quot;/&quot; });
+          regex += &quot;/&quot;;
+        }
+
+        currentState.handlers = handlers;
+        currentState.regex = new RegExp(regex + &quot;$&quot;);
+        currentState.types = types;
+
+        if (name = options &amp;&amp; options.as) {
+          this.names[name] = {
+            segments: allSegments,
+            handlers: handlers
+          };
+        }
+      },
+
+      handlersFor: function(name) {
+        var route = this.names[name], result = [];
+        if (!route) { throw new Error(&quot;There is no route named &quot; + name); }
+
+        for (var i=0, l=route.handlers.length; i&lt;l; i++) {
+          result.push(route.handlers[i]);
+        }
+
+        return result;
+      },
+
+      hasRoute: function(name) {
+        return !!this.names[name];
+      },
+
+      generate: function(name, params) {
+        var route = this.names[name], output = &quot;&quot;;
+        if (!route) { throw new Error(&quot;There is no route named &quot; + name); }
+
+        var segments = route.segments;
+
+        for (var i=0, l=segments.length; i&lt;l; i++) {
+          var segment = segments[i];
+
+          if (segment instanceof EpsilonSegment) { continue; }
+
+          output += &quot;/&quot;;
+          output += segment.generate(params);
+        }
+
+        if (output.charAt(0) !== &#x27;/&#x27;) { output = &#x27;/&#x27; + output; }
+
+        if (params &amp;&amp; params.queryParams) {
+          output += this.generateQueryString(params.queryParams, route.handlers);
+        }
+
+        return output;
+      },
+
+      generateQueryString: function(params, handlers) {
+        var pairs = [];
+        var keys = [];
+        for(var key in params) {
+          if (params.hasOwnProperty(key)) {
+            keys.push(key);
+          }
+        }
+        keys.sort();
+        for (var i = 0, len = keys.length; i &lt; len; i++) {
+          key = keys[i];
+          var value = params[key];
+          if (value == null) {
+            continue;
+          }
+          var pair = encodeURIComponent(key);
+          if (isArray(value)) {
+            for (var j = 0, l = value.length; j &lt; l; j++) {
+              var arrayPair = key + &#x27;[]&#x27; + &#x27;=&#x27; + encodeURIComponent(value[j]);
+              pairs.push(arrayPair);
+            }
+          } else {
+            pair += &quot;=&quot; + encodeURIComponent(value);
+            pairs.push(pair);
+          }
+        }
+
+        if (pairs.length === 0) { return &#x27;&#x27;; }
+
+        return &quot;?&quot; + pairs.join(&quot;&amp;&quot;);
+      },
+
+      parseQueryString: function(queryString) {
+        var pairs = queryString.split(&quot;&amp;&quot;), queryParams = {};
+        for(var i=0; i &lt; pairs.length; i++) {
+          var pair      = pairs[i].split(&#x27;=&#x27;),
+              key       = decodeURIComponent(pair[0]),
+              keyLength = key.length,
+              isArray = false,
+              value;
+          if (pair.length === 1) {
+            value = &#x27;true&#x27;;
+          } else {
+            //Handle arrays
+            if (keyLength &gt; 2 &amp;&amp; key.slice(keyLength -2) === &#x27;[]&#x27;) {
+              isArray = true;
+              key = key.slice(0, keyLength - 2);
+              if(!queryParams[key]) {
+                queryParams[key] = [];
+              }
+            }
+            value = pair[1] ? decodeURIComponent(pair[1]) : &#x27;&#x27;;
+          }
+          if (isArray) {
+            queryParams[key].push(value);
+          } else {
+            queryParams[key] = value;
+          }
+        }
+        return queryParams;
+      },
+
+      recognize: function(path) {
+        var states = [ this.rootState ],
+            pathLen, i, l, queryStart, queryParams = {},
+            isSlashDropped = false;
+
+        queryStart = path.indexOf(&#x27;?&#x27;);
+        if (queryStart !== -1) {
+          var queryString = path.substr(queryStart + 1, path.length);
+          path = path.substr(0, queryStart);
+          queryParams = this.parseQueryString(queryString);
+        }
+
+        path = decodeURI(path);
+
+        // DEBUG GROUP path
+
+        if (path.charAt(0) !== &quot;/&quot;) { path = &quot;/&quot; + path; }
+
+        pathLen = path.length;
+        if (pathLen &gt; 1 &amp;&amp; path.charAt(pathLen - 1) === &quot;/&quot;) {
+          path = path.substr(0, pathLen - 1);
+          isSlashDropped = true;
+        }
+
+        for (i=0, l=path.length; i&lt;l; i++) {
+          states = recognizeChar(states, path.charAt(i));
+          if (!states.length) { break; }
+        }
+
+        // END DEBUG GROUP
+
+        var solutions = [];
+        for (i=0, l=states.length; i&lt;l; i++) {
+          if (states[i].handlers) { solutions.push(states[i]); }
+        }
+
+        states = sortSolutions(solutions);
+
+        var state = solutions[0];
+
+        if (state &amp;&amp; state.handlers) {
+          // if a trailing slash was dropped and a star segment is the last segment
+          // specified, put the trailing slash back
+          if (isSlashDropped &amp;&amp; state.regex.source.slice(-5) === &quot;(.+)$&quot;) {
+            path = path + &quot;/&quot;;
+          }
+          return findHandler(state, path, queryParams);
+        }
+      }
+    };
+
+    RouteRecognizer.prototype.map = map;
+
+    __exports__[&quot;default&quot;] = RouteRecognizer;
+  });
+define(&quot;route-recognizer/dsl&quot;,
+  [&quot;exports&quot;],
+  function(__exports__) {
+    &quot;use strict&quot;;
+    function Target(path, matcher, delegate) {
+      this.path = path;
+      this.matcher = matcher;
+      this.delegate = delegate;
+    }
+
+    Target.prototype = {
+      to: function(target, callback) {
+        var delegate = this.delegate;
+
+        if (delegate &amp;&amp; delegate.willAddRoute) {
+          target = delegate.willAddRoute(this.matcher.target, target);
+        }
+
+        this.matcher.add(this.path, target);
+
+        if (callback) {
+          if (callback.length === 0) { throw new Error(&quot;You must have an argument in the function passed to &#x60;to&#x60;&quot;); }
+          this.matcher.addChild(this.path, target, callback, this.delegate);
+        }
+        return this;
+      }
+    };
+
+    function Matcher(target) {
+      this.routes = {};
+      this.children = {};
+      this.target = target;
+    }
+
+    Matcher.prototype = {
+      add: function(path, handler) {
+        this.routes[path] = handler;
+      },
+
+      addChild: function(path, target, callback, delegate) {
+        var matcher = new Matcher(target);
+        this.children[path] = matcher;
+
+        var match = generateMatch(path, matcher, delegate);
+
+        if (delegate &amp;&amp; delegate.contextEntered) {
+          delegate.contextEntered(target, match);
+        }
+
+        callback(match);
+      }
+    };
+
+    function generateMatch(startingPath, matcher, delegate) {
+      return function(path, nestedCallback) {
+        var fullPath = startingPath + path;
+
+        if (nestedCallback) {
+          nestedCallback(generateMatch(fullPath, matcher, delegate));
+        } else {
+          return new Target(startingPath + path, matcher, delegate);
+        }
+      };
+    }
+
+    function addRoute(routeArray, path, handler) {
+      var len = 0;
+      for (var i=0, l=routeArray.length; i&lt;l; i++) {
+        len += routeArray[i].path.length;
+      }
+
+      path = path.substr(len);
+      var route = { path: path, handler: handler };
+      routeArray.push(route);
+    }
+
+    function eachRoute(baseRoute, matcher, callback, binding) {
+      var routes = matcher.routes;
+
+      for (var path in routes) {
+        if (routes.hasOwnProperty(path)) {
+          var routeArray = baseRoute.slice();
+          addRoute(routeArray, path, routes[path]);
+
+          if (matcher.children[path]) {
+            eachRoute(routeArray, matcher.children[path], callback, binding);
+          } else {
+            callback.call(binding, routeArray);
+          }
+        }
+      }
+    }
+
+    __exports__[&quot;default&quot;] = function(callback, addRouteCallback) {
+      var matcher = new Matcher();
+
+      callback(generateMatch(&quot;&quot;, matcher, this.delegate));
+
+      eachRoute([], matcher, function(route) {
+        if (addRouteCallback) { addRouteCallback(this, route); }
+        else { this.add(route); }
+      }, this);
+    }
+  });
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

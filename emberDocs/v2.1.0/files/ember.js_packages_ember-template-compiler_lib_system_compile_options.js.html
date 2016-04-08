@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -190,18 +194,19 @@
 @submodule ember-template-compiler
 */
 
+import isEnabled from &#x27;ember-metal/features&#x27;;
 import assign from &#x27;ember-metal/assign&#x27;;
 import defaultPlugins from &#x27;ember-template-compiler/plugins&#x27;;
-
-let compileOptions;
-let fragmentReason;
 
 /**
   @private
   @property compileOptions
 */
-compileOptions = function(_options) {
+export default function(_options) {
   var disableComponentGeneration = true;
+  if (isEnabled(&#x27;ember-htmlbars-component-generation&#x27;)) {
+    disableComponentGeneration = false;
+  }
 
   let options;
   // When calling &#x60;Ember.Handlebars.compile()&#x60; a second argument of &#x60;true&#x60;
@@ -226,7 +231,7 @@ compileOptions = function(_options) {
 
   options.buildMeta = function buildMeta(program) {
     return {
-      fragmentReason: fragmentReason(program),
+      topLevel: detectTopLevel(program),
       revision: &#x27;Ember@VERSION_STRING_PLACEHOLDER&#x27;,
       loc: program.loc,
       moduleName: options.moduleName
@@ -234,16 +239,15 @@ compileOptions = function(_options) {
   };
 
   return options;
-};
+}
 
-fragmentReason = function(program) {
+function detectTopLevel(program) {
   let { loc, body } = program;
-  if (!loc || loc.start.line !== 1 || loc.start.column !== 0) { return false; }
+  if (!loc || loc.start.line !== 1 || loc.start.column !== 0) { return null; }
 
-  let candidate;
+  let lastComponentNode;
+  let lastIndex;
   let nodeCount = 0;
-
-  let problems = {};
 
   for (let i = 0, l = body.length; i &lt; l; i++) {
     let curr = body[i];
@@ -252,36 +256,24 @@ fragmentReason = function(program) {
     if (curr.type === &#x27;TextNode&#x27; &amp;&amp; /^[\s]*$/.test(curr.chars)) { continue; }
 
     // has multiple root elements if we&#x27;ve been here before
-    if (nodeCount++ &gt; 0) { problems[&#x27;multiple-nodes&#x27;] = true; }
+    if (nodeCount++ &gt; 0) { return false; }
 
     if (curr.type === &#x27;ComponentNode&#x27; || curr.type === &#x27;ElementNode&#x27;) {
-      candidate = curr;
-    } else {
-      problems[&#x27;wrong-type&#x27;] = true;
+      lastComponentNode = curr;
+      lastIndex = i;
     }
   }
 
-  if (nodeCount === 0) {
-    return { name: &#x27;missing-wrapper&#x27;, problems: [&#x27;empty-body&#x27;] };
+  if (!lastComponentNode) { return null; }
+
+  if (lastComponentNode.type === &#x27;ComponentNode&#x27;) {
+    let tag = lastComponentNode.tag;
+    if (tag.charAt(0) !== &#x27;&lt;&#x27;) { return null; }
+    return tag.slice(1, -1);
   }
 
-  let problemList = Object.keys(problems);
-  if (problemList.length) {
-    return { name: &#x27;missing-wrapper&#x27;, problems: problemList };
-  }
-
-  if (candidate.type === &#x27;ComponentNode&#x27;) {
-    return false;
-  } else if (candidate.modifiers.length) {
-    return { name: &#x27;modifiers&#x27;, modifiers: candidate.modifiers.map(m =&gt; m.path.original) };
-  } else if (candidate.attributes.some(attr =&gt; !attr.value.escaped)) {
-    return { name: &#x27;triple-curlies&#x27; };
-  } else {
-    return false;
-  }
-};
-
-export default compileOptions;
+  return null;
+}
 
     </pre>
 </div>

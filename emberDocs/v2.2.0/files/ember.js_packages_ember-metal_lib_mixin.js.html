@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,6 +38,7 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/@Ember.ApplicationInstance.BootOptions.html">@Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
                                 <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
@@ -48,7 +49,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -193,20 +198,20 @@
 @module ember
 @submodule ember-metal
 */
+
 import Ember from &#x27;ember-metal/core&#x27;; // warn, assert, wrap, et;
 import EmberError from &#x27;ember-metal/error&#x27;;
-import { debugSeal, assert, deprecate, runInDebug } from &#x27;ember-metal/debug&#x27;;
+import { assert, deprecate, runInDebug } from &#x27;ember-metal/debug&#x27;;
 import assign from &#x27;ember-metal/assign&#x27;;
 import EmptyObject from &#x27;ember-metal/empty_object&#x27;;
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import { set, trySet } from &#x27;ember-metal/property_set&#x27;;
 import {
   guidFor,
-  GUID_KEY,
   wrap,
   makeArray
 } from &#x27;ember-metal/utils&#x27;;
-import { meta as metaFor, peekMeta } from &#x27;ember-metal/meta&#x27;;
+import { meta as metaFor } from &#x27;ember-metal/meta&#x27;;
 import expandProperties from &#x27;ember-metal/expand_properties&#x27;;
 import {
   Descriptor,
@@ -217,8 +222,6 @@ import { Binding } from &#x27;ember-metal/binding&#x27;;
 import {
   addObserver,
   removeObserver,
-  _addBeforeObserver,
-  _removeBeforeObserver,
   _suspendObserver
 } from &#x27;ember-metal/observer&#x27;;
 import {
@@ -541,13 +544,11 @@ function replaceObserversAndListeners(obj, key, observerOrListener) {
   var prev = obj[key];
 
   if (&#x27;function&#x27; === typeof prev) {
-    updateObserversAndListeners(obj, key, prev, &#x27;__ember_observesBefore__&#x27;, _removeBeforeObserver);
     updateObserversAndListeners(obj, key, prev, &#x27;__ember_observes__&#x27;, removeObserver);
     updateObserversAndListeners(obj, key, prev, &#x27;__ember_listens__&#x27;, removeListener);
   }
 
   if (&#x27;function&#x27; === typeof observerOrListener) {
-    updateObserversAndListeners(obj, key, observerOrListener, &#x27;__ember_observesBefore__&#x27;, _addBeforeObserver);
     updateObserversAndListeners(obj, key, observerOrListener, &#x27;__ember_observes__&#x27;, addObserver);
     updateObserversAndListeners(obj, key, observerOrListener, &#x27;__ember_listens__&#x27;, addListener);
   }
@@ -658,7 +659,7 @@ export function mixin(obj, ...args) {
   //filters will be created as a separate array during the object&#x27;s initialization
   App.Filterable = Ember.Mixin.create({
     init: function() {
-      this._super(...arguments);
+      this._super.apply(this, arguments);
       this.set(&quot;filters&quot;, Ember.A());
     }
   });
@@ -690,10 +691,6 @@ export default function Mixin(args, properties) {
     this.mixins = undefined;
   }
   this.ownerConstructor = undefined;
-  this._without = undefined;
-  this[GUID_KEY] = null;
-  this[GUID_KEY + &#x27;_name&#x27;] = null;
-  debugSeal(this);
 }
 
 Mixin._apply = applyMixin;
@@ -722,7 +719,6 @@ Mixin.create = function(...args) {
 };
 
 var MixinPrototype = Mixin.prototype;
-
 
 /**
   @method reopen
@@ -776,10 +772,6 @@ MixinPrototype.applyPartial = function(obj) {
   return applyMixin(obj, [this], true);
 };
 
-MixinPrototype.toString = function Mixin_toString() {
-  return &#x27;(unknown mixin)&#x27;;
-};
-
 function _detect(curMixin, targetMixin, seen) {
   var guid = guidFor(curMixin);
 
@@ -804,7 +796,7 @@ function _detect(curMixin, targetMixin, seen) {
 MixinPrototype.detect = function(obj) {
   if (!obj) { return false; }
   if (obj instanceof Mixin) { return _detect(obj, this, {}); }
-  var m = peekMeta(obj);
+  var m = obj.__ember_meta__;
   if (!m) { return false; }
   return !!m.peekMixins(guidFor(this));
 };
@@ -820,10 +812,9 @@ function _keys(ret, mixin, seen) {
   seen[guidFor(mixin)] = true;
 
   if (mixin.properties) {
-    var props = Object.keys(mixin.properties);
-    for (var i = 0; i &lt; props.length; i++) {
-      var key = props[i];
-      ret[key] = true;
+    var props = mixin.properties;
+    for (var key in props) {
+      if (props.hasOwnProperty(key)) { ret[key] = true; }
     }
   } else if (mixin.mixins) {
     mixin.mixins.forEach((x) =&gt; _keys(ret, x, seen));
@@ -833,18 +824,20 @@ function _keys(ret, mixin, seen) {
 MixinPrototype.keys = function() {
   var keys = {};
   var seen = {};
-
+  var ret = [];
   _keys(keys, this, seen);
-  var ret = Object.keys(keys);
+  for (var key in keys) {
+    if (keys.hasOwnProperty(key)) {
+      ret.push(key);
+    }
+  }
   return ret;
 };
-
-debugSeal(MixinPrototype);
 
 // returns the mixins currently applied to the specified object
 // TODO: Make Ember.mixin
 Mixin.mixins = function(obj) {
-  var m = peekMeta(obj);
+  var m = obj[&#x27;__ember_meta__&#x27;];
   var ret = [];
   if (!m) { return ret; }
 
@@ -931,13 +924,19 @@ export function aliasMethod(methodName) {
   @param {String} propertyNames*
   @param {Function} func
   @return func
-  @public
+  @private
 */
 export function observer(...args) {
   var func  = args.slice(-1)[0];
   var paths;
 
   var addWatchedProperty = function(path) {
+    assert(
+      &#x60;Depending on arrays using a dependent key ending with \&#x60;@each\&#x60; is no longer supported. &#x60; +
+      &#x60;Please refactor from \&#x60;Ember.observer(&#x27;${path}&#x27;, function() {});\&#x60; to \&#x60;Ember.observer(&#x27;${path.slice(0, -6)}.[]&#x27;, function() {})\&#x60;.&#x60;,
+      path.slice(-5) !== &#x27;@each&#x27;
+    );
+
     paths.push(path);
   };
   var _paths = args.slice(0, -1);
@@ -1001,75 +1000,6 @@ export function _immediateObserver() {
   }
 
   return observer.apply(this, arguments);
-}
-
-/**
-  When observers fire, they are called with the arguments &#x60;obj&#x60;, &#x60;keyName&#x60;.
-
-  Note, &#x60;@each.property&#x60; observer is called per each add or replace of an element
-  and it&#x27;s not called with a specific enumeration item.
-
-  A &#x60;_beforeObserver&#x60; fires before a property changes.
-
-  A &#x60;_beforeObserver&#x60; is an alternative form of &#x60;.observesBefore()&#x60;.
-
-  &#x60;&#x60;&#x60;javascript
-  App.PersonView = Ember.View.extend({
-    friends: [{ name: &#x27;Tom&#x27; }, { name: &#x27;Stefan&#x27; }, { name: &#x27;Kris&#x27; }],
-
-    valueDidChange: Ember.observer(&#x27;content.value&#x27;, function(obj, keyName) {
-        // only run if updating a value already in the DOM
-        if (this.get(&#x27;state&#x27;) === &#x27;inDOM&#x27;) {
-          var color = obj.get(keyName) &gt; this.changingFrom ? &#x27;green&#x27; : &#x27;red&#x27;;
-          // logic
-        }
-    }),
-
-    friendsDidChange: Ember.observer(&#x27;friends.@each.name&#x27;, function(obj, keyName) {
-      // some logic
-      // obj.get(keyName) returns friends array
-    })
-  });
-  &#x60;&#x60;&#x60;
-
-  Also available as &#x60;Function.prototype.observesBefore&#x60; if prototype extensions are
-  enabled.
-
-  @method beforeObserver
-  @for Ember
-  @param {String} propertyNames*
-  @param {Function} func
-  @return func
-  @deprecated
-  @private
-*/
-export function _beforeObserver(...args) {
-  var func  = args.slice(-1)[0];
-  var paths;
-
-  var addWatchedProperty = function(path) { paths.push(path); };
-
-  var _paths = args.slice(0, -1);
-
-  if (typeof func !== &#x27;function&#x27;) {
-    // revert to old, soft-deprecated argument ordering
-
-    func  = args[0];
-    _paths = args.slice(1);
-  }
-
-  paths = [];
-
-  for (var i = 0; i &lt; _paths.length; ++i) {
-    expandProperties(_paths[i], addWatchedProperty);
-  }
-
-  if (typeof func !== &#x27;function&#x27;) {
-    throw new Ember.Error(&#x27;Ember.beforeObserver called without a function&#x27;);
-  }
-
-  func.__ember_observesBefore__ = paths;
-  return func;
 }
 
 export {

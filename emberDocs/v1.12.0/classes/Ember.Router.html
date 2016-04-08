@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,104 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementers can use to tie your tests to their specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
+                                <li><a href="../classes/Ember.AttributeBindingsSupport.html">Ember.AttributeBindingsSupport</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
-                                <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
                                 <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
+                                <li><a href="../classes/Ember.HTMLBars.Helper.html">Ember.HTMLBars.Helper</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
                                 <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
                                 <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +147,44 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
                                 <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
+                                <li><a href="../classes/Ember.ViewChildViewsSupport.html">Ember.ViewChildViewsSupport</a></li>
+                                <li><a href="../classes/Ember.ViewsContextSupport.html">Ember.ViewsContextSupport</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
                                 <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
+                                <li><a href="../classes/HandlebarsCompatibleHelper.html">HandlebarsCompatibleHelper</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
+                                <li><a href="../classes/TransformWithAsToHash.html">TransformWithAsToHash</a></li>
                             </ul>
                 
                 
@@ -138,6 +193,7 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
                                 <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
@@ -145,7 +201,6 @@
                                 <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
                                 <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -195,7 +250,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l39"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:39</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l36"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:36</code></a>
         </div>
 
             Module: <a href="../modules/ember-routing.html">ember-routing</a><br>
@@ -227,7 +282,7 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method__lazyInjections">_lazyInjections</a>
 
                             </li>
@@ -239,51 +294,51 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
                                 <a href="#method__scheduledDestroy">_scheduledDestroy</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_addObserver">addObserver</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_beginPropertyChanges">beginPropertyChanges</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_cacheFor">cacheFor</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_decrementProperty">decrementProperty</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_destroy">destroy</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method private">
                                 <a href="#method_didTransition">didTransition</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_endPropertyChanges">endPropertyChanges</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_get">get</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_getProperties">getProperties</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_getWithDefault">getWithDefault</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_has">has</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_hasObserverFor">hasObserverFor</a>
 
                             </li>
@@ -291,11 +346,11 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
                                 <a href="#method_hasRoute">hasRoute</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_incrementProperty">incrementProperty</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_init">init</a>
 
                             </li>
@@ -307,43 +362,43 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
                                 <a href="#method_isActiveIntent">isActiveIntent</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_map">map</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_notifyPropertyChange">notifyPropertyChange</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_off">off</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_on">on</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_one">one</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_propertyDidChange">propertyDidChange</a>
 
                             </li>
-                            <li class="index-item method private inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_propertyWillChange">propertyWillChange</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_removeObserver">removeObserver</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_reopen">reopen</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_reopenClass">reopenClass</a>
 
                             </li>
@@ -351,11 +406,11 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
                                 <a href="#method_reset">reset</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_set">set</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_setProperties">setProperties</a>
 
                             </li>
@@ -363,31 +418,27 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
                                 <a href="#method_startRouting">startRouting</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_toggleProperty">toggleProperty</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_toString">toString</a>
 
                             </li>
-                            <li class="index-item method public">
-                                <a href="#method_transitionTo">transitionTo</a>
-
-                            </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_trigger">trigger</a>
 
                             </li>
-                            <li class="index-item method private">
+                            <li class="index-item method">
                                 <a href="#method_url">url</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#method_willDestroy">willDestroy</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method private">
                                 <a href="#method_willTransition">willTransition</a>
 
                             </li>
@@ -398,27 +449,23 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
-                            <li class="index-item property public inherited">
+                            <li class="index-item property inherited">
                                 <a href="#property_concatenatedProperties">concatenatedProperties</a>
 
                             </li>
-                            <li class="index-item property public inherited">
+                            <li class="index-item property inherited">
                                 <a href="#property_isDestroyed">isDestroyed</a>
 
                             </li>
-                            <li class="index-item property public inherited">
+                            <li class="index-item property inherited">
                                 <a href="#property_isDestroying">isDestroying</a>
 
                             </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_location">location</a>
 
                             </li>
-                            <li class="index-item property public inherited">
-                                <a href="#property_mergedProperties">mergedProperties</a>
-
-                            </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_rootURL">rootURL</a>
 
                             </li>
@@ -431,7 +478,7 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method__lazyInjections" class="method item private inherited">
+<div id="method__lazyInjections" class="method item inherited">
     <h3 class="name"><code>_lazyInjections</code></h3>
 
         <span class="paren">()</span>
@@ -441,7 +488,6 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -450,7 +496,7 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__lazyInjections">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l912"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:912</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l839"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:839</code></a>
         </p>
 
 
@@ -490,7 +536,7 @@ properties will lookup on the container lazily.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__onLookup">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l903"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:903</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l830"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:830</code></a>
         </p>
 
 
@@ -521,7 +567,7 @@ properties will lookup on the container lazily.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__scheduledDestroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l465"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:465</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l390"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:390</code></a>
         </p>
 
 
@@ -537,7 +583,7 @@ scheduled for execution by the <code>destroy</code> method.
 
 
 </div>
-<div id="method_addObserver" class="method item public inherited">
+<div id="method_addObserver" class="method item inherited">
     <h3 class="name"><code>addObserver</code></h3>
 
         <div class="args">
@@ -556,7 +602,6 @@ scheduled for execution by the <code>destroy</code> method.
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -565,7 +610,7 @@ scheduled for execution by the <code>destroy</code> method.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_addObserver">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l333"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:333</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l337"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:337</code></a>
         </p>
 
 
@@ -655,7 +700,7 @@ any of these values, to write an observer that has no parameters at all.
 
 
 </div>
-<div id="method_beginPropertyChanges" class="method item private inherited">
+<div id="method_beginPropertyChanges" class="method item inherited">
     <h3 class="name"><code>beginPropertyChanges</code></h3>
 
         <span class="paren">()</span>
@@ -665,7 +710,6 @@ any of these values, to write an observer that has no parameters at all.
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -674,7 +718,7 @@ any of these values, to write an observer that has no parameters at all.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_beginPropertyChanges">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l231"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:231</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l235"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:235</code></a>
         </p>
 
 
@@ -704,7 +748,7 @@ deferring.
 
 
 </div>
-<div id="method_cacheFor" class="method item public inherited">
+<div id="method_cacheFor" class="method item inherited">
     <h3 class="name"><code>cacheFor</code></h3>
 
         <div class="args">
@@ -720,7 +764,6 @@ deferring.
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -771,7 +814,7 @@ generated lazily.
 
 
 </div>
-<div id="method_decrementProperty" class="method item public inherited">
+<div id="method_decrementProperty" class="method item inherited">
     <h3 class="name"><code>decrementProperty</code></h3>
 
         <div class="args">
@@ -790,7 +833,6 @@ generated lazily.
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -853,7 +895,7 @@ orc.decrementProperty('health', 5);
 
 
 </div>
-<div id="method_destroy" class="method item public inherited">
+<div id="method_destroy" class="method item inherited">
     <h3 class="name"><code>destroy</code></h3>
 
         <span class="paren">()</span>
@@ -863,7 +905,6 @@ orc.decrementProperty('health', 5);
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -872,7 +913,7 @@ orc.decrementProperty('health', 5);
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_destroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l434"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:434</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l361"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:361</code></a>
         </p>
 
 
@@ -902,14 +943,14 @@ happen immediately.  It will set an isDestroying flag immediately.
 
 
 </div>
-<div id="method_didTransition" class="method item public">
+<div id="method_didTransition" class="method item private">
     <h3 class="name"><code>didTransition</code></h3>
 
         <span class="paren">()</span>
 
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -918,7 +959,7 @@ happen immediately.  It will set an isDestroying flag immediately.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l198"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:198</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l164"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:164</code></a>
         </p>
 
 
@@ -930,21 +971,6 @@ happen immediately.  It will set an isDestroying flag immediately.
         <p>Handles updating the paths and notifying any listeners of the URL
 change.</p>
 <p>Triggers the router level <code>didTransition</code> hook.</p>
-<p>For example, to notify google analytics when the route changes,
-you could use this hook.  (Note: requires also including GA scripts, etc.)</p>
-<pre class="code prettyprint"><code class="language-javascript">var Router = Ember.Router.extend({
-  location: config.locationType,
-
-  didTransition: function() {
-    this._super(...arguments);
-
-    return ga('send', 'pageview', {
-      'page': this.get('url'),
-      'title': this.get('url')
-    });
-  }
-});
-</code></pre>
 
     </div>
 
@@ -952,7 +978,7 @@ you could use this hook.  (Note: requires also including GA scripts, etc.)</p>
 
 
 </div>
-<div id="method_endPropertyChanges" class="method item private inherited">
+<div id="method_endPropertyChanges" class="method item inherited">
     <h3 class="name"><code>endPropertyChanges</code></h3>
 
         <span class="paren">()</span>
@@ -962,7 +988,6 @@ you could use this hook.  (Note: requires also including GA scripts, etc.)</p>
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -971,7 +996,7 @@ you could use this hook.  (Note: requires also including GA scripts, etc.)</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_endPropertyChanges">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l251"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:251</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l254"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:254</code></a>
         </p>
 
 
@@ -1000,7 +1025,7 @@ deliver the deferred change notifications and end deferring.
 
 
 </div>
-<div id="method_get" class="method item public inherited">
+<div id="method_get" class="method item inherited">
     <h3 class="name"><code>get</code></h3>
 
         <div class="args">
@@ -1016,7 +1041,6 @@ deliver the deferred change notifications and end deferring.
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1025,7 +1049,7 @@ deliver the deferred change notifications and end deferring.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_get">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l100"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:100</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l98"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:98</code></a>
         </p>
 
 
@@ -1095,7 +1119,7 @@ not defined upfront.
 
 
 </div>
-<div id="method_getProperties" class="method item public inherited">
+<div id="method_getProperties" class="method item inherited">
     <h3 class="name"><code>getProperties</code></h3>
 
         <div class="args">
@@ -1107,11 +1131,10 @@ not defined upfront.
         </div>
 
         <span class="returns-inline">
-            <span class="type">Object</span>
+            <span class="type">Hash</span>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1120,7 +1143,7 @@ not defined upfront.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_getProperties">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l143"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:143</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l140"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:140</code></a>
         </p>
 
 
@@ -1165,13 +1188,13 @@ record.getProperties(['firstName', 'lastName', 'zipCode']);
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">Object</span>:
+                        <span class="type">Hash</span>:
             </div>
         </div>
 
 
 </div>
-<div id="method_getWithDefault" class="method item public inherited">
+<div id="method_getWithDefault" class="method item inherited">
     <h3 class="name"><code>getWithDefault</code></h3>
 
         <div class="args">
@@ -1190,7 +1213,6 @@ record.getProperties(['firstName', 'lastName', 'zipCode']);
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1199,7 +1221,7 @@ record.getProperties(['firstName', 'lastName', 'zipCode']);
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_getWithDefault">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l415"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:415</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l416"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:416</code></a>
         </p>
 
 
@@ -1253,7 +1275,7 @@ person.getWithDefault('lastName', 'Doe');
 
 
 </div>
-<div id="method_has" class="method item public inherited">
+<div id="method_has" class="method item inherited">
     <h3 class="name"><code>has</code></h3>
 
         <div class="args">
@@ -1269,7 +1291,6 @@ person.getWithDefault('lastName', 'Doe');
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1278,7 +1299,7 @@ person.getWithDefault('lastName', 'Doe');
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Evented.html#method_has">Ember.Evented</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l142"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:142</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l137"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:137</code></a>
         </p>
 
 
@@ -1317,7 +1338,7 @@ person.getWithDefault('lastName', 'Doe');
 
 
 </div>
-<div id="method_hasObserverFor" class="method item private inherited">
+<div id="method_hasObserverFor" class="method item inherited">
     <h3 class="name"><code>hasObserverFor</code></h3>
 
         <div class="args">
@@ -1333,7 +1354,6 @@ person.getWithDefault('lastName', 'Doe');
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -1342,7 +1362,7 @@ person.getWithDefault('lastName', 'Doe');
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_hasObserverFor">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l400"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:400</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l402"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:402</code></a>
         </p>
 
 
@@ -1402,7 +1422,7 @@ on the object.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l399"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:399</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l328"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:328</code></a>
         </p>
 
 
@@ -1425,7 +1445,7 @@ on the object.
 
 
 </div>
-<div id="method_incrementProperty" class="method item public inherited">
+<div id="method_incrementProperty" class="method item inherited">
     <h3 class="name"><code>incrementProperty</code></h3>
 
         <div class="args">
@@ -1444,7 +1464,6 @@ on the object.
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1507,14 +1526,13 @@ team.incrementProperty('score', 2);
 
 
 </div>
-<div id="method_init" class="method item public inherited">
+<div id="method_init" class="method item inherited">
     <h3 class="name"><code>init</code></h3>
 
         <span class="paren">()</span>
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1523,7 +1541,7 @@ team.incrementProperty('score', 2);
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_init">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l234"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:234</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l237"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:237</code></a>
         </p>
 
 
@@ -1550,8 +1568,8 @@ var steve = App.Person.create({
 // alerts 'Name is Steve'.
 <code>&#x60;</code>
 
-NOTE: If you do override <code>init</code> for a framework class like <code>Ember.View</code>,
-be sure to call <code>this._super(...arguments)</code> in your
+NOTE: If you do override <code>init</code> for a framework class like <code>Ember.View</code> or
+<code>Ember.ArrayController</code>, be sure to call <code>this._super.apply(this, arguments)</code> in your
 <code>init</code> declaration! If you don't, Ember may not have an opportunity to
 do important setup work, and you'll see strange behavior in your
 application.
@@ -1586,7 +1604,7 @@ application.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l365"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:365</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l294"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:294</code></a>
         </p>
 
 
@@ -1656,7 +1674,7 @@ application.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l378"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:378</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l307"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:307</code></a>
         </p>
 
 
@@ -1718,7 +1736,7 @@ array.</p>
 
 
 </div>
-<div id="method_map" class="method item public">
+<div id="method_map" class="method item">
     <h3 class="name"><code>map</code></h3>
 
         <div class="args">
@@ -1731,7 +1749,6 @@ array.</p>
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1740,7 +1757,7 @@ array.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l998"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:998</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l892"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:892</code></a>
         </p>
 
 
@@ -1749,35 +1766,14 @@ array.</p>
 
     <div class="description">
         <p>The <code>Router.map</code> function allows you to define mappings from URLs to routes
-in your application. These mappings are defined within the
-supplied callback function using <code>this.route</code>.</p>
-<p>The first parameter is the name of the route which is used by default as the
-path name as well.</p>
-<p>The second parameter is the optional options hash. Available options are:</p>
-<ul>
-<li><code>path</code>: allows you to provide your own path as well as mark dynamic
-segments.</li>
-<li><code>resetNamespace</code>: false by default; when nesting routes, ember will
-combine the route names to form the fully-qualified route name, which is
-used with <code>{{link-to}}</code> or manually transitioning to routes. Setting
-<code>resetNamespace: true</code> will cause the route not to inherit from its
-parent route's names. This is handy for resources which can be accessed
-in multiple places as well as preventing extremely long route names.
-Keep in mind that the actual URL path behavior is still retained.</li>
-</ul>
-<p>The third parameter is a function, which can be used to nest routes.
-Nested routes, by default, will have the parent route tree's route name and
-path prepended to it's own.</p>
+and resources in your application. These mappings are defined within the
+supplied callback function using <code>this.resource</code> and <code>this.route</code>.</p>
 <pre class="code prettyprint"><code class="language-javascript">App.Router.map(function(){
-  this.route('post', { path: '/post/:post_id' }, function() {
-    this.route('edit');
-    this.route('comments', { resetNamespace: true }, function() {
-      this.route('new');
-    });
-  });
+  this.route('about');
+  this.resource('article');
 });
 </code></pre>
-<p>For more detailed documentation and examples please see
+<p>For more detailed examples please see
 <a href="http://emberjs.com/guides/routing/defining-your-routes/">the guides</a>.</p>
 
     </div>
@@ -1802,7 +1798,7 @@ path prepended to it's own.</p>
 
 
 </div>
-<div id="method_notifyPropertyChange" class="method item public inherited">
+<div id="method_notifyPropertyChange" class="method item inherited">
     <h3 class="name"><code>notifyPropertyChange</code></h3>
 
         <div class="args">
@@ -1818,7 +1814,6 @@ path prepended to it's own.</p>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1866,7 +1861,7 @@ succession.
 
 
 </div>
-<div id="method_off" class="method item public inherited">
+<div id="method_off" class="method item inherited">
     <h3 class="name"><code>off</code></h3>
 
         <div class="args">
@@ -1888,7 +1883,6 @@ succession.
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1897,7 +1891,7 @@ succession.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Evented.html#method_off">Ember.Evented</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l127"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:127</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l123"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:123</code></a>
         </p>
 
 
@@ -1955,7 +1949,7 @@ succession.
 
 
 </div>
-<div id="method_on" class="method item public inherited">
+<div id="method_on" class="method item inherited">
     <h3 class="name"><code>on</code></h3>
 
         <div class="args">
@@ -1977,7 +1971,6 @@ succession.
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -1986,7 +1979,7 @@ succession.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Evented.html#method_on">Ember.Evented</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l52"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:52</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l51"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:51</code></a>
         </p>
 
 
@@ -2056,7 +2049,7 @@ parameter is used the callback becomes the third argument.
 
 
 </div>
-<div id="method_one" class="method item public inherited">
+<div id="method_one" class="method item inherited">
     <h3 class="name"><code>one</code></h3>
 
         <div class="args">
@@ -2078,7 +2071,6 @@ parameter is used the callback becomes the third argument.
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2087,7 +2079,7 @@ parameter is used the callback becomes the third argument.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Evented.html#method_one">Ember.Evented</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l78"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:78</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l76"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:76</code></a>
         </p>
 
 
@@ -2152,7 +2144,7 @@ becomes the function.
 
 
 </div>
-<div id="method_propertyDidChange" class="method item private inherited">
+<div id="method_propertyDidChange" class="method item inherited">
     <h3 class="name"><code>propertyDidChange</code></h3>
 
         <div class="args">
@@ -2168,7 +2160,6 @@ becomes the function.
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -2177,7 +2168,7 @@ becomes the function.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_propertyDidChange">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l294"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:294</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l295"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:295</code></a>
         </p>
 
 
@@ -2226,7 +2217,7 @@ like.
 
 
 </div>
-<div id="method_propertyWillChange" class="method item private inherited">
+<div id="method_propertyWillChange" class="method item inherited">
     <h3 class="name"><code>propertyWillChange</code></h3>
 
         <div class="args">
@@ -2242,7 +2233,6 @@ like.
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -2251,7 +2241,7 @@ like.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_propertyWillChange">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l270"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:270</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l272"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:272</code></a>
         </p>
 
 
@@ -2300,7 +2290,7 @@ like.
 
 
 </div>
-<div id="method_removeObserver" class="method item public inherited">
+<div id="method_removeObserver" class="method item inherited">
     <h3 class="name"><code>removeObserver</code></h3>
 
         <div class="args">
@@ -2319,7 +2309,6 @@ like.
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2328,7 +2317,7 @@ like.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_removeObserver">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l385"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:385</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l388"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:388</code></a>
         </p>
 
 
@@ -2381,14 +2370,13 @@ target will no longer receive notifications.
 
 
 </div>
-<div id="method_reopen" class="method item public inherited">
+<div id="method_reopen" class="method item inherited">
     <h3 class="name"><code>reopen</code></h3>
 
         <span class="paren">()</span>
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2397,7 +2385,7 @@ target will no longer receive notifications.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_reopen">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l703"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:703</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l637"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:637</code></a>
         </p>
 
 
@@ -2436,14 +2424,13 @@ see <code>reopenClass</code>
 
 
 </div>
-<div id="method_reopenClass" class="method item public inherited">
+<div id="method_reopenClass" class="method item inherited">
     <h3 class="name"><code>reopenClass</code></h3>
 
         <span class="paren">()</span>
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2452,7 +2439,7 @@ see <code>reopenClass</code>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_reopenClass">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l739"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:739</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l672"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:672</code></a>
         </p>
 
 
@@ -2475,8 +2462,8 @@ MyObject.canBuild; // false
 o = MyObject.create();
 <code>&#x60;</code>
 
-In other words, this creates static properties and functions for the class.
-These are only available on the class and not on any instance of that class.
+In other words, this creates static properties and functions for the class. These are only available on the class
+and not on any instance of that class.
 
 <code>&#x60;</code>javascript
 App.Person = Ember.Object.extend({
@@ -2533,7 +2520,7 @@ see <code>reopen</code>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l410"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:410</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l339"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:339</code></a>
         </p>
 
 
@@ -2550,7 +2537,7 @@ handlers and deactivating them.</p>
 
 
 </div>
-<div id="method_set" class="method item public inherited">
+<div id="method_set" class="method item inherited">
     <h3 class="name"><code>set</code></h3>
 
         <div class="args">
@@ -2565,11 +2552,10 @@ handlers and deactivating them.</p>
         </div>
 
         <span class="returns-inline">
-            <span class="type">Object</span>
+            <span class="type"><a href="../classes/Ember.Observable.html" class="crosslink">Ember.Observable</a></span>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2578,7 +2564,7 @@ handlers and deactivating them.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_set">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l168"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:168</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l164"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:164</code></a>
         </p>
 
 
@@ -2618,6 +2604,15 @@ change with the object. Unless you have placed this call inside of a
 immediately. Any "remote" observers (i.e. observer methods declared on
 another object) will be placed in a queue and called at a later time in a
 coalesced manner.
+
+### Chaining
+
+In addition to property changes, <code>set()</code> returns the value of the object
+itself so you can do chaining like this:
+
+<code>&#x60;</code>javascript
+record.set('firstName', 'Charles').set('lastName', 'Jolley');
+<code>&#x60;</code>
     </div>
 
         <div class="params">
@@ -2651,14 +2646,13 @@ coalesced manner.
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">Object</span>:
-                    The passed value
+                        <span class="type"><a href="../classes/Ember.Observable.html" class="crosslink">Ember.Observable</a></span>:
             </div>
         </div>
 
 
 </div>
-<div id="method_setProperties" class="method item public inherited">
+<div id="method_setProperties" class="method item inherited">
     <h3 class="name"><code>setProperties</code></h3>
 
         <div class="args">
@@ -2670,11 +2664,10 @@ coalesced manner.
         </div>
 
         <span class="returns-inline">
-            <span class="type">Object</span>
+            <span class="type"><a href="../classes/Ember.Observable.html" class="crosslink">Ember.Observable</a></span>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2683,7 +2676,7 @@ coalesced manner.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_setProperties">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l213"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:213</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l218"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:218</code></a>
         </p>
 
 
@@ -2706,7 +2699,7 @@ record.setProperties({ firstName: 'Charles', lastName: 'Jolley' });
             <ul class="params-list">
                 <li class="param">
                         <code class="param-name">hash</code>
-                        <span class="type">Object</span>
+                        <span class="type">Hash</span>
 
 
                     <div class="param-description">
@@ -2721,8 +2714,7 @@ record.setProperties({ firstName: 'Charles', lastName: 'Jolley' });
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">Object</span>:
-                    The passed in hash
+                        <span class="type"><a href="../classes/Ember.Observable.html" class="crosslink">Ember.Observable</a></span>:
             </div>
         </div>
 
@@ -2744,7 +2736,7 @@ record.setProperties({ firstName: 'Charles', lastName: 'Jolley' });
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l152"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:152</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l117"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:117</code></a>
         </p>
 
 
@@ -2763,7 +2755,7 @@ If no value is found <code>/</code> will be used.</p>
 
 
 </div>
-<div id="method_toggleProperty" class="method item public inherited">
+<div id="method_toggleProperty" class="method item inherited">
     <h3 class="name"><code>toggleProperty</code></h3>
 
         <div class="args">
@@ -2775,11 +2767,10 @@ If no value is found <code>/</code> will be used.</p>
         </div>
 
         <span class="returns-inline">
-            <span class="type">Boolean</span>
+            <span class="type">Object</span>
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2825,14 +2816,14 @@ starship.toggleProperty('warpDriveEngaged');
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                        <span class="type">Boolean</span>:
+                        <span class="type">Object</span>:
                     The new property value
             </div>
         </div>
 
 
 </div>
-<div id="method_toString" class="method item public inherited">
+<div id="method_toString" class="method item inherited">
     <h3 class="name"><code>toString</code></h3>
 
         <span class="paren">()</span>
@@ -2842,7 +2833,6 @@ starship.toggleProperty('warpDriveEngaged');
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -2851,7 +2841,7 @@ starship.toggleProperty('warpDriveEngaged');
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_toString">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l484"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:484</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l409"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:409</code></a>
         </p>
 
 
@@ -2904,108 +2894,7 @@ teacher.toString(); //=> "<App.Teacher:ember1026:Tom Dale>"
 
 
 </div>
-<div id="method_transitionTo" class="method item public">
-    <h3 class="name"><code>transitionTo</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>name</code>
-                </li>
-                <li class="arg">
-                        <code>models</code>
-                </li>
-                <li class="arg">
-                        <code class="optional">[options]</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type">Transition</span>
-        </span>
-
-
-        <span class="flag public">public</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l312"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:312</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Transition the application into another route. The route may
-be either a single route or route path:</p>
-<p>See <a href="http://emberjs.com/api/classes/Ember.Route.html#method_transitionTo">Route.transitionTo</a> for more info.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">name</code>
-                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
-
-
-                    <div class="param-description">
-                        <p>the name of the route or a URL</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name">models</code>
-                        <span class="type">...Object</span>
-
-
-                    <div class="param-description">
-                        <p>the model(s) or identifier(s) to be used while
-transitioning to the route.</p>
-
-                    </div>
-
-                </li>
-                <li class="param">
-                        <code class="param-name optional">[options]</code>
-                        <span class="type">Object</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
-
-
-                    <div class="param-description">
-                        <p>optional hash with a queryParams property
-containing a mapping of query parameters</p>
-
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type">Transition</span>:
-                    <p>the transition object associated with this
-attempted transition</p>
-
-            </div>
-        </div>
-
-
-</div>
-<div id="method_trigger" class="method item public inherited">
+<div id="method_trigger" class="method item inherited">
     <h3 class="name"><code>trigger</code></h3>
 
         <div class="args">
@@ -3021,7 +2910,6 @@ attempted transition</p>
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -3030,7 +2918,7 @@ attempted transition</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Evented.html#method_trigger">Ember.Evented</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l104"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:104</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_evented.js.html#l101"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:101</code></a>
         </p>
 
 
@@ -3083,7 +2971,7 @@ person.trigger('didEat', 'broccoli');
 
 
 </div>
-<div id="method_url" class="method item private">
+<div id="method_url" class="method item">
     <h3 class="name"><code>url</code></h3>
 
         <span class="paren">()</span>
@@ -3093,7 +2981,6 @@ person.trigger('didEat', 'broccoli');
         </span>
 
 
-        <span class="flag private">private</span>
 
 
 
@@ -3102,7 +2989,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l129"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:129</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l107"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:107</code></a>
         </p>
 
 
@@ -3127,14 +3014,13 @@ person.trigger('didEat', 'broccoli');
 
 
 </div>
-<div id="method_willDestroy" class="method item public inherited">
+<div id="method_willDestroy" class="method item inherited">
     <h3 class="name"><code>willDestroy</code></h3>
 
         <span class="paren">()</span>
 
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -3143,7 +3029,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_willDestroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l457"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:457</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l383"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:383</code></a>
         </p>
 
 
@@ -3158,14 +3044,14 @@ person.trigger('didEat', 'broccoli');
 
 
 </div>
-<div id="method_willTransition" class="method item public">
+<div id="method_willTransition" class="method item private">
     <h3 class="name"><code>willTransition</code></h3>
 
         <span class="paren">()</span>
 
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -3174,7 +3060,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l281"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:281</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l226"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:226</code></a>
         </p>
 
 
@@ -3198,19 +3084,18 @@ change.</p>
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-<div id="property_concatenatedProperties" class="property item public inherited">
+<div id="property_concatenatedProperties" class="property item inherited">
     <h3 class="name"><code>concatenatedProperties</code></h3>
     <span class="type">Array</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_concatenatedProperties">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l272"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:272</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l271"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:271</code></a>
         </p>
 
 
@@ -3283,19 +3168,18 @@ mislead your users to think they can override the property in a subclass).
 
 
 </div>
-<div id="property_isDestroyed" class="property item public inherited">
+<div id="property_isDestroyed" class="property item inherited">
     <h3 class="name"><code>isDestroyed</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_isDestroyed">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l410"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:410</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l339"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:339</code></a>
         </p>
 
 
@@ -3312,19 +3196,18 @@ removed by the effect of calling the <code>destroy()</code> method.
 
 
 </div>
-<div id="property_isDestroying" class="property item public inherited">
+<div id="property_isDestroying" class="property item inherited">
     <h3 class="name"><code>isDestroying</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_isDestroying">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l422"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:422</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l350"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:350</code></a>
         </p>
 
 
@@ -3341,19 +3224,18 @@ the <code>isDestroyed</code> flag is set.
 
 
 </div>
-<div id="property_location" class="property item public">
+<div id="property_location" class="property item">
     <h3 class="name"><code>location</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l50"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:50</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l46"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:46</code></a>
         </p>
 
 
@@ -3364,12 +3246,11 @@ the <code>isDestroyed</code> flag is set.
 application will use.</p>
 <p>The following location types are currently available:</p>
 <ul>
-<li><code>history</code> - use the browser's history API to make the URLs look just like any standard URL</li>
-<li><code>hash</code> - use <code>#</code> to separate the server part of the URL from the Ember part: <code>/blog/#/posts/new</code></li>
-<li><code>none</code> - do not store the Ember URL in the actual browser URL (mainly used for testing)</li>
-<li><code>auto</code> - use the best option based on browser capabilites: <code>history</code> if possible, then <code>hash</code> if possible, otherwise <code>none</code></li>
+<li><code>auto</code></li>
+<li><code>hash</code></li>
+<li><code>history</code></li>
+<li><code>none</code></li>
 </ul>
-<p>Note: If using ember-cli, this value is defaulted to <code>auto</code> by the <code>locationType</code> setting of <code>/config/environment.js</code></p>
 
     </div>
 
@@ -3377,104 +3258,18 @@ application will use.</p>
 
 
 </div>
-<div id="property_mergedProperties" class="property item public inherited">
-    <h3 class="name"><code>mergedProperties</code></h3>
-    <span class="type">Array</span>
-
-
-        <span class="flag public">public</span>
-
-
-
-    <div class="meta">
-                <p>Inherited from
-                <a href="../classes/Ember.CoreObject.html#property_mergedProperties">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l341"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:341</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        Defines the properties that will be merged from the superclass
-(instead of overridden).
-
-By default, when you extend an Ember class a property defined in
-the subclass overrides a property with the same name that is defined
-in the superclass. However, there are some cases where it is preferable
-to build up a property's value by merging the superclass property value
-with the subclass property's value. An example of this in use within Ember
-is the <code>queryParams</code> property of routes.
-
-Here is some sample code showing the difference between a merged
-property and a normal one:
-
-<code>&#x60;</code>javascript
-App.BarRoute = Ember.Route.extend({
-  someNonMergedProperty: {
-    nonMerged: 'superclass value of nonMerged'
-  },
-  queryParams: {
-    page: {replace: false},
-    limit: {replace: true}
-  }
-});
-
-App.FooBarRoute = App.BarRoute.extend({
-  someNonMergedProperty: {
-    completelyNonMerged: 'subclass value of nonMerged'
-  },
-  queryParams: {
-    limit: {replace: false}
-  }
-});
-
-var fooBarRoute = App.FooBarRoute.create();
-
-fooBarRoute.get('someNonMergedProperty');
-// => { completelyNonMerged: 'subclass value of nonMerged' }
-//
-// Note the entire object, including the nonMerged property of
-// the superclass object, has been replaced
-
-fooBarRoute.get('queryParams');
-// => {
-//   page: {replace: false},
-//   limit: {replace: false}
-// }
-//
-// Note the page remains from the superclass, and the
-// <code>limit</code> property's value of <code>false</code> has been merged from
-// the subclass.
-<code>&#x60;</code>
-
-This behavior is not available during object <code>create</code> calls. It is only
-available at <code>extend</code> time.
-
-This feature is available for you to use throughout the Ember object model,
-although typical app developers are likely to use it infrequently. Since
-it changes expectations about behavior of properties, you should properly
-document its usage in each individual merged property (to not
-mislead your users to think they can override the property in a subclass).
-    </div>
-
-        <p><strong>Default:</strong> null</p>
-
-
-</div>
-<div id="property_rootURL" class="property item public">
+<div id="property_rootURL" class="property item">
     <h3 class="name"><code>rootURL</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l70"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:70</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_router.js.html#l63"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;router.js:63</code></a>
         </p>
 
 

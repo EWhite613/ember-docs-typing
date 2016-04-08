@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,105 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
-                                <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +148,35 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
-                                <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
                 
@@ -138,14 +185,12 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
-                                <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
-                                <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
-                                <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
-                                <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -185,23 +230,28 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-&#x27;no use strict&#x27;;
 // Remove &quot;use strict&quot;; from transpiled module until
 // https://bugs.webkit.org/show_bug.cgi?id=138038 is fixed
+//
+// REMOVE_USE_STRICT: true
 
 /**
-@module ember
-@submodule ember-metal
+@module ember-metal
 */
-import { assert } from &#x27;ember-metal/debug&#x27;;
+import Ember from &quot;ember-metal/core&quot;;
 import {
+  meta as metaFor,
+  tryFinally,
   apply,
   applyStr
-} from &#x27;ember-metal/utils&#x27;;
-import { meta as metaFor, peekMeta } from &#x27;ember-metal/meta&#x27;;
-import { deprecate } from &#x27;ember-metal/debug&#x27;;
+} from &quot;ember-metal/utils&quot;;
+import { create } from &quot;ember-metal/platform&quot;;
 
-import { ONCE, SUSPENDED } from &#x27;ember-metal/meta_listeners&#x27;;
+var a_slice = [].slice;
+
+/* listener flags */
+var ONCE = 1;
+var SUSPENDED = 2;
 
 
 /*
@@ -229,32 +279,76 @@ function indexOf(array, target, method) {
   // of the array and search in reverse
   for (var i = array.length - 3 ; i &gt;=0; i -= 3) {
     if (target === array[i] &amp;&amp; method === array[i + 1]) {
-      index = i;
-      break;
+         index = i; break;
     }
   }
   return index;
 }
 
-export function accumulateListeners(obj, eventName, otherActions) {
-  var meta = peekMeta(obj);
-  if (!meta) { return; }
-  var actions = meta.matchingListeners(eventName);
-  var newActions = [];
+function actionsFor(obj, eventName) {
+  var meta = metaFor(obj, true);
+  var actions;
+  var listeners = meta.listeners;
 
+  if (!listeners) {
+    listeners = meta.listeners = create(null);
+    listeners.__source__ = obj;
+  } else if (listeners.__source__ !== obj) {
+    // setup inherited copy of the listeners object
+    listeners = meta.listeners = create(listeners);
+    listeners.__source__ = obj;
+  }
+
+  actions = listeners[eventName];
+
+  // if there are actions, but the eventName doesn&#x27;t exist in our listeners, then copy them from the prototype
+  if (actions &amp;&amp; actions.__source__ !== obj) {
+    actions = listeners[eventName] = listeners[eventName].slice();
+    actions.__source__ = obj;
+  } else if (!actions) {
+    actions = listeners[eventName] = [];
+    actions.__source__ = obj;
+  }
+
+  return actions;
+}
+
+export function listenersUnion(obj, eventName, otherActions) {
+  var meta = obj[&#x27;__ember_meta__&#x27;];
+  var actions = meta &amp;&amp; meta.listeners &amp;&amp; meta.listeners[eventName];
+
+  if (!actions) { return; }
   for (var i = actions.length - 3; i &gt;= 0; i -= 3) {
     var target = actions[i];
-    var method = actions[i + 1];
-    var flags = actions[i + 2];
+    var method = actions[i+1];
+    var flags = actions[i+2];
     var actionIndex = indexOf(otherActions, target, method);
 
     if (actionIndex === -1) {
       otherActions.push(target, method, flags);
-      newActions.push(target, method, flags);
     }
   }
+}
 
-  return newActions;
+export function listenersDiff(obj, eventName, otherActions) {
+  var meta = obj[&#x27;__ember_meta__&#x27;];
+  var actions = meta &amp;&amp; meta.listeners &amp;&amp; meta.listeners[eventName];
+  var diffActions = [];
+
+  if (!actions) { return; }
+  for (var i = actions.length - 3; i &gt;= 0; i -= 3) {
+    var target = actions[i];
+    var method = actions[i+1];
+    var flags = actions[i+2];
+    var actionIndex = indexOf(otherActions, target, method);
+
+    if (actionIndex !== -1) { continue; }
+
+    otherActions.push(target, method, flags);
+    diffActions.push(target, method, flags);
+  }
+
+  return diffActions;
 }
 
 /**
@@ -267,34 +361,24 @@ export function accumulateListeners(obj, eventName, otherActions) {
   @param {Object|Function} target A target object or a function
   @param {Function|String} method A function or the name of a function to be called on &#x60;target&#x60;
   @param {Boolean} once A flag whether a function should only be called once
-  @public
 */
 export function addListener(obj, eventName, target, method, once) {
-  assert(&#x27;You must pass at least an object and event name to Ember.addListener&#x27;, !!obj &amp;&amp; !!eventName);
-
-  if (eventName === &#x27;didInitAttrs&#x27; &amp;&amp; obj.isComponent) {
-    deprecate(
-      &#x60;[DEPRECATED] didInitAttrs called in ${obj.toString()}.&#x60;,
-      false,
-      {
-        id: &#x27;ember-views.did-init-attrs&#x27;,
-        until: &#x27;3.0.0&#x27;,
-        url: &#x27;http://emberjs.com/deprecations/v2.x#toc_ember-component-didinitattrs&#x27;
-      }
-    );
-  }
+  Ember.assert(&quot;You must pass at least an object and event name to Ember.addListener&quot;, !!obj &amp;&amp; !!eventName);
 
   if (!method &amp;&amp; &#x27;function&#x27; === typeof target) {
     method = target;
     target = null;
   }
 
+  var actions = actionsFor(obj, eventName);
+  var actionIndex = indexOf(actions, target, method);
   var flags = 0;
-  if (once) {
-    flags |= ONCE;
-  }
 
-  metaFor(obj).addToListeners(eventName, target, method, flags);
+  if (once) flags |= ONCE;
+
+  if (actionIndex !== -1) { return; }
+
+  actions.push(target, method, flags);
 
   if (&#x27;function&#x27; === typeof obj.didAddListener) {
     obj.didAddListener(eventName, target, method);
@@ -312,21 +396,40 @@ export function addListener(obj, eventName, target, method, once) {
   @param {String} eventName
   @param {Object|Function} target A target object or a function
   @param {Function|String} method A function or the name of a function to be called on &#x60;target&#x60;
-  @public
 */
-export function removeListener(obj, eventName, target, method) {
-  assert(&#x27;You must pass at least an object and event name to Ember.removeListener&#x27;, !!obj &amp;&amp; !!eventName);
+function removeListener(obj, eventName, target, method) {
+  Ember.assert(&quot;You must pass at least an object and event name to Ember.removeListener&quot;, !!obj &amp;&amp; !!eventName);
 
   if (!method &amp;&amp; &#x27;function&#x27; === typeof target) {
     method = target;
     target = null;
   }
 
-  metaFor(obj).removeFromListeners(eventName, target, method, (...args) =&gt; {
+  function _removeListener(target, method) {
+    var actions = actionsFor(obj, eventName);
+    var actionIndex = indexOf(actions, target, method);
+
+    // action doesn&#x27;t exist, give up silently
+    if (actionIndex === -1) { return; }
+
+    actions.splice(actionIndex, 3);
+
     if (&#x27;function&#x27; === typeof obj.didRemoveListener) {
-      obj.didRemoveListener(...args);
+      obj.didRemoveListener(eventName, target, method);
     }
-  });
+  }
+
+  if (method) {
+    _removeListener(target, method);
+  } else {
+    var meta = obj[&#x27;__ember_meta__&#x27;];
+    var actions = meta &amp;&amp; meta.listeners &amp;&amp; meta.listeners[eventName];
+
+    if (!actions) { return; }
+    for (var i = actions.length - 3; i &gt;= 0; i -= 3) {
+      _removeListener(actions[i], actions[i+1]);
+    }
+  }
 }
 
 /**
@@ -348,7 +451,22 @@ export function removeListener(obj, eventName, target, method) {
   @param {Function} callback
 */
 export function suspendListener(obj, eventName, target, method, callback) {
-  return suspendListeners(obj, [eventName], target, method, callback);
+  if (!method &amp;&amp; &#x27;function&#x27; === typeof target) {
+    method = target;
+    target = null;
+  }
+
+  var actions = actionsFor(obj, eventName);
+  var actionIndex = indexOf(actions, target, method);
+
+  if (actionIndex !== -1) {
+    actions[actionIndex+2] |= SUSPENDED; // mark the action as suspended
+  }
+
+  function tryable()   { return callback.call(target); }
+  function finalizer() { if (actionIndex !== -1) { actions[actionIndex+2] &amp;= ~SUSPENDED; } }
+
+  return tryFinally(tryable, finalizer);
 }
 
 /**
@@ -369,7 +487,33 @@ export function suspendListeners(obj, eventNames, target, method, callback) {
     method = target;
     target = null;
   }
-  return metaFor(obj).suspendListeners(eventNames, target, method, callback);
+
+  var suspendedActions = [];
+  var actionsList = [];
+  var eventName, actions, i, l;
+
+  for (i=0, l=eventNames.length; i&lt;l; i++) {
+    eventName = eventNames[i];
+    actions = actionsFor(obj, eventName);
+    var actionIndex = indexOf(actions, target, method);
+
+    if (actionIndex !== -1) {
+      actions[actionIndex+2] |= SUSPENDED;
+      suspendedActions.push(actionIndex);
+      actionsList.push(actions);
+    }
+  }
+
+  function tryable() { return callback.call(target); }
+
+  function finalizer() {
+    for (var i = 0, l = suspendedActions.length; i &lt; l; i++) {
+      var actionIndex = suspendedActions[i];
+      actionsList[i][actionIndex+2] &amp;= ~SUSPENDED;
+    }
+  }
+
+  return tryFinally(tryable, finalizer);
 }
 
 /**
@@ -381,7 +525,17 @@ export function suspendListeners(obj, eventNames, target, method, callback) {
   @param obj
 */
 export function watchedEvents(obj) {
-  return metaFor(obj).watchedEvents();
+  var listeners = obj[&#x27;__ember_meta__&#x27;].listeners, ret = [];
+
+  if (listeners) {
+    for (var eventName in listeners) {
+      if (eventName !== &#x27;__source__&#x27; &amp;&amp;
+          listeners[eventName]) {
+        ret.push(eventName);
+      }
+    }
+  }
+  return ret;
 }
 
 /**
@@ -397,21 +551,22 @@ export function watchedEvents(obj) {
   @param {Array} params Optional parameters for each listener.
   @param {Array} actions Optional array of actions (listeners).
   @return true
-  @public
 */
 export function sendEvent(obj, eventName, params, actions) {
-  if (!actions) {
-    var meta = peekMeta(obj);
-    actions = meta &amp;&amp; meta.matchingListeners(eventName);
+  // first give object a chance to handle it
+  if (obj !== Ember &amp;&amp; &#x27;function&#x27; === typeof obj.sendEvent) {
+    obj.sendEvent(eventName, params);
   }
 
-  if (!actions || actions.length === 0) { return; }
+  if (!actions) {
+    var meta = obj[&#x27;__ember_meta__&#x27;];
+    actions = meta &amp;&amp; meta.listeners &amp;&amp; meta.listeners[eventName];
+  }
+
+  if (!actions) { return; }
 
   for (var i = actions.length - 3; i &gt;= 0; i -= 3) { // looping in reverse for once listeners
-    var target = actions[i];
-    var method = actions[i + 1];
-    var flags = actions[i + 2];
-
+    var target = actions[i], method = actions[i+1], flags = actions[i+2];
     if (!method) { continue; }
     if (flags &amp; SUSPENDED) { continue; }
     if (flags &amp; ONCE) { removeListener(obj, eventName, target, method); }
@@ -441,9 +596,10 @@ export function sendEvent(obj, eventName, params, actions) {
   @param {String} eventName
 */
 export function hasListeners(obj, eventName) {
-  var meta = peekMeta(obj);
-  if (!meta) { return false; }
-  return meta.matchingListeners(eventName).length &gt; 0;
+  var meta = obj[&#x27;__ember_meta__&#x27;];
+  var actions = meta &amp;&amp; meta.listeners &amp;&amp; meta.listeners[eventName];
+
+  return !!(actions &amp;&amp; actions.length);
 }
 
 /**
@@ -455,14 +611,14 @@ export function hasListeners(obj, eventName) {
 */
 export function listenersFor(obj, eventName) {
   var ret = [];
-  var meta = peekMeta(obj);
-  var actions = meta &amp;&amp; meta.matchingListeners(eventName);
+  var meta = obj[&#x27;__ember_meta__&#x27;];
+  var actions = meta &amp;&amp; meta.listeners &amp;&amp; meta.listeners[eventName];
 
   if (!actions) { return ret; }
 
   for (var i = 0, l = actions.length; i &lt; l; i += 3) {
     var target = actions[i];
-    var method = actions[i + 1];
+    var method = actions[i+1];
     ret.push([target, method]);
   }
 
@@ -491,14 +647,17 @@ export function listenersFor(obj, eventName) {
   @param {String} eventNames*
   @param {Function} func
   @return func
-  @public
 */
-export function on(...args) {
-  var func = args.pop();
-  var events = args;
+export function on(){
+  var func = a_slice.call(arguments, -1)[0];
+  var events = a_slice.call(arguments, 0, -1);
   func.__ember_listens__ = events;
   return func;
 }
+
+export {
+  removeListener
+};
 
     </pre>
 </div>

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,74 +186,90 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l27"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:27</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l59"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:59</code></a>
         </div>
 
 </div>
 
 
 <div class="box intro">
-    <p>An <code>Ember.Component</code> is a view that is completely
-isolated. Properties accessed in its templates go
-to the view object and actions are targeted at
-the view object. There is no access to the
-surrounding context or outer controller; all
-contextual information must be passed in.</p>
-<p>The easiest way to create an <code>Ember.Component</code> is via
-a template. If you name a template
-<code>components/my-foo</code>, you will be able to use
-<code>{{my-foo}}</code> in other templates, which will make
-an instance of the isolated component.</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{app-profile person=currentUser}}
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app-profile template --&gt;
-&lt;h1&gt;{{person.title}}&lt;/h1&gt;
-&lt;img src={{person.avatar}}&gt;
-&lt;p class='signature'&gt;{{person.signature}}&lt;/p&gt;
-</code></pre>
-<p>You can use <code>yield</code> inside a template to
-include the <strong>contents</strong> of any block attached to
-the component. The block will be executed in the
-context of the surrounding context or outer controller:</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{#app-profile person=currentUser}}
-  &lt;p&gt;Admin mode&lt;/p&gt;
-  {{! Executed in the controller's context. }}
-{{/app-profile}}
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app-profile template --&gt;
-&lt;h1&gt;{{person.title}}&lt;/h1&gt;
-{{! Executed in the components context. }}
-{{yield}} {{! block contents }}
-</code></pre>
-<p>If you want to customize the component, in order to
-handle events or actions, you implement a subclass
-of <code>Ember.Component</code> named after the name of the
-component. Note that <code>Component</code> needs to be appended to the name of
-your subclass like <code>AppProfileComponent</code>.</p>
-<p>For example, you could implement the action
-<code>hello</code> for the <code>app-profile</code> component:</p>
-<pre class="code prettyprint"><code class="language-javascript">App.AppProfileComponent = Ember.Component.extend({
-  actions: {
-    hello: function(name) {
-      console.log(&quot;Hello&quot;, name);
-    }
-  }
-});
-</code></pre>
-<p>And then use it in the component's template:</p>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app-profile template --&gt;
+    <p><code>TextSupport</code> is a shared mixin used by both <code>Ember.TextField</code> and
+<code>Ember.TextArea</code>. <code>TextSupport</code> adds a number of methods that allow you to
+specify a controller action to invoke when a certain event is fired on your
+text field or textarea. The specifed controller action would get the current
+value of the field passed in as the only argument unless the value of
+the field is empty. In that case, the instance of the field itself is passed
+in as the only argument.</p>
+<p>Let's use the pressing of the escape key as an example. If you wanted to
+invoke a controller action when a user presses the escape key while on your
+field, you would use the <code>escape-press</code> attribute on your field like so:</p>
+<pre class="code prettyprint"><code class="language-handlebars">  {{! application.hbs}}
 
-&lt;h1&gt;{{person.title}}&lt;/h1&gt;
-{{yield}} &lt;!-- block contents --&gt;
-
-&lt;button {{action 'hello' person.name}}&gt;
-  Say Hello to {{person.name}}
-&lt;/button&gt;
+  {{input escape-press='alertUser'}}
 </code></pre>
-<p>Components must have a <code>-</code> in their name to avoid
-conflicts with built-in controls that wrap HTML
-elements. This is consistent with the same
-requirement in web components.</p>
+<pre class="code prettyprint"><code class="language-javascript">    App = Ember.Application.create();
+
+    App.ApplicationController = Ember.Controller.extend({
+      actions: {
+        alertUser: function ( currentValue ) {
+          alert( 'escape pressed, current value: ' + currentValue );
+        }
+      }
+    });
+</code></pre>
+<p>The following chart is a visual representation of what takes place when the
+escape key is pressed in this scenario:</p>
+<pre class="code prettyprint"><code>The Template
++---------------------------+
+|                           |
+| escape-press='alertUser'  |
+|                           |          TextSupport Mixin
++----+----------------------+          +-------------------------------+
+     |                                 | cancel method                 |
+     |      escape button pressed      |                               |
+     +-------------------------------&gt; | checks for the <code>escape-press</code> |
+                                       | attribute and pulls out the   |
+     +-------------------------------+ | <code>alertUser</code> value             |
+     |     action name 'alertUser'     +-------------------------------+
+     |     sent to controller
+     v
+Controller
++------------------------------------------ +
+|                                           |
+|  actions: {                               |
+|     alertUser: function( currentValue ){  |
+|       alert( 'the esc key was pressed!' ) |
+|     }                                     |
+|  }                                        |
+|                                           |
++-------------------------------------------+
+</code></pre>
+<p>Here are the events that we currently support along with the name of the
+attribute you would need to use on your field. To reiterate, you would use the
+attribute name like so:</p>
+<pre class="code prettyprint"><code class="language-handlebars">  {{input attribute-name='controllerAction'}}
+</code></pre>
+<pre class="code prettyprint"><code>+--------------------+----------------+
+|                    |                |
+| event              | attribute name |
++--------------------+----------------+
+| new line inserted  | insert-newline |
+|                    |                |
+| enter key pressed  | insert-newline |
+|                    |                |
+| cancel key pressed | escape-press   |
+|                    |                |
+| focusin            | focus-in       |
+|                    |                |
+| focusout           | focus-out      |
+|                    |                |
+| keypress           | key-press      |
+|                    |                |
+| keyup              | key-up         |
+|                    |                |
+| keydown            | key-down       |
++--------------------+----------------+
+</code></pre>
 
 </div>
 
@@ -289,8 +305,23 @@ requirement in web components.</p>
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.CollectionView.html">
+                        Ember.CollectionView
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.Component.html">
                         Ember.Component
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.ContainerView.html">
+                        Ember.ContainerView
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.EmptyViewSupport.html">
+                        Ember.EmptyViewSupport
                     </a>
                 </li>
                 <li class="module-class">
@@ -306,6 +337,11 @@ requirement in web components.</p>
                 <li class="module-class">
                     <a href="../classes/Ember.LegacyViewSupport.html">
                         Ember.LegacyViewSupport
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.Select.html">
+                        Ember.Select
                     </a>
                 </li>
                 <li class="module-class">

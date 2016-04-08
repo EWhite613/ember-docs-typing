@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -190,9 +190,12 @@
 @submodule ember-templates
 */
 
-import { assert } from &#x27;ember-metal/debug&#x27;;
-import BasicStream from &#x27;ember-metal/streams/stream&#x27;;
+import Ember from &#x27;ember-metal/core&#x27;;
+import isEnabled from &#x27;ember-metal/features&#x27;;
+import Stream from &#x27;ember-metal/streams/stream&#x27;;
+import KeyStream from &#x27;ember-metal/streams/key-stream&#x27;;
 import { isStream } from &#x27;ember-metal/streams/utils&#x27;;
+import merge from &#x27;ember-metal/merge&#x27;;
 import subscribe from &#x27;ember-htmlbars/utils/subscribe&#x27;;
 import { get } from &#x27;ember-metal/property_get&#x27;;
 import { set } from &#x27;ember-metal/property_set&#x27;;
@@ -202,155 +205,158 @@ import {
 } from &#x27;ember-metal/observer&#x27;;
 
 function labelFor(source, key) {
-  let sourceLabel = source.label ? source.label : &#x27;&#x27;;
-  let keyLabel = key.label ? key.label : &#x27;&#x27;;
+  const sourceLabel = source.label ? source.label : &#x27;&#x27;;
+  const keyLabel = key.label ? key.label : &#x27;&#x27;;
   return &#x60;(get ${sourceLabel} ${keyLabel})&#x60;;
 }
 
-let DynamicKeyStream = BasicStream.extend({
-  init(source, keySource) {
-    // Used to get the original path for debugging purposes.
+if (isEnabled(&#x27;ember-htmlbars-get-helper&#x27;)) {
+  const buildStream = function buildStream(params) {
+    const [objRef, pathRef] = params;
+
+    Ember.assert(&#x27;The first argument to {{get}} must be a stream&#x27;, isStream(objRef));
+    Ember.assert(&#x27;{{get}} requires at least two arguments&#x27;, params.length &gt; 1);
+
+    const stream = new DynamicKeyStream(objRef, pathRef);
+
+    return stream;
+  };
+
+
+  /**
+    Dynamically look up a property on an object. The second argument to &#x60;{{get}}&#x60;
+    should have a string value, although it can be bound.
+
+    For example, these two usages are equivilent:
+
+    &#x60;&#x60;&#x60;handlebars
+    {{person.height}}
+    {{get person &quot;height&quot;}}
+    &#x60;&#x60;&#x60;
+
+    If there were several facts about a person, the &#x60;{{get}}&#x60; helper can dynamically
+    pick one:
+
+    &#x60;&#x60;&#x60;handlebars
+    {{get person factName}}
+    &#x60;&#x60;&#x60;
+
+    For a more complex example, this template would allow the user to switch
+    between showing the user&#x27;s height and weight with a click:
+
+    &#x60;&#x60;&#x60;handlebars
+    {{get person factName}}
+    &lt;button {{action (mut factName) &quot;height&quot;}}&gt;Show height&lt;/button&gt;
+    &lt;button {{action (mut factName) &quot;weight&quot;}}&gt;Show weight&lt;/button&gt;
+    &#x60;&#x60;&#x60;
+
+    The &#x60;{{get}}&#x60; helper can also respect mutable values itself. For example:
+
+    &#x60;&#x60;&#x60;handlebars
+    {{input value=(mut (get person factName)) type=&quot;text&quot;}}
+    &lt;button {{action (mut factName) &quot;height&quot;}}&gt;Show height&lt;/button&gt;
+    &lt;button {{action (mut factName) &quot;weight&quot;}}&gt;Show weight&lt;/button&gt;
+    &#x60;&#x60;&#x60;
+
+    Would allow the user to swap what fact is being displayed, and also edit
+    that fact via a two-way mutable binding.
+
+    @public
+    @method get
+    @for Ember.Templates.helpers
+  */
+  var getKeyword = function getKeyword(morph, env, scope, params, hash, template, inverse, visitor) {
+    if (morph === null) {
+      return buildStream(params);
+    } else {
+      let stream;
+      if (morph.linkedResult) {
+        stream = morph.linkedResult;
+      } else {
+        stream = buildStream(params);
+
+        subscribe(morph, env, scope, stream);
+        env.hooks.linkRenderNode(morph, env, scope, null, params, hash);
+
+        morph.linkedResult = stream;
+      }
+      env.hooks.range(morph, env, scope, null, stream, visitor);
+    }
+
+    return true;
+  };
+
+  var DynamicKeyStream = function DynamicKeyStream(source, keySource) {
+    if (!isStream(keySource)) {
+      return new KeyStream(source, keySource);
+    }
+    Ember.assert(&#x27;DynamicKeyStream error: source must be a stream&#x27;, isStream(source)); // TODO: This isn&#x27;t necessary.
+
+    // used to get the original path for debugging and legacy purposes
     var label = labelFor(source, keySource);
 
-    this.label = label;
+    this.init(label);
     this.path = label;
     this.sourceDep = this.addMutableDependency(source);
     this.keyDep = this.addMutableDependency(keySource);
     this.observedObject = null;
     this.observedKey = null;
-  },
+  };
 
-  key() {
-    let key = this.keyDep.getValue();
-    if (typeof key === &#x27;string&#x27;) {
-      return key;
-    }
-  },
+  DynamicKeyStream.prototype = Object.create(KeyStream.prototype);
 
-  compute() {
-    var object = this.sourceDep.getValue();
-    var key = this.key();
-    if (object &amp;&amp; key) {
-      return get(object, key);
-    }
-  },
+  merge(DynamicKeyStream.prototype, {
+    key() {
+      const key = this.keyDep.getValue();
+      if (typeof key === &#x27;string&#x27;) {
+        Ember.assert(&#x27;DynamicKeyStream error: key must not have a \&#x27;.\&#x27;&#x27;, key.indexOf(&#x27;.&#x27;) === -1);
+        return key;
+      }
+    },
 
-  setValue(value) {
-    var object = this.sourceDep.getValue();
-    var key = this.key();
-    if (object) {
-      set(object, key, value);
-    }
-  },
+    compute() {
+      var object = this.sourceDep.getValue();
+      var key = this.key();
+      if (object &amp;&amp; key) {
+        return get(object, key);
+      }
+    },
 
-  _super$revalidate: BasicStream.prototype.revalidate,
+    setValue(value) {
+      var object = this.sourceDep.getValue();
+      var key = this.key();
+      if (object) {
+        set(object, key, value);
+      }
+    },
 
-  revalidate(value) {
-    this._super$revalidate(value);
+    _super$revalidate: Stream.prototype.revalidate,
 
-    var object = this.sourceDep.getValue();
-    var key = this.key();
-    if (object !== this.observedObject || key !== this.observedKey) {
-      this._clearObservedObject();
+    revalidate(value) {
+      this._super$revalidate(value);
 
-      if (object &amp;&amp; typeof object === &#x27;object&#x27; &amp;&amp; key) {
-        addObserver(object, key, this, this.notify);
-        this.observedObject = object;
-        this.observedKey = key;
+      var object = this.sourceDep.getValue();
+      var key = this.key();
+      if (object !== this.observedObject || key !== this.observedKey) {
+        this._clearObservedObject();
+
+        if (object &amp;&amp; typeof object === &#x27;object&#x27; &amp;&amp; key) {
+          addObserver(object, key, this, this.notify);
+          this.observedObject = object;
+          this.observedKey = key;
+        }
+      }
+    },
+
+    _clearObservedObject() {
+      if (this.observedObject) {
+        removeObserver(this.observedObject, this.observedKey, this, this.notify);
+        this.observedObject = null;
+        this.observedKey = null;
       }
     }
-  },
+  });
 
-  _clearObservedObject() {
-    if (this.observedObject) {
-      removeObserver(this.observedObject, this.observedKey, this, this.notify);
-      this.observedObject = null;
-      this.observedKey = null;
-    }
-  }
-});
-
-const buildStream = function buildStream(params) {
-  let [objRef, pathRef] = params;
-
-  assert(&#x27;The first argument to {{get}} must be a stream&#x27;, isStream(objRef));
-  assert(&#x27;{{get}} requires at least two arguments&#x27;, params.length &gt; 1);
-
-  let stream = buildDynamicKeyStream(objRef, pathRef);
-
-  return stream;
-};
-
-function buildDynamicKeyStream(source, keySource) {
-  if (!isStream(keySource)) {
-    return source.get(keySource);
-  } else {
-    return new DynamicKeyStream(source, keySource);
-  }
-}
-
-/**
-  Dynamically look up a property on an object. The second argument to &#x60;{{get}}&#x60;
-  should have a string value, although it can be bound.
-
-  For example, these two usages are equivilent:
-
-  &#x60;&#x60;&#x60;handlebars
-  {{person.height}}
-  {{get person &quot;height&quot;}}
-  &#x60;&#x60;&#x60;
-
-  If there were several facts about a person, the &#x60;{{get}}&#x60; helper can dynamically
-  pick one:
-
-  &#x60;&#x60;&#x60;handlebars
-  {{get person factName}}
-  &#x60;&#x60;&#x60;
-
-  For a more complex example, this template would allow the user to switch
-  between showing the user&#x27;s height and weight with a click:
-
-  &#x60;&#x60;&#x60;handlebars
-  {{get person factName}}
-  &lt;button {{action (mut factName) &quot;height&quot;}}&gt;Show height&lt;/button&gt;
-  &lt;button {{action (mut factName) &quot;weight&quot;}}&gt;Show weight&lt;/button&gt;
-  &#x60;&#x60;&#x60;
-
-  The &#x60;{{get}}&#x60; helper can also respect mutable values itself. For example:
-
-  &#x60;&#x60;&#x60;handlebars
-  {{input value=(mut (get person factName)) type=&quot;text&quot;}}
-  &lt;button {{action (mut factName) &quot;height&quot;}}&gt;Show height&lt;/button&gt;
-  &lt;button {{action (mut factName) &quot;weight&quot;}}&gt;Show weight&lt;/button&gt;
-  &#x60;&#x60;&#x60;
-
-  Would allow the user to swap what fact is being displayed, and also edit
-  that fact via a two-way mutable binding.
-
-  @public
-  @method get
-  @for Ember.Templates.helpers
-  @since 2.1.0
-*/
-function getKeyword(morph, env, scope, params, hash, template, inverse, visitor) {
-  if (morph === null) {
-    return buildStream(params);
-  } else {
-    let stream;
-    if (morph.linkedResult) {
-      stream = morph.linkedResult;
-    } else {
-      stream = buildStream(params);
-
-      subscribe(morph, env, scope, stream);
-      env.hooks.linkRenderNode(morph, env, scope, null, params, hash);
-
-      morph.linkedResult = stream;
-    }
-    env.hooks.range(morph, env, scope, null, stream, visitor);
-  }
-
-  return true;
 }
 
 export default getKeyword;

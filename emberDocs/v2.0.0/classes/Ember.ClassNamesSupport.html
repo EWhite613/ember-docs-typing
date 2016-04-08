@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -40,15 +40,12 @@
                             <ul id="api-classes" class="apis classes">
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
                                 <li><a href="../classes/Descriptor.html">Descriptor</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,20 +53,22 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +104,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -126,9 +126,9 @@
                                 <li><a href="../classes/Function.html">Function</a></li>
                                 <li><a href="../classes/Libraries.html">Libraries</a></li>
                                 <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -204,7 +204,6 @@
     <ul class="api-class-tabs">
         <li class="api-class-tab index"><a href="#index">Index</a></li>
 
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
             <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
     </ul>
 
@@ -212,35 +211,13 @@
         <div id="index" class="api-class-tabpanel index">
             <h2 class="off-left">Item Index</h2>
 
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                            <li class="index-item method private">
-                                <a href="#method_removeChild">removeChild</a>
-
-                            </li>
-                    </ul>
-                </div>
 
                 <div class="index-section properties">
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
-                            <li class="index-item property private">
-                                <a href="#property_childViews">childViews</a>
-
-                            </li>
                             <li class="index-item property public">
                                 <a href="#property_classNameBindings">classNameBindings</a>
-
-                            </li>
-                            <li class="index-item property public">
-                                <a href="#property_classNameBindings">classNameBindings</a>
-
-                            </li>
-                            <li class="index-item property public">
-                                <a href="#property_classNames">classNames</a>
 
                             </li>
                             <li class="index-item property public">
@@ -253,160 +230,10 @@
 
         </div>
 
-            <div id="methods" class="api-class-tabpanel">
-                <h2 class="off-left">Methods</h2>
-
-<div id="method_removeChild" class="method item private">
-    <h3 class="name"><code>removeChild</code></h3>
-
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-                <li class="arg">
-                        <code>view</code>
-                </li>
-            </ul><span class="paren">)</span>
-        </div>
-
-        <span class="returns-inline">
-            <span class="type"><a href="../classes/Ember.View.html" class="crosslink">Ember.View</a></span>
-        </span>
-
-
-        <span class="flag private">private</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_ember-views_child-views-support.js.html#l35"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;ember-views&#x2F;child-views-support.js:35</code></a>
-        </p>
-
-
-
-    </div>
-
-    <div class="description">
-        <p>Removes the child view from the parent view.</p>
-
-    </div>
-
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-                <li class="param">
-                        <code class="param-name">view</code>
-                        <span class="type"><a href="../classes/Ember.View.html" class="crosslink">Ember.View</a></span>
-
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                </li>
-            </ul>
-        </div>
-
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                        <span class="type"><a href="../classes/Ember.View.html" class="crosslink">Ember.View</a></span>:
-                    <p>receiver</p>
-
-            </div>
-        </div>
-
-
-</div>
-            </div>
 
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-<div id="property_childViews" class="property item private">
-    <h3 class="name"><code>childViews</code></h3>
-    <span class="type">Array</span>
-
-
-        <span class="flag private">private</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_ember-views_child-views-support.js.html#l12"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;ember-views&#x2F;child-views-support.js:12</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>Array of child views. You should never edit this array directly.
-Instead, use <code>appendChild</code> and <code>removeFromParent</code>.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> []</p>
-
-
-</div>
-<div id="property_classNameBindings" class="property item public">
-    <h3 class="name"><code>classNameBindings</code></h3>
-    <span class="type">Array</span>
-
-
-        <span class="flag public">public</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_ember-views_class-names-support.js.html#l40"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;ember-views&#x2F;class-names-support.js:40</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>A list of properties of the view to apply as class names. If the property
-is a string value, the value of that string will be applied as a class
-name.</p>
-<pre class="code prettyprint"><code class="language-javascript">// Applies the 'high' class to the view element
-Ember.View.extend({
-  classNameBindings: ['priority'],
-  priority: 'high'
-});
-</code></pre>
-<p>If the value of the property is a Boolean, the name of that property is
-added as a dasherized class name.</p>
-<pre class="code prettyprint"><code class="language-javascript">// Applies the 'is-urgent' class to the view element
-Ember.View.extend({
-  classNameBindings: ['isUrgent'],
-  isUrgent: true
-});
-</code></pre>
-<p>If you would prefer to use a custom value instead of the dasherized
-property name, you can pass a binding like this:</p>
-<pre class="code prettyprint"><code class="language-javascript">// Applies the 'urgent' class to the view element
-Ember.View.extend({
-  classNameBindings: ['isUrgent:urgent'],
-  isUrgent: true
-});
-</code></pre>
-<p>This list of properties is inherited from the view's superclasses as well.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> []</p>
-
-
-</div>
 <div id="property_classNameBindings" class="property item public">
     <h3 class="name"><code>classNameBindings</code></h3>
     <span class="type">Array</span>
@@ -456,35 +283,6 @@ Ember.View.extend({
     </div>
 
         <p><strong>Default:</strong> []</p>
-
-
-</div>
-<div id="property_classNames" class="property item public">
-    <h3 class="name"><code>classNames</code></h3>
-    <span class="type">Array</span>
-
-
-        <span class="flag public">public</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/ember.js_packages_ember-glimmer_lib_ember-views_class-names-support.js.html#l28"><code>ember.js&#x2F;packages&#x2F;ember-glimmer&#x2F;lib&#x2F;ember-views&#x2F;class-names-support.js:28</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>Standard CSS class names to apply to the view's outer element. This
-property automatically inherits any class names defined by the view's
-superclasses as well.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> [&#x27;ember-view&#x27;]</p>
 
 
 </div>

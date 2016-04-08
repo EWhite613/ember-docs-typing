@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,105 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
-                                <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +148,35 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
-                                <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
                 
@@ -138,14 +185,12 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
-                                <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
-                                <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
-                                <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
-                                <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -186,14 +231,15 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l27"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:27</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-views_lib_views_view.js.html#l98"><code>ember.js&#x2F;packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:98</code></a>
         </div>
 
 </div>
 
 
 <div class="box intro">
-    
+    <p>Ember</p>
+
 </div>
 
 
@@ -203,23 +249,68 @@
 
             <ul class="module-classes">
                 <li class="module-class">
-                    <a href="../classes/Backburner.html">
-                        Backburner
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Container.html">
-                        Container
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/ContainerProxyMixin.html">
-                        ContainerProxyMixin
+                    <a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+applied to any object.  Suites are most useful for defining tests that
+work against a mixin or plugin API.  Developers implementing objects that
+use the mixin or support the API can then run these tests against their
+own code to verify compliance.
+
+To define a suite, you need to define the tests themselves as well as a
+callback API implementors can use to tie your tests to thier specific class.
+
+## Defining a Callback API
+
+To define the callback API, just extend this class and add your properties
+or methods that must be provided.  Use Ember.required() placeholders for
+any properties that implementors must define themselves.
+
+## Defining Unit Tests
+
+To add unit tests, use the suite.module() or suite.test() methods instead
+of a regular module() or test() method when defining your tests.  This will
+add the tests to the suite.
+
+## Using a Suite
+
+To use a Suite to test your own objects, extend the suite subclass and
+define any required methods.  Then call run() on the new subclass.  This
+will create an instance of your class and then defining the unit tests..html">
+                        A Suite can be used to define a reusable set of unit tests that can be
+applied to any object.  Suites are most useful for defining tests that
+work against a mixin or plugin API.  Developers implementing objects that
+use the mixin or support the API can then run these tests against their
+own code to verify compliance.
+
+To define a suite, you need to define the tests themselves as well as a
+callback API implementors can use to tie your tests to thier specific class.
+
+## Defining a Callback API
+
+To define the callback API, just extend this class and add your properties
+or methods that must be provided.  Use Ember.required() placeholders for
+any properties that implementors must define themselves.
+
+## Defining Unit Tests
+
+To add unit tests, use the suite.module() or suite.test() methods instead
+of a regular module() or test() method when defining your tests.  This will
+add the tests to the suite.
+
+## Using a Suite
+
+To use a Suite to test your own objects, extend the suite subclass and
+define any required methods.  Then call run() on the new subclass.  This
+will create an instance of your class and then defining the unit tests.
                     </a>
                 </li>
                 <li class="module-class">
                     <a href="../classes/Ember.html">
                         Ember
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember._HandlebarsBoundView.html">
+                        Ember._HandlebarsBoundView
                     </a>
                 </li>
                 <li class="module-class">
@@ -233,6 +324,11 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember._SimpleMetamorphView.html">
+                        Ember._SimpleMetamorphView
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.ActionHandler.html">
                         Ember.ActionHandler
                     </a>
@@ -243,23 +339,13 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.ApplicationInstance.html">
-                        Ember.ApplicationInstance
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.ApplicationInstance.BootOptions.html">
-                        Ember.ApplicationInstance.BootOptions
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.AriaRoleSupport.html">
-                        Ember.AriaRoleSupport
-                    </a>
-                </li>
-                <li class="module-class">
                     <a href="../classes/Ember.Array.html">
                         Ember.Array
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.ArrayController.html">
+                        Ember.ArrayController
                     </a>
                 </li>
                 <li class="module-class">
@@ -273,18 +359,13 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.Binding.html">
-                        Ember.Binding
-                    </a>
-                </li>
-                <li class="module-class">
                     <a href="../classes/Ember.Checkbox.html">
                         Ember.Checkbox
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.ClassNamesSupport.html">
-                        Ember.ClassNamesSupport
+                    <a href="../classes/Ember.CollectionView.html">
+                        Ember.CollectionView
                     </a>
                 </li>
                 <li class="module-class">
@@ -298,13 +379,8 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.computed.html">
-                        Ember.computed
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.ComputedProperty.html">
-                        Ember.ComputedProperty
+                    <a href="../classes/Ember.ComponentTemplateDeprecation.html">
+                        Ember.ComponentTemplateDeprecation
                     </a>
                 </li>
                 <li class="module-class">
@@ -313,8 +389,18 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.ContainerView.html">
+                        Ember.ContainerView
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.Controller.html">
                         Ember.Controller
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">
+                        Ember.ControllerContentModelAliasDeprecation
                     </a>
                 </li>
                 <li class="module-class">
@@ -343,13 +429,13 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.Debug.html">
-                        Ember.Debug
+                    <a href="../classes/Ember.DefaultResolver.html">
+                        Ember.DefaultResolver
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.DefaultResolver.html">
-                        Ember.DefaultResolver
+                    <a href="../classes/Ember.Deferred.html">
+                        Ember.Deferred
                     </a>
                 </li>
                 <li class="module-class">
@@ -360,11 +446,6 @@
                 <li class="module-class">
                     <a href="../classes/Ember.Enumerable.html">
                         Ember.Enumerable
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.Error.html">
-                        Ember.Error
                     </a>
                 </li>
                 <li class="module-class">
@@ -388,13 +469,28 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.HashLocation.html">
-                        Ember.HashLocation
+                    <a href="../classes/Ember.Handlebars.html">
+                        Ember.Handlebars
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.Helper.html">
-                        Ember.Helper
+                    <a href="../classes/Ember.Handlebars.Compiler.html">
+                        Ember.Handlebars.Compiler
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.Handlebars.helpers.html">
+                        Ember.Handlebars.helpers
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">
+                        Ember.Handlebars.JavaScriptCompiler
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.HashLocation.html">
+                        Ember.HashLocation
                     </a>
                 </li>
                 <li class="module-class">
@@ -403,58 +499,18 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.HTMLBars.html">
-                        Ember.HTMLBars
-                    </a>
-                </li>
-                <li class="module-class">
                     <a href="../classes/Ember.inject.html">
                         Ember.inject
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.InjectedProperty.html">
-                        Ember.InjectedProperty
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.Instrumentation.html">
-                        Ember.Instrumentation
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.InstrumentationSupport.html">
-                        Ember.InstrumentationSupport
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.LegacyViewSupport.html">
-                        Ember.LegacyViewSupport
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.LinkComponent.html">
-                        Ember.LinkComponent
+                    <a href="../classes/Ember.LinkView.html">
+                        Ember.LinkView
                     </a>
                 </li>
                 <li class="module-class">
                     <a href="../classes/Ember.Location.html">
                         Ember.Location
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.Logger.html">
-                        Ember.Logger
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.Map.html">
-                        Ember.Map
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.MapWithDefault.html">
-                        Ember.MapWithDefault
                     </a>
                 </li>
                 <li class="module-class">
@@ -493,6 +549,11 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.ObjectController.html">
+                        Ember.ObjectController
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.ObjectProxy.html">
                         Ember.ObjectProxy
                     </a>
@@ -500,11 +561,6 @@
                 <li class="module-class">
                     <a href="../classes/Ember.Observable.html">
                         Ember.Observable
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.OrderedSet.html">
-                        Ember.OrderedSet
                     </a>
                 </li>
                 <li class="module-class">
@@ -518,6 +574,11 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.ReduceComputedProperty.html">
+                        Ember.ReduceComputedProperty
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.Route.html">
                         Ember.Route
                     </a>
@@ -528,8 +589,23 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.Select.html">
+                        Ember.Select
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.Service.html">
                         Ember.Service
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.Set.html">
+                        Ember.Set
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Ember.SortableMixin.html">
+                        Ember.SortableMixin
                     </a>
                 </li>
                 <li class="module-class">
@@ -538,18 +614,13 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.SubArray.html">
+                        Ember.SubArray
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.TargetActionSupport.html">
                         Ember.TargetActionSupport
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.TemplateRenderingSupport.html">
-                        Ember.TemplateRenderingSupport
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Ember.Templates.helpers.html">
-                        Ember.Templates.helpers
                     </a>
                 </li>
                 <li class="module-class">
@@ -583,6 +654,11 @@
                     </a>
                 </li>
                 <li class="module-class">
+                    <a href="../classes/Ember.TrackedArray.html">
+                        Ember.TrackedArray
+                    </a>
+                </li>
+                <li class="module-class">
                     <a href="../classes/Ember.View.html">
                         Ember.View
                     </a>
@@ -593,43 +669,13 @@
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Ember.VisibilitySupport.html">
-                        Ember.VisibilitySupport
-                    </a>
-                </li>
-                <li class="module-class">
                     <a href="../classes/Function.html">
                         Function
                     </a>
                 </li>
                 <li class="module-class">
-                    <a href="../classes/Libraries.html">
-                        Libraries
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/Registry.html">
-                        Registry
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/RegistryProxyMixin.html">
-                        RegistryProxyMixin
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/RoutingService.html">
-                        RoutingService
-                    </a>
-                </li>
-                <li class="module-class">
                     <a href="../classes/String.html">
                         String
-                    </a>
-                </li>
-                <li class="module-class">
-                    <a href="../classes/TransformInputOnToOnEvent.html">
-                        TransformInputOnToOnEvent
                     </a>
                 </li>
             </ul>
@@ -646,24 +692,7 @@
                     </a>
 
                     <div class="module-submodule-description">
-                        The <code>ApplicationInstance</code> encapsulates all of the stateful aspects of a
-running <code>Application</code>.
-
-At a high-level, we break application boot into two distinct phases:
-
-* Definition time, where all of the classes, templates, and other
-  dependencies are loaded (typically in the browser).
-* Run time, where we begin executing the application once everything
-  has loaded.
-
-Definition time can be expensive and only needs to happen once since it is
-an idempotent operation. For example, between test runs and FastBoot
-requests, the application stays the same. It is only the state that we want
-to reset.
-
-That state is what the <code>ApplicationInstance</code> manages: it is responsible for
-creating the container that contains all application state, and disposing of
-it once the particular test run or FastBoot request has finished.
+                        Ember Application
                     </div>
                 </li>
                 <li class="module-submodule">
@@ -672,7 +701,7 @@ it once the particular test run or FastBoot request has finished.
                     </a>
 
                     <div class="module-submodule-description">
-                        
+                        Ember Debug
                     </div>
                 </li>
                 <li class="module-submodule">
@@ -681,47 +710,33 @@ it once the particular test run or FastBoot request has finished.
                     </a>
 
                     <div class="module-submodule-description">
-                        The <code>ContainerDebugAdapter</code> helps the container and resolver interface
-with tools that debug Ember such as the
-[Ember Extension](https://github.com/tildeio/ember-extension)
-for Chrome and Firefox.
-
-This class can be extended by a custom resolver implementer
-to override some of the methods with library-specific code.
-
-The methods likely to be overridden are:
-
-* <code>canCatalogEntriesByType</code>
-* <code>catalogEntriesByType</code>
-
-The adapter will need to be registered
-in the application's container as <code>container-debug-adapter:main</code>.
-
-Example:
-
-<code>&#x60;</code>javascript
-Application.initializer({
-  name: "containerDebugAdapter",
-
-  initialize: function(application) {
-    application.register('container-debug-adapter:main', require('app/container-debug-adapter'));
-  }
-});
-<code>&#x60;</code>
+                        Ember Extension Support
                     </div>
                 </li>
                 <li class="module-submodule">
-                    <a href="../modules/ember-htmlbars.html">
-                        ember-htmlbars
+                    <a href="../modules/ember-handlebars.html">
+                        ember-handlebars
                     </a>
 
                     <div class="module-submodule-description">
-                        [HTMLBars](https://github.com/tildeio/htmlbars) is a [Handlebars](http://handlebarsjs.com/)
-  compatible templating engine used by Ember.js. The classes and namespaces
-  covered by this documentation attempt to focus on APIs for interacting
-  with HTMLBars itself. For more general guidance on Ember.js templates and
-  helpers, please see the [ember-templates](/api/modules/ember-templates.html)
-  package.
+                        Ember Handlebars
+                    </div>
+                </li>
+                <li class="module-submodule">
+                    <a href="../modules/ember-handlebars-compiler.html">
+                        ember-handlebars-compiler
+                    </a>
+
+                    <div class="module-submodule-description">
+                        Prepares the Handlebars templating library for use inside Ember's view
+system.
+
+The <code>Ember.Handlebars</code> object is the standard Handlebars library, extended to
+use Ember's <code>get()</code> method instead of direct property access, which allows
+computed properties to be used inside templates.
+
+To create an <code>Ember.Handlebars</code> template, call <code>Ember.Handlebars.compile()</code>.
+This will return a function that can be used by <code>Ember.View</code> for rendering.
                     </div>
                 </li>
                 <li class="module-submodule">
@@ -730,140 +745,16 @@ Application.initializer({
                     </a>
 
                     <div class="module-submodule-description">
-                        Ember.Location returns an instance of the correct implementation of
-the <code>location</code> API.
-
-## Implementations
-
-You can pass an implementation name (<code>hash</code>, <code>history</code>, <code>none</code>) to force a
-particular implementation to be used in your application.
-
-### HashLocation
-
-Using <code>HashLocation</code> results in URLs with a <code>#</code> (hash sign) separating the
-server side URL portion of the URL from the portion that is used by Ember.
-This relies upon the <code>hashchange</code> event existing in the browser.
-
-Example:
-
-<code>&#x60;</code>javascript
-App.Router.map(function() {
-  this.route('posts', function() {
-    this.route('new');
-  });
-});
-
-App.Router.reopen({
-  location: 'hash'
-});
-<code>&#x60;</code>
-
-This will result in a posts.new url of <code>&#x2F;#&#x2F;posts&#x2F;new</code>.
-
-### HistoryLocation
-
-Using <code>HistoryLocation</code> results in URLs that are indistinguishable from a
-standard URL. This relies upon the browser's <code>history</code> API.
-
-Example:
-
-<code>&#x60;</code>javascript
-App.Router.map(function() {
-  this.route('posts', function() {
-    this.route('new');
-  });
-});
-
-App.Router.reopen({
-  location: 'history'
-});
-<code>&#x60;</code>
-
-This will result in a posts.new url of <code>&#x2F;posts&#x2F;new</code>.
-
-Keep in mind that your server must serve the Ember app at all the routes you
-define.
-
-### AutoLocation
-
-Using <code>AutoLocation</code>, the router will use the best Location class supported by
-the browser it is running in.
-
-Browsers that support the <code>history</code> API will use <code>HistoryLocation</code>, those that
-do not, but still support the <code>hashchange</code> event will use <code>HashLocation</code>, and
-in the rare case neither is supported will use <code>NoneLocation</code>.
-
-Example:
-
-<code>&#x60;</code>javascript
-App.Router.map(function() {
-  this.route('posts', function() {
-    this.route('new');
-  });
-});
-
-App.Router.reopen({
-  location: 'auto'
-});
-<code>&#x60;</code>
-
-This will result in a posts.new url of <code>&#x2F;posts&#x2F;new</code> for modern browsers that
-support the <code>history</code> api or <code>&#x2F;#&#x2F;posts&#x2F;new</code> for older ones, like Internet
-Explorer 9 and below.
-
-When a user visits a link to your application, they will be automatically
-upgraded or downgraded to the appropriate <code>Location</code> class, with the URL
-transformed accordingly, if needed.
-
-Keep in mind that since some of your users will use <code>HistoryLocation</code>, your
-server must serve the Ember app at all the routes you define.
-
-### NoneLocation
-
-Using <code>NoneLocation</code> causes Ember to not store the applications URL state
-in the actual URL. This is generally used for testing purposes, and is one
-of the changes made when calling <code>App.setupForTesting()</code>.
-
-## Location API
-
-Each location implementation must provide the following methods:
-
-* implementation: returns the string name used to reference the implementation.
-* getURL: returns the current URL.
-* setURL(path): sets the current URL.
-* replaceURL(path): replace the current URL (optional).
-* onUpdateURL(callback): triggers the callback when the URL changes.
-* formatURL(url): formats <code>url</code> to be placed into <code>href</code> attribute.
-* detect() (optional): instructs the location to do any feature detection
-    necessary. If the location needs to redirect to a different URL, it
-    can cancel routing by setting the <code>cancelRouterSetup</code> property on itself
-    to <code>false</code>.
-
-Calling setURL or replaceURL will not trigger onUpdateURL callbacks.
+                        Ember Routing
                     </div>
                 </li>
                 <li class="module-submodule">
-                    <a href="../modules/ember-routing-htmlbars.html">
-                        ember-routing-htmlbars
+                    <a href="../modules/ember-routing-handlebars.html">
+                        ember-routing-handlebars
                     </a>
 
                     <div class="module-submodule-description">
-                        
-                    </div>
-                </li>
-                <li class="module-submodule">
-                    <a href="../modules/ember-routing-views.html">
-                        ember-routing-views
-                    </a>
-
-                    <div class="module-submodule-description">
-                        <code>Ember.LinkComponent</code> renders an element whose <code>click</code> event triggers a
-transition of the application's instance of <code>Ember.Router</code> to
-a supplied route by name.
-
-<code>Ember.LinkComponent</code> components are invoked with {{#link-to}}. Properties
-of this class can be overridden with <code>reopen</code> to customize application-wide
-behavior.
+                        Ember Routing Handlebars
                     </div>
                 </li>
                 <li class="module-submodule">
@@ -872,100 +763,7 @@ behavior.
                     </a>
 
                     <div class="module-submodule-description">
-                        Defines string helper methods including string formatting and localization.
-Unless <code>Ember.EXTEND_PROTOTYPES.String</code> is <code>false</code> these methods will also be
-added to the <code>String.prototype</code> as well.
-                    </div>
-                </li>
-                <li class="module-submodule">
-                    <a href="../modules/ember-template-compiler.html">
-                        ember-template-compiler
-                    </a>
-
-                    <div class="module-submodule-description">
-                        
-                    </div>
-                </li>
-                <li class="module-submodule">
-                    <a href="../modules/ember-templates.html">
-                        ember-templates
-                    </a>
-
-                    <div class="module-submodule-description">
-                        Ember templates are executed by [HTMLBars](https://github.com/tildeio/htmlbars),
-an HTML-friendly version of [Handlebars](http://handlebarsjs.com/). Any valid Handlebars syntax is valid in an Ember template.
-
-### Showing a property
-
-Templates manage the flow of an application's UI, and display state (through
-the DOM) to a user. For example, given a component with the property "name",
-that component's template can use the name in several ways:
-
-<code>&#x60;</code>javascript
-// app/components/person.js
-export default Ember.Component.extend({
-  name: 'Jill'
-});
-<code>&#x60;</code>
-
-<code>&#x60;</code>handlebars
-{{! app/components/person.hbs }}
-{{name}}
-<div>{{name}}</div>
-<span data-name={{name}}></span>
-<code>&#x60;</code>
-
-Any time the "name" property on the component changes, the DOM will be
-updated.
-
-Properties can be chained as well:
-
-<code>&#x60;</code>handlebars
-{{aUserModel.name}}
-<div>{{listOfUsers.firstObject.name}}</div>
-<code>&#x60;</code>
-
-### Using Ember helpers
-
-When content is passed in mustaches <code>{{}}</code>, Ember will first try to find a helper
-or component with that name. For example, the <code>if</code> helper:
-
-<code>&#x60;</code>handlebars
-{{if name "I have a name" "I have no name"}}
-<span data-has-name={{if name true}}></span>
-<code>&#x60;</code>
-
-The returned value is placed where the <code>{{}}</code> is called. The above style is
-called "inline". A second style of helper usage is called "block". For example:
-
-<code>&#x60;</code>handlebars
-{{#if name}}
-  I have a name
-{{else}}
-  I have no name
-{{/if}}
-<code>&#x60;</code>
-
-The block form of helpers allows you to control how the UI is created based
-on the values of properties.
-
-A third form of helper is called "nested". For example here the concat
-helper will add " Doe" to a displayed name if the person has no last name:
-
-<code>&#x60;</code>handlebars
-<span data-name={{concat firstName (
- if lastName (concat " " lastName) "Doe"
-)}}></span>
-<code>&#x60;</code>
-
-Ember's built-in helpers are described under the [Ember.Templates.helpers](/api/classes/Ember.Templates.helpers.html)
-namespace. Documentation on creating custom helpers can be found under
-[Ember.Helper](/api/classes/Ember.Helper.html).
-
-### Invoking a Component
-
-Ember components represent state to the UI of an application. Further
-reading on components can be found under [Ember.Component](/api/classes/Ember.Component.html).
+                        Ember Runtime
                     </div>
                 </li>
                 <li class="module-submodule">
@@ -974,8 +772,7 @@ reading on components can be found under [Ember.Component](/api/classes/Ember.Co
                     </a>
 
                     <div class="module-submodule-description">
-                        The primary purpose of this class is to create hooks that can be implemented
-by an adapter for various test frameworks.
+                        Ember Testing
                     </div>
                 </li>
                 <li class="module-submodule">
@@ -984,85 +781,7 @@ by an adapter for various test frameworks.
                     </a>
 
                     <div class="module-submodule-description">
-                        An <code>Ember.Component</code> is a view that is completely
-isolated. Properties accessed in its templates go
-to the view object and actions are targeted at
-the view object. There is no access to the
-surrounding context or outer controller; all
-contextual information must be passed in.
-
-The easiest way to create an <code>Ember.Component</code> is via
-a template. If you name a template
-<code>components&#x2F;my-foo</code>, you will be able to use
-<code>{{my-foo}}</code> in other templates, which will make
-an instance of the isolated component.
-
-<code>&#x60;</code>handlebars
-{{app-profile person=currentUser}}
-<code>&#x60;</code>
-
-<code>&#x60;</code>handlebars
-<!-- app-profile template -->
-<h1>{{person.title}}</h1>
-<img src={{person.avatar}}>
-<p class='signature'>{{person.signature}}</p>
-<code>&#x60;</code>
-
-You can use <code>yield</code> inside a template to
-include the **contents** of any block attached to
-the component. The block will be executed in the
-context of the surrounding context or outer controller:
-
-<code>&#x60;</code>handlebars
-{{#app-profile person=currentUser}}
-  <p>Admin mode</p>
-  {{! Executed in the controller's context. }}
-{{/app-profile}}
-<code>&#x60;</code>
-
-<code>&#x60;</code>handlebars
-<!-- app-profile template -->
-<h1>{{person.title}}</h1>
-{{! Executed in the components context. }}
-{{yield}} {{! block contents }}
-<code>&#x60;</code>
-
-If you want to customize the component, in order to
-handle events or actions, you implement a subclass
-of <code>Ember.Component</code> named after the name of the
-component. Note that <code>Component</code> needs to be appended to the name of
-your subclass like <code>AppProfileComponent</code>.
-
-For example, you could implement the action
-<code>hello</code> for the <code>app-profile</code> component:
-
-<code>&#x60;</code>javascript
-App.AppProfileComponent = Ember.Component.extend({
-  actions: {
-    hello: function(name) {
-      console.log("Hello", name);
-    }
-  }
-});
-<code>&#x60;</code>
-
-And then use it in the component's template:
-
-<code>&#x60;</code>handlebars
-<!-- app-profile template -->
-
-<h1>{{person.title}}</h1>
-{{yield}} <!-- block contents -->
-
-<button {{action 'hello' person.name}}>
-  Say Hello to {{person.name}}
-</button>
-<code>&#x60;</code>
-
-Components must have a <code>-</code> in their name to avoid
-conflicts with built-in controls that wrap HTML
-elements. This is consistent with the same
-requirement in web components.
+                        Ember Views
                     </div>
                 </li>
             </ul>

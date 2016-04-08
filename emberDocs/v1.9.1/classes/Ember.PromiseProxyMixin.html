@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,54 +38,105 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
-                                <li><a href="../classes/Backburner.html">Backburner</a></li>
-                                <li><a href="../classes/Container.html">Container</a></li>
-                                <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
-                                <li><a href="../classes/Descriptor.html">Descriptor</a></li>
+                                <li><a href="../classes/A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests..html">A Suite can be used to define a reusable set of unit tests that can be
+                applied to any object.  Suites are most useful for defining tests that
+                work against a mixin or plugin API.  Developers implementing objects that
+                use the mixin or support the API can then run these tests against their
+                own code to verify compliance.
+                
+                To define a suite, you need to define the tests themselves as well as a
+                callback API implementors can use to tie your tests to thier specific class.
+                
+                ## Defining a Callback API
+                
+                To define the callback API, just extend this class and add your properties
+                or methods that must be provided.  Use Ember.required() placeholders for
+                any properties that implementors must define themselves.
+                
+                ## Defining Unit Tests
+                
+                To add unit tests, use the suite.module() or suite.test() methods instead
+                of a regular module() or test() method when defining your tests.  This will
+                add the tests to the suite.
+                
+                ## Using a Suite
+                
+                To use a Suite to test your own objects, extend the suite subclass and
+                define any required methods.  Then call run() on the new subclass.  This
+                will create an instance of your class and then defining the unit tests.</a></li>
                                 <li><a href="../classes/Ember.html">Ember</a></li>
+                                <li><a href="../classes/Ember._HandlebarsBoundView.html">Ember._HandlebarsBoundView</a></li>
                                 <li><a href="../classes/Ember._Metamorph.html">Ember._Metamorph</a></li>
                                 <li><a href="../classes/Ember._MetamorphView.html">Ember._MetamorphView</a></li>
+                                <li><a href="../classes/Ember._SimpleMetamorphView.html">Ember._SimpleMetamorphView</a></li>
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
-                                <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
+                                <li><a href="../classes/Ember.ArrayController.html">Ember.ArrayController</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
                                 <li><a href="../classes/Ember.AutoLocation.html">Ember.AutoLocation</a></li>
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
-                                <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
-                                <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
+                                <li><a href="../classes/Ember.ComponentTemplateDeprecation.html">Ember.ComponentTemplateDeprecation</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
+                                <li><a href="../classes/Ember.ControllerContentModelAliasDeprecation.html">Ember.ControllerContentModelAliasDeprecation</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
                                 <li><a href="../classes/Ember.CoreObject.html">Ember.CoreObject</a></li>
                                 <li><a href="../classes/Ember.CoreView.html">Ember.CoreView</a></li>
                                 <li><a href="../classes/Ember.DataAdapter.html">Ember.DataAdapter</a></li>
-                                <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
+                                <li><a href="../classes/Ember.Deferred.html">Ember.Deferred</a></li>
+                                <li><a href="../classes/Ember.Descriptor.html">Ember.Descriptor</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
+                                <li><a href="../classes/Ember.EnumerableUtils.html">Ember.EnumerableUtils</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
                                 <li><a href="../classes/Ember.Evented.html">Ember.Evented</a></li>
                                 <li><a href="../classes/Ember.FEATURES.html">Ember.FEATURES</a></li>
                                 <li><a href="../classes/Ember.Freezable.html">Ember.Freezable</a></li>
+                                <li><a href="../classes/Ember.Handlebars.html">Ember.Handlebars</a></li>
+                                <li><a href="../classes/Ember.Handlebars.Compiler.html">Ember.Handlebars.Compiler</a></li>
+                                <li><a href="../classes/Ember.Handlebars.helpers.html">Ember.Handlebars.helpers</a></li>
+                                <li><a href="../classes/Ember.Handlebars.JavaScriptCompiler.html">Ember.Handlebars.JavaScriptCompiler</a></li>
                                 <li><a href="../classes/Ember.HashLocation.html">Ember.HashLocation</a></li>
-                                <li><a href="../classes/Ember.Helper.html">Ember.Helper</a></li>
                                 <li><a href="../classes/Ember.HistoryLocation.html">Ember.HistoryLocation</a></li>
-                                <li><a href="../classes/Ember.HTMLBars.html">Ember.HTMLBars</a></li>
                                 <li><a href="../classes/Ember.inject.html">Ember.inject</a></li>
                                 <li><a href="../classes/Ember.InjectedProperty.html">Ember.InjectedProperty</a></li>
                                 <li><a href="../classes/Ember.Instrumentation.html">Ember.Instrumentation</a></li>
-                                <li><a href="../classes/Ember.InstrumentationSupport.html">Ember.InstrumentationSupport</a></li>
-                                <li><a href="../classes/Ember.LegacyViewSupport.html">Ember.LegacyViewSupport</a></li>
-                                <li><a href="../classes/Ember.LinkComponent.html">Ember.LinkComponent</a></li>
+                                <li><a href="../classes/Ember.LinkView.html">Ember.LinkView</a></li>
                                 <li><a href="../classes/Ember.Location.html">Ember.Location</a></li>
                                 <li><a href="../classes/Ember.Logger.html">Ember.Logger</a></li>
                                 <li><a href="../classes/Ember.Map.html">Ember.Map</a></li>
@@ -97,39 +148,35 @@
                                 <li><a href="../classes/Ember.NativeArray.html">Ember.NativeArray</a></li>
                                 <li><a href="../classes/Ember.NoneLocation.html">Ember.NoneLocation</a></li>
                                 <li><a href="../classes/Ember.Object.html">Ember.Object</a></li>
+                                <li><a href="../classes/Ember.ObjectController.html">Ember.ObjectController</a></li>
                                 <li><a href="../classes/Ember.ObjectProxy.html">Ember.ObjectProxy</a></li>
                                 <li><a href="../classes/Ember.Observable.html">Ember.Observable</a></li>
                                 <li><a href="../classes/Ember.OrderedSet.html">Ember.OrderedSet</a></li>
+                                <li><a href="../classes/Ember.platform.html">Ember.platform</a></li>
                                 <li><a href="../classes/Ember.PromiseProxyMixin.html">Ember.PromiseProxyMixin</a></li>
                                 <li><a href="../classes/Ember.ProxyMixin.html">Ember.ProxyMixin</a></li>
+                                <li><a href="../classes/Ember.ReduceComputedProperty.html">Ember.ReduceComputedProperty</a></li>
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
-                                <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
-                                <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
-                                <li><a href="../classes/Ember.streams.Ember.stream.html">Ember.streams.Ember.stream</a></li>
-                                <li><a href="../classes/Ember.streams.Subscriber.html">Ember.streams.Subscriber</a></li>
+                                <li><a href="../classes/Ember.Set.html">Ember.Set</a></li>
+                                <li><a href="../classes/Ember.SortableMixin.html">Ember.SortableMixin</a></li>
                                 <li><a href="../classes/Ember.String.html">Ember.String</a></li>
+                                <li><a href="../classes/Ember.SubArray.html">Ember.SubArray</a></li>
                                 <li><a href="../classes/Ember.TargetActionSupport.html">Ember.TargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.TemplateRenderingSupport.html">Ember.TemplateRenderingSupport</a></li>
-                                <li><a href="../classes/Ember.Templates.helpers.html">Ember.Templates.helpers</a></li>
                                 <li><a href="../classes/Ember.Test.html">Ember.Test</a></li>
                                 <li><a href="../classes/Ember.Test.Adapter.html">Ember.Test.Adapter</a></li>
                                 <li><a href="../classes/Ember.Test.QUnitAdapter.html">Ember.Test.QUnitAdapter</a></li>
                                 <li><a href="../classes/Ember.TextArea.html">Ember.TextArea</a></li>
                                 <li><a href="../classes/Ember.TextField.html">Ember.TextField</a></li>
                                 <li><a href="../classes/Ember.TextSupport.html">Ember.TextSupport</a></li>
+                                <li><a href="../classes/Ember.TrackedArray.html">Ember.TrackedArray</a></li>
                                 <li><a href="../classes/Ember.View.html">Ember.View</a></li>
                                 <li><a href="../classes/Ember.ViewTargetActionSupport.html">Ember.ViewTargetActionSupport</a></li>
-                                <li><a href="../classes/Ember.VisibilitySupport.html">Ember.VisibilitySupport</a></li>
                                 <li><a href="../classes/Function.html">Function</a></li>
-                                <li><a href="../classes/Libraries.html">Libraries</a></li>
-                                <li><a href="../classes/Registry.html">Registry</a></li>
-                                <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
-                                <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
-                                <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
                 
@@ -138,14 +185,12 @@
                                 <li><a href="../modules/ember-application.html">ember-application</a></li>
                                 <li><a href="../modules/ember-debug.html">ember-debug</a></li>
                                 <li><a href="../modules/ember-extension-support.html">ember-extension-support</a></li>
-                                <li><a href="../modules/ember-htmlbars.html">ember-htmlbars</a></li>
+                                <li><a href="../modules/ember-handlebars.html">ember-handlebars</a></li>
+                                <li><a href="../modules/ember-handlebars-compiler.html">ember-handlebars-compiler</a></li>
                                 <li><a href="../modules/ember-metal.html">ember-metal</a></li>
                                 <li><a href="../modules/ember-routing.html">ember-routing</a></li>
-                                <li><a href="../modules/ember-routing-htmlbars.html">ember-routing-htmlbars</a></li>
-                                <li><a href="../modules/ember-routing-views.html">ember-routing-views</a></li>
+                                <li><a href="../modules/ember-routing-handlebars.html">ember-routing-handlebars</a></li>
                                 <li><a href="../modules/ember-runtime.html">ember-runtime</a></li>
-                                <li><a href="../modules/ember-template-compiler.html">ember-template-compiler</a></li>
-                                <li><a href="../modules/ember-templates.html">ember-templates</a></li>
                                 <li><a href="../modules/ember-testing.html">ember-testing</a></li>
                                 <li><a href="../modules/ember-views.html">ember-views</a></li>
                             </ul>
@@ -196,44 +241,53 @@
 
 
 <div class="box intro">
-    <p>A low level mixin making ObjectProxy promise-aware.</p>
-<pre class="code prettyprint"><code class="language-javascript">var ObjectPromiseProxy = Ember.ObjectProxy.extend(Ember.PromiseProxyMixin);
+    <p>A low level mixin making ObjectProxy, ObjectController or ArrayController's promise aware.</p>
+<pre class="code prettyprint"><code class="language-javascript">var ObjectPromiseController = Ember.ObjectController.extend(Ember.PromiseProxyMixin);
 
-var proxy = ObjectPromiseProxy.create({
+var controller = ObjectPromiseController.create({
   promise: $.getJSON('/some/remote/data.json')
 });
 
-proxy.then(function(json){
+controller.then(function(json){
    // the json
 }, function(reason) {
    // the reason why you have no json
 });
 </code></pre>
-<p>the proxy has bindable attributes which
+<p>the controller has bindable attributes which
 track the promises life cycle</p>
-<pre class="code prettyprint"><code class="language-javascript">proxy.get('isPending')   //=&gt; true
-proxy.get('isSettled')  //=&gt; false
-proxy.get('isRejected')  //=&gt; false
-proxy.get('isFulfilled') //=&gt; false
+<pre class="code prettyprint"><code class="language-javascript">controller.get('isPending')   //=&gt; true
+controller.get('isSettled')  //=&gt; false
+controller.get('isRejected')  //=&gt; false
+controller.get('isFulfilled') //=&gt; false
 </code></pre>
-<p>When the $.getJSON completes, and the promise is fulfilled
+<p>When the the $.getJSON completes, and the promise is fulfilled
 with json, the life cycle attributes will update accordingly.</p>
-<pre class="code prettyprint"><code class="language-javascript">proxy.get('isPending')   //=&gt; false
-proxy.get('isSettled')   //=&gt; true
-proxy.get('isRejected')  //=&gt; false
-proxy.get('isFulfilled') //=&gt; true
+<pre class="code prettyprint"><code class="language-javascript">controller.get('isPending')   //=&gt; false
+controller.get('isSettled')   //=&gt; true
+controller.get('isRejected')  //=&gt; false
+controller.get('isFulfilled') //=&gt; true
 </code></pre>
-<p>As the proxy is an ObjectProxy, and the json now its content,
-all the json properties will be available directly from the proxy.</p>
+<p>As the controller is an ObjectController, and the json now its content,
+all the json properties will be available directly from the controller.</p>
 <pre class="code prettyprint"><code class="language-javascript">// Assuming the following json:
 {
   firstName: 'Stefan',
   lastName: 'Penner'
 }
 
-// both properties will accessible on the proxy
-proxy.get('firstName') //=&gt; 'Stefan'
-proxy.get('lastName')  //=&gt; 'Penner'
+// both properties will accessible on the controller
+controller.get('firstName') //=&gt; 'Stefan'
+controller.get('lastName')  //=&gt; 'Penner'
+</code></pre>
+<p>If the controller is backing a template, the attributes are
+bindable from within that template</p>
+<pre class="code prettyprint"><code class="language-handlebars">{{#if isPending}}
+  loading...
+{{else}}
+  firstName: {{firstName}}
+  lastName: {{lastName}}
+{{/if}}
 </code></pre>
 
 </div>
@@ -255,15 +309,15 @@ proxy.get('lastName')  //=&gt; 'Penner'
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_catch">catch</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_finally">finally</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method">
                                 <a href="#method_then">then</a>
 
                             </li>
@@ -274,27 +328,27 @@ proxy.get('lastName')  //=&gt; 'Penner'
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_isFulfilled">isFulfilled</a>
 
                             </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_isPending">isPending</a>
 
                             </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_isRejected">isRejected</a>
 
                             </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_isSettled">isSettled</a>
 
                             </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_promise">promise</a>
 
                             </li>
-                            <li class="index-item property public">
+                            <li class="index-item property">
                                 <a href="#property_reason">reason</a>
 
                             </li>
@@ -307,7 +361,7 @@ proxy.get('lastName')  //=&gt; 'Penner'
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
-<div id="method_catch" class="method item public">
+<div id="method_catch" class="method item">
     <h3 class="name"><code>catch</code></h3>
 
         <div class="args">
@@ -323,7 +377,6 @@ proxy.get('lastName')  //=&gt; 'Penner'
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -332,7 +385,7 @@ proxy.get('lastName')  //=&gt; 'Penner'
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l176"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:176</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l178"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:178</code></a>
         </p>
 
 
@@ -373,7 +426,7 @@ proxy.get('lastName')  //=&gt; 'Penner'
 
 
 </div>
-<div id="method_finally" class="method item public">
+<div id="method_finally" class="method item">
     <h3 class="name"><code>finally</code></h3>
 
         <div class="args">
@@ -389,7 +442,6 @@ proxy.get('lastName')  //=&gt; 'Penner'
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -398,7 +450,7 @@ proxy.get('lastName')  //=&gt; 'Penner'
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l189"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:189</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l190"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:190</code></a>
         </p>
 
 
@@ -439,7 +491,7 @@ proxy.get('lastName')  //=&gt; 'Penner'
 
 
 </div>
-<div id="method_then" class="method item public">
+<div id="method_then" class="method item">
     <h3 class="name"><code>then</code></h3>
 
         <div class="args">
@@ -455,7 +507,6 @@ proxy.get('lastName')  //=&gt; 'Penner'
         </span>
 
 
-        <span class="flag public">public</span>
 
 
 
@@ -464,7 +515,7 @@ proxy.get('lastName')  //=&gt; 'Penner'
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l164"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:164</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l167"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:167</code></a>
         </p>
 
 
@@ -509,19 +560,18 @@ proxy.get('lastName')  //=&gt; 'Penner'
             <div id="properties" class="api-class-tabpanel">
                 <h2 class="off-left">Properties</h2>
 
-<div id="property_isFulfilled" class="property item public">
+<div id="property_isFulfilled" class="property item">
     <h3 class="name"><code>isFulfilled</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l129"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:129</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l135"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:135</code></a>
         </p>
 
 
@@ -536,19 +586,18 @@ proxy.get('lastName')  //=&gt; 'Penner'
 
 
 </div>
-<div id="property_isPending" class="property item public">
+<div id="property_isPending" class="property item">
     <h3 class="name"><code>isPending</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l102"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:102</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l111"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:111</code></a>
         </p>
 
 
@@ -563,19 +612,18 @@ proxy.get('lastName')  //=&gt; 'Penner'
 
 
 </div>
-<div id="property_isRejected" class="property item public">
+<div id="property_isRejected" class="property item">
     <h3 class="name"><code>isRejected</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l120"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:120</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l127"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:127</code></a>
         </p>
 
 
@@ -590,19 +638,18 @@ proxy.get('lastName')  //=&gt; 'Penner'
 
 
 </div>
-<div id="property_isSettled" class="property item public">
+<div id="property_isSettled" class="property item">
     <h3 class="name"><code>isSettled</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l111"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:111</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l119"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:119</code></a>
         </p>
 
 
@@ -617,19 +664,18 @@ proxy.get('lastName')  //=&gt; 'Penner'
 
 
 </div>
-<div id="property_promise" class="property item public">
+<div id="property_promise" class="property item">
     <h3 class="name"><code>promise</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l138"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:138</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l143"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:143</code></a>
         </p>
 
 
@@ -640,7 +686,7 @@ proxy.get('lastName')  //=&gt; 'Penner'
 <p>This property must be specified upon creation, and should not be
 changed once created.</p>
 <p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">Ember.ObjectProxy.extend(Ember.PromiseProxyMixin).create({
+<pre class="code prettyprint"><code class="language-javascript">Ember.ObjectController.extend(Ember.PromiseProxyMixin).create({
   promise: &lt;thenable&gt;
 });
 </code></pre>
@@ -650,19 +696,18 @@ changed once created.</p>
 
 
 </div>
-<div id="property_reason" class="property item public">
+<div id="property_reason" class="property item">
     <h3 class="name"><code>reason</code></h3>
     <span class="type">Unknown</span>
 
 
-        <span class="flag public">public</span>
 
 
 
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l92"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:92</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_promise_proxy.js.html#l102"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;promise_proxy.js:102</code></a>
         </p>
 
 

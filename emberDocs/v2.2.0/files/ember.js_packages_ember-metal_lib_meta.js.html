@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -38,6 +38,7 @@
                 
                         <div id="api-tabview-panel">
                             <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/@Ember.ApplicationInstance.BootOptions.html">@Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Backburner.html">Backburner</a></li>
                                 <li><a href="../classes/Container.html">Container</a></li>
                                 <li><a href="../classes/ContainerProxyMixin.html">ContainerProxyMixin</a></li>
@@ -48,7 +49,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +108,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +133,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -219,7 +224,6 @@ import EmptyObject from &#x27;ember-metal/empty_object&#x27;;
 */
 let members = {
   cache: ownMap,
-  weak: ownMap,
   watching: inheritedMap,
   mixins: inheritedMap,
   bindings: inheritedMap,
@@ -230,11 +234,9 @@ let members = {
 };
 
 let memberNames = Object.keys(members);
-const META_FIELD = &#x27;__ember_meta__&#x27;;
 
 function Meta(obj, parentMeta) {
   this._cache = undefined;
-  this._weak = undefined;
   this._watching = undefined;
   this._mixins = undefined;
   this._bindings = undefined;
@@ -315,7 +317,7 @@ function inheritedMap(name, Meta) {
   };
 
   Meta.prototype[&#x27;clear&#x27; + capitalized] = function() {
-    this[key] = undefined;
+    this[key] = new EmptyObject();
   };
 
   Meta.prototype[&#x27;deleteFrom&#x27; + capitalized] = function(subkey) {
@@ -482,24 +484,12 @@ export var META_DESC = {
 };
 
 var EMBER_META_PROPERTY = {
-  name: META_FIELD,
+  name: &#x27;__ember_meta__&#x27;,
   descriptor: META_DESC
 };
 
-// choose the one appropriate for given platform
-let setMeta = function(obj, meta) {
-  // if &#x60;null&#x60; already, just set it to the new value
-  // otherwise define property first
-  if (obj[META_FIELD] !== null) {
-    if (obj.__defineNonEnumerable) {
-      obj.__defineNonEnumerable(EMBER_META_PROPERTY);
-    } else {
-      Object.defineProperty(obj, META_FIELD, META_DESC);
-    }
-  }
-
-  obj[META_FIELD] = meta;
-};
+// Placeholder for non-writable metas.
+export var EMPTY_META = new Meta(null);
 
 /**
   Retrieves the meta hash for an object. If &#x60;writable&#x60; is true ensures the
@@ -519,32 +509,34 @@ let setMeta = function(obj, meta) {
     the meta hash, allowing the method to avoid making an unnecessary copy.
   @return {Object} the meta hash for an object
 */
-export function meta(obj) {
-  let maybeMeta = peekMeta(obj);
-  let parent;
+export function meta(obj, writable) {
+  var ret = obj.__ember_meta__;
+  if (writable === false) {
+    return ret || EMPTY_META;
+  }
 
-  // remove this code, in-favor of explicit parent
-  if (maybeMeta) {
-    if (maybeMeta.source === obj) {
-      return maybeMeta;
+  if (ret &amp;&amp; ret.source === obj) {
+    return ret;
+  }
+
+  if (!ret) {
+    ret = new Meta(obj);
+  } else {
+    ret = new Meta(obj, ret);
+  }
+
+  // if &#x60;null&#x60; already, just set it to the new value
+  // otherwise define property first
+  if (obj.__ember_meta__ !== null) {
+    if (obj.__defineNonEnumerable) {
+      obj.__defineNonEnumerable(EMBER_META_PROPERTY);
+    } else {
+      Object.defineProperty(obj, &#x27;__ember_meta__&#x27;, META_DESC);
     }
-    parent = maybeMeta;
   }
+  obj.__ember_meta__ = ret;
 
-  let newMeta = new Meta(obj, parent);
-  setMeta(obj, newMeta);
-  return newMeta;
-}
-
-export function peekMeta(obj) {
-  return obj[META_FIELD];
-}
-
-export function deleteMeta(obj) {
-  if (typeof obj[META_FIELD] !== &#x27;object&#x27;) {
-    return;
-  }
-  obj[META_FIELD] = null;
+  return ret;
 }
 
     </pre>

@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -56,11 +56,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +72,9 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
+                                <li><a href="../classes/Ember.Engine.html">Ember.Engine</a></li>
+                                <li><a href="../classes/Ember.EngineInstance.html">Ember.EngineInstance</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +110,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +135,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -186,6 +193,7 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 // jQuery, Ember.lookup,
+// Ember.ContainerView circular dependency
 // Ember.ENV
 import Ember from &#x27;ember-metal/core&#x27;;
 import { deprecate } from &#x27;ember-metal/debug&#x27;;
@@ -196,6 +204,9 @@ import CoreView from &#x27;ember-views/views/core_view&#x27;;
 import ViewContextSupport from &#x27;ember-views/mixins/view_context_support&#x27;;
 import ViewChildViewsSupport from &#x27;ember-views/mixins/view_child_views_support&#x27;;
 import ViewLegacyChildViewsSupport from &#x27;ember-views/mixins/legacy_child_views_support&#x27;;
+import {
+  childViewsProperty
+} from &#x27;ember-views/mixins/view_child_views_support&#x27;;
 import ViewStateSupport from &#x27;ember-views/mixins/view_state_support&#x27;;
 import TemplateRenderingSupport from &#x27;ember-views/mixins/template_rendering_support&#x27;;
 import ClassNamesSupport from &#x27;ember-views/mixins/class_names_support&#x27;;
@@ -452,20 +463,21 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   &#x60;&#x60;&#x60;
 
   If the return value of an &#x60;attributeBindings&#x60; monitored property is a boolean
-  the property&#x27;s value will be set as a coerced string:
+  the property will follow HTML&#x27;s pattern of repeating the attribute&#x27;s name as
+  its value:
 
   &#x60;&#x60;&#x60;javascript
   MyTextInput = Ember.View.extend({
     tagName: &#x27;input&#x27;,
     attributeBindings: [&#x27;disabled&#x27;],
-    disabled: false
+    disabled: true
   });
   &#x60;&#x60;&#x60;
 
-  Will result in a view instance with an HTML representation of:
+  Will result in view instances with an HTML representation of:
 
   &#x60;&#x60;&#x60;html
-  &lt;input id=&quot;ember1&quot; class=&quot;ember-view&quot; disabled=&quot;false&quot; /&gt;
+  &lt;input id=&quot;ember1&quot; class=&quot;ember-view&quot; disabled=&quot;disabled&quot; /&gt;
   &#x60;&#x60;&#x60;
 
   &#x60;attributeBindings&#x60; can refer to computed properties:
@@ -481,17 +493,6 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
         return false;
       }
     })
-  });
-  &#x60;&#x60;&#x60;
-
-  To prevent setting an attribute altogether, use &#x60;null&#x60; or &#x60;undefined&#x60; as the
-  return value of the &#x60;attributeBindings&#x60; monitored property:
-
-  &#x60;&#x60;&#x60;javascript
-  MyTextInput = Ember.View.extend({
-    tagName: &#x27;form&#x27;,
-    attributeBindings: [&#x27;novalidate&#x27;],
-    novalidate: null
   });
   &#x60;&#x60;&#x60;
 
@@ -823,7 +824,6 @@ import { deprecateProperty } from &#x27;ember-metal/deprecate_property&#x27;;
   @namespace Ember
   @extends Ember.CoreView
   @deprecated See http://emberjs.com/deprecations/v1.x/#toc_ember-view
-  @uses Ember.ViewSupport
   @uses Ember.ViewContextSupport
   @uses Ember.ViewChildViewsSupport
   @uses Ember.TemplateRenderingSupport
@@ -917,7 +917,14 @@ View.reopenClass({
     @type Object
     @private
   */
-  views: {}
+  views: {},
+
+  // If someone overrides the child views computed property when
+  // defining their class, we want to be able to process the user&#x27;s
+  // supplied childViews and then restore the original computed property
+  // at view initialization time. This happens in Ember.ContainerView&#x27;s init
+  // method.
+  childViewsProperty
 });
 
 function viewDeprecationMessage() {

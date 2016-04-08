@@ -17,7 +17,7 @@
                 <h1><img src="../assets/css/logo.png" title="The Ember API" width="117" height="52"></h1>
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 2.6.0-canary</em>
+            <em>API Docs for: 1.0.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -48,7 +48,6 @@
                                 <li><a href="../classes/Ember.ActionHandler.html">Ember.ActionHandler</a></li>
                                 <li><a href="../classes/Ember.Application.html">Ember.Application</a></li>
                                 <li><a href="../classes/Ember.ApplicationInstance.html">Ember.ApplicationInstance</a></li>
-                                <li><a href="../classes/Ember.ApplicationInstance.BootOptions.html">Ember.ApplicationInstance.BootOptions</a></li>
                                 <li><a href="../classes/Ember.AriaRoleSupport.html">Ember.AriaRoleSupport</a></li>
                                 <li><a href="../classes/Ember.Array.html">Ember.Array</a></li>
                                 <li><a href="../classes/Ember.ArrayProxy.html">Ember.ArrayProxy</a></li>
@@ -56,11 +55,13 @@
                                 <li><a href="../classes/Ember.Binding.html">Ember.Binding</a></li>
                                 <li><a href="../classes/Ember.Checkbox.html">Ember.Checkbox</a></li>
                                 <li><a href="../classes/Ember.ClassNamesSupport.html">Ember.ClassNamesSupport</a></li>
+                                <li><a href="../classes/Ember.CollectionView.html">Ember.CollectionView</a></li>
                                 <li><a href="../classes/Ember.Comparable.html">Ember.Comparable</a></li>
                                 <li><a href="../classes/Ember.Component.html">Ember.Component</a></li>
                                 <li><a href="../classes/Ember.computed.html">Ember.computed</a></li>
                                 <li><a href="../classes/Ember.ComputedProperty.html">Ember.ComputedProperty</a></li>
                                 <li><a href="../classes/Ember.ContainerDebugAdapter.html">Ember.ContainerDebugAdapter</a></li>
+                                <li><a href="../classes/Ember.ContainerView.html">Ember.ContainerView</a></li>
                                 <li><a href="../classes/Ember.Controller.html">Ember.Controller</a></li>
                                 <li><a href="../classes/Ember.ControllerMixin.html">Ember.ControllerMixin</a></li>
                                 <li><a href="../classes/Ember.Copyable.html">Ember.Copyable</a></li>
@@ -70,6 +71,7 @@
                                 <li><a href="../classes/Ember.Debug.html">Ember.Debug</a></li>
                                 <li><a href="../classes/Ember.DefaultResolver.html">Ember.DefaultResolver</a></li>
                                 <li><a href="../classes/Ember.EachProxy.html">Ember.EachProxy</a></li>
+                                <li><a href="../classes/Ember.EmptyViewSupport.html">Ember.EmptyViewSupport</a></li>
                                 <li><a href="../classes/Ember.Enumerable.html">Ember.Enumerable</a></li>
                                 <li><a href="../classes/Ember.Error.html">Ember.Error</a></li>
                                 <li><a href="../classes/Ember.EventDispatcher.html">Ember.EventDispatcher</a></li>
@@ -105,6 +107,7 @@
                                 <li><a href="../classes/Ember.Route.html">Ember.Route</a></li>
                                 <li><a href="../classes/Ember.Router.html">Ember.Router</a></li>
                                 <li><a href="../classes/Ember.run.html">Ember.run</a></li>
+                                <li><a href="../classes/Ember.Select.html">Ember.Select</a></li>
                                 <li><a href="../classes/Ember.Service.html">Ember.Service</a></li>
                                 <li><a href="../classes/Ember.stream.Stream.html">Ember.stream.Stream</a></li>
                                 <li><a href="../classes/Ember.streams.Dependency.html">Ember.streams.Dependency</a></li>
@@ -129,6 +132,7 @@
                                 <li><a href="../classes/RegistryProxyMixin.html">RegistryProxyMixin</a></li>
                                 <li><a href="../classes/RoutingService.html">RoutingService</a></li>
                                 <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/TransformEachInToHash.html">TransformEachInToHash</a></li>
                                 <li><a href="../classes/TransformInputOnToOnEvent.html">TransformInputOnToOnEvent</a></li>
                             </ul>
                 
@@ -196,7 +200,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l43"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:43</code></a>
+            Defined in: <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l40"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:40</code></a>
         </div>
 
             Module: <a href="../modules/ember-routing.html">ember-routing</a><br>
@@ -305,7 +309,7 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
                                 <a href="#method_destroy">destroy</a>
 
                             </li>
-                            <li class="index-item method public">
+                            <li class="index-item method private">
                                 <a href="#method_disconnectOutlet">disconnectOutlet</a>
 
                             </li>
@@ -618,7 +622,7 @@ the <a href="http://emberjs.com/guides/routing/">routing guide</a> for documenta
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__lazyInjections">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l912"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:912</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l900"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:900</code></a>
         </p>
 
 
@@ -658,7 +662,7 @@ properties will lookup on the container lazily.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__onLookup">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l903"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:903</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l891"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:891</code></a>
         </p>
 
 
@@ -689,7 +693,7 @@ properties will lookup on the container lazily.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l442"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:442</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l439"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:439</code></a>
         </p>
 
 
@@ -721,7 +725,7 @@ properties will lookup on the container lazily.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method__scheduledDestroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l465"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:465</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l460"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:460</code></a>
         </p>
 
 
@@ -753,7 +757,7 @@ scheduled for execution by the <code>destroy</code> method.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l263"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:263</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l260"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:260</code></a>
         </p>
 
 
@@ -784,7 +788,7 @@ scheduled for execution by the <code>destroy</code> method.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l305"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:305</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l302"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:302</code></a>
         </p>
 
 
@@ -815,7 +819,7 @@ scheduled for execution by the <code>destroy</code> method.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l864"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:864</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l856"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:856</code></a>
         </p>
 
 
@@ -860,7 +864,7 @@ when the model for the route changes.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_addObserver">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l333"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:333</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l332"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:332</code></a>
         </p>
 
 
@@ -978,7 +982,7 @@ any of these values, to write an observer that has no parameters at all.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1321"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1321</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1311"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1311</code></a>
         </p>
 
 
@@ -1075,7 +1079,7 @@ utilized in any way.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1244"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1244</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1234"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1234</code></a>
         </p>
 
 
@@ -1196,7 +1200,7 @@ utilized in any way.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_beginPropertyChanges">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l231"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:231</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l230"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:230</code></a>
         </p>
 
 
@@ -1251,7 +1255,7 @@ deferring.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_cacheFor">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l490"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:490</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l489"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:489</code></a>
         </p>
 
 
@@ -1309,7 +1313,7 @@ generated lazily.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1382"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1382</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1372"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1372</code></a>
         </p>
 
 
@@ -1350,7 +1354,7 @@ generated lazily.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1677"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1677</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1667"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1667</code></a>
         </p>
 
 
@@ -1415,7 +1419,7 @@ associated route or using <code>generateController</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l855"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:855</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l847"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:847</code></a>
         </p>
 
 
@@ -1460,7 +1464,7 @@ not executed when the model for the route changes.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_decrementProperty">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l453"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:453</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l452"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:452</code></a>
         </p>
 
 
@@ -1542,7 +1546,7 @@ orc.decrementProperty('health', 5);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1493"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1493</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1483"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1483</code></a>
         </p>
 
 
@@ -1622,7 +1626,7 @@ orc.decrementProperty('health', 5);
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l371"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:371</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l368"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:368</code></a>
         </p>
 
 
@@ -1693,7 +1697,7 @@ orc.decrementProperty('health', 5);
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_destroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l434"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:434</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l429"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:429</code></a>
         </p>
 
 
@@ -1723,7 +1727,7 @@ happen immediately.  It will set an isDestroying flag immediately.
 
 
 </div>
-<div id="method_disconnectOutlet" class="method item public">
+<div id="method_disconnectOutlet" class="method item private">
     <h3 class="name"><code>disconnectOutlet</code></h3>
 
         <div class="args">
@@ -1736,7 +1740,7 @@ happen immediately.  It will set an isDestroying flag immediately.
 
 
 
-        <span class="flag public">public</span>
+        <span class="flag private">private</span>
 
 
 
@@ -1745,7 +1749,7 @@ happen immediately.  It will set an isDestroying flag immediately.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1963"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1963</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1953"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1953</code></a>
         </p>
 
 
@@ -1827,7 +1831,7 @@ happen immediately.  It will set an isDestroying flag immediately.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_endPropertyChanges">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l251"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:251</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l250"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:250</code></a>
         </p>
 
 
@@ -1872,7 +1876,7 @@ deliver the deferred change notifications and end deferring.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l455"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:455</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l452"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:452</code></a>
         </p>
 
 
@@ -1903,7 +1907,7 @@ deliver the deferred change notifications and end deferring.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l431"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:431</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l428"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:428</code></a>
         </p>
 
 
@@ -1943,7 +1947,7 @@ deliver the deferred change notifications and end deferring.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1506"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1506</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1496"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1496</code></a>
         </p>
 
 
@@ -2011,7 +2015,7 @@ deliver the deferred change notifications and end deferring.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1716"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1716</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1706"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1706</code></a>
         </p>
 
 
@@ -2088,7 +2092,7 @@ deliver the deferred change notifications and end deferring.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_get">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l100"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:100</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l99"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:99</code></a>
         </p>
 
 
@@ -2183,7 +2187,7 @@ not defined upfront.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_getProperties">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l143"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:143</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l142"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:142</code></a>
         </p>
 
 
@@ -2262,7 +2266,7 @@ record.getProperties(['firstName', 'lastName', 'zipCode']);
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_getWithDefault">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l415"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:415</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l414"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:414</code></a>
         </p>
 
 
@@ -2405,7 +2409,7 @@ person.getWithDefault('lastName', 'Doe');
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_hasObserverFor">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l400"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:400</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l399"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:399</code></a>
         </p>
 
 
@@ -2474,7 +2478,7 @@ on the object.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_incrementProperty">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l433"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:433</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l432"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:432</code></a>
         </p>
 
 
@@ -2544,7 +2548,7 @@ team.incrementProperty('score', 2);
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_init">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l234"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:234</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l229"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:229</code></a>
         </p>
 
 
@@ -2572,7 +2576,7 @@ var steve = App.Person.create({
 <code>&#x60;</code>
 
 NOTE: If you do override <code>init</code> for a framework class like <code>Ember.View</code>,
-be sure to call <code>this._super(...arguments)</code> in your
+be sure to call <code>this._super.apply(this, arguments)</code> in your
 <code>init</code> declaration! If you don't, Ember may not have an opportunity to
 do important setup work, and you'll see strange behavior in your
 application.
@@ -2607,7 +2611,7 @@ application.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1032"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1032</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1024"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1024</code></a>
         </p>
 
 
@@ -2687,7 +2691,7 @@ to the route.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1392"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1392</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1382"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1382</code></a>
         </p>
 
 
@@ -2701,7 +2705,7 @@ this route.</p>
   this.route('post', { path: '/posts/:post_id' });
 });
 </code></pre>
-<p>The model for the <code>post</code> route is <code>store.findRecord('post', params.post_id)</code>.</p>
+<p>The model for the <code>post</code> route is <code>store.find('post', params.post_id)</code>.</p>
 <p>By default, if your route has a dynamic segment ending in <code>_id</code>:</p>
 <ul>
 <li>The model class is determined from the segment (<code>post_id</code>'s
@@ -2721,7 +2725,7 @@ which does cause the model hook to be called.</p>
 this.transitionTo('posts');
 
 // model passed in, so model hook not called
-thePost = store.findRecord('post', 1);
+thePost = store.find('post', 1);
 this.transitionTo('post', thePost);
 
 // integer passed in, model hook is called
@@ -2729,7 +2733,7 @@ this.transitionTo('post', 1);
 
 // model id passed in, model hook is called
 // useful for forcing the hook to execute
-thePost = store.findRecord('post', 1);
+thePost = store.find('post', 1);
 this.transitionTo('post', thePost.id);
 </code></pre>
 <p>This hook follows the asynchronous/promise semantics
@@ -2739,7 +2743,7 @@ handled by the <code>error</code> hook on <code>Ember.Route</code>.</p>
 <p>Example</p>
 <pre class="code prettyprint"><code class="language-javascript">App.PostRoute = Ember.Route.extend({
   model: function(params) {
-    return this.store.findRecord('post', params.post_id);
+    return this.store.find('post', params.post_id);
   }
 });
 </code></pre>
@@ -2814,7 +2818,7 @@ will be used as the model for this route.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1743"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1743</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1733"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1733</code></a>
         </p>
 
 
@@ -2901,7 +2905,7 @@ App.CommentsRoute = Ember.Route.extend({
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_notifyPropertyChange">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l318"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:318</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l317"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:317</code></a>
         </p>
 
 
@@ -3248,7 +3252,7 @@ becomes the function.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l316"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:316</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l313"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:313</code></a>
         </p>
 
 
@@ -3306,7 +3310,7 @@ variable and getQueryParamsFor, using the supplied routeName.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_propertyDidChange">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l294"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:294</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l293"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:293</code></a>
         </p>
 
 
@@ -3380,7 +3384,7 @@ like.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_propertyWillChange">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l270"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:270</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l269"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:269</code></a>
         </p>
 
 
@@ -3454,7 +3458,7 @@ like.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1355"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1355</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1345"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1345</code></a>
         </p>
 
 
@@ -3532,7 +3536,7 @@ are considered to be fully validated.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1054"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1054</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1046"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1046</code></a>
         </p>
 
 
@@ -3598,7 +3602,7 @@ attempted transition</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_removeObserver">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l385"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:385</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l384"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:384</code></a>
         </p>
 
 
@@ -3676,7 +3680,7 @@ target will no longer receive notifications.
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1825"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1825</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1815"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1815</code></a>
         </p>
 
 
@@ -3755,7 +3759,7 @@ the Route calls <code>render</code>:</p>
 <pre class="code prettyprint"><code class="language-javascript">//
 this.render('post', {  // the template name associated with 'post' Route
   into: 'application', // the parent route to 'post' Route
-  outlet: 'main',      // {{outlet}} and {{outlet 'main'}} are synonymous,
+  outlet: 'main',      // {{outlet}} and {{outlet 'main' are synonymous}},
   view: 'post',        // the view associated with the 'post' Route
   controller: 'post',  // the controller associated with the 'post' Route
 })
@@ -3873,7 +3877,7 @@ Defaults to the return value of the Route's model hook</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1790"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1790</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1780"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1780</code></a>
         </p>
 
 
@@ -3952,7 +3956,7 @@ alternative templates.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_reopen">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l703"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:703</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l694"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:694</code></a>
         </p>
 
 
@@ -4007,7 +4011,7 @@ see <code>reopenClass</code>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_reopenClass">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l739"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:739</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l730"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:730</code></a>
         </p>
 
 
@@ -4030,8 +4034,8 @@ MyObject.canBuild; // false
 o = MyObject.create();
 <code>&#x60;</code>
 
-In other words, this creates static properties and functions for the class.
-These are only available on the class and not on any instance of that class.
+In other words, this creates static properties and functions for the class. These are only available on the class
+and not on any instance of that class.
 
 <code>&#x60;</code>javascript
 App.Person = Ember.Object.extend({
@@ -4100,7 +4104,7 @@ see <code>reopen</code>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1080"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1080</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1072"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1072</code></a>
         </p>
 
 
@@ -4200,7 +4204,7 @@ attempted transition</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l406"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:406</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l403"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:403</code></a>
         </p>
 
 
@@ -4214,7 +4218,7 @@ changes or the route is exiting.</p>
 <pre class="code prettyprint"><code class="language-javascript">App.ArticlesRoute = Ember.Route.extend({
   // ...
 
-  resetController: function(controller, isExiting, transition) {
+  resetController: function (controller, isExiting, transition) {
     if (isExiting) {
       controller.set('page', 1);
     }
@@ -4293,7 +4297,7 @@ changes or the route is exiting.</p>
                 Ember.ActionHandler
             </a>
             but overwritten in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1116"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1116</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1108"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1108</code></a>
         </p>
 
 
@@ -4388,7 +4392,7 @@ App.IndexRoute = Ember.Route.extend({
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1553"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1553</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1543"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1543</code></a>
         </p>
 
 
@@ -4493,7 +4497,7 @@ route (in the example, <code>['post_id']</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l352"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:352</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l349"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:349</code></a>
         </p>
 
 
@@ -4567,7 +4571,7 @@ route (in the example, <code>['post_id']</code>.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l341"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:341</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l338"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:338</code></a>
         </p>
 
 
@@ -4627,7 +4631,7 @@ route (in the example, <code>['post_id']</code>.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_set">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l168"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:168</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l167"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:167</code></a>
         </p>
 
 
@@ -4732,7 +4736,7 @@ coalesced manner.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_setProperties">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l213"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:213</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l212"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:212</code></a>
         </p>
 
 
@@ -4793,7 +4797,7 @@ record.setProperties({ firstName: 'Charles', lastName: 'Jolley' });
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1164"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1164</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1156"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1156</code></a>
         </p>
 
 
@@ -4834,7 +4838,7 @@ record.setProperties({ firstName: 'Charles', lastName: 'Jolley' });
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1610"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1610</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1600"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1600</code></a>
         </p>
 
 
@@ -4853,10 +4857,10 @@ when implementing your <code>setupController</code> function, make sure to call
 <code>_super</code>:</p>
 <pre class="code prettyprint"><code class="language-javascript">App.PhotosRoute = Ember.Route.extend({
   model: function() {
-    return this.store.findAll('photo');
+    return this.store.find('photo');
   },
 
-  setupController: function(controller, model) {
+  setupController: function (controller, model) {
     // Call _super for default behavior
     this._super(controller, model);
     // Implement your custom setup after
@@ -4938,7 +4942,7 @@ instance would be used.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1518"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1518</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l1508"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:1508</code></a>
         </p>
 
 
@@ -4990,7 +4994,7 @@ in the model hook.</p>
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l2061"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:2061</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l2051"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:2051</code></a>
         </p>
 
 
@@ -5030,7 +5034,7 @@ in the model hook.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.Observable.html#method_toggleProperty">Ember.Observable</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l473"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:473</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_observable.js.html#l472"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;observable.js:472</code></a>
         </p>
 
 
@@ -5093,7 +5097,7 @@ starship.toggleProperty('warpDriveEngaged');
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_toString">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l484"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:484</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l479"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:479</code></a>
         </p>
 
 
@@ -5177,7 +5181,7 @@ teacher.toString(); //=> "<App.Teacher:ember1026:Tom Dale>"
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l873"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:873</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l865"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:865</code></a>
         </p>
 
 
@@ -5450,7 +5454,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#method_willDestroy">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l457"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:457</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l452"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:452</code></a>
         </p>
 
 
@@ -5482,7 +5486,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l295"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:295</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l292"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:292</code></a>
         </p>
 
 
@@ -5507,7 +5511,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l256"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:256</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l253"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:253</code></a>
         </p>
 
 
@@ -5532,7 +5536,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l397"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:397</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l394"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:394</code></a>
         </p>
 
 
@@ -5557,7 +5561,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l112"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:112</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l109"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:109</code></a>
         </p>
 
 
@@ -5582,7 +5586,7 @@ person.trigger('didEat', 'broccoli');
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.ActionHandler.html#property_actions">Ember.ActionHandler</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_action_handler.js.html#l24"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;action_handler.js:24</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_mixins_action_handler.js.html#l23"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;action_handler.js:23</code></a>
         </p>
 
 
@@ -5642,7 +5646,7 @@ App.SongRoute = Ember.Route.extend({
 });
 <code>&#x60;</code>
 
-It is also possible to call <code>this._super(...arguments)</code> from within an
+It is also possible to call <code>this._super.apply(this, arguments)</code> from within an
 action handler if it overrides a handler defined on a parent
 class or mixin:
 
@@ -5661,7 +5665,7 @@ App.AnnoyingDebugRoute = Ember.Route.extend(App.DebugRoute, {
   actions: {
     debugRouteInformation: function() {
       // also call the debugRouteInformation of mixed in App.DebugRoute
-      this._super(...arguments);
+      this._super.apply(this, arguments);
 
       // show additional annoyance
       window.alert(...);
@@ -5720,7 +5724,7 @@ App.AlbumSongRoute = Ember.Route.extend({
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_concatenatedProperties">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l272"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:272</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l267"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:267</code></a>
         </p>
 
 
@@ -5805,7 +5809,7 @@ mislead your users to think they can override the property in a subclass).
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l726"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:726</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l718"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:718</code></a>
         </p>
 
 
@@ -5848,7 +5852,7 @@ mislead your users to think they can override the property in a subclass).
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l518"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:518</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l515"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:515</code></a>
         </p>
 
 
@@ -5886,7 +5890,7 @@ using this property.</p>
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_isDestroyed">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l410"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:410</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l405"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:405</code></a>
         </p>
 
 
@@ -5915,7 +5919,7 @@ removed by the effect of calling the <code>destroy()</code> method.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_isDestroying">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l422"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:422</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l417"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:417</code></a>
         </p>
 
 
@@ -5944,7 +5948,7 @@ the <code>isDestroyed</code> flag is set.
     <div class="meta">
                 <p>Inherited from
                 <a href="../classes/Ember.CoreObject.html#property_mergedProperties">Ember.CoreObject</a>:
-        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l341"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:341</code></a>
+        <a href="../files/ember.js_packages_ember-runtime_lib_system_core_object.js.html#l336"><code>ember.js&#x2F;packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:336</code></a>
         </p>
 
 
@@ -6029,7 +6033,7 @@ mislead your users to think they can override the property in a subclass).
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l55"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:55</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l52"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:52</code></a>
         </p>
 
 
@@ -6087,7 +6091,7 @@ configuration options and their defaults are as follows
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l99"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:99</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l96"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:96</code></a>
         </p>
 
 
@@ -6116,7 +6120,7 @@ configuration options and their defaults are as follows
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l494"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:494</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l491"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:491</code></a>
         </p>
 
 
@@ -6154,7 +6158,7 @@ App.PostsArchivedRoute = PostsList.extend();
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l466"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:466</code></a>
+        <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l463"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:463</code></a>
         </p>
 
 
@@ -6201,7 +6205,7 @@ App.PostsArchivedRoute = PostsList.extend();
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l692"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:692</code></a>
+                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l684"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:684</code></a>
                             </p>
                     
                     
@@ -6235,7 +6239,7 @@ App.PostsArchivedRoute = PostsList.extend();
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l709"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:709</code></a>
+                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l701"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:701</code></a>
                             </p>
                     
                     
@@ -6269,7 +6273,7 @@ App.PostsArchivedRoute = PostsList.extend();
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l581"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:581</code></a>
+                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l573"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:573</code></a>
                             </p>
                     
                     
@@ -6310,7 +6314,7 @@ App.PostsArchivedRoute = PostsList.extend();
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l637"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:637</code></a>
+                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l629"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:629</code></a>
                             </p>
                     
                     
@@ -6403,7 +6407,7 @@ App.PostsArchivedRoute = PostsList.extend();
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l605"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:605</code></a>
+                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l597"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:597</code></a>
                             </p>
                     
                     
@@ -6477,7 +6481,7 @@ App.PostsArchivedRoute = PostsList.extend();
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l540"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:540</code></a>
+                            <a href="../files/ember.js_packages_ember-routing_lib_system_route.js.html#l537"><code>ember.js&#x2F;packages&#x2F;ember-routing&#x2F;lib&#x2F;system&#x2F;route.js:537</code></a>
                             </p>
                     
                     
@@ -6509,10 +6513,6 @@ App.PostsArchivedRoute = PostsList.extend();
                     subsequent <code>willTransition</code> actions to fire for the redirecting
                     transition, you must first explicitly call
                     <code>transition.abort()</code>.</p>
-                    <p>To allow the <code>willTransition</code> event to continue bubbling to the parent
-                    route, use <code>return true;</code>. When the <code>willTransition</code> method has a
-                    return value of <code>true</code> then the parent route's <code>willTransition</code> method
-                    will be fired, enabling &quot;bubbling&quot; behavior for the event.</p>
                     
                         </div>
                     
