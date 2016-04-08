@@ -1,0 +1,24 @@
+{
+  "name": "ember-docs-typing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EWhite613/ember-docs-typing.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EWhite613/ember-docs-typing/issues"
+  },
+  "homepage": "https://github.com/EWhite613/ember-docs-typing#readme",
+  "devDependencies": {
+    "http": "0.0.0",
+    "sync-exec": "^0.6.2",
+    "sync-request": "^3.0.0"
+  }
+}
